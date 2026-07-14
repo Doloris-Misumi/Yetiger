@@ -328,6 +328,9 @@ class YesTigerHandler(BaseHTTPRequestHandler):
             if path == "/builder" or path == "/builder.html":
                 self.send_file(STATIC_DIR / "builder.html")
                 return
+            if path in {"/styles.css", "/config.js", "/app.js", "/builder.js"}:
+                self.send_file(STATIC_DIR / path.lstrip("/"))
+                return
             if path.startswith("/static/"):
                 self.send_file(safe_join(STATIC_DIR, path[len("/static/") :]))
                 return

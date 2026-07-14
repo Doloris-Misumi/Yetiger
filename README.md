@@ -133,6 +133,18 @@ Linux / macOS：
 
 ## 五、常见问题
 
+### 页面只有链接和原生按钮，没有居中布局 / 拖拽区 / canvas
+
+这是前端静态资源没有加载成功的表现。请先确认已经拉到最新代码：
+
+```powershell
+git pull
+git lfs pull
+.\start_windows.ps1
+```
+
+然后在浏览器里按 `Ctrl + F5` 强制刷新。正常页面应该有居中的入口卡片，Studio 页面应该有拖放音频区域和右侧 canvas 预览。
+
 ### checkpoint.pt 很小或者模型加载失败
 
 通常是 Git LFS 没有拉到真实模型文件。重新运行：
