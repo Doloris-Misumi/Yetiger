@@ -1,0 +1,115 @@
+{
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "sweetsban",
+    "title": "Sweets BAN!",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/sweetsban.mp3",
+    "bpm": 158,
+    "call_bpm": 79.0,
+    "call_bar_multiplier": 0.5,
+    "meter": "4/4"
+  },
+  "segments": [
+    {
+      "start": 0.54,
+      "end": 20.55,
+      "music_label": "intro",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 20.55,
+      "end": 45.16,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 45.16,
+      "end": 54.38,
+      "music_label": "pre_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 54.38,
+      "end": 62.07,
+      "music_label": "pre_chorus_build",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 62.07,
+      "end": 89.76,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 89.76,
+      "end": 102.08,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 102.08,
+      "end": 126.69,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 126.69,
+      "end": 135.92,
+      "music_label": "pre_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 135.92,
+      "end": 143.61,
+      "music_label": "pre_chorus_build",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 143.61,
+      "end": 171.3,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 171.3,
+      "end": 174.36,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 174.36,
+      "end": 200.55,
+      "music_label": "solo",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 200.55,
+      "end": 234.39,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 234.39,
+      "end": 248.04,
+      "music_label": "outro",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 248.04,
+      "end": 254.8,
+      "music_label": "end",
+      "notes": "manually_reviewed_from_struct; annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "call_spans": [],
+  "annotation": {
+    "annotator": "",
+    "reviewed": true,
+    "review_date": "2026-06-17",
+    "notes": "Structure-only annotation.",
+    "call_bpm": 79.0,
+    "call_bar_multiplier": 0.5
+  }
+}

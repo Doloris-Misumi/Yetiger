@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>YesTiger MIX Builder</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <h1>✏️ MIX Builder</h1>
+          <p id="builderStatus">创建你自己的 Call & MIX</p>
+        </div>
+        <div class="top-actions">
+          <a class="back-link" href="./index.html">← 返回入口</a>
+        </div>
+      </header>
+
+      <section class="builder-layout">
+        <!-- Left: form -->
+        <div class="builder-form-panel">
+          <div class="builder-section">
+            <div class="process-head"><h2>基本信息</h2></div>
+            <label class="field-label">
+              MIX 名称
+              <input id="mixName" type="text" placeholder="例如：Standard MIX" />
+            </label>
+            <div class="builder-row">
+              <label class="field-label" style="flex:1">
+                类别
+                <select id="mixCategory">
+                  <option value="mix">MIX</option>
+                  <option value="rhythmcall">节奏 Call</option>
+                  <option value="underground_gei">地下艺</option>
+                  <option value="keepspace">留白</option>
+                </select>
+              </label>
+              <label class="field-label" style="flex:1">
+                风险
+                <select id="mixRisk">
+                  <option value="low">低</option>
+                  <option value="medium" selected>中</option>
+                  <option value="high">高</option>
+                </select>
+              </label>
+            </div>
+            <label class="field-label">
+              小节数
+              <input id="mixBars" type="number" value="4" min="1" max="32" />
+            </label>
+            <label class="field-label">
+              中文别名
+              <input id="mixAlias" type="text" placeholder="例如：标准MIX" />
+            </label>
+          </div>
+
+          <div class="builder-section">
+            <div class="process-head">
+              <h2>小节内容</h2>
+              <span class="pipeline-badge">按小节拆分</span>
+            </div>
+            <ol id="barList" class="bar-list"></ol>
+          </div>
+
+          <div class="builder-section">
+            <div class="process-head"><h2>适用场景（多选）</h2></div>
+            <div id="contextChips" class="context-chips"></div>
+          </div>
+
+          <div class="export-panel">
+            <button id="saveToLibraryBtn" type="button">保存到动作库</button>
+            <button id="exportJsonBtn" type="button">导出 JSON</button>
+            <button id="copyClipboardBtn" type="button">复制到剪贴板</button>
+          </div>
+        </div>
+
+        <!-- Right: live preview -->
+        <div class="builder-preview-panel">
+          <div class="process-head"><h2>实时预览</h2></div>
+          <div id="previewCard" class="preview-card">
+            <div id="previewName" class="preview-name"></div>
+            <div id="previewCategory" class="preview-cat"></div>
+            <div id="previewBars" class="preview-bars"></div>
+            <div id="previewText" class="preview-text"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="./config.js"></script>
+    <script src="./builder.js"></script>
+  </body>
+</html>

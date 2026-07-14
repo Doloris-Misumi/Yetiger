@@ -1,0 +1,103 @@
+{
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "sophie",
+    "title": "Sophie",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/Sophie.mp3",
+    "bpm": 200,
+    "call_bpm": 100.0,
+    "call_bar_multiplier": 0.5,
+    "meter": "4/4"
+  },
+  "segments": [
+    {
+      "start": 0.51,
+      "end": 19.72,
+      "music_label": "intro",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 19.71,
+      "end": 39.06,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 39.06,
+      "end": 43.87,
+      "music_label": "pre_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 43.87,
+      "end": 48.66,
+      "music_label": "pre_chorus_build",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 48.66,
+      "end": 70.25,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 70.25,
+      "end": 79.86,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 79.86,
+      "end": 99.06,
+      "music_label": "bridge",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 99.06,
+      "end": 108.66,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 108.66,
+      "end": 118.26,
+      "music_label": "solo",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 118.26,
+      "end": 137.34,
+      "music_label": "bridge",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 137.34,
+      "end": 184.26,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 184.26,
+      "end": 193.41,
+      "music_label": "outro",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 193.41,
+      "end": 198.23,
+      "music_label": "end",
+      "notes": "manually_reviewed_from_struct; annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "call_spans": [],
+  "annotation": {
+    "annotator": "",
+    "reviewed": true,
+    "review_date": "2026-06-16",
+    "notes": "Structure-only annotation.",
+    "call_bpm": 100.0,
+    "call_bar_multiplier": 0.5
+  }
+}

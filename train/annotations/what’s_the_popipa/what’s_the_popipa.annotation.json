@@ -1,0 +1,112 @@
+{
+  "segments": [
+    {
+      "start": 0.8,
+      "end": 32.41,
+      "music_label": "intro"
+    },
+    {
+      "start": 32.41,
+      "end": 35.01,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 35.01,
+      "end": 61.12,
+      "music_label": "verse"
+    },
+    {
+      "start": 61.12,
+      "end": 68.53,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 68.53,
+      "end": 78.87,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 78.87,
+      "end": 104.69,
+      "music_label": "chorus"
+    },
+    {
+      "start": 104.69,
+      "end": 107.5,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 107.5,
+      "end": 120.16,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 120.16,
+      "end": 145.95,
+      "music_label": "verse"
+    },
+    {
+      "start": 145.95,
+      "end": 153.71,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 153.71,
+      "end": 164.02,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 164.02,
+      "end": 189.84,
+      "music_label": "chorus"
+    },
+    {
+      "start": 189.84,
+      "end": 192.43,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 192.43,
+      "end": 197.58,
+      "music_label": "chorus"
+    },
+    {
+      "start": 197.58,
+      "end": 210.79,
+      "music_label": "solo"
+    },
+    {
+      "start": 210.79,
+      "end": 228.55,
+      "music_label": "bridge"
+    },
+    {
+      "start": 228.55,
+      "end": 254.35,
+      "music_label": "chorus"
+    },
+    {
+      "start": 254.35,
+      "end": 275.18,
+      "music_label": "outro"
+    },
+    {
+      "start": 275.18,
+      "end": 278.67,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "what’s_the_popipa",
+    "title": "what’s_the_popipa",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/what’s_the_popipa.mp3",
+    "bpm": 94,
+    "call_bpm": 94,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  }
+}

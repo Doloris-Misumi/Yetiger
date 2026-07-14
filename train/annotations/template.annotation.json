@@ -1,0 +1,30 @@
+{
+  "annotation_version": "0.1.0",
+  "song": {
+    "song_id": "replace_with_stable_id",
+    "title": "Replace Song Title",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "songs/replace_with_audio.mp3",
+    "bpm": null,
+    "call_bpm": null,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  },
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 8.0,
+      "music_label": "intro",
+      "call_role": "mix",
+      "recommended_actions": ["standard_mix"]
+    },
+    {
+      "start": 8.0,
+      "end": 24.0,
+      "music_label": "verse",
+      "call_role": "keepspace",
+      "notes": ""
+    }
+  ]
+}

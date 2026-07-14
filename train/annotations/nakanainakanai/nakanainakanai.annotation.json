@@ -1,0 +1,92 @@
+{
+  "segments": [
+    {
+      "start": 0.81,
+      "end": 15.98,
+      "music_label": "intro"
+    },
+    {
+      "start": 15.98,
+      "end": 35.76,
+      "music_label": "verse"
+    },
+    {
+      "start": 35.76,
+      "end": 50.91,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 50.91,
+      "end": 58.01,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 58.01,
+      "end": 87.7,
+      "music_label": "chorus"
+    },
+    {
+      "start": 87.7,
+      "end": 100.06,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 100.06,
+      "end": 119.86,
+      "music_label": "verse"
+    },
+    {
+      "start": 119.86,
+      "end": 134.71,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 134.71,
+      "end": 142.13,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 142.13,
+      "end": 169.34,
+      "music_label": "chorus"
+    },
+    {
+      "start": 169.34,
+      "end": 171.82,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 171.82,
+      "end": 186.66,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 186.66,
+      "end": 236.15,
+      "music_label": "chorus"
+    },
+    {
+      "start": 236.15,
+      "end": 246.35,
+      "music_label": "outro"
+    },
+    {
+      "start": 246.35,
+      "end": 248.37,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "nakanainakanai",
+    "title": "nakanainakanai",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/nakanainakanai.mp3",
+    "bpm": 97,
+    "call_bpm": 97,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  }
+}

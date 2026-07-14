@@ -1,0 +1,97 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 6.79,
+      "music_label": "intro"
+    },
+    {
+      "start": 6.79,
+      "end": 19.18,
+      "music_label": "intro"
+    },
+    {
+      "start": 19.18,
+      "end": 34.66,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 34.66,
+      "end": 47.05,
+      "music_label": "verse"
+    },
+    {
+      "start": 47.05,
+      "end": 56.35,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 56.35,
+      "end": 61.0,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 61.0,
+      "end": 98.16,
+      "music_label": "chorus"
+    },
+    {
+      "start": 98.16,
+      "end": 104.34,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 104.34,
+      "end": 116.74,
+      "music_label": "verse"
+    },
+    {
+      "start": 116.74,
+      "end": 126.03,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 126.03,
+      "end": 130.67,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 130.67,
+      "end": 167.83,
+      "music_label": "chorus"
+    },
+    {
+      "start": 167.83,
+      "end": 180.21,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 180.21,
+      "end": 217.36,
+      "music_label": "chorus"
+    },
+    {
+      "start": 217.36,
+      "end": 220.46,
+      "music_label": "outro"
+    },
+    {
+      "start": 220.46,
+      "end": 224.8,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "shakunetsubonfire",
+    "title": "shakunetsubonfire",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/shakunetsubonfire.mp3",
+    "bpm": 154,
+    "call_bpm": 77.0,
+    "call_bar_multiplier": 0.5,
+    "meter": "4/4"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "segments": [
+    {
+      "start": 0.9,
+      "end": 13.13,
+      "music_label": "intro"
+    },
+    {
+      "start": 13.13,
+      "end": 28.5,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 28.5,
+      "end": 43.84,
+      "music_label": "verse"
+    },
+    {
+      "start": 43.84,
+      "end": 61.13,
+      "music_label": "verse"
+    },
+    {
+      "start": 61.13,
+      "end": 68.82,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 68.82,
+      "end": 78.41,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 78.41,
+      "end": 97.61,
+      "music_label": "chorus"
+    },
+    {
+      "start": 97.61,
+      "end": 101.22,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 101.22,
+      "end": 109.12,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 109.12,
+      "end": 124.49,
+      "music_label": "solo"
+    },
+    {
+      "start": 124.49,
+      "end": 141.29,
+      "music_label": "verse"
+    },
+    {
+      "start": 141.29,
+      "end": 149.45,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 149.45,
+      "end": 159.04,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 159.04,
+      "end": 178.25,
+      "music_label": "chorus"
+    },
+    {
+      "start": 178.25,
+      "end": 182.09,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 182.09,
+      "end": 185.92,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 185.92,
+      "end": 205.14,
+      "music_label": "chorus"
+    },
+    {
+      "start": 205.14,
+      "end": 241.6,
+      "music_label": "chorus"
+    },
+    {
+      "start": 241.6,
+      "end": 245.2,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 245.2,
+      "end": 255.04,
+      "music_label": "outro"
+    },
+    {
+      "start": 255.04,
+      "end": 259.42,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "hashirihajimetabakarinokimini",
+    "title": "hashirihajimetabakarinokimini",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/hashirihajimetabakarinokimini.mp3",
+    "bpm": 125,
+    "call_bpm": 62.5,
+    "call_bar_multiplier": 0.5,
+    "meter": "4/4"
+  }
+}

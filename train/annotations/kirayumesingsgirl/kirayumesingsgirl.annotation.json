@@ -1,0 +1,127 @@
+{
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "kirayumesingsgirl",
+    "title": "Kirayume Sing Girls",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/kirayumesingsgirl.mp3",
+    "bpm": 90,
+    "call_bpm": 90,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  },
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 11.95,
+      "music_label": "intro",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 11.95,
+      "end": 33.29,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 33.29,
+      "end": 49.29,
+      "music_label": "pre_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 49.29,
+      "end": 57.29,
+      "music_label": "pre_chorus_build",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 57.29,
+      "end": 89.3,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 89.3,
+      "end": 99.78,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 99.78,
+      "end": 121.29,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 121.29,
+      "end": 137.31,
+      "music_label": "pre_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 137.31,
+      "end": 145.27,
+      "music_label": "pre_chorus_build",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 145.27,
+      "end": 177.28,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 177.28,
+      "end": 179.94,
+      "music_label": "post_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 179.94,
+      "end": 198.61,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 198.62,
+      "end": 222.63,
+      "music_label": "solo",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 222.63,
+      "end": 249.27,
+      "music_label": "bridge",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 249.27,
+      "end": 281.29,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 281.29,
+      "end": 300.16,
+      "music_label": "outro",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 300.16,
+      "end": 305.9,
+      "music_label": "end",
+      "notes": "manually_reviewed_from_struct; annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "call_spans": [],
+  "annotation": {
+    "annotator": "",
+    "reviewed": true,
+    "review_date": "2026-06-15",
+    "notes": "Structure-only annotation.",
+    "call_bpm": 90,
+    "call_bar_multiplier": 1.0
+  }
+}

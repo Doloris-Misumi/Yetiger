@@ -1,0 +1,360 @@
+{
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "kizunamusic",
+    "title": "Kizuna Music",
+    "artist": "Poppin Party",
+    "franchise": "bang_dream",
+    "audio_path": "train/songs/kizunamusic.mp3",
+    "bpm": 95,
+    "call_bpm": 95,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  },
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 10.73,
+      "music_label": "intro",
+      "notes": ""
+    },
+    {
+      "start": 10.73,
+      "end": 31.04,
+      "music_label": "verse",
+      "notes": ""
+    },
+    {
+      "start": 31.04,
+      "end": 36.12,
+      "music_label": "pre_chorus",
+      "notes": ""
+    },
+    {
+      "start": 36.12,
+      "end": 46.28,
+      "music_label": "pre_chorus_build",
+      "notes": ""
+    },
+    {
+      "start": 46.28,
+      "end": 86.92,
+      "music_label": "chorus",
+      "notes": ""
+    },
+    {
+      "start": 86.92,
+      "end": 97.07,
+      "music_label": "instrumental_break",
+      "notes": ""
+    },
+    {
+      "start": 97.07,
+      "end": 117.4,
+      "music_label": "verse",
+      "notes": ""
+    },
+    {
+      "start": 117.4,
+      "end": 122.49,
+      "music_label": "pre_chorus",
+      "notes": ""
+    },
+    {
+      "start": 122.49,
+      "end": 132.62,
+      "music_label": "pre_chorus_build",
+      "notes": ""
+    },
+    {
+      "start": 132.62,
+      "end": 173.27,
+      "music_label": "chorus",
+      "notes": ""
+    },
+    {
+      "start": 173.27,
+      "end": 193.58,
+      "music_label": "instrumental_break",
+      "notes": ""
+    },
+    {
+      "start": 193.58,
+      "end": 218.97,
+      "music_label": "solo",
+      "notes": ""
+    },
+    {
+      "start": 218.97,
+      "end": 239.3,
+      "music_label": "bridge",
+      "notes": ""
+    },
+    {
+      "start": 239.3,
+      "end": 245.64,
+      "music_label": "pre_chorus_build",
+      "notes": ""
+    },
+    {
+      "start": 245.64,
+      "end": 288.82,
+      "music_label": "chorus",
+      "notes": "soft final chorus entry"
+    },
+    {
+      "start": 288.82,
+      "end": 293.9,
+      "music_label": "post_chorus",
+      "notes": ""
+    },
+    {
+      "start": 293.9,
+      "end": 310.73,
+      "music_label": "outro",
+      "notes": ""
+    },
+    {
+      "start": 310.73,
+      "end": 315.4,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "call_spans": [
+    {
+      "start": 0.0,
+      "end": 5.65,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "clap"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 5.65,
+      "end": 10.73,
+      "call_role": "mix",
+      "recommended_actions": [
+        "myhontousuke"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 10.73,
+      "end": 31.04,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "clap"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 31.04,
+      "end": 36.12,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "sing_along"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 36.12,
+      "end": 41.2,
+      "call_role": "mix",
+      "recommended_actions": [
+        "bismarck_mix_first_half"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 41.2,
+      "end": 46.28,
+      "call_role": "mix",
+      "recommended_actions": [
+        "ietora"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 46.28,
+      "end": 56.44,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "long_zhi_mao"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 56.44,
+      "end": 66.59,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "cun_zheng"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 66.59,
+      "end": 76.74,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "lei_she"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 76.74,
+      "end": 86.92,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "luo_man_si"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 86.92,
+      "end": 97.07,
+      "call_role": "mix",
+      "recommended_actions": [
+        "tiger_fire_activation"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 97.07,
+      "end": 117.4,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "clap"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 117.4,
+      "end": 122.49,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "sing_along"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 122.49,
+      "end": 127.57,
+      "call_role": "mix",
+      "recommended_actions": [
+        "bismarck_mix_first_half"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 127.57,
+      "end": 132.62,
+      "call_role": "mix",
+      "recommended_actions": [
+        "ietora"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 132.62,
+      "end": 152.92,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "dian_bo_she"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 152.92,
+      "end": 173.27,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "zi_he_she"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 173.27,
+      "end": 193.58,
+      "call_role": "mix",
+      "recommended_actions": [
+        "kaho_sanren_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 193.58,
+      "end": 213.88,
+      "call_role": "mix",
+      "recommended_actions": [
+        "ietora_konzetsu_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 213.88,
+      "end": 218.97,
+      "call_role": "mix",
+      "recommended_actions": [
+        "ietora"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 218.97,
+      "end": 239.3,
+      "call_role": "mix",
+      "recommended_actions": [
+        "popipa_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 239.3,
+      "end": 245.64,
+      "call_role": "mix",
+      "recommended_actions": [
+        "ietora"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 245.64,
+      "end": 265.97,
+      "call_role": "mix",
+      "recommended_actions": [
+        "sekai_konton_mix"
+      ],
+      "notes": "soft final chorus entry"
+    },
+    {
+      "start": 268.48,
+      "end": 288.82,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "chan_she"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 288.82,
+      "end": 293.9,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "oi_oi"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 293.9,
+      "end": 304.08,
+      "call_role": "mix",
+      "recommended_actions": [
+        "ainu_kahen_mix"
+      ],
+      "notes": ""
+    }
+  ]
+}

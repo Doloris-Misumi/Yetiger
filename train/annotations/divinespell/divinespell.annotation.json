@@ -1,0 +1,102 @@
+{
+  "segments": [
+    {
+      "start": 2.0,
+      "end": 24.51,
+      "music_label": "intro"
+    },
+    {
+      "start": 24.51,
+      "end": 48.52,
+      "music_label": "verse"
+    },
+    {
+      "start": 48.52,
+      "end": 54.53,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 54.53,
+      "end": 62.01,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 62.01,
+      "end": 92.01,
+      "music_label": "chorus"
+    },
+    {
+      "start": 92.01,
+      "end": 95.02,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 95.02,
+      "end": 104.01,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 104.01,
+      "end": 128.01,
+      "music_label": "verse"
+    },
+    {
+      "start": 128.01,
+      "end": 140.02,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 140.02,
+      "end": 153.51,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 153.51,
+      "end": 183.51,
+      "music_label": "chorus"
+    },
+    {
+      "start": 183.51,
+      "end": 189.52,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 189.52,
+      "end": 195.45,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 195.45,
+      "end": 210.5,
+      "music_label": "solo"
+    },
+    {
+      "start": 210.5,
+      "end": 267.51,
+      "music_label": "chorus"
+    },
+    {
+      "start": 267.51,
+      "end": 279.51,
+      "music_label": "outro"
+    },
+    {
+      "start": 279.51,
+      "end": 283.2,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "divinespell",
+    "title": "divinespell",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/divinespell.mp3",
+    "bpm": 158,
+    "call_bpm": 79.0,
+    "call_bar_multiplier": 0.5,
+    "meter": "4/4"
+  }
+}

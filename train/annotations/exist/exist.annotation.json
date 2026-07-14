@@ -1,0 +1,123 @@
+{
+  "segments": [
+    {
+      "start": 0.49,
+      "end": 7.35,
+      "music_label": "intro"
+    },
+    {
+      "start": 7.35,
+      "end": 32.28,
+      "music_label": "verse"
+    },
+    {
+      "start": 32.28,
+      "end": 35.91,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 35.91,
+      "end": 49.62,
+      "music_label": "verse"
+    },
+    {
+      "start": 49.62,
+      "end": 56.48,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 56.48,
+      "end": 63.3,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 63.3,
+      "end": 83.88,
+      "music_label": "chorus"
+    },
+    {
+      "start": 83.88,
+      "end": 87.32,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 87.32,
+      "end": 90.77,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 90.77,
+      "end": 104.47,
+      "music_label": "verse"
+    },
+    {
+      "start": 104.47,
+      "end": 111.33,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 111.33,
+      "end": 118.18,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 118.18,
+      "end": 131.89,
+      "music_label": "chorus"
+    },
+    {
+      "start": 131.89,
+      "end": 138.77,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 138.77,
+      "end": 159.33,
+      "music_label": "solo"
+    },
+    {
+      "start": 159.33,
+      "end": 173.05,
+      "music_label": "bridge"
+    },
+    {
+      "start": 173.05,
+      "end": 183.33,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 183.33,
+      "end": 203.9,
+      "music_label": "chorus"
+    },
+    {
+      "start": 203.9,
+      "end": 207.56,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 207.56,
+      "end": 232.19,
+      "music_label": "outro"
+    },
+    {
+      "start": 232.19,
+      "end": 238.4,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "exist",
+    "title": "exist",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/exist.mp3",
+    "bpm": 140,
+    "call_bpm": 70.0,
+    "call_bar_multiplier": 0.5,
+    "meter": "4/4"
+  },
+  "call_spans": []
+}

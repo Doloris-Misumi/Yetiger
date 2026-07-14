@@ -1,0 +1,128 @@
+{
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "home_street",
+    "title": "Home Street",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/Home_Street.mp3",
+    "bpm": 105,
+    "call_bpm": 105,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  },
+  "segments": [
+    {
+      "start": 1.54,
+      "end": 12.97,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 12.97,
+      "end": 26.69,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 26.69,
+      "end": 44.98,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 44.98,
+      "end": 49.55,
+      "music_label": "pre_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 49.55,
+      "end": 55.57,
+      "music_label": "pre_chorus_build",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 55.57,
+      "end": 78.13,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 78.13,
+      "end": 92.12,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 92.12,
+      "end": 110.13,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 110.13,
+      "end": 114.68,
+      "music_label": "pre_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 114.68,
+      "end": 120.41,
+      "music_label": "pre_chorus_build",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 120.41,
+      "end": 138.69,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 138.69,
+      "end": 147.84,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 147.84,
+      "end": 170.71,
+      "music_label": "solo",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 170.71,
+      "end": 180.99,
+      "music_label": "bridge",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 180.99,
+      "end": 212.99,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+
+    {
+      "start": 212.99,
+      "end": 221.11,
+      "music_label": "outro",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 221.11,
+      "end": 228.0,
+      "music_label": "end",
+      "notes": "manually_reviewed_from_struct; annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "call_spans": [],
+  "annotation": {
+    "annotator": "",
+    "reviewed": true,
+    "review_date": "2026-06-15",
+    "notes": "Structure-only annotation.",
+    "call_bpm": 105,
+    "call_bar_multiplier": 1.0
+  }
+}

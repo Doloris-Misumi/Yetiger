@@ -1,0 +1,140 @@
+{
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "kimigahajimaru",
+    "title": "Kimi ga Hajimaru",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/kimigahajimaru.mp3",
+    "bpm": 88,
+    "call_bpm": 88,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  },
+  "segments": [
+    {
+      "start": 1.8,
+      "end": 9.96,
+      "music_label": "intro",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 9.96,
+      "end": 20.79,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 20.79,
+      "end": 39.78,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 39.78,
+      "end": 45.21,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 45.21,
+      "end": 50.64,
+      "music_label": "pre_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 50.64,
+      "end": 58.59,
+      "music_label": "pre_chorus_build",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 58.59,
+      "end": 80.48,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 80.48,
+      "end": 96.72,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 96.72,
+      "end": 115.73,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 115.73,
+      "end": 121.13,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 121.13,
+      "end": 126.57,
+      "music_label": "pre_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 126.57,
+      "end": 134.54,
+      "music_label": "pre_chorus_build",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 134.54,
+      "end": 156.4,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 156.4,
+      "end": 167.06,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+
+    {
+      "start": 167.06,
+      "end": 181.13,
+      "music_label": "bridge",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 181.13,
+      "end": 203.86,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 203.86,
+      "end": 209.1,
+      "music_label": "post_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 209.1,
+      "end": 211.81,
+      "music_label": "outro",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 211.81,
+      "end": 218.04,
+      "music_label": "end",
+      "notes": "manually_reviewed_from_struct; annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "call_spans": [],
+  "annotation": {
+    "annotator": "",
+    "reviewed": true,
+    "review_date": "2026-06-17",
+    "notes": "Structure-only annotation.",
+    "call_bpm": 88,
+    "call_bar_multiplier": 1.0
+  }
+}

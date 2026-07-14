@@ -1,0 +1,97 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 6.71,
+      "music_label": "intro"
+    },
+    {
+      "start": 6.71,
+      "end": 16.83,
+      "music_label": "chorus"
+    },
+    {
+      "start": 16.83,
+      "end": 21.88,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 21.88,
+      "end": 42.21,
+      "music_label": "verse"
+    },
+    {
+      "start": 42.21,
+      "end": 52.35,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 52.35,
+      "end": 58.51,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 58.51,
+      "end": 81.25,
+      "music_label": "chorus"
+    },
+    {
+      "start": 81.25,
+      "end": 91.35,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 91.35,
+      "end": 114.08,
+      "music_label": "verse"
+    },
+    {
+      "start": 114.08,
+      "end": 136.99,
+      "music_label": "chorus"
+    },
+    {
+      "start": 136.99,
+      "end": 142.03,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 142.03,
+      "end": 162.25,
+      "music_label": "solo"
+    },
+    {
+      "start": 162.25,
+      "end": 177.41,
+      "music_label": "bridge"
+    },
+    {
+      "start": 177.41,
+      "end": 211.35,
+      "music_label": "chorus"
+    },
+    {
+      "start": 211.35,
+      "end": 216.39,
+      "music_label": "outro"
+    },
+    {
+      "start": 216.39,
+      "end": 219.64,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "tarinai",
+    "title": "tarinai",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/tarinai.mp3",
+    "bpm": 95,
+    "call_bpm": 95,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  }
+}

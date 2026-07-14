@@ -1,0 +1,337 @@
+{
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "mayoiuta",
+    "title": "迷星叫",
+    "artist": "MyGO!!!!!",
+    "franchise": "bang_dream",
+    "audio_path": "train/songs/mayoiuta.mp3",
+    "bpm": 95,
+    "call_bpm": 95,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  },
+  "call_spans": [
+    {
+      "start": 0.0,
+      "end": 3.7,
+      "call_role": "keepspace",
+      "recommended_actions": [],
+      "notes": ""
+    },
+    {
+      "start": 3.7,
+      "end": 6.21,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "clap"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 6.21,
+      "end": 16.33,
+      "call_role": "mix",
+      "recommended_actions": [
+        "tiger_fire_activation"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 16.33,
+      "end": 23.91,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "clap"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 23.91,
+      "end": 26.43,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "name_call"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 26.43,
+      "end": 44.12,
+      "call_role": "mix",
+      "recommended_actions": [
+        "takamatsu_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 44.12,
+      "end": 49.16,
+      "call_role": "mix",
+      "recommended_actions": [
+        "ietora"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 49.16,
+      "end": 50.43,
+      "call_role": "keepspace",
+      "recommended_actions": [],
+      "notes": ""
+    },
+    {
+      "start": 50.43,
+      "end": 60.52,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "long_zhi_mao"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 60.52,
+      "end": 70.65,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "lei_she"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 70.65,
+      "end": 73.18,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "sing_along"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 73.18,
+      "end": 83.27,
+      "call_role": "mix",
+      "recommended_actions": [
+        "bandor_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 83.27,
+      "end": 90.83,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "clap"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 90.83,
+      "end": 93.36,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "name_call"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 93.36,
+      "end": 111.08,
+      "call_role": "mix",
+      "recommended_actions": [
+        "bismarck_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 111.08,
+      "end": 116.16,
+      "call_role": "mix",
+      "recommended_actions": [
+        "ietora"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 116.16,
+      "end": 117.37,
+      "call_role": "keepspace",
+      "recommended_actions": [],
+      "notes": ""
+    },
+    {
+      "start": 117.37,
+      "end": 127.47,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "lei_she"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 127.47,
+      "end": 137.56,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "cun_zheng"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 137.56,
+      "end": 140.12,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "sing_along"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 140.12,
+      "end": 160.33,
+      "call_role": "mix",
+      "recommended_actions": [
+        "ietora_konzetsu_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 160.33,
+      "end": 162.85,
+      "call_role": "mix",
+      "recommended_actions": [
+        "highclap"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 162.85,
+      "end": 183.06,
+      "call_role": "mix",
+      "recommended_actions": [
+        "sekai_konton_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 183.06,
+      "end": 188.11,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "sing_along"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 188.11,
+      "end": 211.38,
+      "call_role": "keepspace",
+      "recommended_actions": [],
+      "notes": ""
+    }
+  ],
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 16.33,
+      "music_label": "intro",
+      "notes": ""
+    },
+    {
+      "start": 16.33,
+      "end": 36.53,
+      "music_label": "verse",
+      "notes": ""
+    },
+    {
+      "start": 36.53,
+      "end": 41.58,
+      "music_label": "pre_chorus",
+      "notes": ""
+    },
+    {
+      "start": 41.58,
+      "end": 50.43,
+      "music_label": "pre_chorus_build",
+      "notes": ""
+    },
+    {
+      "start": 50.43,
+      "end": 73.18,
+      "music_label": "chorus",
+      "notes": ""
+    },
+    {
+      "start": 73.18,
+      "end": 75.7,
+      "music_label": "post_chorus",
+      "notes": ""
+    },
+    {
+      "start": 75.7,
+      "end": 83.27,
+      "music_label": "instrumental_break",
+      "notes": ""
+    },
+    {
+      "start": 83.27,
+      "end": 103.49,
+      "music_label": "verse",
+      "notes": ""
+    },
+    {
+      "start": 103.49,
+      "end": 108.54,
+      "music_label": "pre_chorus",
+      "notes": ""
+    },
+    {
+      "start": 108.54,
+      "end": 117.37,
+      "music_label": "pre_chorus_build",
+      "notes": ""
+    },
+    {
+      "start": 117.37,
+      "end": 140.12,
+      "music_label": "chorus",
+      "notes": ""
+    },
+    {
+      "start": 140.12,
+      "end": 142.64,
+      "music_label": "post_chorus",
+      "notes": ""
+    },
+    {
+      "start": 142.64,
+      "end": 162.85,
+      "music_label": "solo",
+      "notes": ""
+    },
+    {
+      "start": 162.85,
+      "end": 185.59,
+      "music_label": "chorus",
+      "notes": ""
+    },
+    {
+      "start": 185.59,
+      "end": 188.11,
+      "music_label": "post_chorus",
+      "notes": ""
+    },
+    {
+      "start": 188.11,
+      "end": 208.14,
+      "music_label": "outro",
+      "notes": ""
+    },
+    {
+      "start": 208.14,
+      "end": 211.38,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ]
+}

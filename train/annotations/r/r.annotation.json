@@ -1,0 +1,127 @@
+{
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "r",
+    "title": "R",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/R.mp3",
+    "bpm": 94,
+    "call_bpm": 94,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  },
+  "segments": [
+    {
+      "start": 1.36,
+      "end": 6.46,
+      "music_label": "intro",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 6.46,
+      "end": 37.11,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 37.11,
+      "end": 43.49,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 43.49,
+      "end": 66.47,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 66.47,
+      "end": 71.26,
+      "music_label": "pre_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 71.26,
+      "end": 76.36,
+      "music_label": "pre_chorus_build",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 76.36,
+      "end": 107.32,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 107.32,
+      "end": 117.53,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 117.53,
+      "end": 140.51,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 140.51,
+      "end": 145.62,
+      "music_label": "pre_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 145.62,
+      "end": 150.73,
+      "music_label": "pre_chorus_build",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 150.73,
+      "end": 181.36,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 181.36,
+      "end": 206.9,
+      "music_label": "solo",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 206.9,
+      "end": 227.32,
+      "music_label": "bridge",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 227.32,
+      "end": 257.96,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 257.96,
+      "end": 277.54,
+      "music_label": "outro",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 277.54,
+      "end": 285.3,
+      "music_label": "end",
+      "notes": "manually_reviewed_from_struct; annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "call_spans": [],
+  "annotation": {
+    "annotator": "",
+    "reviewed": true,
+    "review_date": "2026-06-16",
+    "notes": "Structure-only annotation.",
+    "call_bpm": 94,
+    "call_bar_multiplier": 1.0
+  }
+}

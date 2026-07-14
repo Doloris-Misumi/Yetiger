@@ -1,0 +1,82 @@
+{
+  "segments": [
+    {
+      "start": 0.55,
+      "end": 22.43,
+      "music_label": "intro"
+    },
+    {
+      "start": 22.43,
+      "end": 40.19,
+      "music_label": "verse"
+    },
+    {
+      "start": 40.19,
+      "end": 48.99,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 48.99,
+      "end": 57.54,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 57.54,
+      "end": 88.49,
+      "music_label": "chorus"
+    },
+    {
+      "start": 88.49,
+      "end": 101.7,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 101.7,
+      "end": 119.45,
+      "music_label": "verse"
+    },
+    {
+      "start": 119.45,
+      "end": 128.26,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 128.26,
+      "end": 136.81,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 136.81,
+      "end": 154.54,
+      "music_label": "solo"
+    },
+    {
+      "start": 154.54,
+      "end": 185.36,
+      "music_label": "chorus"
+    },
+    {
+      "start": 185.36,
+      "end": 198.57,
+      "music_label": "outro"
+    },
+    {
+      "start": 198.57,
+      "end": 204.12,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "athiscode",
+    "title": "athiscode",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/athiscode.mp3",
+    "bpm": 109,
+    "call_bpm": 109,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  }
+}

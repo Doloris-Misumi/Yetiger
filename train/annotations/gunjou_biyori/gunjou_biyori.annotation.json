@@ -1,0 +1,79 @@
+{
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "gunjou_biyori",
+    "title": "Gunjou Biyori",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/Gunjou_Biyori.mp3",
+    "bpm": 176,
+    "call_bpm": 88.0,
+    "call_bar_multiplier": 0.5,
+    "meter": "4/4"
+  },
+  "segments": [
+    {
+      "start": 2.7,
+      "end": 24.7,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 24.7,
+      "end": 35.65,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 35.65,
+      "end": 57.59,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 57.59,
+      "end": 68.57,
+      "music_label": "pre_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 68.57,
+      "end": 72.7,
+      "music_label": "pre_chorus_build",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 72.7,
+      "end": 97.38,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 97.38,
+      "end": 100.12,
+      "music_label": "post_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 100.11,
+      "end": 102.86,
+      "music_label": "outro",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 102.86,
+      "end": 104.92,
+      "music_label": "end",
+      "notes": "manually_reviewed_from_struct; annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "call_spans": [],
+  "annotation": {
+    "annotator": "",
+    "reviewed": true,
+    "review_date": "2026-06-15",
+    "notes": "Structure-only annotation.",
+    "call_bpm": 88.0,
+    "call_bar_multiplier": 0.5
+  }
+}

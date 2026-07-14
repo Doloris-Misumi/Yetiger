@@ -1,0 +1,127 @@
+{
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "yesbang_dream",
+    "title": "Yes BanG Dream",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/yesbang_dream.mp3",
+    "bpm": 92,
+    "call_bpm": 92,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  },
+  "segments": [
+    {
+      "start": 2.27,
+      "end": 19.46,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 19.46,
+      "end": 32.1,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 32.1,
+      "end": 55.45,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 55.45,
+      "end": 71.01,
+      "music_label": "pre_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 71.01,
+      "end": 81.4,
+      "music_label": "pre_chorus_build",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 81.4,
+      "end": 107.34,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 107.34,
+      "end": 112.52,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 112.52,
+      "end": 135.88,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 135.88,
+      "end": 151.45,
+      "music_label": "pre_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 151.45,
+      "end": 161.82,
+      "music_label": "pre_chorus_build",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 161.82,
+      "end": 187.77,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 187.77,
+      "end": 200.74,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 200.74,
+      "end": 221.5,
+      "music_label": "solo",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 221.5,
+      "end": 247.45,
+      "music_label": "bridge",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 247.45,
+      "end": 273.38,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 273.38,
+      "end": 290.44,
+      "music_label": "outro",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 290.44,
+      "end": 309.97,
+      "music_label": "end",
+      "notes": "manually_reviewed_from_struct; annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "call_spans": [],
+  "annotation": {
+    "annotator": "",
+    "reviewed": true,
+    "review_date": "2026-06-17",
+    "notes": "Structure-only annotation.",
+    "call_bpm": 92,
+    "call_bar_multiplier": 1.0
+  }
+}

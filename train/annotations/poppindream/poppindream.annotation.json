@@ -1,0 +1,402 @@
+{
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "poppindream",
+    "title": "Poppin'Dream!",
+    "artist": "Poppin'Party",
+    "franchise": "bang_dream",
+    "audio_path": "train/songs/Poppindream.mp3",
+    "bpm": 100,
+    "call_bpm": 100,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  },
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 17.4,
+      "music_label": "intro",
+      "notes": ""
+    },
+    {
+      "start": 17.4,
+      "end": 31.8,
+      "music_label": "verse",
+      "notes": ""
+    },
+    {
+      "start": 31.8,
+      "end": 50.99,
+      "music_label": "pre_chorus",
+      "notes": ""
+    },
+    {
+      "start": 50.99,
+      "end": 53.4,
+      "music_label": "pre_chorus_build",
+      "notes": ""
+    },
+    {
+      "start": 53.4,
+      "end": 79.8,
+      "music_label": "chorus",
+      "notes": ""
+    },
+    {
+      "start": 79.8,
+      "end": 82.21,
+      "music_label": "post_chorus",
+      "notes": "draft split before allin1 instrumental boundary; verify by listening"
+    },
+    {
+      "start": 82.21,
+      "end": 94.19,
+      "music_label": "instrumental_break",
+      "notes": ""
+    },
+    {
+      "start": 94.19,
+      "end": 108.59,
+      "music_label": "verse",
+      "notes": ""
+    },
+    {
+      "start": 108.59,
+      "end": 127.8,
+      "music_label": "pre_chorus",
+      "notes": ""
+    },
+    {
+      "start": 127.8,
+      "end": 130.2,
+      "music_label": "pre_chorus_build",
+      "notes": "draft refinement within allin1 chorus; verify by listening"
+    },
+    {
+      "start": 130.2,
+      "end": 157.2,
+      "music_label": "chorus",
+      "notes": ""
+    },
+    {
+      "start": 157.2,
+      "end": 159.61,
+      "music_label": "post_chorus",
+      "notes": "draft transition to solo; verify by listening"
+    },
+    {
+      "start": 159.61,
+      "end": 178.21,
+      "music_label": "instrumental_break",
+      "notes": ""
+    },
+    {
+      "start": 178.21,
+      "end": 197.41,
+      "music_label": "solo",
+      "notes": ""
+    },
+    {
+      "start": 197.41,
+      "end": 221.4,
+      "music_label": "bridge",
+      "notes": "merged_adjacent"
+    },
+    {
+      "start": 221.4,
+      "end": 229.8,
+      "music_label": "pre_chorus_build",
+      "notes": "draft final-chorus build; verify by listening"
+    },
+    {
+      "start": 229.8,
+      "end": 256.2,
+      "music_label": "chorus",
+      "notes": "draft final chorus second half"
+    },
+    {
+      "start": 256.2,
+      "end": 258.6,
+      "music_label": "post_chorus",
+      "notes": ""
+    },
+    {
+      "start": 258.6,
+      "end": 263.4,
+      "music_label": "outro",
+      "notes": ""
+    },
+    {
+      "start": 263.4,
+      "end": 270.64,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "call_spans": [
+    {
+      "start": 0.0,
+      "end": 3.0,
+      "call_role": "keepspace",
+      "recommended_actions": [],
+      "notes": ""
+    },
+    {
+      "start": 3.0,
+      "end": 7.81,
+      "call_role": "mix",
+      "recommended_actions": [
+        "myohon_activation"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 7.81,
+      "end": 12.6,
+      "call_role": "mix",
+      "recommended_actions": [
+        "myhontousuke"
+      ],
+      "notes": "draft Popipa-style intro option"
+    },
+    {
+      "start": 12.6,
+      "end": 17.4,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "sing_along"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 17.4,
+      "end": 27.0,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "clap"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 27.0,
+      "end": 31.8,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "sing_along"
+      ],
+      "notes": "draft melodic group-vocal hook in verse; confirm exact bar by listening"
+    },
+    {
+      "start": 31.8,
+      "end": 53.4,
+      "call_role": "mix",
+      "recommended_actions": [
+        "bismarck+kanzenseniki_mix"
+      ],
+      "notes": "即将进入副歌,完整的一段mix拉升情绪"
+    },
+    {
+      "start": 53.4,
+      "end": 63.0,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "long_zhi_mao"
+      ],
+      "notes": "high-energy draft; verify desired live style"
+    },
+    {
+      "start": 63.0,
+      "end": 72.61,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "lei_she"
+      ],
+      "notes": "high-energy draft; verify desired live style"
+    },
+    {
+      "start": 72.61,
+      "end": 77.39,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "sing_along"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 77.39,
+      "end": 79.8,
+      "call_role": "keepspace",
+      "recommended_actions": [],
+      "notes": ""
+    },
+    {
+      "start": 79.8,
+      "end": 89.4,
+      "call_role": "mix",
+      "recommended_actions": [
+        "tiger_fire_activation"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 89.4,
+      "end": 94.19,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "sing_along"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 94.19,
+      "end": 103.8,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "clap"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 103.8,
+      "end": 108.59,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "sing_along"
+      ],
+      "notes": "draft melodic group-vocal hook in verse; confirm exact bar by listening"
+    },
+    {
+      "start": 108.59,
+      "end": 127.8,
+      "call_role": "mix",
+      "recommended_actions": [
+        "hogwarts_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 127.8,
+      "end": 130.2,
+      "call_role": "mix",
+      "recommended_actions": [
+        "ietora"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 130.2,
+      "end": 139.8,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "heibai_shuangyi"
+      ],
+      "notes": "high-energy draft; verify desired live style"
+    },
+    {
+      "start": 139.8,
+      "end": 149.39,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "cun_zheng"
+      ],
+      "notes": "high-energy draft; verify desired live style"
+    },
+    {
+      "start": 149.39,
+      "end": 159.61,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "sing_along"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 159.61,
+      "end": 178.21,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "clap"
+      ],
+      "notes": "鼓点太重不好拉mix,跟随鼓点鼓掌吧"
+    },
+    {
+      "start": 178.21,
+      "end": 197.41,
+      "call_role": "mix",
+      "recommended_actions": [
+        "ietora_konzetsu_mix"
+      ],
+      "notes": "8-bar solo draft based on existing Poppin'Party annotations"
+    },
+    {
+      "start": 197.41,
+      "end": 202.2,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "sing_along"
+      ],
+      "notes": "melodic group-vocal hook at bridge entry"
+    },
+    {
+      "start": 202.2,
+      "end": 221.4,
+      "call_role": "mix",
+      "recommended_actions": [
+        "popipa_mix"
+      ],
+      "notes": "Popipa bridge option; verify vocal density before approval"
+    },
+    {
+      "start": 221.4,
+      "end": 229.8,
+      "call_role": "mix",
+      "recommended_actions": [
+        "ietora"
+      ],
+      "notes": "final-chorus build"
+    },
+    {
+      "start": 229.8,
+      "end": 249.0,
+      "call_role": "mix",
+      "recommended_actions": [
+        "sekai_konton_mix"
+      ],
+      "notes": "high-energy final-chorus draft; verify desired live style"
+    },
+    {
+      "start": 249.0,
+      "end": 256.2,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "sing_along"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 256.2,
+      "end": 261.0,
+      "call_role": "mix",
+      "recommended_actions": [
+        "standard_mix_first_half"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 261.0,
+      "end": 263.4,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "sing_along"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 263.4,
+      "end": 270.64,
+      "call_role": "keepspace",
+      "recommended_actions": [],
+      "notes": "leave ending open until manual listening review"
+    }
+  ]
+}

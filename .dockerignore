@@ -1,0 +1,9 @@
+.venv
+.hf
+webapp_runs
+__pycache__
+**/__pycache__
+*.pyc
+*.log
+.git
+.gitignore

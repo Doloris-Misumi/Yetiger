@@ -1,0 +1,131 @@
+{
+  "segments": [
+    {
+      "start": 0.8,
+      "end": 14.59,
+      "music_label": "intro"
+    },
+    {
+      "start": 14.59,
+      "end": 28.39,
+      "music_label": "chorus"
+    },
+    {
+      "start": 28.39,
+      "end": 34.88,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 34.88,
+      "end": 60.82,
+      "music_label": "verse"
+    },
+    {
+      "start": 60.82,
+      "end": 67.3,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 67.3,
+      "end": 77.03,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 77.03,
+      "end": 90.0,
+      "music_label": "chorus"
+    },
+    {
+      "start": 90.0,
+      "end": 102.98,
+      "music_label": "chorus"
+    },
+    {
+      "start": 102.98,
+      "end": 106.23,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 106.23,
+      "end": 109.47,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 109.47,
+      "end": 135.41,
+      "music_label": "verse"
+    },
+    {
+      "start": 135.41,
+      "end": 141.89,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 141.89,
+      "end": 150.0,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 150.0,
+      "end": 162.97,
+      "music_label": "chorus"
+    },
+    {
+      "start": 162.97,
+      "end": 175.95,
+      "music_label": "chorus"
+    },
+    {
+      "start": 175.95,
+      "end": 179.2,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 179.2,
+      "end": 182.44,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 182.44,
+      "end": 195.41,
+      "music_label": "solo"
+    },
+    {
+      "start": 195.41,
+      "end": 208.37,
+      "music_label": "chorus"
+    },
+    {
+      "start": 208.37,
+      "end": 224.61,
+      "music_label": "chorus"
+    },
+    {
+      "start": 224.61,
+      "end": 227.85,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 227.85,
+      "end": 242.39,
+      "music_label": "chorus"
+    },
+    {
+      "start": 242.39,
+      "end": 249.0,
+      "music_label": "outro"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "stepbystep",
+    "title": "stepbystep",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/stepbystep.mp3",
+    "bpm": 146,
+    "call_bpm": 73.0,
+    "call_bar_multiplier": 0.5,
+    "meter": "4/4"
+  }
+}

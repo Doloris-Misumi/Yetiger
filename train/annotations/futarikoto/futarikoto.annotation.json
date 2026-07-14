@@ -1,0 +1,87 @@
+{
+  "segments": [
+    {
+      "start": 0.36,
+      "end": 23.23,
+      "music_label": "intro"
+    },
+    {
+      "start": 23.23,
+      "end": 68.94,
+      "music_label": "verse"
+    },
+    {
+      "start": 68.94,
+      "end": 86.1,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 86.1,
+      "end": 108.97,
+      "music_label": "chorus"
+    },
+    {
+      "start": 108.97,
+      "end": 131.83,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 131.83,
+      "end": 154.68,
+      "music_label": "verse"
+    },
+    {
+      "start": 154.68,
+      "end": 166.12,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 166.12,
+      "end": 171.84,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 171.84,
+      "end": 194.68,
+      "music_label": "chorus"
+    },
+    {
+      "start": 194.68,
+      "end": 220.4,
+      "music_label": "solo"
+    },
+    {
+      "start": 220.4,
+      "end": 246.12,
+      "music_label": "chorus"
+    },
+    {
+      "start": 246.12,
+      "end": 248.98,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 248.98,
+      "end": 283.25,
+      "music_label": "outro"
+    },
+    {
+      "start": 283.25,
+      "end": 287.39,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "futarikoto",
+    "title": "futarikoto",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/futarikoto.mp3",
+    "bpm": 85,
+    "call_bpm": 85,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  }
+}

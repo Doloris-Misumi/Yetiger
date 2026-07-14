@@ -1,0 +1,77 @@
+{
+  "segments": [
+    {
+      "start": 0.46,
+      "end": 37.41,
+      "music_label": "verse"
+    },
+    {
+      "start": 37.41,
+      "end": 45.42,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 45.42,
+      "end": 48.65,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 48.65,
+      "end": 80.83,
+      "music_label": "chorus"
+    },
+    {
+      "start": 80.83,
+      "end": 105.31,
+      "music_label": "verse"
+    },
+    {
+      "start": 105.31,
+      "end": 113.94,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 113.94,
+      "end": 120.96,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 120.96,
+      "end": 154.19,
+      "music_label": "chorus"
+    },
+    {
+      "start": 154.19,
+      "end": 171.97,
+      "music_label": "bridge"
+    },
+    {
+      "start": 171.97,
+      "end": 203.94,
+      "music_label": "chorus"
+    },
+    {
+      "start": 203.94,
+      "end": 217.99,
+      "music_label": "chorus"
+    },
+    {
+      "start": 217.99,
+      "end": 221.74,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "chiisanakoinouta",
+    "title": "chiisanakoinouta",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/chiisanakoinouta.mp3",
+    "bpm": 120,
+    "call_bpm": 120,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  }
+}

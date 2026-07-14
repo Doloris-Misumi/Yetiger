@@ -1,0 +1,429 @@
+{
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "starttruedreams",
+    "title": "START!! True dreams",
+    "artist": "Liella!",
+    "franchise": "love_live_superstar",
+    "audio_path": "train/songs/STARTTruedreams.mp3",
+    "bpm": 90,
+    "call_bpm": 90,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  },
+  "call_spans": [
+    {
+      "start": 2.04,
+      "end": 10.16,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "clap"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 10.16,
+      "end": 20.95,
+      "call_role": "mix",
+      "recommended_actions": [
+        "gachikoi_koujou"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 20.95,
+      "end": 26.33,
+      "call_role": "mix",
+      "recommended_actions": [
+        "standard_mix_first_half"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 26.33,
+      "end": 29.02,
+      "call_role": "mix",
+      "recommended_actions": [
+        "std_mix_kouhan_dt"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 29.02,
+      "end": 31.73,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "clap"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 31.73,
+      "end": 39.82,
+      "call_role": "mix",
+      "recommended_actions": [
+        "sae_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 39.82,
+      "end": 42.5,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "chokokoro_call"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 42.5,
+      "end": 45.21,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "name_call"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 45.21,
+      "end": 50.61,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "oi_oi"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 50.61,
+      "end": 56.0,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "ppph"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 60.05,
+      "end": 63.41,
+      "call_role": "mix",
+      "recommended_actions": [
+        "ietora"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 66.1,
+      "end": 68.8,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "fufu_call"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 71.5,
+      "end": 74.2,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "sing_along"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 76.89,
+      "end": 79.59,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "fufu_call"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 84.98,
+      "end": 90.38,
+      "call_role": "mix",
+      "recommended_actions": [
+        "standard_mix_first_half"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 90.38,
+      "end": 93.07,
+      "call_role": "mix",
+      "recommended_actions": [
+        "japanese_mix_second_half_double_time"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 101.15,
+      "end": 103.85,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "name_call"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 103.85,
+      "end": 109.25,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "name_call"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 109.25,
+      "end": 114.64,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "oi_oi"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 114.64,
+      "end": 124.08,
+      "call_role": "mix",
+      "recommended_actions": [
+        "jyajya_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 124.08,
+      "end": 125.43,
+      "call_role": "mix",
+      "recommended_actions": [
+        "ietora"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 125.43,
+      "end": 136.22,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "cun_zheng"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 136.22,
+      "end": 147.0,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "lei_she"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 147.0,
+      "end": 149.69,
+      "call_role": "mix",
+      "recommended_actions": [
+        "haiseno_activation"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 149.69,
+      "end": 171.29,
+      "call_role": "mix",
+      "recommended_actions": [
+        "popipa_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 171.29,
+      "end": 173.97,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "popipapipopa"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 176.67,
+      "end": 182.07,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "clap"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 182.07,
+      "end": 184.76,
+      "call_role": "mix",
+      "recommended_actions": [
+        "ietora"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 184.76,
+      "end": 190.16,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "fufu_call"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 192.85,
+      "end": 195.55,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "sing_along"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 198.24,
+      "end": 200.94,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "fufu_call"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 203.64,
+      "end": 211.72,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "sing_along"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 211.72,
+      "end": 233.32,
+      "call_role": "mix",
+      "recommended_actions": [
+        "lin_xiu_mix"
+      ],
+      "notes": ""
+    }
+  ],
+  "segments": [
+    {
+      "start": 0,
+      "end": 2.04,
+      "music_label": "intro",
+      "notes": ""
+    },
+    {
+      "start": 2.04,
+      "end": 10.16,
+      "music_label": "chorus",
+      "notes": ""
+    },
+    {
+      "start": 10.16,
+      "end": 12.85,
+      "music_label": "post_chorus",
+      "notes": ""
+    },
+    {
+      "start": 12.85,
+      "end": 29.02,
+      "music_label": "instrumental_break",
+      "notes": ""
+    },
+    {
+      "start": 29.02,
+      "end": 50.61,
+      "music_label": "verse",
+      "notes": ""
+    },
+    {
+      "start": 50.61,
+      "end": 56.0,
+      "music_label": "pre_chorus",
+      "notes": ""
+    },
+    {
+      "start": 56.0,
+      "end": 63.41,
+      "music_label": "pre_chorus_build",
+      "notes": ""
+    },
+    {
+      "start": 63.41,
+      "end": 84.98,
+      "music_label": "chorus",
+      "notes": ""
+    },
+    {
+      "start": 84.98,
+      "end": 93.07,
+      "music_label": "instrumental_break",
+      "notes": ""
+    },
+    {
+      "start": 93.07,
+      "end": 114.64,
+      "music_label": "verse",
+      "notes": ""
+    },
+    {
+      "start": 114.64,
+      "end": 120.04,
+      "music_label": "pre_chorus",
+      "notes": ""
+    },
+    {
+      "start": 120.04,
+      "end": 125.43,
+      "music_label": "pre_chorus_build",
+      "notes": ""
+    },
+    {
+      "start": 125.43,
+      "end": 147.0,
+      "music_label": "chorus",
+      "notes": ""
+    },
+    {
+      "start": 147.0,
+      "end": 149.69,
+      "music_label": "instrumental_break",
+      "notes": ""
+    },
+    {
+      "start": 149.69,
+      "end": 173.97,
+      "music_label": "bridge",
+      "notes": ""
+    },
+    {
+      "start": 173.97,
+      "end": 184.76,
+      "music_label": "pre_chorus",
+      "notes": ""
+    },
+    {
+      "start": 184.76,
+      "end": 211.72,
+      "music_label": "chorus",
+      "notes": ""
+    },
+    {
+      "start": 211.72,
+      "end": 233.32,
+      "music_label": "outro",
+      "notes": ""
+    },
+    {
+      "start": 233.32,
+      "end": 242.72,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ]
+}

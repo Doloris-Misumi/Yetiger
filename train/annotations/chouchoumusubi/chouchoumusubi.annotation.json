@@ -1,0 +1,97 @@
+{
+  "segments": [
+    {
+      "start": 0.36,
+      "end": 27.2,
+      "music_label": "intro"
+    },
+    {
+      "start": 27.2,
+      "end": 65.67,
+      "music_label": "verse"
+    },
+    {
+      "start": 65.67,
+      "end": 79.26,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 79.26,
+      "end": 83.2,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 83.2,
+      "end": 120.0,
+      "music_label": "chorus"
+    },
+    {
+      "start": 120.0,
+      "end": 135.81,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 135.81,
+      "end": 156.2,
+      "music_label": "verse"
+    },
+    {
+      "start": 156.2,
+      "end": 169.77,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 169.77,
+      "end": 174.32,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 174.32,
+      "end": 192.39,
+      "music_label": "chorus"
+    },
+    {
+      "start": 192.39,
+      "end": 210.51,
+      "music_label": "chorus"
+    },
+    {
+      "start": 210.51,
+      "end": 226.33,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 226.33,
+      "end": 244.48,
+      "music_label": "bridge"
+    },
+    {
+      "start": 244.48,
+      "end": 280.67,
+      "music_label": "chorus"
+    },
+    {
+      "start": 280.67,
+      "end": 304.74,
+      "music_label": "outro"
+    },
+    {
+      "start": 304.74,
+      "end": 312.15,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "chouchoumusubi",
+    "title": "chouchoumusubi",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/chouchoumusubi.mp3",
+    "bpm": 105,
+    "call_bpm": 105,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  }
+}

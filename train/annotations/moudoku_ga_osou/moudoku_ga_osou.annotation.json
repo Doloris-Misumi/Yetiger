@@ -1,0 +1,103 @@
+{
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "moudoku_ga_osou",
+    "title": "Moudoku ga Osou",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/Moudoku_ga_Osou.mp3",
+    "bpm": 158,
+    "call_bpm": 79.0,
+    "call_bar_multiplier": 0.5,
+    "meter": "4/4"
+  },
+  "segments": [
+    {
+      "start": 0.57,
+      "end": 25.18,
+      "music_label": "intro",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 25.18,
+      "end": 37.51,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 37.51,
+      "end": 49.81,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 49.81,
+      "end": 62.12,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 62.12,
+      "end": 86.74,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 86.74,
+      "end": 99.02,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 99.02,
+      "end": 123.65,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 123.65,
+      "end": 148.27,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 148.27,
+      "end": 160.57,
+      "music_label": "solo",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 160.57,
+      "end": 185.19,
+      "music_label": "bridge",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 185.19,
+      "end": 222.12,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 222.12,
+      "end": 246.72,
+      "music_label": "solo",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 246.72,
+      "end": 254.32,
+      "music_label": "end",
+      "notes": "manually_reviewed_from_struct; annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "call_spans": [],
+  "annotation": {
+    "annotator": "",
+    "reviewed": true,
+    "review_date": "2026-06-15",
+    "notes": "Structure-only annotation.",
+    "call_bpm": 79.0,
+    "call_bar_multiplier": 0.5
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "segments": [
+    {
+      "start": 0.1,
+      "end": 34.94,
+      "music_label": "intro"
+    },
+    {
+      "start": 34.94,
+      "end": 60.0,
+      "music_label": "verse"
+    },
+    {
+      "start": 60.0,
+      "end": 69.41,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 69.41,
+      "end": 72.54,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 72.54,
+      "end": 97.6,
+      "music_label": "chorus"
+    },
+    {
+      "start": 97.6,
+      "end": 103.86,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 103.86,
+      "end": 110.16,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 110.16,
+      "end": 122.68,
+      "music_label": "verse"
+    },
+    {
+      "start": 122.68,
+      "end": 132.09,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 132.09,
+      "end": 135.23,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 135.23,
+      "end": 160.27,
+      "music_label": "chorus"
+    },
+    {
+      "start": 160.27,
+      "end": 166.55,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 166.55,
+      "end": 179.09,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 179.09,
+      "end": 207.27,
+      "music_label": "bridge"
+    },
+    {
+      "start": 207.27,
+      "end": 232.37,
+      "music_label": "chorus"
+    },
+    {
+      "start": 232.37,
+      "end": 238.61,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 238.61,
+      "end": 251.41,
+      "music_label": "outro"
+    },
+    {
+      "start": 251.41,
+      "end": 260.38,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "karenorakugaki",
+    "title": "karenorakugaki",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/karenorakugaki.mp3",
+    "bpm": 154,
+    "call_bpm": 77.0,
+    "call_bar_multiplier": 0.5,
+    "meter": "4/4"
+  }
+}

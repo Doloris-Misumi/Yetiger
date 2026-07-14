@@ -1,0 +1,3788 @@
+{
+  "version": "0.1.0",
+  "notes": [
+    "Draft library for YesTiger MVP.",
+    "These entries are candidate support actions, not universal rules.",
+    "Venue, artist, group, and fandom rules should override this library."
+  ],
+  "actions": [
+    {
+      "id": "keepspace",
+      "display_name": "Keep Space",
+      "aliases": [
+        "Silence",
+        "No call"
+      ],
+      "category": "keepspace",
+      "typical_text": "",
+      "best_context": [
+        "verse",
+        "end",
+        "quiet_listening_section",
+        "dense_vocal"
+      ],
+      "requires": {
+        "min_bars": 1,
+        "max_bars": 64,
+        "vocal_density": "any"
+      },
+      "duration": {
+        "preferred_bars": 4,
+        "strict_bars": false,
+        "can_compress": true,
+        "can_extend": true
+      },
+      "avoid": [],
+      "intensity": 0.0,
+      "risk": "low"
+    },
+    {
+      "id": "standard_mix",
+      "display_name": "Standard MIX",
+      "aliases": [
+        "English MIX",
+        "Tiger Fire",
+        "标准MIX",
+        "英语MIX"
+      ],
+      "category": "mix",
+      "typical_text": " Uhai Uhai Uhai Uhai/ A~yosshaikuzo/ Taiga Faiya Saiba Faiba / Daiba Baiba Jya-jya",
+      "best_context": [
+        "intro",
+        "instrumental_break",
+        "post_chorus_interlude"
+      ],
+      "requires": {
+        "min_bars": 4.0,
+        "max_bars": 4.0,
+        "vocal_density": "low",
+        "beat_stability": "high",
+        "allowed_bars": [
+          4
+        ]
+      },
+      "duration": {
+        "preferred_bars": 4,
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "quiet_ballad",
+        "important_lyric_line"
+      ],
+      "intensity": 0.85,
+      "risk": "medium",
+      "tutorial_text": {
+        "source": "MixAndCall",
+        "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+        "source_title": "英语mix [ スタンダードmix ] [ 英語mix ]",
+        "language": "romaji",
+        "full_text": "Uhai Uhai Uhai Uhai\nA~yosshaikuzo\nTaiga Faiya Saiba Faiba\nDaiba Baiba Jya-jya",
+        "bars": [
+          "Uhai Uhai Uhai Uhai",
+          "A~yosshaikuzo",
+          "Taiga Faiya Saiba Faiba",
+          "Daiba Baiba Jya-jya"
+        ]
+      },
+      "chinese_alias": "标准MIX"
+    },
+    {
+      "id": "standard_mix_long",
+      "display_name": "Standard MIX +1-bar Extension",
+      "aliases": [
+        "Standard MIX Long",
+        "English MIX Long",
+        "Standard MIX Shaku +1",
+        "スタンダードmix尺+1小節",
+        "Tiger Fire Long",
+        "标准MIX加长",
+        "标准MIX+1小节"
+      ],
+      "category": "mix",
+      "typical_text": "Uhai Uhai Uhai Uhai/A~yosshaikuzo / Taiga Faiya Saiba Faiba / Daiba Baiba Jya-jya / Faibo Waipa ",
+      "best_context": [
+        "intro",
+        "instrumental_break",
+        "post_chorus_interlude",
+        "high_energy_break"
+      ],
+      "requires": {
+        "min_bars": 5.0,
+        "max_bars": 5.0,
+        "allowed_bars": [
+          5
+        ],
+        "vocal_density": "low",
+        "beat_stability": "high"
+      },
+      "duration": {
+        "preferred_bars": 5,
+        "preferred_counts": 20,
+        "count_unit": "beat",
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_5_bars",
+        "quiet_ballad"
+      ],
+      "intensity": 0.87,
+      "risk": "medium",
+      "tutorial_text": {
+        "source": "MixAndCall",
+        "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+        "source_title": "スタンダードmix尺+1小節",
+        "language": "romaji",
+        "full_text": "Uhai Uhai Uhai Uhai\nA~yosshaikuzo\nTaiga Faiya Saiba Faiba\nDaiba Baiba Jya-jya-\nFaibo Waipa ",
+        "bars": [
+          "Uhai Uhai Uhai Uhai",
+          "A~yosshaikuzo",
+          "Taiga Faiya Saiba Faiba",
+          "Daiba Baiba Jya-jya-",
+          "Faibo Waipa "
+        ]
+      },
+      "chinese_alias": "标准MIX加长版"
+    },
+    {
+      "id": "mix_leadin_aaa_ikuzo",
+      "display_name": "MIX Lead-in Aaa Ikuzo",
+      "aliases": [
+        "Aaa Yossha Ikuzo",
+        "MIX Lead-in",
+        "MIX Kakegoe",
+        "MIX前导",
+        "MIX起头",
+        "MIX吆喝"
+      ],
+      "category": "mix",
+      "typical_text": "Aaa, yossha ikuzo!",
+      "best_context": [
+        "intro",
+        "instrumental_break",
+        "post_chorus_interlude",
+        "high_energy_break"
+      ],
+      "requires": {
+        "min_bars": 1.0,
+        "max_bars": 1.0,
+        "allowed_bars": [
+          1
+        ],
+        "vocal_density": "low",
+        "beat_stability": "high"
+      },
+      "duration": {
+        "preferred_bars": 1,
+        "preferred_counts": 4,
+        "count_unit": "beat",
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_4_beats",
+        "quiet_ballad"
+      ],
+      "intensity": 0.82,
+      "risk": "medium",
+      "tutorial_text": {
+        "source": "",
+        "source_url": "",
+        "source_title": "",
+        "language": "romaji",
+        "full_text": "Aaa, yossha ikuzo!",
+        "bars": [
+          "Aaa, yossha ikuzo!"
+        ]
+      },
+      "chinese_alias": "MIX入场喊"
+    },
+    {
+      "id": "standard_mix_first_half",
+      "display_name": "Standard MIX First Half",
+      "aliases": [
+        "English MIX First Half",
+        "Standard MIX Zenhan",
+        "Tiger Fire Zenhan",
+        "标准MIX前半"
+      ],
+      "category": "mix",
+      "typical_text": "Uhai Uhai Uhai Uhai / A~yosshaikuzo",
+      "best_context": [
+        "intro",
+        "instrumental_break",
+        "post_chorus_interlude",
+        "high_energy_break"
+      ],
+      "requires": {
+        "min_bars": 2.0,
+        "max_bars": 2.0,
+        "allowed_bars": [
+          2
+        ],
+        "vocal_density": "low",
+        "beat_stability": "high"
+      },
+      "duration": {
+        "preferred_bars": 2,
+        "preferred_counts": 8,
+        "count_unit": "beat",
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_8_beats",
+        "quiet_ballad"
+      ],
+      "intensity": 0.84,
+      "risk": "medium",
+      "tutorial_text": {
+        "source": "MixAndCall",
+        "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+        "source_title": "英语mix [ スタンダードmix ] [ 英語mix ]",
+        "language": "romaji",
+        "full_text": "Uhai Uhai Uhai Uhai\n_A~yosshaikuzo",
+        "bars": [
+          "Uhai Uhai Uhai Uhai",
+          "A~yosshaikuzo"
+        ]
+      },
+      "chinese_alias": "标准MIX前半段"
+    },
+    {
+      "id": "standard_mix_second_half",
+      "display_name": "Standard MIX Second Half",
+      "aliases": [
+        "English MIX Second Half",
+        "Standard MIX Kouhan",
+        "Tiger Fire Kouhan",
+        "标准MIX后半"
+      ],
+      "category": "mix",
+      "typical_text": "Taiga Faiya Saiba Faiba / Daiba Baiba Jya-jya-",
+      "best_context": [
+        "intro",
+        "instrumental_break",
+        "post_chorus_interlude",
+        "high_energy_break"
+      ],
+      "requires": {
+        "min_bars": 2.0,
+        "max_bars": 2.0,
+        "vocal_density": "low",
+        "beat_stability": "high",
+        "allowed_bars": [
+          2
+        ]
+      },
+      "duration": {
+        "preferred_bars": 2,
+        "preferred_counts": 8,
+        "count_unit": "beat",
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_8_beats",
+        "quiet_ballad"
+      ],
+      "intensity": 0.86,
+      "risk": "medium",
+      "tutorial_text": {
+        "source": "MixAndCall",
+        "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+        "source_title": "英语mix [ スタンダードmix ] [ 英語mix ]",
+        "language": "romaji",
+        "full_text": "Taiga Faiya Saiba Faiba\nDaiba Baiba Jya-jya-",
+        "bars": [
+          "Taiga Faiya Saiba Faiba",
+          "Daiba Baiba Jya-jya-"
+        ]
+      },
+      "chinese_alias": "标准MIX后半段"
+    },
+    {
+      "id": "std_mix_kouhan_dt",
+      "display_name": "Standard MIX Second Half Double Time",
+      "aliases": [
+        "Standard MIX Second Half Double Time",
+        "Standard MIX Kouhan Double Time",
+        "Tiger Fire Kouhan Double Time",
+        "标准MIX后半双倍速"
+      ],
+      "category": "mix",
+      "typical_text": "Taiga Faiya Saiba Faiba Daiba Baiba Jya-jya-",
+      "best_context": [
+        "intro",
+        "instrumental_break",
+        "post_chorus_interlude",
+        "short_high_energy_gap"
+      ],
+      "requires": {
+        "min_bars": 1.0,
+        "max_bars": 1.0,
+        "vocal_density": "low",
+        "beat_stability": "high",
+        "allowed_bars": [
+          1
+        ]
+      },
+      "duration": {
+        "preferred_bars": 1,
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_1_bar",
+        "quiet_ballad"
+      ],
+      "intensity": 0.9,
+      "risk": "medium",
+      "tutorial_text": {
+        "source": "MixAndCall",
+        "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+        "source_title": "英语mix [ スタンダードmix ] [ 英語mix ]",
+        "language": "romaji",
+        "full_text": "Taiga Faiya Saiba Faiba Daiba Baiba Jya-jya-",
+        "bars": [
+          "Taiga Faiya Saiba Faiba Daiba Baiba Jya-jya-"
+        ]
+      },
+      "chinese_alias": "标准MIX后半双倍速"
+    },
+    {
+      "id": "japanese_mix",
+      "display_name": "Japanese MIX",
+      "aliases": [
+        "Nihongo MIX",
+        "日语MIX"
+      ],
+      "category": "mix",
+      "typical_text": "Uhai Uhai Uhai Uhai /A~jyaikuzo / Tora Hi Jinzou Sen'i / Ama Shindou Ka-sen",
+      "best_context": [
+        "second_intro",
+        "instrumental_break",
+        "post_chorus_interlude"
+      ],
+      "requires": {
+        "min_bars": 4.0,
+        "max_bars": 4.0,
+        "vocal_density": "low",
+        "beat_stability": "high",
+        "allowed_bars": [
+          4
+        ]
+      },
+      "duration": {
+        "preferred_bars": 4,
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "quiet_ballad"
+      ],
+      "intensity": 0.88,
+      "risk": "medium",
+      "tutorial_text": {
+        "source": "MixAndCall",
+        "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+        "source_title": "日本语mix [ ジャパニーズmix ] [ 日本語mix ]",
+        "language": "romaji",
+        "full_text": "Uhai Uhai Uhai Uhai\nA~jyaikuzo\nTora Hi Jinzou Sen'i\nAma Shindou Ka-sen",
+        "bars": [
+          "Uhai Uhai Uhai Uhai",
+          "A~jyaikuzo",
+          "Tora Hi Jinzou Sen'i",
+          "Ama Shindou Ka-sen"
+        ]
+      },
+      "chinese_alias": "日语MIX"
+    },
+    {
+      "id": "japanese_mix_long",
+      "display_name": "Japanese MIX +1-bar Extension",
+      "aliases": [
+        "Japanese MIX Long",
+        "Nihongo MIX Long",
+        "Japanese MIX Shaku +1",
+        "ジャパニーズmix尺+1小節",
+        "日语MIX加长",
+        "日语MIX+1小节"
+      ],
+      "category": "mix",
+      "typical_text": "Uhai Uhai Uhai Uhai/A~mouiccyoikuzo / Tora Hi Jinzou Sen'i / Ama Shindou Ka-sen / Tobi Jyokyo ",
+      "best_context": [
+        "second_intro",
+        "instrumental_break",
+        "post_chorus_interlude",
+        "high_energy_break"
+      ],
+      "requires": {
+        "min_bars": 5.0,
+        "max_bars": 5.0,
+        "allowed_bars": [
+          5
+        ],
+        "vocal_density": "low",
+        "beat_stability": "high"
+      },
+      "duration": {
+        "preferred_bars": 5,
+        "preferred_counts": 20,
+        "count_unit": "beat",
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_5_bars",
+        "quiet_ballad"
+      ],
+      "intensity": 0.9,
+      "risk": "medium",
+      "tutorial_text": {
+        "source": "MixAndCall",
+        "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+        "source_title": "ジャパニーズmix尺+1小節",
+        "language": "romaji",
+        "full_text": "Uhai Uhai Uhai Uhai\nA~mouiccyoikuzo\nTora Hi Jinzou Sen'i\nAma Shindou Ka-sen\nTobi Jyokyo ",
+        "bars": [
+          "Uhai Uhai Uhai Uhai",
+          "A~mouiccyoikuzo",
+          "Tora Hi Jinzou Sen'i",
+          "Ama Shindou Ka-sen",
+          "Tobi Jyokyo "
+        ]
+      },
+      "chinese_alias": "日语MIX加长版"
+    },
+    {
+      "id": "japanese_mix_second_half",
+      "display_name": "Japanese MIX Second Half",
+      "aliases": [
+        "Nihongo MIX Kouhan",
+        "Japanese MIX Kouhan",
+        "日语MIX后半"
+      ],
+      "category": "mix",
+      "typical_text": "Tora Hi Jinzou Sen'i / Ama ShindouKasen",
+      "best_context": [
+        "intro",
+        "instrumental_break",
+        "post_chorus_interlude",
+        "high_energy_break"
+      ],
+      "requires": {
+        "min_bars": 2.0,
+        "max_bars": 2.0,
+        "vocal_density": "low",
+        "beat_stability": "high",
+        "allowed_bars": [
+          
+          2
+        ]
+      },
+      "duration": {
+        "preferred_bars": 2,
+        "preferred_counts": 16,
+        "count_unit": "beat",
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_2_beats",
+        "quiet_ballad"
+      ],
+      "intensity": 0.88,
+      "risk": "medium",
+      "tutorial_text": {
+        "source": "MixAndCall",
+        "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+        "source_title": "ジャパニーズmix（最後を短縮）",
+        "language": "romaji",
+        "full_text": "Tora Hi Jinzou Sen'i\n_Ama Shindou Kasen",
+        "bars": [
+          "Tora Hi Jinzou Sen'i",
+          "Ama Shindou Kasen"
+        ]
+      },
+      "chinese_alias": "日语MIX后半段"
+    },
+    {
+      "id": "japanese_mix_second_half_double_time",
+      "display_name": "Japanese MIX Second Half Double Time",
+      "aliases": [
+        "Nihongo MIX Kouhan Double Time",
+        "Japanese MIX Kouhan Double Speed",
+        "Japanese MIX Second Half Baisoku",
+        "日语MIX后半双倍速"
+      ],
+      "category": "mix",
+      "typical_text": "Tora Hi Jinzou Sen'i Ama Shindou Kasen",
+      "best_context": [
+        "intro",
+        "instrumental_break",
+        "post_chorus_interlude",
+        "short_high_energy_gap"
+      ],
+      "requires": {
+        "min_bars": 1.0,
+        "max_bars": 1.0,
+        "vocal_density": "low",
+        "beat_stability": "high",
+        "allowed_bars": [
+          1
+        ]
+      },
+      "duration": {
+        "preferred_bars": 1,
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_1_bar",
+        "quiet_ballad"
+      ],
+      "intensity": 0.9,
+      "risk": "medium",
+      "tutorial_text": {
+        "source": "MixAndCall",
+        "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+        "source_title": "ジャパニーズmix（最後を短縮）",
+        "language": "romaji",
+        "full_text": "Tora Hi Jinzou Sen'i Ama Shindou Kasen",
+        "bars": [
+          "Tora Hi Jinzou Sen'i Ama Shindou Kasen"
+        ]
+      },
+      "chinese_alias": "日语MIX后半双倍速"
+    },
+    {
+      "id": "jp_mix_seigyaku_dt",
+      "display_name": "Japanese MIX Forward-Reverse Double Time",
+      "aliases": [
+        "Japanese MIX Seigyaku Double Time",
+        "Nihongo MIX Seigyaku Baisoku",
+        "Seigyaku Japanese MIX",
+        "Seigyaku Nihongo MIX Double Time",
+        "日语MIX正逆双倍速",
+        "日语正逆MIX"
+      ],
+      "category": "mix",
+      "typical_text": "Tora Hi Jinzou Sen'i / Ama Shindou KasenTobi / JyokyoTobi Kasen Shindou / Ama Sen'i JinzouHi",
+      "best_context": [
+        "intro",
+        "instrumental_break",
+        "post_chorus_interlude",
+        "short_high_energy_gap",
+        "chorus_entry"
+      ],
+      "requires": {
+        "min_bars": 4.0,
+        "max_bars": 4.0,
+        "vocal_density": "low",
+        "beat_stability": "high",
+        "allowed_bars": [
+          4
+        ]
+      },
+      "duration": {
+        "preferred_bars": 4,
+        "preferred_counts": 16,
+        "count_unit": "beat",
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_4_bars",
+        "quiet_ballad"
+      ],
+      "intensity": 0.91,
+      "risk": "medium",
+      "tutorial_text": {
+        "source": "MixAndCall",
+        "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+        "source_title": "ジャパニーズmix逆打ち",
+        "language": "romaji",
+        "full_text": "Tora Hi Jinzou Sen'i\nAma Shindou KasenTobi\nJyokyoTobi Kasen Shindou\nAma Sen'i JinzouHi",
+        "bars": [
+          "Tora Hi Jinzou Sen'i",
+          "Ama Shindou KasenTobi",
+          "JyokyoTobi Kasen Shindou",
+          "Ama Sen'i JinzouHi"
+        ]
+      },
+      "chinese_alias": "日语MIX正逆双倍速"
+    },
+    {
+      "id": "ainu_mix",
+      "display_name": "Ainu MIX (Zenkyo Short)",
+      "aliases": [
+        "Ainu-style MIX",
+        "アイヌ語mix（ゼンキョウver）",
+        "阿伊努MIX短版",
+        "アイヌMIX短"
+      ],
+      "category": "mix",
+      "typical_text": "Uhai Uhai Uhai Uhai/A~rasutoikuzo / Chape Ape Kara Kina / Rara Tusuke Myo-hontusuke",
+      "best_context": [
+        "long_intro",
+        "instrumental_break",
+        "final_build"
+      ],
+      "requires": {
+        "min_bars": 4.0,
+        "max_bars": 4.0,
+        "vocal_density": "low",
+        "beat_stability": "high",
+        "allowed_bars": [
+          4
+        ]
+      },
+      "duration": {
+        "preferred_bars": 4,
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "low_energy_intro"
+      ],
+      "intensity": 0.9,
+      "risk": "medium",
+      "tutorial_text": {
+        "source": "MixAndCall",
+        "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+        "source_title": "アイヌ語mix（ゼンキョウver）",
+        "language": "romaji",
+        "full_text": "Uhai Uhai Uhai Uhai\n_A~rasutoikuzo\n_Chape Ape Kara Kina\n_Rara TusukeMyo-hontusuke",
+        "bars": [
+          "Uhai Uhai Uhai Uhai",
+          "A~rasutoikuzo",
+          "Chape Ape Kara Kina",
+          "Rara TusukeMyo-hontusuke"
+        ]
+      },
+      "chinese_alias": "阿伊努MIX短版"
+    },
+    {
+      "id": "ainu_mix_long",
+      "display_name": "Ainu MIX Full",
+      "aliases": [
+        "Ainu MIX Long",
+        "Ainu-style MIX Long",
+        "アイヌ語mix",
+        "阿伊努MIX完整版",
+        "アイヌMIX完整"
+      ],
+      "category": "mix",
+      "typical_text": "A~rasutoikuzo / _Chape Ape Kara Kina / _Rara Tusuke Wisupe / Kesui Suisuupa",
+      "best_context": [
+        "long_intro",
+        "instrumental_break",
+        "final_build",
+        "high_energy_break"
+      ],
+      "requires": {
+        "min_bars": 6.0,
+        "max_bars": 6.0,
+        "allowed_bars": [
+          6
+        ],
+        "vocal_density": "low",
+        "beat_stability": "high"
+      },
+      "duration": {
+        "preferred_bars": 6,
+        "preferred_counts": 24,
+        "count_unit": "beat",
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_6_bars",
+        "quiet_ballad"
+      ],
+      "intensity": 0.91,
+      "risk": "medium",
+      "tutorial_text": {
+        "source": "MixAndCall",
+        "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+        "source_title": "阿伊努语mix [ アイヌ語mix ]",
+        "language": "romaji",
+        "full_text": "A~rasutoikuzo\n_Chape Ape Kara Kina\n_Rara Tusuke Wisupe\nKesui Suisuupa",
+        "bars": [
+          "A~rasutoikuzo",
+          "_Chape Ape Kara Kina",
+          "_Rara Tusuke Wisupe",
+          "Kesui Suisuupa"
+        ]
+      },
+      "chinese_alias": "阿伊努MIX完整版"
+    },
+    {
+      "id": "ainu_second_half_mix",
+      "display_name": "Ainu MIX Second Half",
+      "aliases": [
+        "Ainu MIX Kouhan",
+        "Ainu Second Half MIX",
+        "阿伊努MIX后半"
+      ],
+      "category": "mix",
+      "typical_text": "Chape Ape Kara Kina / Rara TusukeMyo-hontusuke",
+      "best_context": [
+        "intro",
+        "instrumental_break",
+        "post_chorus_interlude",
+        "high_energy_break",
+        "pre_chorus",
+        "chorus_entry"
+      ],
+      "requires": {
+        "min_bars": 2.0,
+        "max_bars": 2.0,
+        "vocal_density": "low_or_gap",
+        "beat_stability": "high",
+        "allowed_bars": [
+          2
+        ]
+      },
+      "duration": {
+        "preferred_bars": 2,
+        "preferred_counts": 8,
+        "count_unit": "beat",
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_8_beats",
+        "quiet_ballad"
+      ],
+      "intensity": 0.9,
+      "risk": "medium",
+      "tutorial_text": {
+        "source": "MixAndCall",
+        "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+        "source_title": "アイヌ語mix（ゼンキョウver）",
+        "language": "romaji",
+        "full_text": "Chape Ape Kara Kina\nRara TusukeMyo-hontusuke",
+        "bars": [
+          "Chape Ape Kara Kina",
+          "Rara Tusuke Myohontusuke"
+        ]
+      },
+      "chinese_alias": "阿伊努MIX后半段"
+    },
+    {
+      "id": "ainu_kahen_mix",
+      "display_name": "Ainu Variable MIX",
+      "aliases": [
+        "Ainu Kahen MIX",
+        "Ainu Kahen",
+        "アイヌ可変",
+        "阿伊努可变MIX"
+      ],
+      "category": "mix",
+      "typical_text": "WisupeKesui ChapeChapeChape/ChapeApeKaraKinaKaraApeChape/JyokyoTobiJyokon ToraToraTora/ToraHi JinzouSen'iAmaShindouKasen/Tobi Jyokyo",
+      "best_context": [
+        "instrumental_break",
+        "outro",
+        "high_energy_break",
+        "post_chorus_interlude"
+      ],
+      "requires": {
+        "min_bars": 5.0,
+        "max_bars": 5.0,
+        "vocal_density": "low",
+        "beat_stability": "high",
+        "allowed_bars": [
+          5
+        ]
+      },
+      "duration": {
+        "preferred_bars": 5,
+        "preferred_counts": 20,
+        "count_unit": "beat",
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_20_beats",
+        "quiet_ballad"
+      ],
+      "intensity": 0.92,
+      "risk": "medium",
+      "tutorial_text": {
+        "source": "",
+        "source_url": "",
+        "source_title": "",
+        "language": "romaji",
+        "full_text": "WisupeKesui ChapeChapeChape\nChapeApeKaraKinaKaraApeChape\nJyokyoTobiJyokon ToraToraTora\nToraHi JinzouSen'iAmaShindouKasen\nTobi Jyokyo",
+        "bars": [
+          "WisupeKesui ChapeChapeChape",
+          "ChapeApeKaraKinaKaraApeChape",
+          "JyokyoTobiJyokon ToraToraTora",
+          "ToraHi JinzouSen'iAmaShindouKasen",
+          "Tobi Jyokyo"
+        ]
+      },
+      "chinese_alias": "阿伊努可变MIX"
+    },
+    {
+      "id": "myhontousuke",
+      "display_name": "Myohon-tusuke",
+      "aliases": [
+        "Myohon Tusuke",
+        "妙本二助"
+      ],
+      "category": "mix",
+      "typical_text": "Myohon-tusuke KasenTobi jyokyo / Jyajya Faibo Waipa",
+      "best_context": [
+        "intro",
+        "instrumental_break",
+        "post_chorus_interlude",
+        "high_energy_break"
+      ],
+      "requires": {
+        "min_bars": 2.0,
+        "max_bars": 2.0,
+        "vocal_density": "low",
+        "beat_stability": "high",
+        "allowed_bars": [
+          2
+        ]
+      },
+      "duration": {
+        "preferred_bars": 2,
+        "preferred_counts": 8,
+        "count_unit": "beat",
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_8_beats",
+        "quiet_ballad"
+      ],
+      "intensity": 0.9,
+      "risk": "medium",
+      "tutorial_text": {
+        "source": "",
+        "source_url": "",
+        "source_title": "",
+        "language": "romaji",
+        "full_text": "Myohon-tusuke KasenTobi jyokyo \n Jyajya Faibo Waipa",
+        "bars": [
+          "Myohon-tusuke KasenTobi jyokyo",
+          "Jyajya Faibo Waipa"
+        ]
+      },
+      "chinese_alias": "妙本二助"
+    },
+    {
+      "id": "myohon_activation",
+      "display_name": "Myohon Activation",
+      "aliases": [
+        "Myohon Hatsudou",
+        "Myohon",
+        "妙本发动"
+      ],
+      "category": "mix",
+      "typical_text": "Myohon-tusuke Myohon-tusuke / Myohon-tusuke Jya Irarenai",
+      "best_context": [
+        "intro",
+        "instrumental_break",
+        "post_chorus_interlude",
+        "reintro",
+        "short_high_energy_gap",
+        "high_energy_break"
+      ],
+      "requires": {
+        "min_bars": 2.0,
+        "max_bars": 2.0,
+        "allowed_bars": [
+          2
+        ],
+        "vocal_density": "low",
+        "beat_stability": "high"
+      },
+      "duration": {
+        "preferred_bars": 2,
+        "preferred_counts": 8,
+        "count_unit": "beat",
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_8_beats",
+        "quiet_ballad"
+      ],
+      "intensity": 0.9,
+      "risk": "medium",
+      "tutorial_text": {
+        "source": "",
+        "source_url": "",
+        "source_title": "",
+        "language": "romaji",
+        "full_text": "Myohon-tusuke Myohon-tusuke \n Myohon-tusuke Jya Irarenai",
+        "bars": [
+          "Myohon-tusuke Myohon-tusuke",
+          "Myohon-tusuke Jya Irarenai"
+        ]
+      },
+      "chinese_alias": "妙本发动"
+    },
+    {
+      "id": "kaho_sanren_mix",
+      "display_name": "Kahen Sanren MIX",
+      "aliases": [
+        "Variable Triple MIX",
+        "可変三連",
+        "可变三连MIX",
+        "可変三連MIX"
+      ],
+      "category": "mix",
+      "typical_text": "JinZou Faiya Faibo Waipa/Taiga Taiga TaTaTaTa Taiga/ChapeApe KaraKina ChapeApe KaraKina/Myohon tusuke Waipa/FaiyaFaiya ToraTora KaraKina/ChapeApe Fama AmaAma Jasupa/ToraTaiga ToraTaiga/Jinzou Seni Iettaiga",
+      "best_context": [
+        "long_intro",
+        "extended_instrumental",
+        "high_energy_break",
+        "outro",
+        "high_energy_outro"
+      ],
+      "requires": {
+        "min_bars": 8.0,
+        "max_bars": 8.0,
+        "vocal_density": "low",
+        "energy": "high",
+        "allowed_bars": [
+          8
+        ]
+      },
+      "duration": {
+        "preferred_bars": 8,
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "short_gap",
+        "dense_vocal",
+        "restrained_live_style"
+      ],
+      "intensity": 0.98,
+      "risk": "high",
+      "tutorial_text": {
+        "source": "",
+        "source_url": "",
+        "source_title": "",
+        "language": "romaji",
+        "full_text": "JinZou Faiya Faibo Waipa\nTaiga Taiga TaTaTaTa Taiga\nChapeApe KaraKina ChapeApe KaraKina\nMyohon tusuke Waipa\nFaiyaFaiya ToraTora KaraKina\nChapeApe Fama AmaAma Jasupa\nToraTaiga ToraTaiga\nJinzou Seni Iettaiga",
+        "bars": [
+          "JinZou Faiya Faibo Waipa",
+          "Taiga Taiga TaTaTaTa Taiga",
+          "ChapeApe KaraKina ChapeApe KaraKina",
+          "Myohon tusuke Waipa",
+          "FaiyaFaiya ToraTora KaraKina",
+          "ChapeApe Fama AmaAma Jasupa",
+          "ToraTaiga ToraTaiga",
+          "Jinzou Seni Iettaiga"
+        ]
+      },
+      "chinese_alias": "可变三连MIX"
+    },
+    {
+      "id": "shuumaku_kahen_mix",
+      "display_name": "Shuumaku Kahen MIX",
+      "aliases": [
+        "Shumaku Kahen MIX",
+        "Terminal Variable MIX",
+        "Finale Variable MIX",
+        "終幕可変 MIX",
+        "终幕可变 MIX",
+        "终幕可变MIX"
+      ],
+      "category": "mix",
+      "typical_text": "Nojo Mai Umiu Chou/Jokyo Tobi Kasen Shindo Ama Sen'i Jinzou Hi / Tora Hi Tora Hi / Tora Tora Tora Tora ToraHi Jinzo Seni Ama Shindo/ Amashin Amashin Amashindo Amase Amase JinzoHi / ToraHi Jinzo Seni/ Ama Shindo Kasen Tobi / Jokyo Chou Umiu Mai (Nojo) ",
+      "best_context": [
+        "outro",
+        "high_energy_outro",
+        "extended_instrumental",
+        "high_energy_break"
+      ],
+      "requires": {
+        "min_bars": 8.0,
+        "max_bars": 8.0,
+        "vocal_density": "low",
+        "energy": "high",
+        "allowed_bars": [
+          8
+        ]
+      },
+      "duration": {
+        "preferred_bars": 8,
+        "preferred_counts": 32,
+        "count_unit": "beat",
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "short_gap",
+        "dense_vocal",
+        "restrained_live_style"
+      ],
+      "intensity": 0.98,
+      "risk": "high",
+      "tutorial_text": {
+        "source": "",
+        "source_url": "",
+        "source_title": "",
+        "language": "romaji",
+        "full_text": "Nojo Mai Umiu Chou\nJokyo Tobi Kasen Shindo Ama Sen'i Jinzou Hi\nTora Hi Tora Hi\nTora Tora Tora Tora ToraHi Jinzo Seni Ama Shindo\nAmashin Amashin Amashindo Amase Amase JinzoHi\nToraHi Jinzo Seni\nAma Shindo Kasen Tobi\nJokyo Chou Umiu Mai (Nojo)",
+        "bars": [
+          "Nojo Mai Umiu Chou",
+          "Jokyo Tobi Kasen Shindo Ama Sen'i Jinzou Hi",
+          "Tora Hi Tora Hi",
+          "Tora Tora Tora Tora ToraHi Jinzo Seni Ama Shindo",
+          "Amashin Amashin Amashindo Amase Amase JinzoHi",
+          "ToraHi Jinzo Seni",
+          "Ama Shindo Kasen Tobi",
+          "Jokyo Chou Umiu Mai (Nojo)"
+        ]
+      },
+      "chinese_alias": "终幕可变MIX"
+    },
+    {
+      "id": "ietora_konzetsu_mix",
+      "display_name": "Ietora Konzetsu MIX",
+      "aliases": [
+        "Ie Tiger Konzetsu MIX",
+        "Iettaiga Konzetsu MIX",
+        "家虎根绝MIX"
+      ],
+      "category": "mix",
+      "typical_text": "IetoraKinshi TaidoKouka / Taijyou Taijyou TatatataTaijyou / Burakkurisutoda Burakkurisutoda / BushironoTaidoga P Kibishii / Seikyuu Seikyuu SongaiBaishou / Houtekisekinin IetoraSaiban / KamiUnei KamiUnei / IetoraKonzetsu Yettaiga",
+      "best_context": [
+        "long_intro",
+        "instrumental_break",
+        "high_energy_break",
+        "pre_final_chorus_gap"
+      ],
+      "requires": {
+        "min_bars": 8.0,
+        "max_bars": 8.0,
+        "vocal_density": "low",
+        "energy": "high",
+        "allowed_bars": [
+          8
+        ]
+      },
+      "duration": {
+        "preferred_bars": 8,
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "short_gap",
+        "dense_vocal",
+        "formal_live",
+        "restrained_live_style"
+      ],
+      "intensity": 0.98,
+      "risk": "high",
+      "tutorial_text": {
+        "source": "MixAndCall",
+        "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+        "source_title": "家虎根绝 [ ブシロ可変三連 ]",
+        "language": "romaji",
+        "full_text": "IetoraKinshi TaidoKouka\nTaijyou Taijyou TatatataTaijyou\nBurakkurisutoda Burakkurisutoda\nBushironoTaidoga P Kibishii\nSeikyuu Seikyuu SongaiBaishou\nHoutekisekinin IetoraSaiban\nKamiUnei KamiUnei\nIetoraKonzetsu Yettaiga",
+        "bars": [
+          "IetoraKinshi TaidoKouka",
+          "Taijyou Taijyou TatatataTaijyou",
+          "Burakkurisutoda Burakkurisutoda",
+          "BushironoTaidoga P Kibishii",
+          "Seikyuu Seikyuu SongaiBaishou",
+          "Houtekisekinin IetoraSaiban",
+          "KamiUnei KamiUnei",
+          "IetoraKonzetsu Yettaiga"
+        ]
+      },
+      "chinese_alias": "家虎根绝MIX"
+    },
+    {
+      "id": "lin_xiu_mix",
+      "display_name": "Lin Xiu MIX",
+      "aliases": [
+        "Lin Xiu MIX",
+        "Hayashi Osamu MIX",
+        "林修MIX"
+      ],
+      "category": "mix",
+      "typical_text": "Uhai Uhai Uhai Uhai / A~madaikanai/Uhai Uhai Uhai Uhai / A~madaikanai/Itsuikuno Imadesho/A~jyaIkuzo/Taiga Faiya Saiba Faiba/Daiba Baiba Jya-jya",
+      "best_context": [
+        "long_intro",
+        "instrumental_break",
+        "extended_instrumental",
+        "high_energy_break",
+        "pre_final_chorus_gap",
+        "outro",
+        "high_energy_outro"
+      ],
+      "requires": {
+        "min_bars": 8.0,
+        "max_bars": 8.0,
+        "allowed_bars": [
+          8 
+        ],
+        "vocal_density": "low",
+        "energy": "high"
+      },
+      "duration": {
+        "preferred_bars": 8,
+        "preferred_counts": 32,
+        "count_unit": "beat",
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "short_gap",
+        "dense_vocal",
+        "formal_live",
+        "restrained_live_style"
+      ],
+      "intensity": 0.96,
+      "risk": "high",
+      "tutorial_text": {
+        "source": "",
+        "source_url": "",
+        "source_title": "",
+        "language": "romaji",
+        "full_text": "Uhai Uhai Uhai Uhai \n A~madaikanai \n Uhai Uhai Uhai Uhai \n A~madaikanai \n Itsuikuno Imadesho \n A~jyaIkuzo \n Taiga Faiya Saiba Faiba \n Daiba Baiba Jya-jya",
+        "bars": [
+          "Uhai Uhai Uhai Uhai",
+          "A~madaikanai",
+          "Uhai Uhai Uhai Uhai",
+          "A~madaikanai",
+          "Itsuikuno Imadesho",
+          "A~jyaIkuzo",
+          "Taiga Faiya Saiba Faiba",
+          "Daiba Baiba Jya-jya"
+        ]
+      },
+      "chinese_alias": "林修MIX"
+    },
+    {
+      "id": "hogwarts_mix",
+      "display_name": "Hogwarts MIX",
+      "aliases": [
+        "Hogwart MIX",
+        "Hogwarts Mix",
+        "ホグワーツmix",
+        "霍格沃茨mix",
+        "霍格沃茨MIX"
+      ],
+      "category": "mix",
+      "typical_text": "Marufoi Marufoi Marufoi Marufoi/a~ Gurifindoru/Akunshio Redakuto Rumosu/Winga diamu Reviosa/Anatanowa Reviosa/Ekunsu pekuto Pataronamu/Tomuridoru Tomuridoru/Vorudemo totte Shitteru",
+      "best_context": [
+        "pre_chorus",
+        "pre_chorus_build",
+        "high_tension_gap",
+        "chorus_entry",
+        "high_energy_break"
+      ],
+      "requires": {
+        "min_bars": 8.0,
+        "max_bars": 8.0,
+        "allowed_bars": [
+          8
+        ],
+        "vocal_density": "low_or_gap",
+        "energy": "high"
+      },
+      "duration": {
+        "preferred_bars": 8,
+        "preferred_counts": 32,
+        "count_unit": "beat",
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "short_gap_under_8_bars",
+        "dense_vocal",
+        "formal_live",
+        "restrained_live_style"
+      ],
+      "intensity": 0.96,
+      "risk": "high",
+      "tutorial_text": {
+        "source": "",
+        "source_url": "",
+        "source_title": "",
+        "language": "romaji",
+        "full_text": "Marufoi Marufoi Marufoi Marufoi\nA~ Gurifindoru\nAkunshio Redakuto Rumosu\nWinga diamu Reviosa\nAnatanowa Reviosa\nEkunsu pekuto Pataronamu\nTomuridoru Tomuridoru\nVorudemo totte Shitteru",
+        "bars": [
+          "Marufoi Marufoi Marufoi Marufoi",
+          "A~ Gurifindoru",
+          "Akunshio Redakuto Rumosu",
+          "Winga diamu Reviosa",
+          "Anatanowa Reviosa",
+          "Ekunsu pekuto Pataronamu",
+          "Tomuridoru Tomuridoru",
+          "Vorudemo totte Shitteru"
+        ]
+      },
+      "chinese_alias": "霍格沃茨MIX"
+    },
+    {
+      "id": "sae_mix",
+      "display_name": "Sae MIX",
+      "aliases": [
+        "Sae Mix",
+        "纱英MIX"
+      ],
+      "category": "mix",
+      "typical_text": "Sae MIX phrase; fill exact chant text after local validation.",
+      "best_context": [
+        "verse",
+        "mid_energy_vocal",
+        "instrumental_break",
+        "short_high_energy_gap"
+      ],
+      "requires": {
+        "min_bars": 3.0,
+        "max_bars": 3.0,
+        "allowed_bars": [
+          3
+        ],
+        "vocal_density": "low_or_gap",
+        "beat_stability": "high"
+      },
+      "duration": {
+        "preferred_bars": 3,
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_3_bars",
+        "quiet_ballad"
+      ],
+      "intensity": 0.9,
+      "risk": "medium",
+      "tutorial_text": {
+        "source": "",
+        "source_url": "",
+        "source_title": "",
+        "language": "romaji",
+        "full_text": "",
+        "bars": [
+          ""
+        ]
+      },
+      "chinese_alias": "纱英MIX"
+    },
+    {
+      "id": "chokokoro_call",
+      "display_name": "Chokokoro Call",
+      "aliases": [
+        "Chokokoro"
+      ],
+      "category": "rhythmcall",
+      "typical_text": "Chokokoro ne",
+      "best_context": [
+        "verse",
+        "mid_energy_vocal",
+        "short_vocal_hook",
+        "call_and_response"
+      ],
+      "requires": {
+        "min_bars": 1.0,
+        "max_bars": 1.0,
+        "vocal_density": "gap",
+        "beat_stability": "high",
+        "allowed_bars": [
+          1
+        ]
+      },
+      "duration": {
+        "preferred_bars": 1,
+        "strict_bars": false,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "quiet_ballad"
+      ],
+      "intensity": 0.58,
+      "risk": "low"
+    },
+    {
+      "id": "jyajya_mix",
+      "display_name": "Jya Jya MIX",
+      "aliases": [
+        "Jyajya MIX",
+        "JyaJya MIX",
+        "李嘉MIX"
+      ],
+      "category": "mix",
+      "typical_text": "Jya Jya MIX phrase; fill exact chant text after local validation.",
+      "best_context": [
+        "pre_chorus",
+        "pre_chorus_build",
+        "chorus_entry",
+        "high_tension_gap"
+      ],
+      "requires": {
+        "min_bars": 3.5,
+        "max_bars": 3.5,
+        "allowed_bars": [
+          3.5
+        ],
+        "vocal_density": "low_or_gap",
+        "beat_stability": "high"
+      },
+      "duration": {
+        "preferred_bars": 3.5,
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_3_5_bars",
+        "quiet_ballad"
+      ],
+      "intensity": 0.9,
+      "risk": "medium",
+      "tutorial_text": {
+        "source": "",
+        "source_url": "",
+        "source_title": "",
+        "language": "romaji",
+        "full_text": "",
+        "bars": [
+          ""
+        ]
+      },
+      "chinese_alias": "李嘉MIX"
+    },
+    {
+      "id": "popipa_mix",
+      "display_name": "Popipa MIX",
+      "aliases": [
+        "Poppin'Party MIX",
+        "PoPiPa MIX",
+        "破琵琶MIX"
+      ],
+      "category": "mix",
+      "typical_text": "Taiya Faiya Terakawa/Saaya Saaya Sasasasa Saaya/Doki Doki Kira Kira/Doki Doki Kira Kira/Ichigaya Rimi Toyama/Rokka Rokka Nishimoto Ootsuka/Takaaki Kidanni Oohashi Ayaka/Arisamama Arisamama/Hoshinokodou Popipa",
+      "best_context": [
+        "bridge",
+        "instrumental_break",
+        "extended_instrumental",
+        "high_energy_break",
+        "pre_final_chorus_gap"
+      ],
+      "requires": {
+        "min_bars": 8.0,
+        "max_bars": 8.0,
+        "allowed_bars": [
+          8
+        ],
+        "vocal_density": "low_or_gap",
+        "energy": "high"
+      },
+      "duration": {
+        "preferred_bars": 8,
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "short_gap",
+        "dense_vocal",
+        "restrained_live_style"
+      ],
+      "intensity": 0.94,
+      "risk": "high",
+      "tutorial_text": {
+        "source": "",
+        "source_url": "",
+        "source_title": "",
+        "language": "romaji",
+        "full_text": "Taiya Faiya Terakawa\nSaaya Saaya Sasasasa Saaya\nDoki Doki Kira Kira\nDoki Doki Kira Kira\nIchigaya Rimi Toyama\nRokka Rokka Nishimoto Ootsuka\nTakaaki Kidanni Oohashi Ayaka\nArisamama Arisamama\nHoshinokodou Popipa",
+        "bars": [
+          "Taiya Faiya Terakawa",
+          "Saaya Saaya Sasasasa Saaya",
+          "Doki Doki Kira Kira",
+          "Doki Doki Kira Kira",
+          "Ichigaya Rimi Toyama",
+          "Rokka Rokka Nishimoto Ootsuka",
+          "Takaaki Kidanni Oohashi Ayaka",
+          "Arisamama Arisamama",
+          "Hoshinokodou Popipa"
+        ]
+      },
+      "chinese_alias": "Popipa MIX"
+    },
+    {
+      "id": "popipapipopa",
+      "display_name": "Popipa Pipopa",
+      "aliases": [
+        "Po Pi Pa Pi Po Pa"
+      ],
+      "category": "rhythmcall",
+      "typical_text": "Popipa pipopa",
+      "best_context": [
+        "bridge",
+        "chant",
+        "short_vocal_hook",
+        "call_and_response",
+        "chorus_entry"
+      ],
+      "requires": {
+        "min_bars": 1.0,
+        "max_bars": 1.0,
+        "vocal_density": "gap",
+        "beat_stability": "high",
+        "allowed_bars": [
+          1
+        ]
+      },
+      "duration": {
+        "preferred_bars": 1,
+        "strict_bars": false,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "quiet_ballad"
+      ],
+      "intensity": 0.62,
+      "risk": "low"
+    },
+    {
+      "id": "takamatsu_mix",
+      "display_name": "Takamatsu MIX",
+      "aliases": [
+        "Takamatsu",
+        "高松MIX"
+      ],
+      "category": "mix",
+      "typical_text": "Takamatsu MIX phrase; fill exact chant text after local validation.",
+      "best_context": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build",
+        "chorus_entry",
+        "high_tension_gap"
+      ],
+      "requires": {
+        "min_bars": 7.0,
+        "max_bars": 7.0,
+        "vocal_density": "low_or_gap",
+        "beat_stability": "high",
+        "allowed_bars": [
+          7
+        ]
+      },
+      "duration": {
+        "preferred_bars": 7,
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_7_bars",
+        "quiet_ballad"
+      ],
+      "intensity": 0.94,
+      "risk": "high",
+      "tutorial_text": {
+        "source": "",
+        "source_url": "",
+        "source_title": "",
+        "language": "romaji",
+        "full_text": "",
+        "bars": [
+          ""
+        ]
+      },
+      "chinese_alias": "高松MIX"
+    },
+    {
+      "id": "bandor_mix",
+      "display_name": "Bandor MIX",
+      "aliases": [
+        "Bandor MIX",
+        "Band MIX",
+        "乐队MIX"
+      ],
+      "category": "mix",
+      "typical_text": "Kessoku Bando  Kamen Bando / Maigo no Bando  Pasuteru Paretto / Seitokai Bando Anon Tokyo/ Houkago Tea Time jyajya",
+      "best_context": [
+        "post_chorus",
+        "post_chorus_interlude",
+        "instrumental_break",
+        "high_energy_break"
+      ],
+      "requires": {
+        "min_bars": 4.0,
+        "max_bars": 4.0,
+        "vocal_density": "low_or_gap",
+        "beat_stability": "high",
+        "allowed_bars": [
+          4
+        ]
+      },
+      "duration": {
+        "preferred_bars": 4,
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_4_bars",
+        "quiet_ballad"
+      ],
+      "intensity": 0.93,
+      "risk": "high",
+      "tutorial_text": {
+        "source": "",
+        "source_url": "",
+        "source_title": "",
+        "language": "romaji",
+        "full_text": "Kessoku Bando  Kamen Bando\nMaigo no Bando  Pasuteru Paretto\nSeitokai Bando Anon Tokyo\nHoukago Tea Time jyajya",
+        "bars": [
+          "Kessoku Bando  Kamen Bando",
+          "Maigo no Bando  Pasu Paretto", 
+          "Seitokai Bando Anon Tokyo",
+          "Houkago Tea Time jyajya"
+        ]
+      },
+      "chinese_alias": "乐队MIX"
+    },
+    {
+      "id": "highclap",
+      "display_name": "High Clap",
+      "aliases": [
+        "Highclap",
+        "High Clap Gei",
+        "高速拍手",
+        "高拍手"
+      ],
+      "category": "mix",
+      "typical_text": "High-clap movement/action treated as an er-kai MIX action.",
+      "best_context": [
+        "solo",
+        "instrumental_break",
+        "high_energy_break",
+        "chorus_entry"
+      ],
+      "requires": {
+        "min_bars": 1.0,
+        "max_bars": 2.0,
+        "allowed_bars": [
+          1,
+          2
+        ],
+        "vocal_density": "low_or_gap",
+        "beat_stability": "high"
+      },
+      "duration": {
+        "preferred_bars": 1,
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "quiet_ballad"
+      ],
+      "intensity": 0.78,
+      "risk": "high",
+      "tutorial_text": {
+        "source": "",
+        "source_url": "",
+        "source_title": "",
+        "language": "romaji",
+        "full_text": "高速拍手",
+        "bars": [
+          "高速拍手"
+        ]
+      },
+      "chinese_alias": "高速拍手"
+    },
+    {
+      "id": "sekai_konton_mix",
+      "display_name": "Sekai Konton MIX",
+      "aliases": [
+        "World Chaos MIX",
+        "Sekai Chaos MIX",
+        "世界混沌MIX"
+      ],
+      "category": "mix",
+      "typical_text": "Wa Wa Wa Wa/ Wa Wa Waarudokaosu/Shogyou Kogure Shigure Kagura/Kongousan Shoushuusha/Sho Sho Sho Sho /Sho Sho Shoshuusha/Kongousan Kagura Shigure /Kogure Shogyou Waarudokaosu",
+      "best_context": [
+        "long_intro",
+        "instrumental_break",
+        "high_energy_break",
+        "pre_final_chorus_gap"
+      ],
+      "requires": {
+        "min_bars": 8.0,
+        "max_bars": 8.0,
+        "bar_multiple": 8,
+        "allowed_bars": [
+          8
+        ],
+        "vocal_density": "low",
+        "energy": "high"
+      },
+      "duration": {
+        "preferred_bars": 8,
+        "strict_bars": true,
+        "strict_bar_multiple": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "short_gap",
+        "dense_vocal",
+        "formal_live",
+        "restrained_live_style"
+      ],
+      "intensity": 0.98,
+      "risk": "high",
+      "tutorial_text": {
+        "source": "",
+        "source_url": "",
+        "source_title": "",
+        "language": "romaji",
+        "full_text": "Wa Wa Wa Wa \nWa Wa Waarudokaosu\nShogyou Kogure Shigure Kagura\nKongousan Shoushuusha\nSho Sho Sho Sho\n Sho Sho Shoshuusha\nKongousan Kagura Shigure \nKogure Shogyou Waarudokaosu  ",
+        "bars": [
+          "Wa Wa Wa Wa ",
+          "Wa Wa Waarudokaosu",
+          "Shogyou Kogure Shigure Kagura",
+          "Kongousan Shoushuusha",
+          "Sho Sho Sho Sho",
+          " Sho Sho Shoshuusha",
+          "Kongousan Kagura Shigure",
+          "Kogure Shogyou Waarudokaosu"
+        ]
+      },
+      "chinese_alias": "世界混沌MIX"
+    },
+    {
+      "id": "sekai_konton_mix_first_half",
+      "display_name": "Sekai Konton MIX First Half",
+      "aliases": [
+        "World Chaos MIX First Half",
+        "Sekai Chaos MIX First Half",
+        "Sekai Konton MIX Zenhan",
+        "世界混沌MIX前半"
+      ],
+      "category": "mix",
+      "typical_text": "Wa Wa Wa Wa/ Wa Wa Waarudokaosu/Shogyou Kogure Shigure Kagura/Kongousan Shoushuusha",
+      "best_context": [
+        "instrumental_break",
+        "high_energy_break",
+        "pre_final_chorus_gap",
+        "short_high_energy_gap"
+      ],
+      "requires": {
+        "min_bars": 4.0,
+        "max_bars": 4.0,
+        "vocal_density": "low",
+        "energy": "high",
+        "allowed_bars": [
+          4
+        ]
+      },
+      "duration": {
+        "preferred_bars": 4,
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "short_gap_under_4_bars",
+        "dense_vocal",
+        "formal_live",
+        "restrained_live_style"
+      ],
+      "intensity": 0.96,
+      "risk": "high",
+      "tutorial_text": {
+        "source": "",
+        "source_url": "",
+        "source_title": "",
+        "language": "romaji",
+        "full_text": "Wa Wa Wa Wa \nWa Wa Waarudokaosu\nShogyou Kogure Shigure Kagura\nKongousan Shoushuusha",
+        "bars": [
+          "Wa Wa Wa Wa ",
+          "Wa Wa Waarudokaosu",
+          "Shogyou Kogure Shigure Kagura",
+          "Kongousan Shoushuusha"
+        ]
+      },
+      "chinese_alias": "世界混沌MIX前半段"
+    },
+    {
+      "id": "ietora",
+      "display_name": "Ietora",
+      "aliases": [
+        "Ie Tiger",
+        "Iettaiga",
+        "Ie Tora",
+        "家虎"
+      ],
+      "category": "mix",
+      "typical_text": "Ie Ie / Iettaiga ",
+      "best_context": [
+        "pre_chorus",
+        "pre_chorus_build",
+        "chorus_entry",
+        "high_tension_gap"
+      ],
+      "requires": {
+        "min_bars": 2.0,
+        "max_bars": 2.0,
+        "energy_trend": "rising",
+        "vocal_density": "low_or_gap",
+        "allowed_bars": [
+          2
+        ]
+      },
+      "duration": {
+        "preferred_bars": 2,
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "artist_bans_ietora",
+        "quiet_ballad",
+        "dense_vocal"
+      ],
+      "intensity": 0.95,
+      "risk": "high",
+      "tutorial_text": {
+        "source": "MixAndCall",
+        "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+        "source_title": "家虎 [ イェッタイガー ]",
+        "language": "romaji",
+        "full_text": "Ie Ie\nIettaiga",
+        "bars": [
+          "Ie Ie",
+          "Iettaiga"
+        ]
+      },
+      "chinese_alias": "家虎"
+    },
+    {
+      "id": "ietora_long",
+      "display_name": "Ietora Long",
+      "aliases": [
+        "Ie Tiger Long",
+        "Iettaiga Long",
+        "Ie Tora Long",
+        "家虎加长版",
+        "家虎+2小节"
+      ],
+      "category": "mix",
+      "typical_text": "Iettaiga / Iettaiga / Iettaiga / FaiboWaipa",
+      "best_context": [
+        "pre_chorus",
+        "pre_chorus_build",
+        "chorus_entry",
+        "high_tension_gap",
+        "instrumental_break"
+      ],
+      "requires": {
+        "min_bars": 4.0,
+        "max_bars": 4.0,
+        "energy_trend": "rising",
+        "vocal_density": "low_or_gap",
+        "allowed_bars": [
+          4
+        ]
+      },
+      "duration": {
+        "preferred_bars": 4,
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "artist_bans_ietora",
+        "quiet_ballad",
+        "dense_vocal",
+        "short_gap_under_4_bars"
+      ],
+      "intensity": 0.95,
+      "risk": "high",
+      "tutorial_text": {
+        "source": "MixAndCall",
+        "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+        "source_title": "家虎 加长版 [ イェッタイガー 尺+2 ]",
+        "language": "romaji",
+        "full_text": "Iettaiga\nIettaiga\nIettaiga\nFaiboWaipa",
+        "bars": [
+          "Iettaiga",
+          "Iettaiga",
+          "Iettaiga",
+          "FaiboWaipa"
+        ]
+      },
+      "chinese_alias": "家虎加长版"
+    },
+    {
+      "id": "tiger_fire_activation",
+      "display_name": "Tiger-Fire Activation Standard MIX",
+      "aliases": [
+        "Tora-hi hatsudou",
+        "タイガーファイヤー始動",
+        "スタンダードmix（タイガーファイヤー始動）",
+        "虎火启动标准MIX"
+      ],
+      "category": "mix",
+      "typical_text": "【空四拍】Tai-ga-Fai-ya / Saiba Faiba Daiba Baiba / Jya-jya Faibo Waipa ",
+      "best_context": [
+        "post_chorus_interlude",
+        "instrumental_break",
+        "reintro"
+      ],
+      "requires": {
+        "min_bars": 3.0,
+        "max_bars": 3.0,
+        "vocal_density": "low",
+        "beat_stability": "high",
+        "allowed_bars": [
+         3
+        ]
+      },
+      "duration": {
+        "preferred_bars": 3,
+        "preferred_counts": 12,
+        "count_unit": "beat",
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_8_bars"
+      ],
+      "intensity": 0.9,
+      "risk": "medium",
+      "tutorial_text": {
+        "source": "MixAndCall",
+        "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+        "source_title": "スタンダードmix [ タイガーファイヤー始動 ]",
+        "language": "romaji",
+        "full_text": "【空四拍】Tai-ga-Fai-ya\nSaiba Faiba Daiba Baiba\nJya-jya Faibo Wai-pa",
+        "bars": [
+          "【空四拍】Tai-ga-Fai-ya",
+          "_Saiba Faiba Daiba Baiba",
+          "_Jya-jya Faibo Wai-pa"
+
+        ]
+      },
+      "chinese_alias": "虎火发动"
+    },
+    {
+      "id": "tora_tora_activation",
+      "display_name": "Tora Tora Activation",
+      "aliases": [
+        "Tora Tora hatsudou",
+        "虎虎始動",
+        "虎虎发动",
+        "虎虎启动"
+      ],
+      "category": "mix",
+      "typical_text": "ToraTora ToraTora ToraTora ToraTora/ToraTora ToraTora ToraHi/Jinzou Seni Ama Shindou/Kasen Tobi Jyokyo",
+      "best_context": [
+        "post_chorus_interlude",
+        "instrumental_break",
+        "reintro"
+      ],
+      "requires": {
+        "min_bars": 4.0,
+        "max_bars": 4.0,
+        "vocal_density": "low",
+        "beat_stability": "high",
+        "allowed_bars": [
+          4
+        ]
+      },
+      "duration": {
+        "preferred_bars": 4,
+        "preferred_counts": 16,
+        "count_unit": "beat",
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_4_bars"
+      ],
+      "intensity": 0.88,
+      "risk": "medium",
+      "tutorial_text": {
+        "source": "",
+        "source_url": "",
+        "source_title": "",
+        "language": "romaji",
+        "full_text": "ToraTora ToraTora ToraTora ToraTora\nToraTora ToraTora ToraHi\nJinzou Seni Ama Shindou\nKasen Tobi Jyokyo ",
+        "bars": [
+          "ToraTora ToraTora ToraTora ToraTora",
+          "ToraTora ToraTora ToraHi",
+          "Jinzou Seni Ama Shindou",
+          "Kasen Tobi Jyokyo "
+        ]
+      },
+      "chinese_alias": "虎虎起手式"
+    },
+
+ 
+    {
+      "id": "haiseno_activation",
+      "display_name": "Haiseno Activation",
+      "aliases": [
+        "Haiseno",
+        "Hai Seno",
+        "Hai Se-no Activation",
+        "Hai Se-no",
+        "Haiseno Hatsudou",
+        "嗨塞诺启动",
+        "はいせーの启动"
+      ],
+      "category": "mix",
+      "typical_text": "Haiseno ",
+      "best_context": [
+        "post_chorus_interlude",
+        "instrumental_break",
+        "reintro",
+        "short_high_energy_gap",
+        "chorus_entry"
+      ],
+      "requires": {
+        "min_bars": 1.0,
+        "max_bars": 1.0,
+        "allowed_bars": [
+          1
+        ],
+        "vocal_density": "low",
+        "beat_stability": "high"
+      },
+      "duration": {
+        "preferred_bars": 1,
+        "preferred_counts": 8,
+        "count_unit": "beat",
+        "preferred_eight_counts": 2,
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_4_beats",
+        "quiet_ballad"
+      ],
+      "intensity": 0.9,
+      "risk": "medium",
+      "tutorial_text": {
+        "source": "",
+        "source_url": "",
+        "source_title": "",
+        "language": "romaji",
+        "full_text": "Haiseno",
+        "bars": [
+          "Haiseno"
+        ]
+      },
+      "chinese_alias": "一二发动"
+    },
+    {
+      "id": "mouikai",
+      "display_name": "Mou Ikkai",
+      "aliases": [
+        "Mou Ikai",
+        "Mou Ikkai Call",
+        "再来一次"
+      ],
+      "category": "mix",
+      "typical_text": "Mou ikkai!",
+      "best_context": [
+        "pre_chorus",
+        "pre_chorus_build",
+        "short_high_energy_gap",
+        "chorus_entry",
+        "instrumental_break",
+        "post_chorus_interlude"
+      ],
+      "requires": {
+        "min_bars": 1.0,
+        "max_bars": 1.0,
+        "allowed_bars": [
+          1
+        ],
+        "vocal_density": "low",
+        "beat_stability": "high"
+      },
+      "duration": {
+        "preferred_bars": 1,
+        "preferred_counts": 4,
+        "count_unit": "beat",
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_1_bar",
+        "quiet_ballad"
+      ],
+      "intensity": 0.82,
+      "risk": "medium",
+      "tutorial_text": {
+        "source": "",
+        "source_url": "",
+        "source_title": "",
+        "language": "romaji",
+        "full_text": "Mou ikkai!",
+        "bars": [
+          "Mou ikkai!"
+        ]
+      },
+      "chinese_alias": "再来一次"
+    },
+    {
+      "id": "bismarck_mix_first_half",
+      "display_name": "Bismarck Koujou First Half",
+      "aliases": [
+        "Bismarck MIX Zenhan",
+        "Bismaruku MIX Zenhan",
+        "Bismarck Koujou Zenhan",
+        "俾斯麦口上前半"
+      ],
+      "category": "mix",
+      "typical_text": "Takamaruyo Takamaruyo / TakamaruHikumaruBisumaruku",
+      "best_context": [
+        "intro",
+        "instrumental_break",
+        "post_chorus_interlude",
+        "high_energy_break"
+      ],
+      "requires": {
+        "min_bars": 2.0,
+        "max_bars": 2.0,
+        "vocal_density": "low",
+        "beat_stability": "high",
+        "allowed_bars": [
+          2
+        ]
+      },
+      "duration": {
+        "preferred_bars": 2,
+        "preferred_counts": 8,
+        "count_unit": "beat",
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_8_beats",
+        "quiet_ballad"
+      ],
+      "intensity": 0.9,
+      "risk": "medium",
+      "tutorial_text": {
+        "source": "MixAndCall",
+        "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+        "source_title": "高低call [ 俾斯麦口上 ] [ ビスマルク口上 ]",
+        "language": "romaji",
+        "full_text": "Takamaruyo Takamaruyo\nTakamaruHikumaruBisumaruku",
+        "bars": [
+          "Takamaruyo Takamaruyo",
+          "TakamaruHikumaruBisumaruku"
+        ]
+      },
+      "chinese_alias": "俾斯麦前半"
+    },
+    {
+      "id": "bismarck_mix",
+      "display_name": "Bismarck Koujou",
+      "aliases": [
+        "Bismarck MIX Full",
+        "Bismaruku MIX",
+        "Bismarck Koujou",
+        "ビスマルク口上",
+        "俾斯麦口上"
+      ],
+      "category": "mix",
+      "typical_text": "Takamaruyo Takamaruyo / TakamaruHikumaruBisumaruku / Shijima-ru Arushindo / Kazudansu Ni-haiO-hai(P) / Kanchu-hai U-ronhai / Nachuraruhai Aikyanfurai(跳起)",
+      "best_context": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build",
+        "chorus_entry",
+        "high_tension_gap",
+        "intro",
+        "instrumental_break",
+        "post_chorus_interlude",
+        "high_energy_break",
+        "long_vocal_gap"
+      ],
+      "requires": {
+        "min_bars": 6.0,
+        "max_bars": 6.0,
+        "allowed_bars": [
+          6 
+        ],
+        "vocal_density": "low",
+        "beat_stability": "high"
+      },
+      "duration": {
+        "preferred_bars": 6,
+        "preferred_counts": 24,
+        "count_unit": "double_time_call_count",
+        "preferred_eight_counts": 6,
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_6_bars",
+        "quiet_ballad"
+      ],
+      "intensity": 0.92,
+      "risk": "medium",
+      "tutorial_text": {
+        "source": "MixAndCall",
+        "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+        "source_title": "高低call [ 俾斯麦口上 ] [ ビスマルク口上 ]",
+        "language": "romaji",
+        "full_text": "Takamaruyo Takamaruyo\nTakamaruHikumaruBisumaruku\nShijima-ru Arushindo\nKazudansu Ni-haiO-hai(P)\nKanchu-hai U-ronhai\nNachuraruhai Aikyanfurai(跳起)",
+        "bars": [
+          "Takamaruyo Takamaruyo",
+          "TakamaruHikumaruBisumaruku",
+          "Shijima-ru Arushindo",
+          "Kazudansu Ni-haiO-hai(P)",
+          "Kanchu-hai U-ronhai",
+          "Nachuraruhai Aikyanfurai"
+        ]
+      },
+      "chinese_alias": "俾斯麦"
+    },
+    {
+      "id": "bismarck+kanzenseniki_mix",
+      "display_name": "Bismarck + Kanzenseniki MIX",
+      "aliases": [
+        "Bismarck Kanzenseniki MIX",
+        "Bismarck + Kanzenseniki",
+        "bismarck_kanzenseniki_mix",
+        "俾斯麦完全圣域MIX",
+        "俾斯麦+完全圣域MIX"
+      ],
+      "category": "mix",
+      "typical_text": "Hirabaruyo Hirabaruyo / TakabaruHirabaruBisubaruku / Tanaka-ru Ozoshindo / Barudansu Yu-haiYa-hai / Nyanchuuhai U-zonhai / Barubaruhai Daichanfurai",
+      "best_context": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build",
+        "chorus_entry",
+        "high_tension_gap",
+        "long_vocal_gap",
+        "high_energy_break"
+      ],
+      "requires": {
+        "min_bars": 9.0,
+        "max_bars": 9.0,
+        "allowed_bars": [
+          9
+        ],
+        "vocal_density": "low_or_gap",
+        "beat_stability": "high"
+      },
+      "duration": {
+        "preferred_bars": 9,
+        "preferred_counts": 72,
+        "count_unit": "double_time_call_count",
+        "preferred_eight_counts": 9,
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_9_call_eight_counts",
+        "quiet_ballad"
+      ],
+      "intensity": 0.94,
+      "risk": "medium",
+      "tutorial_text": {
+        "source": "MixAndCall",
+        "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+        "source_title": "ビスマルク口上·派生",
+        "language": "romaji",
+        "full_text": "Hirabaruyo Hirabaruyo\nTakabaruHirabaruBisubaruku\nTanaka-ru Ozoshindo\nBarudansu Yu-haiYa-hai\nNyanchuuhai U-zonhai\nBarubaruhai Daichanfurai",
+        "bars": [
+          "Hirabaruyo Hirabaruyo",
+          "TakabaruHirabaruBisubaruku",
+          "Tanaka-ru Ozoshindo",
+          "Barudansu Yu-haiYa-hai",
+          "Nyanchuuhai U-zonhai",
+          "Barubaruhai Daichanfurai"
+        ]
+      },
+      "chinese_alias": "俾斯麦+完全圣域MIX"
+    },
+    {
+      "id": "aiai_mix",
+      "display_name": "Aiai MIX",
+      "aliases": [
+        "Meaningless Aiai MIX",
+        "Imi Fumei Aiai MIX",
+        "哎哎MIX"
+      ],
+      "category": "mix",
+      "typical_text": "Aiaiaiai Aiaiaiai/Aiaiaiai Aiaiaiai",
+      "best_context": [
+        "intro",
+        "instrumental_break",
+        "post_chorus_interlude",
+        "short_high_energy_gap"
+      ],
+      "requires": {
+        "min_bars": 2.0,
+        "max_bars": 2.0,
+        "bar_multiple": 2,
+        "allowed_bars": [
+          2
+        ],
+        "vocal_density": "low",
+        "beat_stability": "high"
+      },
+      "duration": {
+        "preferred_bars": 2,
+        "strict_bars": true,
+        "strict_bar_multiple": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_2_bars",
+        "quiet_ballad"
+      ],
+      "intensity": 0.9,
+      "risk": "medium",
+      "tutorial_text": {
+        "source": "",
+        "source_url": "",
+        "source_title": "",
+        "language": "romaji",
+        "full_text": "Aiaiaiai Aiaiaiai\nAiaiaiai Aiaiaiai ",
+        "bars": [
+          "Aiaiaiai Aiaiaiai",
+          "Aiaiaiai Aiaiaiai"
+        ]
+      },
+      "chinese_alias": "Aiai MIX"
+    },
+    {
+      "id": "imi_fumei_ai_mix",
+      "display_name": "Imi Fumei Ai MIX",
+      "aliases": [
+        "Meaningless Ai MIX",
+        "Imi Fumei Ai MIX",
+        "意味不明愛 MIX",
+        "意味不明爱 MIX",
+        "意味不明爱MIX"
+      ],
+      "category": "mix",
+      "typical_text": "Aiaiaiai Aimoiikai/Aiaiaiai Aimoiikai",
+      "best_context": [
+        "intro",
+        "instrumental_break",
+        "post_chorus_interlude",
+        "short_high_energy_gap",
+        "chorus_entry"
+      ],
+      "requires": {
+        "min_bars": 1.0,
+        "max_bars": 2.0,
+        "allowed_bars": [
+          1,
+          2
+        ],
+        "vocal_density": "low",
+        "beat_stability": "high"
+      },
+      "duration": {
+        "preferred_bars": 1,
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_1_bar",
+        "quiet_ballad"
+      ],
+      "intensity": 0.9,
+      "risk": "medium",
+      "tutorial_text": {
+        "source": "",
+        "source_url": "",
+        "source_title": "",
+        "language": "romaji",
+        "full_text": "Aiaiaiai Aimoiikai\nAiaiaiai Aimoiikai ",
+        "bars": [
+          "Aiaiaiai Aimoiikai",
+          "Aiaiaiai Aimoiikai"
+        ]
+      },
+      "chinese_alias": "意味不明爱MIX"
+    },
+    {
+      "id": "pan_mix",
+      "display_name": "Pan MIX",
+      "aliases": [
+        "Bread MIX",
+        "Menbao MIX",
+        "面包MIX"
+      ],
+      "category": "mix",
+      "typical_text": "Panpan Panpan Pokemon Pan/Furesshu Bureddo Ito uPan/Matsutakako Matsutakako/Yamazaki Haruno PanMusturi",
+      "best_context": [
+        "intro",
+        "instrumental_break",
+        "post_chorus_interlude",
+        "high_energy_break"
+      ],
+      "requires": {
+        "min_bars": 4.0,
+        "max_bars": 4.0,
+        "vocal_density": "low",
+        "beat_stability": "high",
+        "allowed_bars": [
+          4
+        ]
+      },
+      "duration": {
+        "preferred_bars": 4,
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_4_bars",
+        "quiet_ballad"
+      ],
+      "intensity": 0.9,
+      "risk": "medium",
+      "tutorial_text": {
+        "source": "",
+        "source_url": "",
+        "source_title": "",
+        "language": "romaji",
+        "full_text": "Panpan Panpan Pokemon Pan\nFuresshu Bureddo Ito uPan\nMatsutakako Matsutakako\nYamazaki Haruno PanMusturi",
+        "bars": [
+          "Panpan Panpan Pokemon Pan",
+          "Furesshu Bureddo Ito uPan",
+          "Matsutakako Matsutakako",
+          "Yamazaki Haruno PanMusturi"
+        ]
+      },
+      "chinese_alias": "Pan MIX"
+    },
+    {
+      "id": "gozen_ichiban_mix",
+      "display_name": "Gozen Ichiban MIX",
+      "aliases": [
+        "Gozen Ichiban",
+        "Gozen MIX",
+        "Gozen Ichiban",
+        "御前一番MIX"
+      ],
+      "category": "mix",
+      "typical_text": "Gozen Ichiban MIX phrase in romanized form.",
+      "best_context": [
+        "intro",
+        "instrumental_break",
+        "post_chorus_interlude",
+        "high_energy_break",
+        "pre_final_chorus_gap"
+      ],
+      "requires": {
+        "min_bars": 4.0,
+        "max_bars": 4.0,
+        "vocal_density": "low",
+        "beat_stability": "high",
+        "allowed_bars": [
+          4
+        ]
+      },
+      "duration": {
+        "preferred_bars": 4,
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_4_bars",
+        "quiet_ballad"
+      ],
+      "intensity": 0.92,
+      "risk": "medium",
+      "tutorial_text": {
+        "source": "",
+        "source_url": "",
+        "source_title": "",
+        "language": "romaji",
+        "full_text": "",
+        "bars": [
+          ""
+        ]
+      },
+      "chinese_alias": "御前一番MIX"
+    },
+    {
+      "id": "bariyado_mix",
+      "display_name": "Bariyado MIX",
+      "aliases": [
+        "Bariyado",
+        "吸盘MIX"
+      ],
+      "category": "mix",
+      "typical_text": "Baribaribaribaribariyado/Baribaribaribaribariyado",
+      "best_context": [
+        "long_intro",
+        "instrumental_break",
+        "extended_instrumental",
+        "high_energy_break",
+        "pre_final_chorus_gap"
+      ],
+      "requires": {
+        "min_bars": 2,
+        "max_bars": 2,
+        "vocal_density": "low",
+        "beat_stability": "high",
+        "allowed_bars": [
+          2
+        ]
+      },
+      "duration": {
+        "preferred_bars": 2,
+        "preferred_counts": 32,
+        "count_unit": "beat",
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_8_bars",
+        "quiet_ballad"
+      ],
+      "intensity": 0.94,
+      "risk": "medium",
+      "tutorial_text": {
+        "source": "",
+        "source_url": "",
+        "source_title": "",
+        "language": "romaji",
+        "full_text": "Baribaribaribaribariyado/Baribaribaribaribariyado",
+        "bars": [
+          "Baribaribaribaribariyado",
+          "Baribaribaribaribariyado"
+        ]
+      },
+      "chinese_alias": "吸盘MIX"
+    },
+    {
+      "id": "tsunagaridai_mix",
+      "display_name": "Tsunagaridai MIX",
+      "aliases": [
+        "Tsunagaritai MIX",
+        "Tsunagari-dai MIX",
+        "私联MIX"
+      ],
+      "category": "mix",
+      "typical_text": "Tsunagaritai Tsunagaritai / Yappari 〇〇〇to Tsunagaritai / Tsunagaritai Tsunagaritai / TsunagaritaiKara TsunagariTaiga/Faiya Saiba Faiba Daiba/Baiba Jya-jya Faibo /Injyo Jyasupa Biburaru Kasen / Ye Naruda Faboriasuta",
+      "best_context": [
+        "long_intro",
+        "instrumental_break",
+        "extended_instrumental",
+        "high_energy_break",
+        "pre_final_chorus_gap"
+      ],
+      "requires": {
+        "min_bars": 8.0,
+        "max_bars": 8.0,
+        "allowed_bars": [
+          8,
+          8
+        ],
+        "vocal_density": "low",
+        "beat_stability": "high"
+      },
+      "duration": {
+        "preferred_bars": 8,
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_4_bars",
+        "quiet_ballad"
+      ],
+      "intensity": 0.95,
+      "risk": "high",
+      "tutorial_text": {
+        "source": "MixAndCall",
+        "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+        "source_title": "繋がりタイガーmix（8小節尺）#1",
+        "language": "romaji",
+        "full_text": "Tsunagaritai Tsunagaritai\nYappari 〇〇〇to Tsunagaritai\nTsunagaritai Tsunagaritai\nTsunagaritaiKara TsunagariTaiga\nFaiya Saiba Faiba Daiba\nBaiba Jya-jya Faibo\nInjyo Jyasupa Biburaru Kasen\nYe Naruda Faboriasuta",
+        "bars": [
+          "Tsunagaritai Tsunagaritai",
+          "Yappari 〇〇〇to Tsunagaritai",
+          "Tsunagaritai Tsunagaritai",
+          "TsunagaritaiKara TsunagariTaiga",
+          "Faiya Saiba Faiba Daiba",
+          "Baiba Jya-jya Faibo",
+          "Injyo Jyasupa Biburaru Kasen",
+          "Ye Naruda Faboriasuta" 
+        ]
+      },
+      "chinese_alias": "私联MIX"
+    },
+    {
+      "id": "gachikoi_koujou",
+      "display_name": "Gachikoi Koujou",
+      "aliases": [
+        "Gachi-koi speech",
+        "Gachikoi Koujou Japanese",
+        "恋口上",
+        "Gachikoi口上"
+      ],
+      "category": "mix",
+      "typical_text": "Iitai Kotoga Arundayo/Yappari 〇〇chanwa Kawaiiyo/Sukisuki Daisuki Yappasuki/Yatto Mitsuketa Ohimesama/Orega Umarete Kitariyuu/Sorewa Omaeni Deautame/Oreto Isshoni Jinsei Ayumou/Sekaide Ichiban Aishiteru",
+      "best_context": [
+        "long_intro",
+        "instrumental_break",
+        "pre_final_chorus_gap"
+      ],
+      "requires": {
+        "min_bars": 8.0,
+        "max_bars": 8.0,
+        "vocal_density": "low",
+        "emotional_style": "oshi_focused",
+        "allowed_bars": [
+          8
+        ]
+      },
+      "duration": {
+        "preferred_bars": 8,
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "short_gap",
+        "dense_vocal",
+        "formal_live"
+      ],
+      "intensity": 0.92,
+      "risk": "high",
+      "tutorial_text": {
+        "source": "",
+        "source_url": "",
+        "source_title": "",
+        "language": "romaji",
+        "full_text": "Iitai Kotoga Arundayo\nYappari 〇〇chanwa Kawaiiyo\nSukisuki Daisuki Yappasuki\nYatto Mitsuketa Ohimesama\nOrega Umarete Kitariyuu\nSorewa Omaeni Deautame\nOreto Isshoni Jinsei Ayumou\nSekaide Ichiban Aishiteru",
+        "bars": [
+          "Iitai Kotoga Arundayo",
+          "Yappari 〇〇chanwa Kawaiiyo",
+          "Sukisuki Daisuki Yappasuki",
+          "Yatto Mitsuketa Ohimesama",
+          "Orega Umarete Kitariyuu",
+          "Sorewa Omaeni Deautame",
+          "Oreto Isshoni Jinsei Ayumou",
+          "Sekaide Ichiban Aishiteru"
+        ]
+      },
+      "chinese_alias": "恋口上"
+    },
+    {
+      "id": "chikipa_mix",
+      "display_name": "Chikipa MIX",
+      "aliases": [
+        "Chikipa",
+        "Cheeky Parade MIX",
+        "动物园MIX"
+      ],
+      "category": "mix",
+      "typical_text": "Raion Tora Chita/Ratarata Ratarata/Sai Gorira Zo/Sagozo Sagozo/Eiyou Eiyou Eiyou Eiyou/Kapisaishin tte shitteruu",
+      "best_context": [
+        "instrumental_break",
+        "high_energy_break",
+        "post_chorus_interlude",
+        "verse",
+        "mid_energy_vocal"
+      ],
+      "requires": {
+        "min_bars": 7.0,
+        "max_bars": 7.0,
+        "allowed_bars": [
+          7
+        ],
+        "vocal_density": "low_or_gap",
+        "beat_stability": "high"
+      },
+      "duration": {
+        "preferred_bars": 7,
+        "preferred_counts": 28,
+        "count_unit": "beat",
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_7_bars",
+        "quiet_ballad",
+        "formal_live"
+      ],
+      "intensity": 0.94,
+      "risk": "high",
+      "tutorial_text": {
+        "source": "",
+        "source_url": "",
+        "source_title": "",
+        "language": "romaji",
+        "full_text": "Raion Tora Chita\nRatarata Ratarata\nSai Gorira Zo\nSagozo Sagozo\nEiyou Eiyou Eiyou Eiyou\nKapisaishin tte shitteruu",
+        "bars": [
+          "Raion Tora Chita",
+          "Ratarata Ratarata",
+          "Sai Gorira Zo",
+          "Sagozo Sagozo",
+          "Eiyou Eiyou Eiyou Eiyou",
+          "Kapisaishin tte shitteruu"
+        ]
+      },
+      "chinese_alias": "动物园 MIX"
+    },
+    {
+      "id": "wakage_no_itari_mix",
+      "display_name": "若気の至り MIX",
+      "aliases": [
+        "Wakage no Itari MIX",
+        "若気の至りmix",
+        "若気の至り MIX",
+        "若气之至MIX"
+      ],
+      "category": "mix",
+      "typical_text": "Wagakeno Itarito/Iwanbakarino Genkiyosa Ai",
+      "best_context": [
+        "instrumental_break",
+        "high_energy_break",
+        "post_chorus_interlude",
+        "pre_chorus_build",
+        "chorus_entry",
+        "short_high_energy_gap"
+      ],
+      "requires": {
+        "min_bars": 2.0,
+        "max_bars": 2.0,
+        "allowed_bars": [
+          2
+        ],
+        "vocal_density": "low_or_gap",
+        "beat_stability": "high"
+      },
+      "duration": {
+        "preferred_bars": 2,
+        "preferred_counts": 8,
+        "count_unit": "beat",
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_2_bars",
+        "quiet_ballad"
+      ],
+      "intensity": 0.9,
+      "risk": "medium",
+      "tutorial_text": {
+        "source": "",
+        "source_url": "",
+        "source_title": "",
+        "language": "romaji",
+        "full_text": "Wagakeno Itarito\nIwanbakarino Genkiyosa Ai",
+        "bars": [
+          "Wagakeno Itarito",
+          "Iwanbakarino Genkiyosa Ai  "
+        ]
+      },
+      "chinese_alias": "若気の至りMIX"
+    },
+    {
+      "category": "underground_gei",
+      "best_context": [
+        "instrumental_break",
+        "high_energy_break",
+        "pre_chorus_build",
+        "post_chorus_interlude"
+      ],
+      "requires": {
+        "min_bars": 4.0,
+        "max_bars": 4.0,
+        "bar_multiple": 4,
+        "allowed_bars": [
+          4
+        ],
+        "vocal_density": "low_or_gap",
+        "beat_stability": "high"
+      },
+      "duration": {
+        "preferred_bars": 4,
+        "preferred_counts": 16,
+        "count_unit": "beat",
+        "strict_bar_multiple": true,
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_16_beats",
+        "formal_live",
+        "quiet_ballad"
+      ],
+      "intensity": 0.95,
+      "risk": "high",
+      "id": "long_zhi_mao",
+      "display_name": "Long Zhi Mao",
+      "aliases": [
+        "long zhi mao"
+      ],
+      "typical_text": "Long Zhi Mao underground-gei movement sequence."
+    },
+    {
+      "id": "gongfu_she",
+      "display_name": "Gongfu She",
+      "aliases": [
+        "gongfu she",
+        "Gong Fu She",
+        "功夫蛇"
+      ],
+      "category": "underground_gei",
+      "typical_text": "Gongfu She underground-gei movement sequence.",
+      "best_context": [
+        "chorus",
+        "instrumental_break",
+        "high_energy_break",
+        "extended_instrumental"
+      ],
+      "requires": {
+        "min_bars": 8.0,
+        "max_bars": 8.0,
+        "vocal_density": "low_or_gap",
+        "beat_stability": "high",
+        "allowed_bars": [
+          8
+        ]
+      },
+      "duration": {
+        "preferred_bars": 8,
+        "preferred_counts": 32,
+        "count_unit": "beat",
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_32_beats",
+        "formal_live",
+        "quiet_ballad"
+      ],
+      "intensity": 0.98,
+      "risk": "high"
+    },
+    {
+      "id": "ali_shizi",
+      "display_name": "Ali Shizi",
+      "aliases": [
+        "Ali Shizi",
+        "Ari Juji",
+        "Ali Cross",
+        "阿里十字"
+      ],
+      "category": "underground_gei",
+      "typical_text": "Ali Shizi underground-gei movement sequence.",
+      "best_context": [
+        "chorus",
+        "instrumental_break",
+        "high_energy_break",
+        "pre_chorus_build",
+        "post_chorus_interlude"
+      ],
+      "requires": {
+        "min_bars": 4.0,
+        "max_bars": 4.0,
+        "vocal_density": "low_or_gap",
+        "beat_stability": "high",
+        "allowed_bars": [
+          4
+        ]
+      },
+      "duration": {
+        "preferred_bars": 4,
+        "preferred_counts": 16,
+        "count_unit": "beat",
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_16_beats",
+        "formal_live",
+        "quiet_ballad"
+      ],
+      "intensity": 0.96,
+      "risk": "high"
+    },
+    {
+      "id": "heibai_shuangyi",
+      "display_name": "Heibai Shuangyi",
+      "aliases": [
+        "Heibai Shuangyi",
+        "Black White Double Wings",
+        "黑白双翼"
+      ],
+      "category": "underground_gei",
+      "typical_text": "Heibai Shuangyi underground-gei movement sequence.",
+      "best_context": [
+        "chorus",
+        "instrumental_break",
+        "high_energy_break",
+        "pre_chorus_build",
+        "post_chorus_interlude"
+      ],
+      "requires": {
+        "min_bars": 4.0,
+        "max_bars": 4.0,
+        "vocal_density": "low_or_gap",
+        "beat_stability": "high",
+        "allowed_bars": [
+          4
+        ]
+      },
+      "duration": {
+        "preferred_bars": 4,
+        "preferred_counts": 16,
+        "count_unit": "beat",
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_16_beats",
+        "formal_live",
+        "quiet_ballad"
+      ],
+      "intensity": 0.96,
+      "risk": "high"
+    },
+    {
+      "category": "underground_gei",
+      "best_context": [
+        "instrumental_break",
+        "high_energy_break",
+        "pre_chorus_build",
+        "post_chorus_interlude"
+      ],
+      "requires": {
+        "min_bars": 4.0,
+        "max_bars": 4.0,
+        "bar_multiple": 4,
+        "allowed_bars": [
+          4
+        ],
+        "vocal_density": "low_or_gap",
+        "beat_stability": "high"
+      },
+      "duration": {
+        "preferred_bars": 4,
+        "preferred_counts": 16,
+        "count_unit": "beat",
+        "strict_bar_multiple": true,
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_16_beats",
+        "formal_live",
+        "quiet_ballad"
+      ],
+      "intensity": 0.95,
+      "risk": "high",
+      "id": "cun_zheng",
+      "display_name": "Cun Zheng",
+      "aliases": [
+        "cun zheng",
+        "村正"
+      ],
+      "typical_text": "Cun Zheng underground-gei movement sequence."
+    },
+    {
+      "category": "underground_gei",
+      "best_context": [
+        "instrumental_break",
+        "high_energy_break",
+        "pre_chorus_build",
+        "post_chorus_interlude"
+      ],
+      "requires": {
+        "min_bars": 4.0,
+        "max_bars": 4.0,
+        "bar_multiple": 4,
+        "allowed_bars": [
+          4
+        ],
+        "vocal_density": "low_or_gap",
+        "beat_stability": "high"
+      },
+      "duration": {
+        "preferred_bars": 4,
+        "preferred_counts": 16,
+        "count_unit": "beat",
+        "strict_bar_multiple": true,
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_16_beats",
+        "formal_live",
+        "quiet_ballad"
+      ],
+      "intensity": 0.95,
+      "risk": "high",
+      "id": "lei_she",
+      "display_name": "Lei She",
+      "aliases": [
+        "lei she",
+        "Thunder Snake",
+        "雷蛇"
+      ],
+      "typical_text": "Lei She underground-gei movement sequence."
+    },
+    {
+      "category": "underground_gei",
+      "best_context": [
+        "instrumental_break",
+        "high_energy_break",
+        "pre_chorus_build",
+        "post_chorus_interlude"
+      ],
+      "requires": {
+        "min_bars": 4.0,
+        "max_bars": 4.0,
+        "bar_multiple": 4,
+        "allowed_bars": [
+          4
+        ],
+        "vocal_density": "low_or_gap",
+        "beat_stability": "high"
+      },
+      "duration": {
+        "preferred_bars": 4,
+        "preferred_counts": 16,
+        "count_unit": "beat",
+        "strict_bar_multiple": true,
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_16_beats",
+        "formal_live",
+        "quiet_ballad"
+      ],
+      "intensity": 0.95,
+      "risk": "high",
+      "id": "luo_man_si",
+      "display_name": "Luo Man Si",
+      "aliases": [
+        "luo man si",
+        "罗曼斯"
+      ],
+      "typical_text": "Luo Man Si underground-gei movement sequence."
+    },
+    {
+      "category": "underground_gei",
+      "best_context": [
+        "instrumental_break",
+        "high_energy_break",
+        "long_intro",
+        "extended_instrumental"
+      ],
+      "requires": {
+        "min_bars": 8.0,
+        "max_bars": 8.0,
+        "bar_multiple": 8,
+        "allowed_bars": [
+          8
+        ],
+        "vocal_density": "low_or_gap",
+        "beat_stability": "high"
+      },
+      "duration": {
+        "preferred_bars": 8,
+        "preferred_counts": 32,
+        "count_unit": "beat",
+        "strict_bars": true,
+        "strict_bar_multiple": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_16_beats",
+        "formal_live",
+        "quiet_ballad"
+      ],
+      "intensity": 0.98,
+      "risk": "high",
+      "id": "dian_bo_she",
+      "display_name": "Dian Bo She",
+      "aliases": [
+        "dian bo she",
+        "电波蛇"
+      ],
+      "typical_text": "Dian Bo She underground-gei movement sequence."
+    },
+    {
+      "category": "underground_gei",
+      "best_context": [
+        "instrumental_break",
+        "high_energy_break",
+        "long_intro",
+        "extended_instrumental"
+      ],
+      "requires": {
+        "min_bars": 8.0,
+        "max_bars": 8.0,
+        "vocal_density": "low_or_gap",
+        "beat_stability": "high",
+        "allowed_bars": [
+          8
+        ]
+      },
+      "duration": {
+        "preferred_bars": 8,
+        "preferred_counts": 32,
+        "count_unit": "beat",
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_32_beats",
+        "formal_live",
+        "quiet_ballad"
+      ],
+      "intensity": 0.98,
+      "risk": "high",
+      "id": "zi_he_she",
+      "display_name": "Zi He She",
+      "aliases": [
+        "zi he she",
+        "滋贺蛇"
+      ],
+      "typical_text": "Zi He She underground-gei movement sequence."
+    },
+    {
+      "id": "chan_she",
+      "display_name": "Chan She",
+      "aliases": [
+        "chan she",
+        "禅蛇"
+      ],
+      "category": "underground_gei",
+      "typical_text": "Chan She underground-gei movement sequence.",
+      "best_context": [
+        "instrumental_break",
+        "high_energy_break",
+        "long_intro",
+        "extended_instrumental"
+      ],
+      "requires": {
+        "min_bars": 8.0,
+        "max_bars": 8.0,
+        "vocal_density": "low_or_gap",
+        "beat_stability": "high",
+        "allowed_bars": [
+          8
+        ]
+      },
+      "duration": {
+        "preferred_bars": 8,
+        "preferred_counts": 32,
+        "count_unit": "beat",
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_32_beats",
+        "formal_live",
+        "quiet_ballad"
+      ],
+      "intensity": 0.98,
+      "risk": "high"
+    },
+    {
+      "id": "tian_zhao",
+      "display_name": "Tian Zhao",
+      "aliases": [
+        "tian zhao",
+        "Amaterasu",
+        "天照"
+      ],
+      "category": "underground_gei",
+      "typical_text": "Tian Zhao underground-gei movement sequence.",
+      "best_context": [
+        "chorus",
+        "instrumental_break",
+        "high_energy_break",
+        "extended_instrumental"
+      ],
+      "requires": {
+        "min_bars": 4.0,
+        "max_bars": 4.0,
+        "vocal_density": "low_or_gap",
+        "beat_stability": "high",
+        "bar_multiple": 4,
+        "allowed_bars": [
+          4
+        ]
+      },
+      "duration": {
+        "preferred_bars": 4,
+        "preferred_counts": 16,
+        "count_unit": "beat",
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false,
+        "strict_bar_multiple": true
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_32_beats",
+        "formal_live",
+        "quiet_ballad"
+      ],
+      "intensity": 0.98,
+      "risk": "high"
+    },
+    {
+      "id": "tian_qu_short",
+      "display_name": "Tian Qu Short",
+      "aliases": [
+        "tian_qu",
+        "tian qu",
+        "Tian Qu",
+        "Tian Qu 6 Eight-count",
+        "天体驱动短"
+      ],
+      "category": "underground_gei",
+      "typical_text": "Tian Qu underground-gei movement sequence, short 6 eight-count version.",
+      "best_context": [
+        "instrumental_break",
+        "high_energy_break",
+        "extended_instrumental",
+        "pre_final_chorus_gap"
+      ],
+      "requires": {
+        "min_bars": 12.0,
+        "max_bars": 12.0,
+        "vocal_density": "low_or_gap",
+        "beat_stability": "high",
+        "allowed_bars": [
+          12
+        ]
+      },
+      "duration": {
+        "preferred_bars": 12,
+        "preferred_counts": 48,
+        "count_unit": "beat",
+        "preferred_eight_counts": 6,
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_48_beats",
+        "formal_live",
+        "quiet_ballad"
+      ],
+      "intensity": 0.98,
+      "risk": "high"
+    },
+    {
+      "id": "tian_qu_long",
+      "display_name": "Tian Qu Long",
+      "aliases": [
+        "tian_qu",
+        "tian qu",
+        "Tian Qu",
+        "Tian Qu 10 Eight-count",
+        "天体驱动长"
+      ],
+      "category": "underground_gei",
+      "typical_text": "Tian Qu underground-gei movement sequence, long 10 eight-count version.",
+      "best_context": [
+        "instrumental_break",
+        "high_energy_break",
+        "extended_instrumental",
+        "pre_final_chorus_gap"
+      ],
+      "requires": {
+        "min_bars": 20.0,
+        "max_bars": 20.0,
+        "vocal_density": "low_or_gap",
+        "beat_stability": "high",
+        "allowed_bars": [
+          20
+        ]
+      },
+      "duration": {
+        "preferred_bars": 20,
+        "preferred_counts": 80,
+        "count_unit": "beat",
+        "preferred_eight_counts": 10,
+        "strict_bars": true,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "short_gap_under_80_beats",
+        "formal_live",
+        "quiet_ballad"
+      ],
+      "intensity": 0.99,
+      "risk": "high"
+    },
+    {
+      "id": "ppph",
+      "display_name": "PPPH",
+      "aliases": [
+        "Pan Pa-pan Hyu",
+        "PPPH clap"
+      ],
+      "category": "rhythmcall",
+      "typical_text": "Pan-pa-pan, hyu!",
+      "best_context": [
+        "verse",
+        "pre_chorus",
+        "mid_energy_vocal"
+      ],
+      "requires": {
+        "min_bars": 2.0,
+        "max_bars": 2.0,
+        "vocal_density": "medium",
+        "beat_stability": "high",
+        "allowed_bars": [
+          2
+        ]
+      },
+      "duration": {
+        "preferred_bars": 2,
+        "strict_bars": false,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "very_dense_vocal",
+        "quiet_ballad"
+      ],
+      "intensity": 0.55,
+      "risk": "low"
+    },
+    {
+      "id": "fuwa_fuwa",
+      "display_name": "Fuwa Fuwa",
+      "aliases": [
+        "Fuwa call"
+      ],
+      "category": "rhythmcall",
+      "typical_text": "Fuwa fuwa!",
+      "best_context": [
+        "chorus",
+        "repeated_chorus"
+      ],
+      "requires": {
+        "min_bars": 0.5,
+        "max_bars": 16,
+        "energy": "medium_high",
+        "vocal_density": "can_overlap"
+      },
+      "duration": {
+        "preferred_bars": 4,
+        "strict_bars": false,
+        "can_compress": true,
+        "can_extend": true
+      },
+      "avoid": [
+        "serious_ballad",
+        "low_energy_chorus"
+      ],
+      "intensity": 0.6,
+      "risk": "low"
+    },
+    {
+      "id": "fufu_call",
+      "display_name": "Fu Fu Fu Call",
+      "aliases": [
+        "Fu Fu Fu",
+        "Fufu call",
+        "Three-hit fu call"
+      ],
+      "category": "rhythmcall",
+      "typical_text": "Fu! Fu! Fu!",
+      "best_context": [
+        "pre_chorus_build",
+        "chant",
+        "drum_hit_accent",
+        "chorus_entry"
+      ],
+      "requires": {
+        "min_bars": 1.0,
+        "max_bars": 1.0,
+        "energy": "rising",
+        "beat_stability": "high",
+        "allowed_bars": [
+          1
+        ]
+      },
+      "duration": {
+        "preferred_bars": 1,
+        "strict_bars": false,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "quiet_ballad",
+        "dense_vocal",
+        "no_accent_hits"
+      ],
+      "intensity": 0.62,
+      "risk": "low"
+    },
+    {
+      "id": "hai_hai",
+      "display_name": "Hai Hai",
+      "aliases": [
+        "Hai call"
+      ],
+      "category": "rhythmcall",
+      "typical_text": "Hai! Hai!",
+      "best_context": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build",
+        "chorus",
+        "post_chorus",
+        "instrumental_riff"
+      ],
+      "requires": {
+        "min_bars": 1.0,
+        "max_bars": 2.0,
+        "energy": "medium_high",
+        "beat_stability": "high",
+        "allowed_bars": [
+          1,
+          2
+        ]
+      },
+      "duration": {
+        "preferred_bars": 1,
+        "strict_bars": false,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "quiet_ballad",
+        "important_lyric_line"
+      ],
+      "intensity": 0.65,
+      "risk": "low"
+    },
+    {
+      "id": "o_call",
+      "display_name": "O Call",
+      "aliases": [
+        "Oh call",
+        "Oooo call"
+      ],
+      "category": "rhythmcall",
+      "typical_text": "O! O! O! O!",
+      "best_context": [
+        "chant",
+        "intro",
+        "instrumental_riff",
+        "call_and_response"
+      ],
+      "requires": {
+        "min_bars": 0.5,
+        "max_bars": 4,
+        "energy": "medium_high",
+        "beat_stability": "high"
+      },
+      "duration": {
+        "preferred_bars": 1,
+        "strict_bars": false,
+        "can_compress": true,
+        "can_extend": true
+      },
+      "avoid": [
+        "quiet_ballad",
+        "dense_vocal"
+      ],
+      "intensity": 0.6,
+      "risk": "low"
+    },
+    {
+      "id": "oi_oi",
+      "display_name": "Oi Oi",
+      "aliases": [
+        "Oi call"
+      ],
+      "category": "rhythmcall",
+      "typical_text": "Oi! Oi!",
+      "best_context": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build",
+        "rock_chorus",
+        "instrumental_break",
+        "high_energy_outro"
+      ],
+      "requires": {
+        "min_bars": 1.0,
+        "max_bars": 4.0,
+        "energy": "high",
+        "beat_stability": "high",
+        "allowed_bars": [
+          1,
+          2,
+          4
+        ]
+      },
+      "duration": {
+        "preferred_bars": 2,
+        "strict_bars": false,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "cute_soft_chorus",
+        "quiet_ballad"
+      ],
+      "intensity": 0.75,
+      "risk": "low"
+    },
+    {
+      "id": "clap",
+      "display_name": "Clap",
+      "aliases": [
+        "Hand clap",
+        "Tebyooshi"
+      ],
+      "category": "rhythmcall",
+      "typical_text": "Clap on beat or backbeat.",
+      "best_context": [
+        "verse",
+        "chorus",
+        "bridge",
+        "outro"
+      ],
+      "requires": {
+        "min_bars": 1.0,
+        "max_bars": 8.0,
+        "beat_stability": "high",
+        "allowed_bars": [
+          1,
+          2,
+          3,
+          4,
+          6,
+          8
+        ]
+      },
+      "duration": {
+        "preferred_bars": 2,
+        "strict_bars": false,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "silent_break",
+        "very_quiet_section"
+      ],
+      "intensity": 0.35,
+      "risk": "low"
+    },
+    {
+      "id": "name_call",
+      "display_name": "Name Call",
+      "aliases": [
+        "Member name call",
+        "Oshi name call"
+      ],
+      "category": "rhythmcall",
+      "typical_text": "<member_name>!",
+      "best_context": [
+        "solo_line_gap",
+        "post_phrase_gap",
+        "member_focus"
+      ],
+      "requires": {
+        "min_bars": 1.0,
+        "max_bars": 2.0,
+        "metadata": "member_or_unit_name",
+        "vocal_density": "gap",
+        "allowed_bars": [
+          1,
+          2
+        ]
+      },
+      "duration": {
+        "preferred_bars": 1,
+        "strict_bars": false,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "unknown_member_focus",
+        "dense_vocal"
+      ],
+      "intensity": 0.55,
+      "risk": "medium"
+    },
+    {
+      "id": "vocal_chant",
+      "display_name": "Vocal Chant",
+      "aliases": [
+        "Original vocal chant",
+        "Short chant follow",
+        "Singer-led chant"
+      ],
+      "category": "rhythmcall",
+      "typical_text": "Follow the short chant or shouted phrase already present in the song.",
+      "best_context": [
+        "chant",
+        "vocal_chant",
+        "call_and_response",
+        "short_vocal_hook"
+      ],
+      "requires": {
+        "min_bars": 1.0,
+        "max_bars": 1.0,
+        "vocal_density": "chant",
+        "lyric_familiarity": "medium",
+        "allowed_bars": [
+          1
+        ]
+      },
+      "duration": {
+        "preferred_bars": 1,
+        "strict_bars": false,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_melody_line",
+        "quiet_listening_section",
+        "unknown_lyrics"
+      ],
+      "intensity": 0.5,
+      "risk": "low"
+    },
+    {
+      "id": "aizuchi",
+      "display_name": "Aizuchi Call",
+      "aliases": [
+        "Call and response",
+        "Aizuchi"
+      ],
+      "category": "rhythmcall",
+      "typical_text": "Short response in lyric gaps.",
+      "best_context": [
+        "post_phrase_gap",
+        "chorus_gap",
+        "catchy_hook"
+      ],
+      "requires": {
+        "min_bars": 1,
+        "max_bars": 8,
+        "vocal_density": "gap",
+        "lyric_or_phrase_pattern": "preferred"
+      },
+      "duration": {
+        "preferred_bars": 1,
+        "strict_bars": false,
+        "can_compress": true,
+        "can_extend": false
+      },
+      "avoid": [
+        "dense_vocal",
+        "unknown_gap_timing"
+      ],
+      "intensity": 0.5,
+      "risk": "low"
+    },
+    {
+      "id": "kecha",
+      "display_name": "Kecha",
+      "aliases": [
+        "Kechak",
+        "Forward reach"
+      ],
+      "category": "rhythmcall",
+      "typical_text": "Forward-reaching oshi gesture rather than shouted text.",
+      "best_context": [
+        "emotional_solo",
+        "ballad_chorus",
+        "oshi_focus"
+      ],
+      "requires": {
+        "min_bars": 4,
+        "max_bars": 32,
+        "energy": "low_to_medium",
+        "vocal_density": "can_overlap"
+      },
+      "duration": {
+        "preferred_bars": 4,
+        "strict_bars": false,
+        "can_compress": false,
+        "can_extend": true
+      },
+      "avoid": [
+        "high_speed_mix_section",
+        "aggressive_chorus"
+      ],
+      "intensity": 0.3,
+      "risk": "low"
+    },
+    {
+      "id": "sing_along",
+      "display_name": "Sing Along",
+      "aliases": [
+        "Audience sing-along",
+        "Follow vocal"
+      ],
+      "category": "rhythmcall",
+      "typical_text": "Sing the main hook or chorus melody with the crowd.",
+      "best_context": [
+        "chorus",
+        "final_chorus",
+        "anthem_hook",
+        "outro"
+      ],
+      "requires": {
+        "min_bars": 1.0,
+        "max_bars": 8.0,
+        "vocal_density": "can_overlap",
+        "lyric_familiarity": "high",
+        "allowed_bars": [
+          1,
+          2,
+          3,
+          4,
+          8
+        ]
+      },
+      "duration": {
+        "preferred_bars": 2,
+        "strict_bars": false,
+        "can_compress": false,
+        "can_extend": false
+      },
+      "avoid": [
+        "solo_line_focus",
+        "quiet_listening_section",
+        "unknown_lyrics"
+      ],
+      "intensity": 0.45,
+      "risk": "low"
+    }
+  ]
+}

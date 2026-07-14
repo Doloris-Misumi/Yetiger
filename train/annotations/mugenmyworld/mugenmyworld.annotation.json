@@ -1,0 +1,121 @@
+{
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "mugenmyworld",
+    "title": "Mugen My World",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/mugenmyworld.mp3",
+    "bpm": 97,
+    "call_bpm": 97,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  },
+  "segments": [
+    {
+      "start": 0.8,
+      "end": 20.49,
+      "music_label": "intro",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 20.49,
+      "end": 40.19,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 40.19,
+      "end": 50.04,
+      "music_label": "pre_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 50.04,
+      "end": 59.88,
+      "music_label": "pre_chorus_build",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 59.88,
+      "end": 79.57,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 79.57,
+      "end": 89.42,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 89.42,
+      "end": 99.26,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 99.26,
+      "end": 104.19,
+      "music_label": "pre_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 104.19,
+      "end": 109.12,
+      "music_label": "pre_chorus_build",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 109.12,
+      "end": 128.81,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 128.81,
+      "end": 138.67,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 138.67,
+      "end": 150.95,
+      "music_label": "solo",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 150.95,
+      "end": 170.5,
+      "music_label": "bridge",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 170.5,
+      "end": 195.27,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 195.27,
+      "end": 208.56,
+      "music_label": "outro",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 208.56,
+      "end": 212.19,
+      "music_label": "end",
+      "notes": "manually_reviewed_from_struct; annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "call_spans": [],
+  "annotation": {
+    "annotator": "",
+    "reviewed": true,
+    "review_date": "2026-06-17",
+    "notes": "Structure-only annotation.",
+    "call_bpm": 97,
+    "call_bar_multiplier": 1.0
+  }
+}

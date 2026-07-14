@@ -1,0 +1,96 @@
+{
+  "segments": [
+    {
+      "start": 0.46,
+      "end": 14.18,
+      "music_label": "intro"
+    },
+    {
+      "start": 14.18,
+      "end": 41.6,
+      "music_label": "verse"
+    },
+    {
+      "start": 41.6,
+      "end": 55.33,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 55.33,
+      "end": 72.47,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 72.47,
+      "end": 79.28,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 79.28,
+      "end": 103.32,
+      "music_label": "chorus"
+    },
+    {
+      "start": 103.32,
+      "end": 106.75,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 106.75,
+      "end": 117.05,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 117.05,
+      "end": 144.47,
+      "music_label": "verse"
+    },
+    {
+      "start": 144.47,
+      "end": 158.19,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 158.19,
+      "end": 175.32,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 175.32,
+      "end": 182.18,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 182.18,
+      "end": 219.88,
+      "music_label": "chorus"
+    },
+    {
+      "start": 219.88,
+      "end": 223.31,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 223.31,
+      "end": 237.22,
+      "music_label": "outro"
+    },
+    {
+      "start": 237.22,
+      "end": 245.24,
+      "music_label": "outro"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "itsuaietara",
+    "title": "itsuaietara",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/itsuaietara.mp3",
+    "bpm": 140,
+    "call_bpm": 70.0,
+    "call_bar_multiplier": 0.5,
+    "meter": "4/4"
+  }
+}

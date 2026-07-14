@@ -1,0 +1,115 @@
+{
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "shiruetto_dansu",
+    "title": "Shiruetto Dansu",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/Shiruetto_Dansu.mp3",
+    "bpm": 167,
+    "call_bpm": 83.5,
+    "call_bar_multiplier": 0.5,
+    "meter": "4/4"
+  },
+  "segments": [
+    {
+      "start": 0.66,
+      "end": 18.03,
+      "music_label": "intro",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 18.03,
+      "end": 41.17,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 41.17,
+      "end": 49.83,
+      "music_label": "pre_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 49.83,
+      "end": 54.17,
+      "music_label": "pre_chorus_build",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 54.17,
+      "end": 77.31,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 77.31,
+      "end": 89.59,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 89.59,
+      "end": 112.73,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 112.73,
+      "end": 121.41,
+      "music_label": "pre_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 121.41,
+      "end": 124.3,
+      "music_label": "pre_chorus_build",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 124.3,
+      "end": 147.44,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 147.44,
+      "end": 159.03,
+      "music_label": "solo",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 159.03,
+      "end": 170.55,
+      "music_label": "bridge",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 170.55,
+      "end": 193.69,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 193.69,
+      "end": 205.26,
+      "music_label": "outro",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 205.26,
+      "end": 209.46,
+      "music_label": "end",
+      "notes": "manually_reviewed_from_struct; annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "call_spans": [],
+  "annotation": {
+    "annotator": "",
+    "reviewed": true,
+    "review_date": "2026-06-15",
+    "notes": "Structure-only annotation.",
+    "call_bpm": 83.5,
+    "call_bar_multiplier": 0.5
+  }
+}

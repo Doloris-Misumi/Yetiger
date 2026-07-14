@@ -1,0 +1,489 @@
+{
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "jibun_restart",
+    "title": "Jibun REST@RT",
+    "artist": "765PRO ALLSTARS",
+    "franchise": "idolmaster",
+    "audio_path": "train/songs/jibun_restart.mp3",
+    "bpm": 171,
+    "call_bpm": 85.5,
+    "call_bar_multiplier": 0.5,
+    "meter": "4/4"
+  },
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 24.18,
+      "music_label": "intro",
+      "notes": ""
+    },
+    {
+      "start": 24.18,
+      "end": 46.63,
+      "music_label": "verse",
+      "notes": ""
+    },
+    {
+      "start": 46.63,
+      "end": 67.69,
+      "music_label": "pre_chorus",
+      "notes": ""
+    },
+    {
+      "start": 67.69,
+      "end": 69.09,
+      "music_label": "pre_chorus_build",
+      "notes": ""
+    },
+    {
+      "start": 69.09,
+      "end": 114.0,
+      "music_label": "chorus",
+      "notes": ""
+    },
+    {
+      "start": 114.0,
+      "end": 136.46,
+      "music_label": "instrumental_break",
+      "notes": ""
+    },
+    {
+      "start": 136.46,
+      "end": 158.92,
+      "music_label": "verse",
+      "notes": ""
+    },
+    {
+      "start": 158.92,
+      "end": 179.99,
+      "music_label": "pre_chorus",
+      "notes": ""
+    },
+    {
+      "start": 179.99,
+      "end": 181.37,
+      "music_label": "pre_chorus_build",
+      "notes": ""
+    },
+    {
+      "start": 181.37,
+      "end": 223.48,
+      "music_label": "chorus",
+      "notes": ""
+    },
+    {
+      "start": 223.48,
+      "end": 226.35,
+      "music_label": "instrumental_break",
+      "notes": ""
+    },
+    {
+      "start": 226.35,
+      "end": 248.74,
+      "music_label": "bridge",
+      "notes": ""
+    },
+    {
+      "start": 248.74,
+      "end": 271.2,
+      "music_label": "solo",
+      "notes": ""
+    },
+    {
+      "start": 271.2,
+      "end": 313.31,
+      "music_label": "chorus",
+      "notes": "soft final chorus entry"
+    },
+    {
+      "start": 313.31,
+      "end": 316.11,
+      "music_label": "post_chorus",
+      "notes": ""
+    },
+    {
+      "start": 316.11,
+      "end": 338.57,
+      "music_label": "outro",
+      "notes": ""
+    },
+    {
+      "start": 338.57,
+      "end": 347.66,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "call_spans": [
+    {
+      "start": 12.95,
+      "end": 21.37,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "hai_hai"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 21.37,
+      "end": 22.78,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "o_call"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 22.78,
+      "end": 24.18,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "hai_hai"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 34.0,
+      "end": 35.41,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "fuwa_fuwa"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 45.23,
+      "end": 46.63,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "hai_hai"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 46.63,
+      "end": 56.46,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "ppph"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 56.46,
+      "end": 57.86,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "hai_hai"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 57.86,
+      "end": 66.28,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "ppph"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 68.04,
+      "end": 69.09,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "fufu_call"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 69.09,
+      "end": 80.32,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "tian_zhao"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 80.32,
+      "end": 91.55,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "long_zhi_mao"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 91.55,
+      "end": 102.78,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "lei_she"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 102.78,
+      "end": 114.0,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "luo_man_si"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 114.0,
+      "end": 122.42,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "hai_hai"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 122.42,
+      "end": 125.23,
+      "call_role": "mix",
+      "recommended_actions": [
+        "mix_leadin_aaa_ikuzo"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 125.23,
+      "end": 136.46,
+      "call_role": "mix",
+      "recommended_actions": [
+        "standard_mix_second_half"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 146.28,
+      "end": 147.69,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "fuwa_fuwa"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 157.51,
+      "end": 158.92,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "hai_hai"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 158.92,
+      "end": 168.74,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "ppph"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 168.74,
+      "end": 170.15,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "hai_hai"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 170.15,
+      "end": 178.58,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "ppph"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 180.66,
+      "end": 181.37,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "fufu_call"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 185.58,
+      "end": 186.98,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "fuwa_fuwa"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 191.2,
+      "end": 192.6,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "fuwa_fuwa"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 196.81,
+      "end": 198.22,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "fufu_call"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 202.43,
+      "end": 203.83,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "hai_hai"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 208.04,
+      "end": 209.44,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "fuwa_fuwa"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 213.65,
+      "end": 215.06,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "fuwa_fuwa"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 216.46,
+      "end": 217.86,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "fufu_call"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 219.27,
+      "end": 220.67,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "fufu_call"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 222.07,
+      "end": 223.48,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "fufu_call"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 248.74,
+      "end": 269.8,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "hai_hai"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 269.8,
+      "end": 271.2,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "fufu_call"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 271.2,
+      "end": 293.65,
+      "call_role": "mix",
+      "recommended_actions": [
+        "sekai_konton_mix"
+      ],
+      "notes": "soft final chorus entry"
+    },
+    {
+      "start": 297.87,
+      "end": 299.27,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "fuwa_fuwa"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 303.48,
+      "end": 304.88,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "fuwa_fuwa"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 306.28,
+      "end": 307.69,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "fufu_call"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 309.09,
+      "end": 310.49,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "fufu_call"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 311.9,
+      "end": 313.31,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "fufu_call"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 316.11,
+      "end": 337.16,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "hai_hai"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 337.16,
+      "end": 338.57,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "fufu_call"
+      ],
+      "notes": ""
+    }
+  ]
+}

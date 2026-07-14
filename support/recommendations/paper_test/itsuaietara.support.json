@@ -1,0 +1,724 @@
+{
+  "song_id": "itsuaietara",
+  "source_prediction": "train\\predictions_bar_coarse_muq_paper_test\\itsuaietara.prediction.json",
+  "library": "knowledge\\call_mix_library.json",
+  "bar_estimation": {
+    "bar_estimation": "struct_downbeats",
+    "struct": "train\\struct\\itsuaietara.json",
+    "downbeat_count": 130
+  },
+  "policy": {
+    "max_per_section": 3,
+    "min_confidence": 0.5,
+    "action_semantics": "knowledge\\action_semantics.json",
+    "semantic_actions_loaded": 75,
+    "enable_underground_gei": true,
+    "chorus_underground_gei": "forced_full_section_dense_callbook",
+    "keepspace_policy": "fallback_only_when_no_active_candidate_survives",
+    "pre_chorus_mix": "preferred_tension_ramp",
+    "solo_mix": "preferred_clear_barline_instrumental",
+    "underground_gei_chain_coherence": "rerank_to_avoid_gei_callmix_gei_interruptions",
+    "arrangement_policy": "non_overlapping_primary_timeline",
+    "gei_arrangement": "plan adjacent chorus/post_chorus/instrumental chains as bar-length slots, preferring 8-bar underground-gei phrases and borrowing adjacent sections when needed",
+    "verse_prechorus_fill": "sparse non-overlapping call/mix slots: verse prefers generic military-call style rhythmcalls; pre_chorus uses opening calls, build MIX, and optional chorus-entry Ietora/Haiseno-style accents",
+    "underground_gei_action_uniqueness": "same underground-gei action_id appears at most once per song in the primary plan",
+    "candidate_pool_size_per_section": 16
+  },
+  "recommendations": [
+    {
+      "section_index": 1,
+      "section_label": "intro",
+      "section_start": 0.46,
+      "section_end": 15.89,
+      "section_estimated_bars": 9.0,
+      "start": 0.46,
+      "end": 10.75,
+      "fit_bars": 6.0,
+      "action_fit_bars": 6.0,
+      "action_id": "standard_mix_long",
+      "action_name": "Standard MIX +2-bar Extension",
+      "category": "mix",
+      "risk": "medium",
+      "confidence": 1.0,
+      "reason": "section=intro; estimated_bars=9.0; matched_context=high_energy_break,intro; category=mix; arrangement=single_section_primary",
+      "warnings": [],
+      "arrangement_role": "primary",
+      "arrangement_mode": "single_section_primary",
+      "planned_section_indices": [
+        1
+      ],
+      "planned_section_labels": [
+        "intro"
+      ]
+    },
+    {
+      "section_index": 2,
+      "section_label": "verse",
+      "section_start": 15.89,
+      "section_end": 57.05,
+      "section_estimated_bars": 24.0,
+      "start": 15.89,
+      "end": 19.32,
+      "fit_bars": 2.0,
+      "action_fit_bars": 2.0,
+      "action_id": "oi_oi",
+      "action_name": "Oi Oi",
+      "category": "rhythmcall",
+      "risk": "low",
+      "confidence": 0.892,
+      "reason": "section=verse; estimated_bars=24.0; matched_context=verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_1",
+      "warnings": [],
+      "arrangement_role": "primary",
+      "arrangement_mode": "verse_sparse_call_fill",
+      "arrangement_slot": "verse_fill_1",
+      "planned_section_indices": [
+        2
+      ],
+      "planned_section_labels": [
+        "verse"
+      ]
+    },
+    {
+      "section_index": 2,
+      "section_label": "verse",
+      "section_start": 15.89,
+      "section_end": 57.05,
+      "section_estimated_bars": 24.0,
+      "start": 22.75,
+      "end": 26.18,
+      "fit_bars": 2.0,
+      "action_fit_bars": 2.0,
+      "action_id": "ppph",
+      "action_name": "PPPH",
+      "category": "rhythmcall",
+      "risk": "low",
+      "confidence": 0.906,
+      "reason": "section=verse; estimated_bars=24.0; matched_context=mid_energy_vocal,verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_2",
+      "warnings": [],
+      "arrangement_role": "primary",
+      "arrangement_mode": "verse_sparse_call_fill",
+      "arrangement_slot": "verse_fill_2",
+      "planned_section_indices": [
+        2
+      ],
+      "planned_section_labels": [
+        "verse"
+      ]
+    },
+    {
+      "section_index": 2,
+      "section_label": "verse",
+      "section_start": 15.89,
+      "section_end": 57.05,
+      "section_estimated_bars": 24.0,
+      "start": 29.61,
+      "end": 33.04,
+      "fit_bars": 2.0,
+      "action_fit_bars": 2.0,
+      "action_id": "clap",
+      "action_name": "Clap",
+      "category": "rhythmcall",
+      "risk": "low",
+      "confidence": 0.88,
+      "reason": "section=verse; estimated_bars=24.0; matched_context=verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_3",
+      "warnings": [],
+      "arrangement_role": "primary",
+      "arrangement_mode": "verse_sparse_call_fill",
+      "arrangement_slot": "verse_fill_3",
+      "planned_section_indices": [
+        2
+      ],
+      "planned_section_labels": [
+        "verse"
+      ]
+    },
+    {
+      "section_index": 2,
+      "section_label": "verse",
+      "section_start": 15.89,
+      "section_end": 57.05,
+      "section_estimated_bars": 24.0,
+      "start": 36.47,
+      "end": 38.19,
+      "fit_bars": 1.0,
+      "action_fit_bars": 1.0,
+      "action_id": "hai_hai",
+      "action_name": "Hai Hai",
+      "category": "rhythmcall",
+      "risk": "low",
+      "confidence": 0.889,
+      "reason": "section=verse; estimated_bars=24.0; matched_context=verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_4",
+      "warnings": [],
+      "arrangement_role": "primary",
+      "arrangement_mode": "verse_sparse_call_fill",
+      "arrangement_slot": "verse_fill_4",
+      "planned_section_indices": [
+        2
+      ],
+      "planned_section_labels": [
+        "verse"
+      ]
+    },
+    {
+      "section_index": 2,
+      "section_label": "verse",
+      "section_start": 15.89,
+      "section_end": 57.05,
+      "section_estimated_bars": 24.0,
+      "start": 43.33,
+      "end": 46.76,
+      "fit_bars": 2.0,
+      "action_fit_bars": 2.0,
+      "action_id": "oi_oi",
+      "action_name": "Oi Oi",
+      "category": "rhythmcall",
+      "risk": "low",
+      "confidence": 0.892,
+      "reason": "section=verse; estimated_bars=24.0; matched_context=verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_5",
+      "warnings": [],
+      "arrangement_role": "primary",
+      "arrangement_mode": "verse_sparse_call_fill",
+      "arrangement_slot": "verse_fill_5",
+      "planned_section_indices": [
+        2
+      ],
+      "planned_section_labels": [
+        "verse"
+      ]
+    },
+    {
+      "section_index": 2,
+      "section_label": "verse",
+      "section_start": 15.89,
+      "section_end": 57.05,
+      "section_estimated_bars": 24.0,
+      "start": 50.19,
+      "end": 53.62,
+      "fit_bars": 2.0,
+      "action_fit_bars": 2.0,
+      "action_id": "oi_oi",
+      "action_name": "Oi Oi",
+      "category": "rhythmcall",
+      "risk": "low",
+      "confidence": 0.892,
+      "reason": "section=verse; estimated_bars=24.0; matched_context=verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_6",
+      "warnings": [],
+      "arrangement_role": "primary",
+      "arrangement_mode": "verse_sparse_call_fill",
+      "arrangement_slot": "verse_fill_6",
+      "planned_section_indices": [
+        2
+      ],
+      "planned_section_labels": [
+        "verse"
+      ]
+    },
+    {
+      "section_index": 3,
+      "section_label": "pre_chorus",
+      "section_start": 57.05,
+      "section_end": 60.47,
+      "section_estimated_bars": 2.0,
+      "start": 57.05,
+      "end": 60.47,
+      "fit_bars": 2.0,
+      "action_fit_bars": 2.0,
+      "action_id": "ppph",
+      "action_name": "PPPH",
+      "category": "rhythmcall",
+      "risk": "low",
+      "confidence": 0.956,
+      "reason": "section=pre_chorus; estimated_bars=2.0; matched_context=pre_chorus; category=rhythmcall; arrangement=prechorus_build_fill; arrangement_slot=opening_call",
+      "warnings": [],
+      "arrangement_role": "primary",
+      "arrangement_mode": "prechorus_build_fill",
+      "arrangement_slot": "opening_call",
+      "planned_section_indices": [
+        3
+      ],
+      "planned_section_labels": [
+        "pre_chorus"
+      ]
+    },
+    {
+      "section_index": 4,
+      "section_label": "chorus",
+      "section_start": 60.47,
+      "section_end": 70.76,
+      "section_estimated_bars": 6.0,
+      "start": 60.47,
+      "end": 74.19,
+      "fit_bars": 8.0,
+      "action_fit_bars": 8.0,
+      "action_id": "gongfu_she",
+      "action_name": "Gongfu She",
+      "category": "underground_gei",
+      "risk": "high",
+      "confidence": 1.0,
+      "reason": "section=chorus; estimated_bars=16.0; matched_context=chorus; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; gei_chain=continues_neighbor_gei; gei_chain=bridges_neighbor_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=1/4; arrangement=borrows_adjacent_section",
+      "warnings": [
+        "high-risk action; venue/fandom policy should override",
+        "chorus is forced to underground-gei for dense callbook mode",
+        "semantic context missing; action kept with penalty",
+        "planned action crosses adjacent structure boundary to complete a bar phrase"
+      ],
+      "arrangement_role": "primary",
+      "arrangement_mode": "non_overlapping_gei_chain",
+      "arrangement_slot": "1/4",
+      "planned_section_indices": [
+        4,
+        5
+      ],
+      "planned_section_labels": [
+        "chorus",
+        "instrumental"
+      ]
+    },
+    {
+      "section_index": 5,
+      "section_label": "instrumental",
+      "section_start": 70.76,
+      "section_end": 79.3,
+      "section_estimated_bars": 5.0,
+      "start": 74.19,
+      "end": 87.9,
+      "fit_bars": 8.0,
+      "action_fit_bars": 8.0,
+      "action_id": "dian_bo_she",
+      "action_name": "Dian Bo She",
+      "category": "underground_gei",
+      "risk": "high",
+      "confidence": 0.889,
+      "reason": "section=chorus; estimated_bars=16.0; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; gei_chain=continues_neighbor_gei; gei_chain=bridges_neighbor_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=2/4; arrangement=borrows_adjacent_section",
+      "warnings": [
+        "high-risk action; venue/fandom policy should override",
+        "chorus is forced to underground-gei for dense callbook mode",
+        "semantic context missing; action kept with penalty",
+        "planned action crosses adjacent structure boundary to complete a bar phrase"
+      ],
+      "arrangement_role": "primary",
+      "arrangement_mode": "non_overlapping_gei_chain",
+      "arrangement_slot": "2/4",
+      "planned_section_indices": [
+        5,
+        6
+      ],
+      "planned_section_labels": [
+        "instrumental",
+        "chorus"
+      ]
+    },
+    {
+      "section_index": 6,
+      "section_label": "chorus",
+      "section_start": 79.3,
+      "section_end": 106.75,
+      "section_estimated_bars": 16.0,
+      "start": 87.9,
+      "end": 101.62,
+      "fit_bars": 8.0,
+      "action_fit_bars": 8.0,
+      "action_id": "zi_he_she",
+      "action_name": "Zi He She",
+      "category": "underground_gei",
+      "risk": "high",
+      "confidence": 0.889,
+      "reason": "section=chorus; estimated_bars=16.0; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; gei_chain=continues_neighbor_gei; gei_chain=bridges_neighbor_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=3/4",
+      "warnings": [
+        "high-risk action; venue/fandom policy should override",
+        "chorus is forced to underground-gei for dense callbook mode",
+        "semantic context missing; action kept with penalty"
+      ],
+      "arrangement_role": "primary",
+      "arrangement_mode": "non_overlapping_gei_chain",
+      "arrangement_slot": "3/4",
+      "planned_section_indices": [
+        6
+      ],
+      "planned_section_labels": [
+        "chorus"
+      ]
+    },
+    {
+      "section_index": 6,
+      "section_label": "chorus",
+      "section_start": 79.3,
+      "section_end": 106.75,
+      "section_estimated_bars": 16.0,
+      "start": 101.61,
+      "end": 115.33,
+      "fit_bars": 8.0,
+      "action_fit_bars": 8.0,
+      "action_id": "chan_she",
+      "action_name": "Chan She",
+      "category": "underground_gei",
+      "risk": "high",
+      "confidence": 0.889,
+      "reason": "section=chorus; estimated_bars=16.0; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; gei_chain=continues_neighbor_gei; gei_chain=bridges_neighbor_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=4/4; arrangement=borrows_adjacent_section",
+      "warnings": [
+        "high-risk action; venue/fandom policy should override",
+        "chorus is forced to underground-gei for dense callbook mode",
+        "semantic context missing; action kept with penalty",
+        "planned action crosses adjacent structure boundary to complete a bar phrase"
+      ],
+      "arrangement_role": "primary",
+      "arrangement_mode": "non_overlapping_gei_chain",
+      "arrangement_slot": "4/4",
+      "planned_section_indices": [
+        6,
+        7
+      ],
+      "planned_section_labels": [
+        "chorus",
+        "instrumental"
+      ]
+    },
+    {
+      "section_index": 8,
+      "section_label": "verse",
+      "section_start": 115.33,
+      "section_end": 142.77,
+      "section_estimated_bars": 16.0,
+      "start": 115.33,
+      "end": 118.76,
+      "fit_bars": 2.0,
+      "action_fit_bars": 2.0,
+      "action_id": "oi_oi",
+      "action_name": "Oi Oi",
+      "category": "rhythmcall",
+      "risk": "low",
+      "confidence": 0.892,
+      "reason": "section=verse; estimated_bars=16.0; matched_context=verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_1",
+      "warnings": [],
+      "arrangement_role": "primary",
+      "arrangement_mode": "verse_sparse_call_fill",
+      "arrangement_slot": "verse_fill_1",
+      "planned_section_indices": [
+        8
+      ],
+      "planned_section_labels": [
+        "verse"
+      ]
+    },
+    {
+      "section_index": 8,
+      "section_label": "verse",
+      "section_start": 115.33,
+      "section_end": 142.77,
+      "section_estimated_bars": 16.0,
+      "start": 122.19,
+      "end": 125.62,
+      "fit_bars": 2.0,
+      "action_fit_bars": 2.0,
+      "action_id": "ppph",
+      "action_name": "PPPH",
+      "category": "rhythmcall",
+      "risk": "low",
+      "confidence": 0.906,
+      "reason": "section=verse; estimated_bars=16.0; matched_context=mid_energy_vocal,verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_2",
+      "warnings": [],
+      "arrangement_role": "primary",
+      "arrangement_mode": "verse_sparse_call_fill",
+      "arrangement_slot": "verse_fill_2",
+      "planned_section_indices": [
+        8
+      ],
+      "planned_section_labels": [
+        "verse"
+      ]
+    },
+    {
+      "section_index": 8,
+      "section_label": "verse",
+      "section_start": 115.33,
+      "section_end": 142.77,
+      "section_estimated_bars": 16.0,
+      "start": 129.05,
+      "end": 132.48,
+      "fit_bars": 2.0,
+      "action_fit_bars": 2.0,
+      "action_id": "clap",
+      "action_name": "Clap",
+      "category": "rhythmcall",
+      "risk": "low",
+      "confidence": 0.88,
+      "reason": "section=verse; estimated_bars=16.0; matched_context=verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_3",
+      "warnings": [],
+      "arrangement_role": "primary",
+      "arrangement_mode": "verse_sparse_call_fill",
+      "arrangement_slot": "verse_fill_3",
+      "planned_section_indices": [
+        8
+      ],
+      "planned_section_labels": [
+        "verse"
+      ]
+    },
+    {
+      "section_index": 8,
+      "section_label": "verse",
+      "section_start": 115.33,
+      "section_end": 142.77,
+      "section_estimated_bars": 16.0,
+      "start": 135.91,
+      "end": 137.62,
+      "fit_bars": 1.0,
+      "action_fit_bars": 1.0,
+      "action_id": "hai_hai",
+      "action_name": "Hai Hai",
+      "category": "rhythmcall",
+      "risk": "low",
+      "confidence": 0.889,
+      "reason": "section=verse; estimated_bars=16.0; matched_context=verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_4",
+      "warnings": [],
+      "arrangement_role": "primary",
+      "arrangement_mode": "verse_sparse_call_fill",
+      "arrangement_slot": "verse_fill_4",
+      "planned_section_indices": [
+        8
+      ],
+      "planned_section_labels": [
+        "verse"
+      ]
+    },
+    {
+      "section_index": 9,
+      "section_label": "pre_chorus",
+      "section_start": 142.77,
+      "section_end": 151.32,
+      "section_estimated_bars": 5.0,
+      "start": 142.77,
+      "end": 146.19,
+      "fit_bars": 2.0,
+      "action_fit_bars": 2.0,
+      "action_id": "ppph",
+      "action_name": "PPPH",
+      "category": "rhythmcall",
+      "risk": "low",
+      "confidence": 0.956,
+      "reason": "section=pre_chorus; estimated_bars=5.0; matched_context=pre_chorus; category=rhythmcall; arrangement=prechorus_build_fill; arrangement_slot=opening_call",
+      "warnings": [],
+      "arrangement_role": "primary",
+      "arrangement_mode": "prechorus_build_fill",
+      "arrangement_slot": "opening_call",
+      "planned_section_indices": [
+        9
+      ],
+      "planned_section_labels": [
+        "pre_chorus"
+      ]
+    },
+    {
+      "section_index": 9,
+      "section_label": "pre_chorus",
+      "section_start": 142.77,
+      "section_end": 151.32,
+      "section_estimated_bars": 5.0,
+      "start": 146.19,
+      "end": 149.61,
+      "fit_bars": 2.0,
+      "action_fit_bars": 2.0,
+      "action_id": "ainu_second_half_mix",
+      "action_name": "Ainu MIX Second Half",
+      "category": "mix",
+      "risk": "medium",
+      "confidence": 1.0,
+      "reason": "section=pre_chorus; estimated_bars=5.0; matched_context=chorus_entry,pre_chorus; category=mix; arrangement=prechorus_build_mix_fill; arrangement_slot=middle_build",
+      "warnings": [],
+      "arrangement_role": "primary",
+      "arrangement_mode": "prechorus_build_mix_fill",
+      "arrangement_slot": "middle_build",
+      "planned_section_indices": [
+        9
+      ],
+      "planned_section_labels": [
+        "pre_chorus"
+      ]
+    },
+    {
+      "section_index": 9,
+      "section_label": "pre_chorus",
+      "section_start": 142.77,
+      "section_end": 151.32,
+      "section_estimated_bars": 5.0,
+      "start": 149.61,
+      "end": 151.32,
+      "fit_bars": 1.0,
+      "action_fit_bars": 1.0,
+      "action_id": "ietora",
+      "action_name": "Ietora",
+      "category": "mix",
+      "risk": "high",
+      "confidence": 0.869,
+      "reason": "section=pre_chorus; estimated_bars=5.0; matched_context=chorus_entry,pre_chorus,pre_chorus_build; semantic=context_missing_penalty; category=mix; arrangement=prechorus_chorus_entry_fill; arrangement_slot=chorus_entry",
+      "warnings": [
+        "high-risk action; venue/fandom policy should override",
+        "semantic context missing; action kept with penalty"
+      ],
+      "arrangement_role": "primary",
+      "arrangement_mode": "prechorus_chorus_entry_fill",
+      "arrangement_slot": "chorus_entry",
+      "planned_section_indices": [
+        9
+      ],
+      "planned_section_labels": [
+        "pre_chorus"
+      ]
+    },
+    {
+      "section_index": 10,
+      "section_label": "chorus",
+      "section_start": 151.32,
+      "section_end": 171.9,
+      "section_estimated_bars": 12.0,
+      "start": 151.32,
+      "end": 159.63,
+      "fit_bars": 4.0,
+      "action_fit_bars": 4.0,
+      "action_id": "ali_shizi",
+      "action_name": "Ali Shizi",
+      "category": "underground_gei",
+      "risk": "high",
+      "confidence": 1.0,
+      "reason": "section=chorus; estimated_bars=12.0; matched_context=chorus; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; gei_chain=continues_neighbor_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=1/4",
+      "warnings": [
+        "high-risk action; venue/fandom policy should override",
+        "chorus is forced to underground-gei for dense callbook mode",
+        "semantic context missing; action kept with penalty"
+      ],
+      "arrangement_role": "primary",
+      "arrangement_mode": "non_overlapping_gei_chain",
+      "arrangement_slot": "1/4",
+      "planned_section_indices": [
+        10
+      ],
+      "planned_section_labels": [
+        "chorus"
+      ]
+    },
+    {
+      "section_index": 10,
+      "section_label": "chorus",
+      "section_start": 151.32,
+      "section_end": 171.9,
+      "section_estimated_bars": 12.0,
+      "start": 159.63,
+      "end": 167.95,
+      "fit_bars": 4.0,
+      "action_fit_bars": 4.0,
+      "action_id": "heibai_shuangyi",
+      "action_name": "Heibai Shuangyi",
+      "category": "underground_gei",
+      "risk": "high",
+      "confidence": 1.0,
+      "reason": "section=chorus; estimated_bars=12.0; matched_context=chorus; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; gei_chain=continues_neighbor_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=2/4",
+      "warnings": [
+        "high-risk action; venue/fandom policy should override",
+        "chorus is forced to underground-gei for dense callbook mode",
+        "semantic context missing; action kept with penalty"
+      ],
+      "arrangement_role": "primary",
+      "arrangement_mode": "non_overlapping_gei_chain",
+      "arrangement_slot": "2/4",
+      "planned_section_indices": [
+        10
+      ],
+      "planned_section_labels": [
+        "chorus"
+      ]
+    },
+    {
+      "section_index": 10,
+      "section_label": "chorus",
+      "section_start": 151.32,
+      "section_end": 171.9,
+      "section_estimated_bars": 12.0,
+      "start": 167.95,
+      "end": 176.26,
+      "fit_bars": 4.0,
+      "action_fit_bars": 4.0,
+      "action_id": "tian_zhao",
+      "action_name": "Tian Zhao",
+      "category": "underground_gei",
+      "risk": "high",
+      "confidence": 1.0,
+      "reason": "section=chorus; estimated_bars=12.0; matched_context=chorus; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; gei_chain=continues_neighbor_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=3/4; arrangement=borrows_adjacent_section",
+      "warnings": [
+        "high-risk action; venue/fandom policy should override",
+        "chorus is forced to underground-gei for dense callbook mode",
+        "semantic context missing; action kept with penalty",
+        "planned action crosses adjacent structure boundary to complete a bar phrase"
+      ],
+      "arrangement_role": "primary",
+      "arrangement_mode": "non_overlapping_gei_chain",
+      "arrangement_slot": "3/4",
+      "planned_section_indices": [
+        10,
+        11
+      ],
+      "planned_section_labels": [
+        "chorus",
+        "instrumental"
+      ]
+    },
+    {
+      "section_index": 11,
+      "section_label": "instrumental",
+      "section_start": 171.9,
+      "section_end": 182.18,
+      "section_estimated_bars": 6.0,
+      "start": 176.26,
+      "end": 184.57,
+      "fit_bars": 4.0,
+      "action_fit_bars": 4.0,
+      "action_id": "long_zhi_mao",
+      "action_name": "Long Zhi Mao",
+      "category": "underground_gei",
+      "risk": "high",
+      "confidence": 0.889,
+      "reason": "section=instrumental; estimated_bars=6.0; matched_context=high_energy_break,instrumental_break,post_chorus_interlude; semantic=context_missing_penalty; category=underground_gei; gei_chain=continues_neighbor_gei; gei_chain=bridges_neighbor_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=4/4; arrangement=borrows_adjacent_section",
+      "warnings": [
+        "high-risk action; venue/fandom policy should override",
+        "semantic context missing; action kept with penalty",
+        "planned action crosses adjacent structure boundary to complete a bar phrase"
+      ],
+      "arrangement_role": "primary",
+      "arrangement_mode": "non_overlapping_gei_chain",
+      "arrangement_slot": "4/4",
+      "planned_section_indices": [
+        11,
+        12
+      ],
+      "planned_section_labels": [
+        "instrumental",
+        "chorus"
+      ]
+    },
+    {
+      "section_index": 13,
+      "section_label": "outro",
+      "section_start": 219.9,
+      "section_end": 245.24,
+      "section_estimated_bars": 8.0,
+      "start": 219.9,
+      "end": 226.24,
+      "fit_bars": 2.0,
+      "action_fit_bars": 2.0,
+      "action_id": "oi_oi",
+      "action_name": "Oi Oi",
+      "category": "rhythmcall",
+      "risk": "low",
+      "confidence": 0.962,
+      "reason": "section=outro; estimated_bars=8.0; matched_context=high_energy_outro; category=rhythmcall; arrangement=single_section_primary",
+      "warnings": [],
+      "arrangement_role": "primary",
+      "arrangement_mode": "single_section_primary",
+      "planned_section_indices": [
+        13
+      ],
+      "planned_section_labels": [
+        "outro"
+      ]
+    }
+  ]
+}

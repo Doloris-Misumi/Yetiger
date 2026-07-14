@@ -1,0 +1,101 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 12.37,
+      "music_label": "intro"
+    },
+    {
+      "start": 12.37,
+      "end": 32.33,
+      "music_label": "verse"
+    },
+    {
+      "start": 32.33,
+      "end": 39.84,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 39.84,
+      "end": 44.83,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 44.83,
+      "end": 77.34,
+      "music_label": "chorus"
+    },
+    {
+      "start": 77.34,
+      "end": 82.36,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 82.36,
+      "end": 102.35,
+      "music_label": "verse"
+    },
+    {
+      "start": 102.35,
+      "end": 109.85,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 109.85,
+      "end": 114.84,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 114.84,
+      "end": 134.85,
+      "music_label": "chorus"
+    },
+    {
+      "start": 134.85,
+      "end": 139.86,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 139.86,
+      "end": 144.85,
+      "music_label": "solo"
+    },
+    {
+      "start": 144.85,
+      "end": 166.71,
+      "music_label": "bridge"
+    },
+    {
+      "start": 166.71,
+      "end": 197.97,
+      "music_label": "chorus"
+    },
+    {
+      "start": 197.97,
+      "end": 210.48,
+      "music_label": "chorus"
+    },
+    {
+      "start": 210.48,
+      "end": 215.49,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 215.49,
+      "end": 218.87,
+      "music_label": "outro"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "hekitenbansou",
+    "title": "hekitenbansou",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/hekitenbansou.mp3",
+    "bpm": 97,
+    "call_bpm": 97,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  }
+}

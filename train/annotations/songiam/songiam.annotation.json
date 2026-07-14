@@ -1,0 +1,108 @@
+{
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "songiam",
+    "title": "Song I Am",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/SongIam.mp3",
+    "bpm": 95,
+    "call_bpm": 95,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  },
+  "segments": [
+    {
+      "start": 0.47,
+      "end": 35.52,
+      "music_label": "intro",
+      "notes": "refined_from_struct"
+    },
+    {
+      "start": 35.52,
+      "end": 56.06,
+      "music_label": "verse",
+      "notes": "refined_from_struct"
+    },
+    {
+      "start": 56.06,
+      "end": 63.64,
+      "music_label": "pre_chorus",
+      "notes": "refined_from_struct"
+    },
+    {
+      "start": 63.64,
+      "end": 66.16,
+      "music_label": "pre_chorus_build",
+      "notes": "refined_from_struct"
+    },
+    {
+      "start": 66.16,
+      "end": 86.37,
+      "music_label": "chorus",
+      "notes": "refined_from_struct"
+    },
+    {
+      "start": 86.37,
+      "end": 96.47,
+      "music_label": "instrumental_break",
+      "notes": "refined_from_struct"
+    },
+    {
+      "start": 96.47,
+      "end": 126.79,
+      "music_label": "verse",
+      "notes": "refined_from_struct"
+    },
+    {
+      "start": 126.79,
+      "end": 134.37,
+      "music_label": "pre_chorus",
+      "notes": "refined_from_struct"
+    },
+    {
+      "start": 134.37,
+      "end": 136.9,
+      "music_label": "pre_chorus_build",
+      "notes": "refined_from_struct"
+    },
+    {
+      "start": 136.9,
+      "end": 157.11,
+      "music_label": "chorus",
+      "notes": "refined_from_struct"
+    },
+    {
+      "start": 157.11,
+      "end": 167.21,
+      "music_label": "instrumental_break",
+      "notes": "refined_from_struct"
+    },
+    {
+      "start": 167.21,
+      "end": 177.32,
+      "music_label": "bridge",
+      "notes": "refined_from_struct"
+    },
+    {
+      "start": 177.32,
+      "end": 205.11,
+      "music_label": "solo",
+      "notes": "refined_from_struct"
+    },
+    {
+      "start": 205.11,
+      "end": 235.48,
+      "music_label": "chorus",
+      "notes": "refined_from_struct"
+    },
+    {
+      "start": 235.48,
+      "end": 242.57,
+      "music_label": "end",
+      "notes": "refined_from_struct; annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "call_spans": [],
+  "_notes": "Segments synced from manually refined struct/SongIam.json. Call spans pending."
+}

@@ -1,0 +1,87 @@
+{
+  "segments": [
+    {
+      "start": 0.34,
+      "end": 12.96,
+      "music_label": "intro"
+    },
+    {
+      "start": 12.96,
+      "end": 38.03,
+      "music_label": "verse"
+    },
+    {
+      "start": 38.03,
+      "end": 50.57,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 50.57,
+      "end": 58.4,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 58.4,
+      "end": 64.43,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 64.43,
+      "end": 96.56,
+      "music_label": "chorus"
+    },
+    {
+      "start": 96.56,
+      "end": 128.43,
+      "music_label": "verse"
+    },
+    {
+      "start": 128.43,
+      "end": 133.76,
+      "music_label": "verse"
+    },
+    {
+      "start": 133.76,
+      "end": 139.1,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 139.1,
+      "end": 149.75,
+      "music_label": "chorus"
+    },
+    {
+      "start": 149.75,
+      "end": 171.1,
+      "music_label": "bridge"
+    },
+    {
+      "start": 171.1,
+      "end": 192.43,
+      "music_label": "chorus"
+    },
+    {
+      "start": 192.43,
+      "end": 211.1,
+      "music_label": "chorus"
+    },
+    {
+      "start": 211.1,
+      "end": 217.5,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "trash_life",
+    "title": "trash_life",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/trash_life.mp3",
+    "bpm": 90,
+    "call_bpm": 90,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  }
+}

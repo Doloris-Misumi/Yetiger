@@ -1,0 +1,127 @@
+{
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "blackbirthday",
+    "title": "Black Birthday",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/blackbirthday.mp3",
+    "bpm": 98,
+    "call_bpm": 98,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  },
+  "segments": [
+    {
+      "start": 2.78,
+      "end": 32.79,
+      "music_label": "intro",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 32.79,
+      "end": 51.89,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 51.89,
+      "end": 61.58,
+      "music_label": "pre_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 61.58,
+      "end": 68.86,
+      "music_label": "pre_chorus_build",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 68.86,
+      "end": 88.26,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 88.26,
+      "end": 90.68,
+      "music_label": "post_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 90.68,
+      "end": 97.92,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 97.92,
+      "end": 117.35,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 117.35,
+      "end": 127.04,
+      "music_label": "pre_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 127.04,
+      "end": 134.32,
+      "music_label": "pre_chorus_build",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 134.32,
+      "end": 153.7,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 153.7,
+      "end": 156.13,
+      "music_label": "post_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 156.13,
+      "end": 163.41,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 163.41,
+      "end": 182.8,
+      "music_label": "bridge",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 182.8,
+      "end": 202.2,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 202.2,
+      "end": 221.62,
+      "music_label": "outro",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 221.62,
+      "end": 225.71,
+      "music_label": "end",
+      "notes": "manually_reviewed_from_struct; annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "call_spans": [],
+  "annotation": {
+    "annotator": "",
+    "reviewed": true,
+    "review_date": "2026-06-16",
+    "notes": "Structure-only annotation.",
+    "call_bpm": 98,
+    "call_bar_multiplier": 1.0
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "talktomytone",
+    "title": "Talk to My Tone",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/TalktoMyTone.mp3",
+    "bpm": 103,
+    "call_bpm": 103,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  },
+  "segments": [
+    {
+      "start": 2.0,
+      "end": 20.47,
+      "music_label": "intro",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 20.47,
+      "end": 38.93,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 38.93,
+      "end": 55.07,
+      "music_label": "pre_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 55.07,
+      "end": 59.7,
+      "music_label": "pre_chorus_build",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 59.7,
+      "end": 89.71,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 89.71,
+      "end": 92.02,
+      "music_label": "post_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 92.02,
+      "end": 98.93,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 98.93,
+      "end": 117.4,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 117.4,
+      "end": 147.4,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 147.4,
+      "end": 170.48,
+      "music_label": "bridge",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 170.48,
+      "end": 177.4,
+      "music_label": "solo",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 177.4,
+      "end": 198.17,
+      "music_label": "bridge",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 198.17,
+      "end": 228.17,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 228.17,
+      "end": 232.78,
+      "music_label": "post_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 232.78,
+      "end": 242.02,
+      "music_label": "outro",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 242.02,
+      "end": 245.97,
+      "music_label": "end",
+      "notes": "manually_reviewed_from_struct; annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "call_spans": [],
+  "annotation": {
+    "annotator": "",
+    "reviewed": true,
+    "review_date": "2026-06-16",
+    "notes": "Structure-only annotation.",
+    "call_bpm": 103,
+    "call_bar_multiplier": 1.0
+  }
+}

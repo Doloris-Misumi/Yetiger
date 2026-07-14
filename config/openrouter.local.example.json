@@ -1,0 +1,8 @@
+{
+  "api_key": "sk-or-your-openrouter-api-key-here",
+  "model": "openrouter/free",
+  "base_url": "https://openrouter.ai/api/v1/chat/completions",
+  "timeout": 180,
+  "site_url": "http://localhost",
+  "app_name": "YesTiger"
+}

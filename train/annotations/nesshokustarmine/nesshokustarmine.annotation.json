@@ -1,0 +1,112 @@
+{
+  "segments": [
+    {
+      "start": 1.34,
+      "end": 6.47,
+      "music_label": "intro"
+    },
+    {
+      "start": 6.47,
+      "end": 32.14,
+      "music_label": "chorus"
+    },
+    {
+      "start": 32.14,
+      "end": 44.98,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 44.98,
+      "end": 68.08,
+      "music_label": "verse"
+    },
+    {
+      "start": 68.08,
+      "end": 78.34,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 78.34,
+      "end": 83.48,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 83.48,
+      "end": 106.25,
+      "music_label": "chorus"
+    },
+    {
+      "start": 106.25,
+      "end": 111.71,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 111.71,
+      "end": 121.98,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 121.98,
+      "end": 145.08,
+      "music_label": "verse"
+    },
+    {
+      "start": 145.08,
+      "end": 155.35,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 155.35,
+      "end": 160.48,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 160.48,
+      "end": 183.26,
+      "music_label": "chorus"
+    },
+    {
+      "start": 183.26,
+      "end": 188.55,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 188.55,
+      "end": 196.25,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 196.25,
+      "end": 219.52,
+      "music_label": "solo"
+    },
+    {
+      "start": 219.52,
+      "end": 266.28,
+      "music_label": "chorus"
+    },
+    {
+      "start": 266.28,
+      "end": 275.83,
+      "music_label": "outro"
+    },
+    {
+      "start": 275.83,
+      "end": 280.29,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "nesshokustarmine",
+    "title": "nesshokustarmine",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/nesshokustarmine.mp3",
+    "bpm": 94,
+    "call_bpm": 94,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  }
+}

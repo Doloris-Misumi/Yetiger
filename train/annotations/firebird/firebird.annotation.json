@@ -1,0 +1,127 @@
+{
+  "segments": [
+    {
+      "start": 1.48,
+      "end": 36.97,
+      "music_label": "verse"
+    },
+    {
+      "start": 36.97,
+      "end": 40.36,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 40.36,
+      "end": 53.16,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 53.16,
+      "end": 65.96,
+      "music_label": "verse"
+    },
+    {
+      "start": 65.96,
+      "end": 78.76,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 78.76,
+      "end": 83.56,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 83.56,
+      "end": 96.36,
+      "music_label": "chorus"
+    },
+    {
+      "start": 96.36,
+      "end": 112.36,
+      "music_label": "chorus"
+    },
+    {
+      "start": 112.36,
+      "end": 118.76,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 118.76,
+      "end": 126.76,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 126.76,
+      "end": 139.56,
+      "music_label": "verse"
+    },
+    {
+      "start": 139.56,
+      "end": 149.16,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 149.16,
+      "end": 157.16,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 157.16,
+      "end": 187.56,
+      "music_label": "chorus"
+    },
+    {
+      "start": 187.56,
+      "end": 190.76,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 190.76,
+      "end": 200.36,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 200.36,
+      "end": 219.56,
+      "music_label": "solo"
+    },
+    {
+      "start": 219.56,
+      "end": 264.36,
+      "music_label": "bridge"
+    },
+    {
+      "start": 264.36,
+      "end": 293.16,
+      "music_label": "chorus"
+    },
+    {
+      "start": 293.16,
+      "end": 299.56,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 299.56,
+      "end": 315.35,
+      "music_label": "outro"
+    },
+    {
+      "start": 315.35,
+      "end": 324.17,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "firebird",
+    "title": "firebird",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/firebird.mp3",
+    "bpm": 75,
+    "call_bpm": 75,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  }
+}

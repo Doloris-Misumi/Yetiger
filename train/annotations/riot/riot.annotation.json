@@ -1,0 +1,127 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 7.61,
+      "music_label": "intro"
+    },
+    {
+      "start": 7.61,
+      "end": 29.9,
+      "music_label": "chorus"
+    },
+    {
+      "start": 29.9,
+      "end": 47.04,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 47.04,
+      "end": 74.46,
+      "music_label": "verse"
+    },
+    {
+      "start": 74.46,
+      "end": 81.33,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 81.33,
+      "end": 88.19,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 88.19,
+      "end": 98.46,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 98.46,
+      "end": 117.33,
+      "music_label": "chorus"
+    },
+    {
+      "start": 117.33,
+      "end": 120.76,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 120.76,
+      "end": 137.9,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 137.9,
+      "end": 165.32,
+      "music_label": "verse"
+    },
+    {
+      "start": 165.32,
+      "end": 172.19,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 172.19,
+      "end": 180.76,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 180.76,
+      "end": 199.62,
+      "music_label": "chorus"
+    },
+    {
+      "start": 199.62,
+      "end": 203.04,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 203.04,
+      "end": 220.18,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 220.18,
+      "end": 245.47,
+      "music_label": "solo"
+    },
+    {
+      "start": 245.47,
+      "end": 259.62,
+      "music_label": "chorus"
+    },
+    {
+      "start": 259.62,
+      "end": 278.47,
+      "music_label": "chorus"
+    },
+    {
+      "start": 278.47,
+      "end": 281.91,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 281.91,
+      "end": 297.5,
+      "music_label": "outro"
+    },
+    {
+      "start": 297.5,
+      "end": 301.5,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "riot",
+    "title": "riot",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/riot.mp3",
+    "bpm": 140,
+    "call_bpm": 70.0,
+    "call_bar_multiplier": 0.5,
+    "meter": "4/4"
+  }
+}

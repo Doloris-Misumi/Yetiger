@@ -1,0 +1,92 @@
+{
+  "segments": [
+    {
+      "start": 0.55,
+      "end": 25.63,
+      "music_label": "intro"
+    },
+    {
+      "start": 25.63,
+      "end": 56.28,
+      "music_label": "verse"
+    },
+    {
+      "start": 56.28,
+      "end": 66.83,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 66.83,
+      "end": 74.23,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 74.23,
+      "end": 95.49,
+      "music_label": "chorus"
+    },
+    {
+      "start": 95.49,
+      "end": 111.83,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 111.83,
+      "end": 142.04,
+      "music_label": "verse"
+    },
+    {
+      "start": 142.04,
+      "end": 152.81,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 152.81,
+      "end": 159.97,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 159.97,
+      "end": 179.57,
+      "music_label": "chorus"
+    },
+    {
+      "start": 179.57,
+      "end": 186.61,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 186.61,
+      "end": 201.14,
+      "music_label": "solo"
+    },
+    {
+      "start": 201.14,
+      "end": 236.98,
+      "music_label": "chorus"
+    },
+    {
+      "start": 236.98,
+      "end": 251.09,
+      "music_label": "outro"
+    },
+    {
+      "start": 251.09,
+      "end": 256.4,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "seishuntobecontinued",
+    "title": "seishuntobecontinued",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/seishuntobecontinued.mp3",
+    "bpm": 133,
+    "call_bpm": 66.5,
+    "call_bar_multiplier": 0.5,
+    "meter": "4/4"
+  }
+}

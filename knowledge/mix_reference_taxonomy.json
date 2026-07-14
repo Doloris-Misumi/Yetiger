@@ -1,0 +1,424 @@
+{
+  "version": "0.1.0",
+  "source": {
+    "name": "MixAndCall mix page",
+    "url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+    "accessed": "2026-06-29",
+    "note": "Reference taxonomy only. This file intentionally does not copy full chant text."
+  },
+  "use_policy": {
+    "default_product_layer": "call_mix_library.json",
+    "this_file": "reference and curation backlog",
+    "recommendation": "Move entries into the executable library only after local validation of duration, context, risk, and live-style policy."
+  },
+  "families": [
+    {
+      "id": "core_language_mix",
+      "display_name": "Core language MIX",
+      "description": "Common four-bar full MIX families.",
+      "local_status": "partial",
+      "local_actions": [
+        "standard_mix",
+        "japanese_mix",
+        "ainu_mix"
+      ],
+      "candidate_actions": [
+        {
+          "id": "chinese_mix",
+          "display_name": "Chinese MIX",
+          "priority": 1,
+          "recommended_category": "mix",
+          "recommended_risk": "medium",
+          "recommended_bars": [
+            4
+          ],
+          "enabled_by_default": false,
+          "source_heading": "中文mix [ 中国語mix ] [ チャイニーズmix ]"
+        }
+      ]
+    },
+    {
+      "id": "core_timing_variants",
+      "display_name": "Core timing variants",
+      "description": "Lead-in, first half, second half, reverse打ち, +2 bars, and 12-prefix starts.",
+      "local_status": "partial",
+      "local_actions": [
+        "mix_leadin_aaa_ikuzo",
+        "standard_mix_first_half",
+        "standard_mix_second_half",
+        "japanese_mix_second_half",
+        "ainu_second_half_mix",
+        "standard_mix_long",
+        "japanese_mix_long",
+        "ainu_mix_long"
+      ],
+      "candidate_actions": [
+        {
+          "id": "standard_mix_reverse",
+          "display_name": "Standard MIX Reverse",
+          "priority": 1,
+          "recommended_category": "mix",
+          "recommended_risk": "medium",
+          "recommended_bars": [
+            4
+          ],
+          "enabled_by_default": false,
+          "source_heading": "スタンダードmix逆打ち"
+        },
+        {
+          "id": "japanese_mix_reverse",
+          "display_name": "Japanese MIX Reverse",
+          "priority": 1,
+          "recommended_category": "mix",
+          "recommended_risk": "medium",
+          "recommended_bars": [
+            4
+          ],
+          "enabled_by_default": false,
+          "source_heading": "ジャパニーズmix逆打ち"
+        },
+        {
+          "id": "standard_12_taiga_mix",
+          "display_name": "12 Taiga Standard MIX",
+          "priority": 2,
+          "recommended_category": "mix",
+          "recommended_risk": "medium",
+          "recommended_bars": [
+            4,
+            5
+          ],
+          "enabled_by_default": false,
+          "source_heading": "12Taiga [ スタンダードmix（12タイガー+タイガーファイヤー始動） ]"
+        },
+        {
+          "id": "japanese_12_tora_mix",
+          "display_name": "12 Tora Japanese MIX",
+          "priority": 2,
+          "recommended_category": "mix",
+          "recommended_risk": "medium",
+          "recommended_bars": [
+            4,
+            5
+          ],
+          "enabled_by_default": false,
+          "source_heading": "12Tora [ ジャパニーズmix（12虎+虎火始動） ]"
+        }
+      ]
+    },
+    {
+      "id": "speed_variants",
+      "display_name": "Speed variants",
+      "description": "Double-speed, reverse double-speed, and cancel-to-double-speed families.",
+      "local_status": "partial",
+      "local_actions": [
+        "std_mix_kouhan_dt",
+        "japanese_mix_second_half_double_time",
+        "jp_mix_seigyaku_dt"
+      ],
+      "candidate_actions": [
+        {
+          "id": "standard_mix_double_time",
+          "display_name": "Standard MIX Double Time",
+          "priority": 1,
+          "recommended_category": "mix",
+          "recommended_risk": "medium",
+          "recommended_bars": [
+            2
+          ],
+          "enabled_by_default": true,
+          "source_heading": "倍速英语"
+        },
+        {
+          "id": "japanese_mix_double_time",
+          "display_name": "Japanese MIX Double Time",
+          "priority": 1,
+          "recommended_category": "mix",
+          "recommended_risk": "medium",
+          "recommended_bars": [
+            2
+          ],
+          "enabled_by_default": true,
+          "source_heading": "倍速日语"
+        },
+        {
+          "id": "ainu_mix_double_time",
+          "display_name": "Ainu MIX Double Time",
+          "priority": 1,
+          "recommended_category": "mix",
+          "recommended_risk": "medium",
+          "recommended_bars": [
+            2
+          ],
+          "enabled_by_default": true,
+          "source_heading": "倍速阿伊努语"
+        },
+        {
+          "id": "chinese_mix_double_time",
+          "display_name": "Chinese MIX Double Time",
+          "priority": 2,
+          "recommended_category": "mix",
+          "recommended_risk": "medium",
+          "recommended_bars": [
+            2
+          ],
+          "enabled_by_default": false,
+          "source_heading": "倍速中文"
+        }
+      ]
+    },
+    {
+      "id": "triple_mix",
+      "display_name": "Triple MIX",
+      "description": "Three-part chained MIX families for longer high-energy gaps.",
+      "local_status": "partial",
+      "local_actions": [
+        "kaho_sanren_mix"
+      ],
+      "candidate_actions": [
+        {
+          "id": "basic_sanren_mix",
+          "display_name": "Basic Triple MIX",
+          "priority": 1,
+          "recommended_category": "mix",
+          "recommended_risk": "high",
+          "recommended_bars": [
+            8,
+            12
+          ],
+          "enabled_by_default": false,
+          "source_heading": "基本三连"
+        },
+        {
+          "id": "chinese_sanren_mix",
+          "display_name": "Chinese Triple MIX",
+          "priority": 2,
+          "recommended_category": "mix",
+          "recommended_risk": "high",
+          "recommended_bars": [
+            8,
+            12
+          ],
+          "enabled_by_default": false,
+          "source_heading": "中文三连 [ 中国語三連MIX ]"
+        }
+      ]
+    },
+    {
+      "id": "variable_mix",
+      "display_name": "Variable MIX",
+      "description": "Myohon, driver, wiper, Ainu-Japanese variable, terminal variable and related expandable phrases.",
+      "local_status": "partial",
+      "local_actions": [
+        "myhontousuke",
+        "myohon_activation",
+        "ainu_kahen_mix",
+        "shuumaku_kahen_mix",
+        "ietora_konzetsu_mix"
+      ],
+      "candidate_actions": [
+        {
+          "id": "myohon_driver_kahen",
+          "display_name": "Myohon Driver Variable",
+          "priority": 2,
+          "recommended_category": "mix",
+          "recommended_risk": "high",
+          "recommended_bars": [
+            4,
+            6
+          ],
+          "enabled_by_default": false,
+          "source_heading": "短版秒本驱动器广场 [ ミョーホンドライバー広場(通常尺) ] [ ミョーホンドライバー可変 ]"
+        },
+        {
+          "id": "ainu_japanese_kahen",
+          "display_name": "Ainu Japanese Variable MIX",
+          "priority": 2,
+          "recommended_category": "mix",
+          "recommended_risk": "high",
+          "recommended_bars": [
+            8
+          ],
+          "enabled_by_default": false,
+          "source_heading": "阿伊努日可变mix [ アイヌ日可変 ]"
+        }
+      ]
+    },
+    {
+      "id": "koujou_speech",
+      "display_name": "Koujou and speech-style calls",
+      "description": "Long spoken calls, confession-style calls, and named speech templates.",
+      "local_status": "partial",
+      "local_actions": [
+        "gachikoi_koujou",
+        "bismarck_mix",
+        "bismarck_mix_first_half",
+        "bismarck+kanzenseniki_mix"
+      ],
+      "candidate_actions": [
+        {
+          "id": "short_gachikoi_koujou",
+          "display_name": "Short Gachikoi Koujou",
+          "priority": 2,
+          "recommended_category": "mix",
+          "recommended_risk": "high",
+          "recommended_bars": [
+            4
+          ],
+          "enabled_by_default": false,
+          "source_heading": "ショートガチ恋口上"
+        },
+        {
+          "id": "rocket_dan_koujou",
+          "display_name": "Rocket-dan Koujou",
+          "priority": 3,
+          "recommended_category": "mix",
+          "recommended_risk": "high",
+          "recommended_bars": [
+            8,
+            16
+          ],
+          "enabled_by_default": false,
+          "source_heading": "火箭队口上 [ ロケット団口上#1 ]"
+        }
+      ]
+    },
+    {
+      "id": "thematic_meme_mix",
+      "display_name": "Thematic and meme MIX",
+      "description": "Named topic-specific or fandom-specific phrases. Keep reference-only until a profile explicitly enables them.",
+      "local_status": "partial",
+      "local_actions": [
+        "hogwarts_mix",
+        "lin_xiu_mix",
+        "pan_mix",
+        "chikipa_mix",
+        "sekai_konton_mix",
+        "sekai_konton_mix_first_half",
+        "popipa_mix",
+        "bandor_mix",
+        "takamatsu_mix"
+      ],
+      "candidate_actions": [
+        {
+          "id": "encho_mix",
+          "display_name": "Encho MIX",
+          "priority": 2,
+          "recommended_category": "mix",
+          "recommended_risk": "high",
+          "recommended_bars": [
+            4
+          ],
+          "enabled_by_default": false,
+          "source_heading": "园长mix [ 園長MIX ]"
+        },
+        {
+          "id": "yami_mix",
+          "display_name": "Yami MIX",
+          "priority": 2,
+          "recommended_category": "mix",
+          "recommended_risk": "high",
+          "recommended_bars": [
+            4
+          ],
+          "enabled_by_default": false,
+          "source_heading": "闇mix"
+        },
+        {
+          "id": "kurofuku_mix",
+          "display_name": "Kurofuku MIX",
+          "priority": 2,
+          "recommended_category": "mix",
+          "recommended_risk": "high",
+          "recommended_bars": [
+            4,
+            8
+          ],
+          "enabled_by_default": false,
+          "source_heading": "黑服mix [ 黒服mix ]"
+        }
+      ]
+    },
+    {
+      "id": "foreign_language_expansion",
+      "display_name": "Foreign-language expansion MIX",
+      "description": "Spanish, German, Italian, Korean, Portuguese, Vietnamese, Arabic, Latin, Sanskrit, Nepalese and related language variants.",
+      "local_status": "mostly_missing",
+      "local_actions": [],
+      "candidate_actions": [
+        {
+          "id": "spanish_mix",
+          "display_name": "Spanish MIX",
+          "priority": 2,
+          "recommended_category": "mix",
+          "recommended_risk": "medium",
+          "recommended_bars": [
+            4
+          ],
+          "enabled_by_default": false,
+          "source_heading": "西班牙语mix [ スペイン語mix ]"
+        },
+        {
+          "id": "german_mix",
+          "display_name": "German MIX",
+          "priority": 2,
+          "recommended_category": "mix",
+          "recommended_risk": "medium",
+          "recommended_bars": [
+            4
+          ],
+          "enabled_by_default": false,
+          "source_heading": "德语mix [ ドイツ語mix ]"
+        },
+        {
+          "id": "italian_mix",
+          "display_name": "Italian MIX",
+          "priority": 2,
+          "recommended_category": "mix",
+          "recommended_risk": "medium",
+          "recommended_bars": [
+            4
+          ],
+          "enabled_by_default": false,
+          "source_heading": "意大利语mix [ イタリア語mix ]"
+        },
+        {
+          "id": "korean_mix",
+          "display_name": "Korean MIX",
+          "priority": 3,
+          "recommended_category": "mix",
+          "recommended_risk": "medium",
+          "recommended_bars": [
+            4
+          ],
+          "enabled_by_default": false,
+          "source_heading": "韩国语mix [ 韓国語mix ]"
+        },
+        {
+          "id": "portuguese_mix",
+          "display_name": "Portuguese MIX",
+          "priority": 3,
+          "recommended_category": "mix",
+          "recommended_risk": "medium",
+          "recommended_bars": [
+            4
+          ],
+          "enabled_by_default": false,
+          "source_heading": "葡萄牙语mix [ ポルトガル語mix ] [ ポーチュギーズmix ]"
+        },
+        {
+          "id": "vietnamese_mix",
+          "display_name": "Vietnamese MIX",
+          "priority": 3,
+          "recommended_category": "mix",
+          "recommended_risk": "medium",
+          "recommended_bars": [
+            4
+          ],
+          "enabled_by_default": false,
+          "source_heading": "越南语mix [ ベトナム語mix ] [ ビエトナミーズmix ]"
+        }
+      ]
+    }
+  ]
+}
+

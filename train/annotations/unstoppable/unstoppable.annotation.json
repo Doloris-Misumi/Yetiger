@@ -1,0 +1,108 @@
+{
+  "segments": [
+    {
+      "start": 1.5,
+      "end": 25.5,
+      "music_label": "intro"
+    },
+    {
+      "start": 25.5,
+      "end": 36.8,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 36.8,
+      "end": 48.08,
+      "music_label": "verse"
+    },
+    {
+      "start": 48.08,
+      "end": 56.56,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 56.56,
+      "end": 62.2,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 62.2,
+      "end": 84.79,
+      "music_label": "chorus"
+    },
+    {
+      "start": 84.79,
+      "end": 87.62,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 87.62,
+      "end": 96.1,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 96.1,
+      "end": 107.38,
+      "music_label": "verse"
+    },
+    {
+      "start": 107.38,
+      "end": 117.27,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 117.27,
+      "end": 120.11,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 120.11,
+      "end": 137.04,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 137.04,
+      "end": 148.33,
+      "music_label": "solo"
+    },
+    {
+      "start": 148.33,
+      "end": 175.15,
+      "music_label": "bridge"
+    },
+    {
+      "start": 175.15,
+      "end": 197.73,
+      "music_label": "chorus"
+    },
+    {
+      "start": 197.73,
+      "end": 200.55,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 200.55,
+      "end": 226.01,
+      "music_label": "outro"
+    },
+    {
+      "start": 226.01,
+      "end": 230.3,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "unstoppable",
+    "title": "unstoppable",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/unstoppable.mp3",
+    "bpm": 171,
+    "call_bpm": 85.5,
+    "call_bar_multiplier": 0.5,
+    "meter": "4/4"
+  },
+  "call_spans": []
+}

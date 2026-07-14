@@ -1,0 +1,318 @@
+{
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "hitoshizuku",
+    "title": "壱雫空",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/hitoshizuku.mp3",
+    "bpm": 102,
+    "call_bpm": 102,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  },
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 10.95,
+      "music_label": "chorus",
+      "notes": ""
+    },
+    {
+      "start": 10.95,
+      "end": 18.02,
+      "music_label": "instrumental_break",
+      "notes": ""
+    },
+    {
+      "start": 18.02,
+      "end": 36.81,
+      "music_label": "verse",
+      "notes": ""
+    },
+    {
+      "start": 36.81,
+      "end": 50.94,
+      "music_label": "pre_chorus",
+      "notes": ""
+    },
+    {
+      "start": 50.94,
+      "end": 60.37,
+      "music_label": "pre_chorus_build",
+      "notes": ""
+    },
+    {
+      "start": 60.37,
+      "end": 79.19,
+      "music_label": "chorus",
+      "notes": ""
+    },
+    {
+      "start": 79.19,
+      "end": 80.37,
+      "music_label": "post_chorus",
+      "notes": ""
+    },
+    {
+      "start": 80.37,
+      "end": 89.78,
+      "music_label": "instrumental_break",
+      "notes": ""
+    },
+    {
+      "start": 89.78,
+      "end": 108.6,
+      "music_label": "bridge",
+      "notes": ""
+    },
+    {
+      "start": 108.6,
+      "end": 122.72,
+      "music_label": "pre_chorus",
+      "notes": ""
+    },
+    {
+      "start": 122.72,
+      "end": 132.14,
+      "music_label": "pre_chorus_build",
+      "notes": ""
+    },
+    {
+      "start": 132.14,
+      "end": 173.31,
+      "music_label": "chorus",
+      "notes": ""
+    },
+    {
+      "start": 173.31,
+      "end": 185.07,
+      "music_label": "outro",
+      "notes": ""
+    },
+    {
+      "start": 185.07,
+      "end": 189.59,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "call_spans": [
+    {
+      "start": 1.55,
+      "end": 6.25,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "clap"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 6.25,
+      "end": 10.95,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "name_call"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 10.95,
+      "end": 15.67,
+      "call_role": "mix",
+      "recommended_actions": [
+        "mix_leadin_aaa_ikuzo"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 15.67,
+      "end": 18.02,
+      "call_role": "mix",
+      "recommended_actions": [
+        "std_mix_kouhan_dt"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 18.02,
+      "end": 25.08,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "clap"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 25.08,
+      "end": 27.4,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "name_call"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 27.4,
+      "end": 36.81,
+      "call_role": "mix",
+      "recommended_actions": [
+        "tsunagaridai_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 36.81,
+      "end": 41.52,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "ppph"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 41.52,
+      "end": 46.23,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "hai_hai"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 46.23,
+      "end": 50.94,
+      "call_role": "mix",
+      "recommended_actions": [
+        "japanese_mix_second_half"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 50.94,
+      "end": 55.65,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "sing_along"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 55.65,
+      "end": 60.37,
+      "call_role": "mix",
+      "recommended_actions": [
+        "ietora"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 60.37,
+      "end": 69.78,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "ali_shizi"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 69.78,
+      "end": 79.19,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "heibai_shuangyi"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 80.37,
+      "end": 89.78,
+      "call_role": "mix",
+      "recommended_actions": [
+        "chikipa_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 89.78,
+      "end": 108.6,
+      "call_role": "mix",
+      "recommended_actions": [
+        "ietora_konzetsu_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 108.6,
+      "end": 113.31,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "ppph"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 113.31,
+      "end": 118.01,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "hai_hai"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 118.01,
+      "end": 122.72,
+      "call_role": "mix",
+      "recommended_actions": [
+        "ainu_second_half_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 122.72,
+      "end": 127.43,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "sing_along"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 127.43,
+      "end": 132.14,
+      "call_role": "mix",
+      "recommended_actions": [
+        "ietora"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 133.32,
+      "end": 152.14,
+      "call_role": "mix",
+      "recommended_actions": [
+        "sekai_konton_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 163.9,
+      "end": 173.31,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "clap"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 173.31,
+      "end": 182.72,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "sing_along"
+      ],
+      "notes": ""
+    }
+  ]
+}

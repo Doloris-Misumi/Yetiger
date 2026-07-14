@@ -1,0 +1,71 @@
+{
+  "segments": [
+    {
+      "start": 0.2,
+      "end": 29.02,
+      "music_label": "intro"
+    },
+    {
+      "start": 29.02,
+      "end": 48.21,
+      "music_label": "verse"
+    },
+    {
+      "start": 48.21,
+      "end": 67.4,
+      "music_label": "chorus"
+    },
+    {
+      "start": 67.4,
+      "end": 86.63,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 86.63,
+      "end": 105.82,
+      "music_label": "verse"
+    },
+    {
+      "start": 105.82,
+      "end": 125.02,
+      "music_label": "chorus"
+    },
+    {
+      "start": 125.02,
+      "end": 144.22,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 144.22,
+      "end": 156.22,
+      "music_label": "bridge"
+    },
+    {
+      "start": 156.22,
+      "end": 194.62,
+      "music_label": "chorus"
+    },
+    {
+      "start": 194.62,
+      "end": 228.23,
+      "music_label": "outro"
+    },
+    {
+      "start": 228.23,
+      "end": 235.75,
+      "music_label": "outro"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "marunouchisadistic",
+    "title": "marunouchisadistic",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/marunouchisadistic.mp3",
+    "bpm": 100,
+    "call_bpm": 100,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  }
+}

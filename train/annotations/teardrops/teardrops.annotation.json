@@ -1,0 +1,433 @@
+{
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "teardrops",
+    "title": "Teardrops",
+    "artist": "Poppin'Party",
+    "franchise": "bang_dream",
+    "audio_path": "train/songs/Teardrops.mp3",
+    "bpm": 95,
+    "call_bpm": 95,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  },
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 10.55,
+      "music_label": "intro",
+      "notes": ""
+    },
+    {
+      "start": 10.55,
+      "end": 20.65,
+      "music_label": "chorus",
+      "notes": ""
+    },
+    {
+      "start": 20.65,
+      "end": 23.18,
+      "music_label": "instrumental_break",
+      "notes": ""
+    },
+    {
+      "start": 23.18,
+      "end": 43.4,
+      "music_label": "verse",
+      "notes": ""
+    },
+    {
+      "start": 43.4,
+      "end": 63.61,
+      "music_label": "pre_chorus",
+      "notes": ""
+    },
+    {
+      "start": 63.61,
+      "end": 66.13,
+      "music_label": "pre_chorus_build",
+      "notes": ""
+    },
+    {
+      "start": 66.13,
+      "end": 83.82,
+      "music_label": "chorus",
+      "notes": ""
+    },
+    {
+      "start": 83.82,
+      "end": 88.86,
+      "music_label": "instrumental_break",
+      "notes": ""
+    },
+    {
+      "start": 88.86,
+      "end": 109.07,
+      "music_label": "verse",
+      "notes": ""
+    },
+    {
+      "start": 109.07,
+      "end": 129.28,
+      "music_label": "pre_chorus",
+      "notes": ""
+    },
+    {
+      "start": 129.28,
+      "end": 131.84,
+      "music_label": "pre_chorus_build",
+      "notes": ""
+    },
+    {
+      "start": 131.84,
+      "end": 149.5,
+      "music_label": "chorus",
+      "notes": ""
+    },
+    {
+      "start": 149.5,
+      "end": 159.62,
+      "music_label": "instrumental_break",
+      "notes": ""
+    },
+    {
+      "start": 159.62,
+      "end": 167.19,
+      "music_label": "solo",
+      "notes": ""
+    },
+    {
+      "start": 167.19,
+      "end": 179.82,
+      "music_label": "bridge",
+      "notes": ""
+    },
+    {
+      "start": 179.82,
+      "end": 205.09,
+      "music_label": "chorus",
+      "notes": ""
+    },
+
+    {
+      "start": 205.09,
+      "end": 210.1,
+      "music_label": "outro",
+      "notes": ""
+    },
+    {
+      "start": 210.1,
+      "end": 217.23,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "call_spans": [
+    {
+      "start": 0.0,
+      "end": 0.45,
+      "call_role": "keepspace",
+      "recommended_actions": [],
+      "notes": ""
+    },
+    {
+      "start": 0.45,
+      "end": 5.49,
+      "call_role": "mix",
+      "recommended_actions": [
+        "myohon_activation"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 5.49,
+      "end": 10.55,
+      "call_role": "mix",
+      "recommended_actions": [
+        "myhontousuke"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 10.55,
+      "end": 15.6,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "clap"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 15.6,
+      "end": 20.65,
+      "call_role": "mix",
+      "recommended_actions": [
+        "standard_mix_first_half"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 20.65,
+      "end": 23.18,
+      "call_role": "mix",
+      "recommended_actions": [
+        "std_mix_kouhan_dt"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 23.18,
+      "end": 43.4,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "sing_along"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 43.4,
+      "end": 48.44,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "ppph"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 48.44,
+      "end": 50.97,
+      "call_role": "keepspace",
+      "recommended_actions": [],
+      "notes": ""
+    },
+    {
+      "start": 50.97,
+      "end": 53.49,
+      "call_role": "mix",
+      "recommended_actions": [
+        "mouikai"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 53.49,
+      "end": 58.54,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "ppph"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 58.54,
+      "end": 63.61,
+      "call_role": "keepspace",
+      "recommended_actions": [],
+      "notes": ""
+    },
+    {
+      "start": 63.61,
+      "end": 66.13,
+      "call_role": "mix",
+      "recommended_actions": [
+        "ietora"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 66.13,
+      "end": 76.24,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "long_zhi_mao"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 76.24,
+      "end": 86.35,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "lei_she"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 86.35,
+      "end": 88.86,
+      "call_role": "mix",
+      "recommended_actions": [
+        "japanese_mix_second_half_double_time"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 88.86,
+      "end": 109.07,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "sing_along"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 109.07,
+      "end": 114.13,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "ppph"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 114.13,
+      "end": 116.65,
+      "call_role": "keepspace",
+      "recommended_actions": [],
+      "notes": ""
+    },
+    {
+      "start": 116.65,
+      "end": 119.19,
+      "call_role": "mix",
+      "recommended_actions": [
+        "mouikai"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 119.19,
+      "end": 124.23,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "ppph"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 124.23,
+      "end": 129.28,
+      "call_role": "keepspace",
+      "recommended_actions": [],
+      "notes": ""
+    },
+    {
+      "start": 129.28,
+      "end": 131.84,
+      "call_role": "mix",
+      "recommended_actions": [
+        "ietora"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 131.84,
+      "end": 136.87,
+      "call_role": "keepspace",
+      "recommended_actions": [],
+      "notes": ""
+    },
+    {
+      "start": 136.87,
+      "end": 141.91,
+      "call_role": "mix",
+      "recommended_actions": [
+        "aiai_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 141.91,
+      "end": 149.5,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "sing_along"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 149.5,
+      "end": 167.19,
+      "call_role": "mix",
+      "recommended_actions": [
+        "chikipa_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 167.19,
+      "end": 172.24,
+      "call_role": "mix",
+      "recommended_actions": [
+        "highclap"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 172.24,
+      "end": 177.28,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "clap"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 177.28,
+      "end": 179.82,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "vocal_chant"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 179.82,
+      "end": 184.86,
+      "call_role": "keepspace",
+      "recommended_actions": [],
+      "notes": ""
+    },
+    {
+      "start": 184.86,
+      "end": 189.91,
+      "call_role": "mix",
+      "recommended_actions": [
+        "aiai_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 189.91,
+      "end": 197.5,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "sing_along"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 197.5,
+      "end": 207.57,
+      "call_role": "keepspace",
+      "recommended_actions": [],
+      "notes": ""
+    },
+    {
+      "start": 207.57,
+      "end": 212.59,
+      "call_role": "mix",
+      "recommended_actions": [
+        "wakage_no_itari_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 212.59,
+      "end": 217.23,
+      "call_role": "keepspace",
+      "recommended_actions": [],
+      "notes": ""
+    }
+  ]
+}

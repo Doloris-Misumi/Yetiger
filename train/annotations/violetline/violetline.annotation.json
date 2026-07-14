@@ -1,0 +1,112 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 4.37,
+      "music_label": "intro"
+    },
+    {
+      "start": 4.37,
+      "end": 25.97,
+      "music_label": "chorus"
+    },
+    {
+      "start": 25.97,
+      "end": 45.17,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 45.17,
+      "end": 64.37,
+      "music_label": "verse"
+    },
+    {
+      "start": 64.37,
+      "end": 73.97,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 73.97,
+      "end": 83.57,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 83.57,
+      "end": 102.77,
+      "music_label": "chorus"
+    },
+    {
+      "start": 102.77,
+      "end": 119.57,
+      "music_label": "chorus"
+    },
+    {
+      "start": 119.57,
+      "end": 129.17,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 129.17,
+      "end": 148.38,
+      "music_label": "verse"
+    },
+    {
+      "start": 148.38,
+      "end": 157.36,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 157.36,
+      "end": 193.98,
+      "music_label": "chorus"
+    },
+    {
+      "start": 193.98,
+      "end": 198.77,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 198.77,
+      "end": 203.56,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 203.56,
+      "end": 223.97,
+      "music_label": "bridge"
+    },
+    {
+      "start": 223.97,
+      "end": 267.17,
+      "music_label": "chorus"
+    },
+    {
+      "start": 267.17,
+      "end": 276.77,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 276.77,
+      "end": 286.38,
+      "music_label": "outro"
+    },
+    {
+      "start": 286.38,
+      "end": 290.74,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "violetline",
+    "title": "violetline",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/violetline.mp3",
+    "bpm": 100,
+    "call_bpm": 100,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  }
+}

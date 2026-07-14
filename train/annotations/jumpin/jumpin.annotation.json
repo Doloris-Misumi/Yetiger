@@ -1,0 +1,127 @@
+{
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "jumpin",
+    "title": "Jumpin",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/Jumpin.mp3",
+    "bpm": 97,
+    "call_bpm": 97,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  },
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 0.7,
+      "music_label": "intro",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 0.7,
+      "end": 32.29,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 32.29,
+      "end": 42.77,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 42.77,
+      "end": 47.69,
+      "music_label": "post_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 47.69,
+      "end": 67.39,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 67.39,
+      "end": 87.08,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 87.08,
+      "end": 89.54,
+      "music_label": "post_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 89.54,
+      "end": 99.39,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 99.39,
+      "end": 119.07,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 119.07,
+      "end": 138.77,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 138.77,
+      "end": 141.25,
+      "music_label": "post_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 141.25,
+      "end": 160.94,
+      "music_label": "solo",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 160.94,
+      "end": 180.61,
+      "music_label": "bridge",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 180.61,
+      "end": 220.01,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct; merged_adjacent"
+    },
+    {
+      "start": 220.01,
+      "end": 222.47,
+      "music_label": "post_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 222.47,
+      "end": 242.15,
+      "music_label": "outro",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 242.15,
+      "end": 247.87,
+      "music_label": "end",
+      "notes": "manually_reviewed_from_struct; annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "call_spans": [],
+  "annotation": {
+    "annotator": "",
+    "reviewed": true,
+    "review_date": "2026-06-15",
+    "notes": "Structure-only annotation.",
+    "call_bpm": 97,
+    "call_bar_multiplier": 1.0
+  }
+}

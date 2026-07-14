@@ -1,0 +1,97 @@
+{
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "hachigatsunoif",
+    "title": "Hachigatsu no If",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/Hachigatsunoif.mp3",
+    "bpm": 120,
+    "call_bpm": 120,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  },
+  "segments": [
+    {
+      "start": 0.79,
+      "end": 16.79,
+      "music_label": "intro",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 16.79,
+      "end": 48.81,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 48.81,
+      "end": 58.81,
+      "music_label": "pre_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 58.81,
+      "end": 68.8,
+      "music_label": "pre_chorus_build",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 68.8,
+      "end": 100.81,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 100.81,
+      "end": 132.8,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 132.8,
+      "end": 152.79,
+      "music_label": "solo",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 152.79,
+      "end": 172.8,
+      "music_label": "bridge",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 172.8,
+      "end": 240.8,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 240.8,
+      "end": 244.8,
+      "music_label": "post_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 244.8,
+      "end": 270.8,
+      "music_label": "outro",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 270.8,
+      "end": 273.4,
+      "music_label": "end",
+      "notes": "manually_reviewed_from_struct; annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "call_spans": [],
+  "annotation": {
+    "annotator": "",
+    "reviewed": true,
+    "review_date": "2026-06-17",
+    "notes": "Structure-only annotation.",
+    "call_bpm": 120,
+    "call_bar_multiplier": 1.0
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "segments": [
+    {
+      "start": 0.67,
+      "end": 16.46,
+      "music_label": "intro"
+    },
+    {
+      "start": 16.46,
+      "end": 41.72,
+      "music_label": "verse"
+    },
+    {
+      "start": 41.72,
+      "end": 48.05,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 48.05,
+      "end": 54.36,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 54.36,
+      "end": 79.63,
+      "music_label": "chorus"
+    },
+    {
+      "start": 79.63,
+      "end": 92.26,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 92.26,
+      "end": 104.89,
+      "music_label": "verse"
+    },
+    {
+      "start": 104.89,
+      "end": 117.51,
+      "music_label": "verse"
+    },
+    {
+      "start": 117.51,
+      "end": 127.0,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 127.0,
+      "end": 130.16,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 130.16,
+      "end": 155.42,
+      "music_label": "chorus"
+    },
+    {
+      "start": 155.42,
+      "end": 168.04,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 168.04,
+      "end": 193.3,
+      "music_label": "solo"
+    },
+    {
+      "start": 193.3,
+      "end": 207.53,
+      "music_label": "bridge"
+    },
+    {
+      "start": 207.53,
+      "end": 226.46,
+      "music_label": "chorus"
+    },
+    {
+      "start": 226.46,
+      "end": 245.41,
+      "music_label": "chorus"
+    },
+    {
+      "start": 245.41,
+      "end": 273.45,
+      "music_label": "outro"
+    },
+    {
+      "start": 273.45,
+      "end": 281.94,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "hellowink",
+    "title": "hellowink",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/hellowink.mp3",
+    "bpm": 154,
+    "call_bpm": 77.0,
+    "call_bar_multiplier": 0.5,
+    "meter": "4/4"
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "segments": [
+    {
+      "start": 0.69,
+      "end": 19.89,
+      "music_label": "intro"
+    },
+    {
+      "start": 19.89,
+      "end": 41.85,
+      "music_label": "verse"
+    },
+    {
+      "start": 41.85,
+      "end": 50.09,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 50.09,
+      "end": 54.18,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 54.18,
+      "end": 84.35,
+      "music_label": "chorus"
+    },
+    {
+      "start": 84.35,
+      "end": 87.11,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 87.11,
+      "end": 89.83,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 89.83,
+      "end": 111.79,
+      "music_label": "verse"
+    },
+    {
+      "start": 111.79,
+      "end": 120.11,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 120.11,
+      "end": 124.12,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 124.12,
+      "end": 137.84,
+      "music_label": "chorus"
+    },
+    {
+      "start": 137.84,
+      "end": 154.29,
+      "music_label": "chorus"
+    },
+    {
+      "start": 154.29,
+      "end": 176.25,
+      "music_label": "bridge"
+    },
+    {
+      "start": 176.25,
+      "end": 183.1,
+      "music_label": "solo"
+    },
+    {
+      "start": 183.1,
+      "end": 213.27,
+      "music_label": "chorus"
+    },
+    {
+      "start": 213.27,
+      "end": 216.01,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 216.01,
+      "end": 229.74,
+      "music_label": "outro"
+    },
+    {
+      "start": 229.74,
+      "end": 242.4,
+      "music_label": "outro"
+    },
+    {
+      "start": 242.4,
+      "end": 245.44,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "hoshinoyakusoku",
+    "title": "hoshinoyakusoku",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/hoshinoyakusoku.mp3",
+    "bpm": 176,
+    "call_bpm": 88.0,
+    "call_bar_multiplier": 0.5,
+    "meter": "4/4"
+  }
+}

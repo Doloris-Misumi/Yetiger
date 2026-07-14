@@ -1,0 +1,82 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 11.92,
+      "music_label": "intro"
+    },
+    {
+      "start": 11.92,
+      "end": 57.57,
+      "music_label": "verse"
+    },
+    {
+      "start": 57.57,
+      "end": 79.11,
+      "music_label": "chorus"
+    },
+    {
+      "start": 79.11,
+      "end": 89.27,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 89.27,
+      "end": 99.4,
+      "music_label": "chorus"
+    },
+    {
+      "start": 99.4,
+      "end": 107.01,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 107.01,
+      "end": 127.29,
+      "music_label": "verse"
+    },
+    {
+      "start": 127.29,
+      "end": 147.56,
+      "music_label": "chorus"
+    },
+    {
+      "start": 147.56,
+      "end": 152.64,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 152.64,
+      "end": 165.31,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 165.31,
+      "end": 210.95,
+      "music_label": "chorus"
+    },
+    {
+      "start": 210.95,
+      "end": 232.49,
+      "music_label": "outro"
+    },
+    {
+      "start": 232.49,
+      "end": 234.68,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "georgettemegeorgetteyou",
+    "title": "georgettemegeorgetteyou",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/georgettemegeorgetteyou.mp3",
+    "bpm": 95,
+    "call_bpm": 95,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  }
+}

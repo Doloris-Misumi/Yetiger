@@ -1,0 +1,111 @@
+{
+  "segments": [
+    {
+      "start": 1.27,
+      "end": 17.04,
+      "music_label": "intro"
+    },
+    {
+      "start": 17.04,
+      "end": 31.05,
+      "music_label": "chorus"
+    },
+    {
+      "start": 31.05,
+      "end": 38.06,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 38.06,
+      "end": 66.09,
+      "music_label": "verse"
+    },
+    {
+      "start": 66.09,
+      "end": 73.09,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 73.09,
+      "end": 85.35,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 85.35,
+      "end": 113.39,
+      "music_label": "chorus"
+    },
+    {
+      "start": 113.39,
+      "end": 127.4,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 127.4,
+      "end": 141.41,
+      "music_label": "verse"
+    },
+    {
+      "start": 141.41,
+      "end": 151.93,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 151.93,
+      "end": 160.68,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 160.68,
+      "end": 188.71,
+      "music_label": "chorus"
+    },
+    {
+      "start": 188.71,
+      "end": 192.22,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 192.22,
+      "end": 227.25,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 227.25,
+      "end": 246.53,
+      "music_label": "bridge"
+    },
+    {
+      "start": 246.53,
+      "end": 290.32,
+      "music_label": "chorus"
+    },
+    {
+      "start": 290.32,
+      "end": 293.83,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 293.83,
+      "end": 307.84,
+      "music_label": "outro"
+    },
+    {
+      "start": 307.84,
+      "end": 313.28,
+      "music_label": "outro"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "ryuusencontorasuto",
+    "title": "ryuusencontorasuto",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/ryuusencontorasuto.mp3",
+    "bpm": 136,
+    "call_bpm": 68.0,
+    "call_bar_multiplier": 0.5,
+    "meter": "4/4"
+  }
+}

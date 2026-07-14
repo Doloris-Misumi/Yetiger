@@ -1,0 +1,92 @@
+{
+  "segments": [
+    {
+      "start": 0.42,
+      "end": 15.58,
+      "music_label": "intro"
+    },
+    {
+      "start": 15.58,
+      "end": 35.79,
+      "music_label": "verse"
+    },
+    {
+      "start": 35.79,
+      "end": 45.9,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 45.9,
+      "end": 56.0,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 56.0,
+      "end": 86.31,
+      "music_label": "chorus"
+    },
+    {
+      "start": 86.31,
+      "end": 96.44,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 96.44,
+      "end": 116.63,
+      "music_label": "verse"
+    },
+    {
+      "start": 116.63,
+      "end": 126.74,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 126.74,
+      "end": 136.84,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 136.84,
+      "end": 167.16,
+      "music_label": "chorus"
+    },
+    {
+      "start": 167.16,
+      "end": 177.26,
+      "music_label": "solo"
+    },
+    {
+      "start": 177.26,
+      "end": 199.98,
+      "music_label": "bridge"
+    },
+    {
+      "start": 199.98,
+      "end": 230.32,
+      "music_label": "chorus"
+    },
+    {
+      "start": 230.32,
+      "end": 240.45,
+      "music_label": "outro"
+    },
+    {
+      "start": 240.45,
+      "end": 245.25,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "shunkansummerday",
+    "title": "shunkansummerday",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/shunkansummerday.mp3",
+    "bpm": 95,
+    "call_bpm": 95,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  }
+}

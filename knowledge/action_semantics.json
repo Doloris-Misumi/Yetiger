@@ -1,0 +1,5823 @@
+{
+  "_description": "Structured semantic contracts for support actions. Action IDs are aligned to knowledge/call_mix_library.json.",
+  "_version": "0.2.0",
+  "_note": "Use hard filters for forbidden_structures and requires_context before applying score adjustments. source_library keeps the original library hints.",
+  "_source_library": "knowledge/call_mix_library.json",
+  "_id_aliases": {
+    "fufufu_call": "fufu_call",
+    "oioi": "oi_oi",
+    "popipa_pipopa": "popipapipopa",
+    "standard_mix_extended": "standard_mix_long",
+    "mix_leadin": "mix_leadin_aaa_ikuzo",
+    "bismarck_kanzenseniki_mix": "bismarck+kanzenseniki_mix",
+    "ainu_mix_half": "ainu_second_half_mix",
+    "ainu_mix_variable": "ainu_kahen_mix",
+    "standard_mix_double_time": "std_mix_kouhan_dt"
+  },
+  "_legacy_non_library_ids": [
+    "climax_call",
+    "encore_call"
+  ],
+  "actions": {
+    "keepspace": {
+      "display_name": "Keep Space",
+      "category": "keepspace",
+      "role": "keepspace",
+      "description": "Do nothing actively. Let the audience listen to the music without any call or action. This is not a failure — it's an intentional choice to let the song's own energy carry the moment.",
+      "when_to_use": "Verses, bridges, or any section where the lyrics or instrumental performance deserve full attention. Default action when nothing else fits.",
+      "when_not_to_use": "Choruses, especially the final chorus. Long instrumental breaks where the audience expects participation.",
+      "allowed_structures": [
+        "intro",
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build",
+        "chorus",
+        "post_chorus",
+        "instrumental",
+        "instrumental_break",
+        "solo",
+        "bridge",
+        "outro"
+      ],
+      "discouraged_structures": [
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "forbidden_structures": [],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "low",
+      "semantic_tags": [
+        "keepspace",
+        "risk_low",
+        "long",
+        "pre_chorus_fallback_only"
+      ],
+      "source_library": {
+        "best_context": [
+          "verse",
+          "end",
+          "quiet_listening_section",
+          "dense_vocal"
+        ],
+        "requires": {
+          "min_bars": 1,
+          "max_bars": 64,
+          "vocal_density": "any"
+        },
+        "duration": {
+          "preferred_bars": 4,
+          "strict_bars": false,
+          "can_compress": true,
+          "can_extend": true
+        },
+        "avoid": [],
+        "risk": "low",
+        "intensity": 0.0,
+        "typical_text": ""
+      },
+      "cultural_ties": {
+        "character_tie": "universal",
+        "franchise_tie": "universal"
+      },
+      "notes": [
+        "In pre-chorus and pre-chorus_build, keep space is allowed only as a fallback for dense vocals, restrained songs, or missing context; prefer MIX/rhythm calls for momentum."
+      ]
+    },
+    "standard_mix": {
+      "display_name": "Standard MIX",
+      "category": "mix",
+      "role": "mix",
+      "description": "The classic Japanese idol/anisong MIX chant pattern. A rapid-fire spoken chant that the audience performs during instrumental breaks. The MIX has a standard template (Aaa~ MIX! ...) known across the entire culture.",
+      "when_to_use": "Instrumental breaks (4-8 bars is standard). Intro if the song has a well-known intro MIX.",
+      "when_not_to_use": "Verses (clashes with lyrics). Pre-chorus (disrupts build-up). Outro. Short instrumental breaks under 2 bars.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "medium",
+      "semantic_tags": [
+        "mix",
+        "risk_medium",
+        "needs_low_vocal_density",
+        "solo_mix",
+        "clear_barline"
+      ],
+      "source_library": {
+        "best_context": [
+          "intro",
+          "instrumental_break",
+          "post_chorus_interlude"
+        ],
+        "requires": {
+          "min_bars": 4.0,
+          "max_bars": 4.0,
+          "vocal_density": "low",
+          "beat_stability": "high",
+          "allowed_bars": [
+            4
+          ]
+        },
+        "duration": {
+          "preferred_bars": 4,
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "quiet_ballad",
+          "important_lyric_line"
+        ],
+        "risk": "medium",
+        "intensity": 0.85,
+        "typical_text": "Aaa, yossha ikuzo! Tiger! Fire! Cyber! Fiber! Diver! Viber! Jya Jya!"
+      },
+      "cultural_ties": {
+        "character_tie": "universal",
+        "franchise_tie": "universal"
+      },
+      "notes": [
+        "Allowed in solo sections when the beat grid and bar count are clear; keep existing duration, risk, and context requirements."
+      ]
+    },
+    "standard_mix_long": {
+      "display_name": "Standard MIX +2-bar Extension",
+      "category": "mix",
+      "role": "mix",
+      "description": "Same as Standard MIX but with an extra 2 bars added. Used when the instrumental break is longer than 8 bars.",
+      "when_to_use": "Long instrumental breaks (10+ bars).",
+      "when_not_to_use": "Same constraints as Standard MIX. Short instrumental breaks.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "medium",
+      "semantic_tags": [
+        "mix",
+        "risk_medium",
+        "needs_low_vocal_density",
+        "solo_mix",
+        "clear_barline"
+      ],
+      "source_library": {
+        "best_context": [
+          "intro",
+          "instrumental_break",
+          "post_chorus_interlude",
+          "high_energy_break"
+        ],
+        "requires": {
+          "min_bars": 6.0,
+          "max_bars": 6.0,
+          "allowed_bars": [
+            6
+          ],
+          "vocal_density": "low",
+          "beat_stability": "high"
+        },
+        "duration": {
+          "preferred_bars": 6,
+          "preferred_counts": 24,
+          "count_unit": "beat",
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_6_bars",
+          "quiet_ballad"
+        ],
+        "risk": "medium",
+        "intensity": 0.87,
+        "typical_text": "Standard MIX long phrase; fill exact chant text after local validation."
+      },
+      "legacy_ids": [
+        "standard_mix_extended"
+      ],
+      "cultural_ties": {
+        "character_tie": "universal",
+        "franchise_tie": "universal"
+      },
+      "notes": [
+        "Allowed in solo sections when the beat grid and bar count are clear; keep existing duration, risk, and context requirements."
+      ]
+    },
+    "mix_leadin_aaa_ikuzo": {
+      "display_name": "MIX Lead-in Aaa Ikuzo",
+      "category": "mix",
+      "role": "mix",
+      "description": "A short MIX lead-in chant, often 'Aaa~ Ikuzo!' used to kick off a MIX or signal transition into a high-energy section.",
+      "when_to_use": "Very short instrumental breaks (1-2 bars). Transition into the first MIX of a song.",
+      "when_not_to_use": "Verses, choruses, outros.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "pre_chorus_build",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge",
+        "outro",
+        "pre_chorus"
+      ],
+      "forbidden_structures": [
+        "verse"
+      ],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "medium",
+      "semantic_tags": [
+        "mix",
+        "risk_medium",
+        "short",
+        "needs_low_vocal_density",
+        "solo_mix",
+        "clear_barline"
+      ],
+      "source_library": {
+        "best_context": [
+          "intro",
+          "instrumental_break",
+          "post_chorus_interlude",
+          "high_energy_break"
+        ],
+        "requires": {
+          "min_bars": 1.0,
+          "max_bars": 2.0,
+          "allowed_bars": [
+            1,
+            2
+          ],
+          "vocal_density": "low",
+          "beat_stability": "high"
+        },
+        "duration": {
+          "preferred_bars": 1,
+          "preferred_counts": 4,
+          "count_unit": "beat",
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_4_beats",
+          "quiet_ballad"
+        ],
+        "risk": "medium",
+        "intensity": 0.82,
+        "typical_text": "Aaa, yossha ikuzo!"
+      },
+      "legacy_ids": [
+        "mix_leadin"
+      ],
+      "cultural_ties": {
+        "character_tie": "universal",
+        "franchise_tie": "universal"
+      },
+      "notes": [
+        "Allowed in solo sections when the beat grid and bar count are clear; keep existing duration, risk, and context requirements."
+      ]
+    },
+    "standard_mix_first_half": {
+      "display_name": "Standard MIX First Half",
+      "category": "mix",
+      "role": "mix",
+      "description": "Only the first half of a Standard MIX. Used when the instrumental break is shorter than a full MIX allows.",
+      "when_to_use": "Short instrumental breaks (3-4 bars). Transitional instrumental sections.",
+      "when_not_to_use": "Full-length instrumental breaks where a complete MIX fits.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "medium",
+      "semantic_tags": [
+        "mix",
+        "risk_medium",
+        "short",
+        "needs_low_vocal_density",
+        "solo_mix",
+        "clear_barline"
+      ],
+      "source_library": {
+        "best_context": [
+          "intro",
+          "instrumental_break",
+          "post_chorus_interlude",
+          "high_energy_break"
+        ],
+        "requires": {
+          "min_bars": 2.0,
+          "max_bars": 2.0,
+          "allowed_bars": [
+            2
+          ],
+          "vocal_density": "low",
+          "beat_stability": "high"
+        },
+        "duration": {
+          "preferred_bars": 2,
+          "preferred_counts": 8,
+          "count_unit": "beat",
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_8_beats",
+          "quiet_ballad"
+        ],
+        "risk": "medium",
+        "intensity": 0.84,
+        "typical_text": "Aaa, yossha ikuzo! Tiger! Fire! Cyber! Fiber!"
+      },
+      "cultural_ties": {
+        "character_tie": "universal",
+        "franchise_tie": "universal"
+      },
+      "notes": [
+        "Allowed in solo sections when the beat grid and bar count are clear; keep existing duration, risk, and context requirements."
+      ]
+    },
+    "standard_mix_second_half": {
+      "display_name": "Standard MIX Second Half",
+      "category": "mix",
+      "role": "mix",
+      "description": "Standard MIX Second Half is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "medium",
+      "semantic_tags": [
+        "mix",
+        "risk_medium",
+        "short",
+        "needs_low_vocal_density",
+        "solo_mix",
+        "clear_barline"
+      ],
+      "source_library": {
+        "best_context": [
+          "intro",
+          "instrumental_break",
+          "post_chorus_interlude",
+          "high_energy_break"
+        ],
+        "requires": {
+          "min_bars": 2.0,
+          "max_bars": 2.0,
+          "vocal_density": "low",
+          "beat_stability": "high",
+          "allowed_bars": [
+            2
+          ]
+        },
+        "duration": {
+          "preferred_bars": 2,
+          "preferred_counts": 8,
+          "count_unit": "beat",
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_8_beats",
+          "quiet_ballad"
+        ],
+        "risk": "medium",
+        "intensity": 0.86,
+        "typical_text": "Tiger! Fire! Cyber! Fiber! Diver! Viber! Jya! Jya!"
+      },
+      "notes": [
+        "Allowed in solo sections when the beat grid and bar count are clear; keep existing duration, risk, and context requirements."
+      ]
+    },
+    "std_mix_kouhan_dt": {
+      "display_name": "Standard MIX Second Half Double Time",
+      "category": "mix",
+      "role": "mix",
+      "description": "The second half of a Standard MIX performed at double speed. High-intensity.",
+      "when_to_use": "End of long instrumental breaks. Outro of high-energy songs.",
+      "when_not_to_use": "Medium or slow tempo sections. Verses, dense vocal lines, bridges, and pre-chorus moments without a clear 1-bar high-tension gap.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "pre_chorus_build",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge",
+        "outro",
+        "pre_chorus"
+      ],
+      "forbidden_structures": [
+        "verse"
+      ],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "medium",
+      "semantic_tags": [
+        "mix",
+        "risk_medium",
+        "one_bar",
+        "needs_low_vocal_density",
+        "solo_mix",
+        "clear_barline"
+      ],
+      "source_library": {
+        "best_context": [
+          "intro",
+          "instrumental_break",
+          "post_chorus_interlude",
+          "short_high_energy_gap"
+        ],
+        "requires": {
+          "min_bars": 1.0,
+          "max_bars": 1.0,
+          "vocal_density": "low",
+          "beat_stability": "high",
+          "allowed_bars": [
+            1
+          ]
+        },
+        "duration": {
+          "preferred_bars": 1,
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_1_bar",
+          "quiet_ballad"
+        ],
+        "risk": "medium",
+        "intensity": 0.9,
+        "typical_text": "Standard MIX second-half phrase performed at double speed."
+      },
+      "legacy_ids": [
+        "standard_mix_double_time"
+      ],
+      "cultural_ties": {
+        "character_tie": "universal",
+        "franchise_tie": "universal"
+      },
+      "notes": [
+        "Allowed in solo sections when the beat grid and bar count are clear; keep existing duration, risk, and context requirements."
+      ]
+    },
+    "japanese_mix": {
+      "display_name": "Japanese MIX",
+      "category": "mix",
+      "role": "mix",
+      "description": "Japanese MIX is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "medium",
+      "semantic_tags": [
+        "mix",
+        "risk_medium",
+        "needs_low_vocal_density",
+        "solo_mix",
+        "clear_barline"
+      ],
+      "source_library": {
+        "best_context": [
+          "second_intro",
+          "instrumental_break",
+          "post_chorus_interlude"
+        ],
+        "requires": {
+          "min_bars": 4.0,
+          "max_bars": 4.0,
+          "vocal_density": "low",
+          "beat_stability": "high",
+          "allowed_bars": [
+            4
+          ]
+        },
+        "duration": {
+          "preferred_bars": 4,
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "quiet_ballad"
+        ],
+        "risk": "medium",
+        "intensity": 0.88,
+        "typical_text": "Aaa, mou iccho ikuzo! Tora! Hi! Jinzou! Sen-i! Ama! Shindou! Kasen-tobi-jokyo!"
+      },
+      "notes": [
+        "Allowed in solo sections when the beat grid and bar count are clear; keep existing duration, risk, and context requirements."
+      ]
+    },
+    "japanese_mix_long": {
+      "display_name": "Japanese MIX +2-bar Extension",
+      "category": "mix",
+      "role": "mix",
+      "description": "Japanese MIX +2-bar Extension is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "medium",
+      "semantic_tags": [
+        "mix",
+        "risk_medium",
+        "needs_low_vocal_density",
+        "solo_mix",
+        "clear_barline"
+      ],
+      "source_library": {
+        "best_context": [
+          "second_intro",
+          "instrumental_break",
+          "post_chorus_interlude",
+          "high_energy_break"
+        ],
+        "requires": {
+          "min_bars": 6.0,
+          "max_bars": 6.0,
+          "allowed_bars": [
+            6
+          ],
+          "vocal_density": "low",
+          "beat_stability": "high"
+        },
+        "duration": {
+          "preferred_bars": 6,
+          "preferred_counts": 24,
+          "count_unit": "beat",
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_6_bars",
+          "quiet_ballad"
+        ],
+        "risk": "medium",
+        "intensity": 0.9,
+        "typical_text": "Japanese MIX long phrase; fill exact chant text after local validation."
+      },
+      "notes": [
+        "Allowed in solo sections when the beat grid and bar count are clear; keep existing duration, risk, and context requirements."
+      ]
+    },
+    "japanese_mix_second_half": {
+      "display_name": "Japanese MIX Second Half",
+      "category": "mix",
+      "role": "mix",
+      "description": "Japanese MIX Second Half is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "medium",
+      "semantic_tags": [
+        "mix",
+        "risk_medium",
+        "short",
+        "needs_low_vocal_density",
+        "solo_mix",
+        "clear_barline"
+      ],
+      "source_library": {
+        "best_context": [
+          "intro",
+          "instrumental_break",
+          "post_chorus_interlude",
+          "high_energy_break"
+        ],
+        "requires": {
+          "min_bars": 1.0,
+          "max_bars": 2.0,
+          "vocal_density": "low",
+          "beat_stability": "high",
+          "allowed_bars": [
+            1,
+            2
+          ]
+        },
+        "duration": {
+          "preferred_bars": 1,
+          "preferred_counts": 8,
+          "count_unit": "beat",
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_4_beats",
+          "quiet_ballad"
+        ],
+        "risk": "medium",
+        "intensity": 0.88,
+        "typical_text": "Japanese MIX second-half phrase in romanized form."
+      },
+      "notes": [
+        "Allowed in solo sections when the beat grid and bar count are clear; keep existing duration, risk, and context requirements."
+      ]
+    },
+    "japanese_mix_second_half_double_time": {
+      "display_name": "Japanese MIX Second Half Double Time",
+      "category": "mix",
+      "role": "mix",
+      "description": "Japanese MIX Second Half Double Time is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "medium",
+      "semantic_tags": [
+        "mix",
+        "risk_medium",
+        "one_bar",
+        "needs_low_vocal_density",
+        "solo_mix",
+        "clear_barline"
+      ],
+      "source_library": {
+        "best_context": [
+          "intro",
+          "instrumental_break",
+          "post_chorus_interlude",
+          "short_high_energy_gap"
+        ],
+        "requires": {
+          "min_bars": 1.0,
+          "max_bars": 1.0,
+          "vocal_density": "low",
+          "beat_stability": "high",
+          "allowed_bars": [
+            1
+          ]
+        },
+        "duration": {
+          "preferred_bars": 1,
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_1_bar",
+          "quiet_ballad"
+        ],
+        "risk": "medium",
+        "intensity": 0.9,
+        "typical_text": "Japanese MIX second-half phrase performed at double speed."
+      },
+      "notes": [
+        "Allowed in solo sections when the beat grid and bar count are clear; keep existing duration, risk, and context requirements."
+      ]
+    },
+    "jp_mix_seigyaku_dt": {
+      "display_name": "Japanese MIX Forward-Reverse Double Time",
+      "category": "mix",
+      "role": "mix",
+      "description": "Japanese MIX Forward-Reverse Double Time is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "pre_chorus",
+        "pre_chorus_build",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse"
+      ],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "medium",
+      "semantic_tags": [
+        "mix",
+        "risk_medium",
+        "needs_low_vocal_density",
+        "pre_chorus_mix",
+        "build_mix",
+        "tension_ramp",
+        "solo_mix",
+        "clear_barline"
+      ],
+      "source_library": {
+        "best_context": [
+          "intro",
+          "instrumental_break",
+          "post_chorus_interlude",
+          "short_high_energy_gap",
+          "chorus_entry"
+        ],
+        "requires": {
+          "min_bars": 4.0,
+          "max_bars": 4.0,
+          "vocal_density": "low",
+          "beat_stability": "high",
+          "allowed_bars": [
+            4
+          ]
+        },
+        "duration": {
+          "preferred_bars": 4,
+          "preferred_counts": 16,
+          "count_unit": "beat",
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_4_bars",
+          "quiet_ballad"
+        ],
+        "risk": "medium",
+        "intensity": 0.91,
+        "typical_text": "Japanese MIX forward-reverse phrase performed at double speed."
+      },
+      "notes": [
+        "Pre-chorus/build-compatible when bar fit, vocal gap, beat stability, and cultural/live context all match.",
+        "Allowed in solo sections when the beat grid and bar count are clear; keep existing duration, risk, and context requirements."
+      ]
+    },
+    "ainu_mix": {
+      "display_name": "Ainu MIX (Zenkyo Short)",
+      "category": "mix",
+      "role": "mix",
+      "description": "Ainu MIX (Zenkyo Short) is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "pre_chorus_build",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus"
+      ],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "medium",
+      "semantic_tags": [
+        "mix",
+        "risk_medium",
+        "needs_low_vocal_density",
+        "build_mix",
+        "tension_ramp",
+        "solo_mix",
+        "clear_barline"
+      ],
+      "source_library": {
+        "best_context": [
+          "long_intro",
+          "instrumental_break",
+          "final_build"
+        ],
+        "requires": {
+          "min_bars": 4.0,
+          "max_bars": 4.0,
+          "vocal_density": "low",
+          "beat_stability": "high",
+          "allowed_bars": [
+            4
+          ]
+        },
+        "duration": {
+          "preferred_bars": 4,
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "low_energy_intro"
+        ],
+        "risk": "medium",
+        "intensity": 0.9,
+        "typical_text": "Chape! Ape! Kara! Kina! Rara! Tusuke! Myohon-tusuke!"
+      },
+      "notes": [
+        "Pre-chorus/build-compatible when bar fit, vocal gap, beat stability, and cultural/live context all match.",
+        "Allowed in solo sections when the beat grid and bar count are clear; keep existing duration, risk, and context requirements."
+      ]
+    },
+    "ainu_mix_long": {
+      "display_name": "Ainu MIX Full",
+      "category": "mix",
+      "role": "mix",
+      "description": "Ainu MIX Full is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "pre_chorus_build",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus"
+      ],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "medium",
+      "semantic_tags": [
+        "mix",
+        "risk_medium",
+        "needs_low_vocal_density",
+        "build_mix",
+        "tension_ramp",
+        "solo_mix",
+        "clear_barline"
+      ],
+      "source_library": {
+        "best_context": [
+          "long_intro",
+          "instrumental_break",
+          "final_build",
+          "high_energy_break"
+        ],
+        "requires": {
+          "min_bars": 6.0,
+          "max_bars": 6.0,
+          "allowed_bars": [
+            6
+          ],
+          "vocal_density": "low",
+          "beat_stability": "high"
+        },
+        "duration": {
+          "preferred_bars": 6,
+          "preferred_counts": 24,
+          "count_unit": "beat",
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_6_bars",
+          "quiet_ballad"
+        ],
+        "risk": "medium",
+        "intensity": 0.91,
+        "typical_text": "Ainu MIX long phrase; fill exact chant text after local validation."
+      },
+      "notes": [
+        "Pre-chorus/build-compatible when bar fit, vocal gap, beat stability, and cultural/live context all match.",
+        "Allowed in solo sections when the beat grid and bar count are clear; keep existing duration, risk, and context requirements."
+      ]
+    },
+    "ainu_second_half_mix": {
+      "display_name": "Ainu MIX Second Half",
+      "category": "mix",
+      "role": "mix",
+      "description": "The second-half segment of an Ainu-style MIX pattern. Ainu MIX is a specific call tradition originating from Hokkaido Ainu cultural patterns adapted into idol call culture.",
+      "when_to_use": "Long instrumental breaks (8+ bars) when the audience has already completed the first half.",
+      "when_not_to_use": "First MIX of a song. Short breaks. Culturally sensitive — use only when the audience demographic can be expected to know this pattern.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "pre_chorus",
+        "pre_chorus_build",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse"
+      ],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "medium",
+      "semantic_tags": [
+        "mix",
+        "risk_medium",
+        "short",
+        "needs_low_vocal_density",
+        "pre_chorus_mix",
+        "build_mix",
+        "tension_ramp",
+        "solo_mix",
+        "clear_barline"
+      ],
+      "source_library": {
+        "best_context": [
+          "intro",
+          "instrumental_break",
+          "post_chorus_interlude",
+          "high_energy_break",
+          "pre_chorus",
+          "chorus_entry"
+        ],
+        "requires": {
+          "min_bars": 2.0,
+          "max_bars": 2.0,
+          "vocal_density": "low_or_gap",
+          "beat_stability": "high",
+          "allowed_bars": [
+            2
+          ]
+        },
+        "duration": {
+          "preferred_bars": 2,
+          "preferred_counts": 8,
+          "count_unit": "beat",
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_8_beats",
+          "quiet_ballad"
+        ],
+        "risk": "medium",
+        "intensity": 0.9,
+        "typical_text": "Ainu MIX second-half phrase in romanized form."
+      },
+      "legacy_ids": [
+        "ainu_mix_half"
+      ],
+      "cultural_ties": {
+        "character_tie": "universal",
+        "franchise_tie": "universal"
+      },
+      "notes": [
+        "Pre-chorus/build-compatible when bar fit, vocal gap, beat stability, and cultural/live context all match.",
+        "Allowed in solo sections when the beat grid and bar count are clear; keep existing duration, risk, and context requirements."
+      ]
+    },
+    "ainu_kahen_mix": {
+      "display_name": "Ainu Variable MIX",
+      "category": "mix",
+      "role": "mix",
+      "description": "A flexible Ainu-style MIX that can be adapted to different bar lengths. More adaptable than standard Ainu MIX.",
+      "when_to_use": "Instrumental breaks or outros where a variable-length MIX is needed.",
+      "when_not_to_use": "Same cultural sensitivity notes as Ainu MIX Second Half.",
+      "allowed_structures": [
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "solo",
+        "bridge"
+      ],
+      "discouraged_structures": [
+        "intro",
+        "chorus",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "medium",
+      "semantic_tags": [
+        "mix",
+        "risk_medium",
+        "needs_low_vocal_density",
+        "solo_mix",
+        "clear_barline",
+        "pre_third_short_interlude_mix"
+      ],
+      "source_library": {
+        "best_context": [
+          "pre_final_chorus_gap",
+          "instrumental_break",
+          "post_chorus_interlude",
+          "short_high_energy_gap"
+        ],
+        "requires": {
+          "min_bars": 4.0,
+          "max_bars": 4.5,
+          "vocal_density": "low",
+          "beat_stability": "high",
+          "allowed_bars": [
+            4,
+            4.5
+          ]
+        },
+        "duration": {
+          "preferred_bars": 4,
+          "preferred_counts": 16,
+          "count_unit": "beat",
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_4_bars",
+          "quiet_ballad"
+        ],
+        "risk": "medium",
+        "intensity": 0.92,
+        "typical_text": "Ainu variable MIX phrase in romanized form."
+      },
+      "legacy_ids": [
+        "ainu_mix_variable"
+      ],
+      "cultural_ties": {
+        "character_tie": "universal",
+        "franchise_tie": "universal"
+      },
+      "notes": [
+        "Screenshot placement: Ainu variable MIX is a short interlude before the later chorus block."
+      ]
+    },
+    "myhontousuke": {
+      "display_name": "Myohon-tusuke",
+      "category": "mix",
+      "role": "mix",
+      "description": "Myohon-tusuke is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "medium",
+      "semantic_tags": [
+        "mix",
+        "risk_medium",
+        "short",
+        "needs_low_vocal_density",
+        "solo_mix",
+        "clear_barline",
+        "intro_mix"
+      ],
+      "source_library": {
+        "best_context": [
+          "intro",
+          "reintro",
+          "instrumental_break",
+          "post_chorus_interlude",
+          "short_high_energy_gap"
+        ],
+        "requires": {
+          "min_bars": 2.0,
+          "max_bars": 2.0,
+          "vocal_density": "low",
+          "beat_stability": "high",
+          "allowed_bars": [
+            2
+          ]
+        },
+        "duration": {
+          "preferred_bars": 2,
+          "preferred_counts": 8,
+          "count_unit": "beat",
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_2_bars",
+          "quiet_ballad"
+        ],
+        "risk": "medium",
+        "intensity": 0.9,
+        "typical_text": "Myohon-tusuke!"
+      },
+      "notes": [
+        "Screenshot placement: Myohon-tusuke is a 2-eight-count intro MIX, not a chorus filler."
+      ]
+    },
+    "myohon_activation": {
+      "display_name": "Myohon Activation",
+      "category": "mix",
+      "role": "mix",
+      "description": "Myohon Activation is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "medium",
+      "semantic_tags": [
+        "mix",
+        "risk_medium",
+        "short",
+        "needs_low_vocal_density",
+        "solo_mix",
+        "clear_barline"
+      ],
+      "source_library": {
+        "best_context": [
+          "intro",
+          "instrumental_break",
+          "post_chorus_interlude",
+          "reintro",
+          "short_high_energy_gap",
+          "high_energy_break"
+        ],
+        "requires": {
+          "min_bars": 2.0,
+          "max_bars": 2.0,
+          "allowed_bars": [
+            2
+          ],
+          "vocal_density": "low",
+          "beat_stability": "high"
+        },
+        "duration": {
+          "preferred_bars": 2,
+          "preferred_counts": 8,
+          "count_unit": "beat",
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_8_beats",
+          "quiet_ballad"
+        ],
+        "risk": "medium",
+        "intensity": 0.9,
+        "typical_text": "Myohon activation phrase for a 2-bar gap."
+      },
+      "notes": [
+        "Allowed in solo sections when the beat grid and bar count are clear; keep existing duration, risk, and context requirements."
+      ]
+    },
+    "kaho_sanren_mix": {
+      "display_name": "Kahen Sanren MIX",
+      "category": "mix",
+      "role": "mix",
+      "description": "Kahen Sanren MIX is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "solo",
+        "bridge"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {
+        "song_tradition_any": [
+          "kaho_sanren_mix",
+          "Kahen Sanren MIX"
+        ],
+        "audience_experience_any": [
+          "experienced"
+        ]
+      },
+      "if_context_missing": "penalize",
+      "ooc_risk": "high",
+      "semantic_tags": [
+        "mix",
+        "risk_high",
+        "long",
+        "needs_low_vocal_density",
+        "solo_mix",
+        "clear_barline",
+        "long_interlude_mix"
+      ],
+      "source_library": {
+        "best_context": [
+          "long_intro",
+          "extended_instrumental",
+          "instrumental_break",
+          "high_energy_break",
+          "pre_final_chorus_gap"
+        ],
+        "requires": {
+          "min_bars": 8.0,
+          "max_bars": 8.0,
+          "vocal_density": "low",
+          "energy": "high",
+          "allowed_bars": [
+            8
+          ]
+        },
+        "duration": {
+          "preferred_bars": 8,
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false,
+          "preferred_counts": 32,
+          "count_unit": "beat"
+        },
+        "avoid": [
+          "short_gap_under_8_bars",
+          "dense_vocal",
+          "restrained_live_style"
+        ],
+        "risk": "high",
+        "intensity": 0.98,
+        "typical_text": "MIX variants chained in three phrases."
+      },
+      "notes": [
+        "Screenshot placement: Kahen Sanren is for long instrumental/interlude gaps."
+      ]
+    },
+    "shuumaku_kahen_mix": {
+      "display_name": "Shuumaku Kahen MIX",
+      "category": "mix",
+      "role": "mix",
+      "description": "Shuumaku Kahen MIX is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "outro",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {
+        "song_tradition_any": [
+          "shuumaku_kahen_mix",
+          "Shuumaku Kahen MIX"
+        ],
+        "audience_experience_any": [
+          "experienced"
+        ]
+      },
+      "if_context_missing": "penalize",
+      "ooc_risk": "high",
+      "semantic_tags": [
+        "mix",
+        "risk_high",
+        "long",
+        "needs_low_vocal_density",
+        "solo_mix",
+        "clear_barline"
+      ],
+      "source_library": {
+        "best_context": [
+          "outro",
+          "high_energy_outro",
+          "extended_instrumental",
+          "high_energy_break"
+        ],
+        "requires": {
+          "min_bars": 16.0,
+          "max_bars": 16.0,
+          "vocal_density": "low",
+          "energy": "high",
+          "allowed_bars": [
+            16
+          ]
+        },
+        "duration": {
+          "preferred_bars": 16,
+          "preferred_counts": 64,
+          "count_unit": "beat",
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "short_gap",
+          "dense_vocal",
+          "restrained_live_style"
+        ],
+        "risk": "high",
+        "intensity": 0.98,
+        "typical_text": "Shuumaku Kahen MIX phrase; fill exact chant text after local validation."
+      },
+      "notes": [
+        "Allowed in solo sections when the beat grid and bar count are clear; keep existing duration, risk, and context requirements."
+      ]
+    },
+    "ietora_konzetsu_mix": {
+      "display_name": "Ietora Konzetsu MIX",
+      "category": "mix",
+      "role": "mix",
+      "description": "Ietora Konzetsu MIX is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "solo",
+        "bridge"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {
+        "song_tradition_any": [
+          "ietora_konzetsu_mix",
+          "Ietora Konzetsu MIX"
+        ],
+        "audience_experience_any": [
+          "experienced"
+        ]
+      },
+      "if_context_missing": "penalize",
+      "ooc_risk": "high",
+      "semantic_tags": [
+        "mix",
+        "risk_high",
+        "long",
+        "needs_low_vocal_density",
+        "solo_mix",
+        "clear_barline",
+        "long_interlude_mix"
+      ],
+      "source_library": {
+        "best_context": [
+          "long_intro",
+          "extended_instrumental",
+          "instrumental_break",
+          "high_energy_break",
+          "pre_final_chorus_gap"
+        ],
+        "requires": {
+          "min_bars": 8.0,
+          "max_bars": 8.0,
+          "vocal_density": "low",
+          "energy": "high",
+          "allowed_bars": [
+            8
+          ]
+        },
+        "duration": {
+          "preferred_bars": 8,
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false,
+          "preferred_counts": 32,
+          "count_unit": "beat"
+        },
+        "avoid": [
+          "short_gap_under_8_bars",
+          "dense_vocal",
+          "formal_live",
+          "restrained_live_style"
+        ],
+        "risk": "high",
+        "intensity": 0.98,
+        "typical_text": "IetoraKinshi TaidoKouka / Taijyou Taijyou TatatataTaijyou / Burakkurisutoda Burakkurisutoda / BushironoTaidoga P Kibishii / Seikyuu Seikyuu SongaiBaishou / Houtekisekinin IetoraSaiban / KamiUnei KamiUnei / IetoraKonzetsu Yettaiga"
+      },
+      "notes": [
+        "Screenshot placement: Ietora Konzetsu is for long instrumental/interlude gaps."
+      ]
+    },
+    "lin_xiu_mix": {
+      "display_name": "Lin Xiu MIX",
+      "category": "mix",
+      "role": "mix",
+      "description": "Lin Xiu MIX is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {
+        "song_tradition_any": [
+          "lin_xiu_mix",
+          "Lin Xiu MIX"
+        ],
+        "audience_experience_any": [
+          "experienced"
+        ]
+      },
+      "if_context_missing": "penalize",
+      "ooc_risk": "high",
+      "semantic_tags": [
+        "mix",
+        "risk_high",
+        "long",
+        "needs_low_vocal_density",
+        "solo_mix",
+        "clear_barline",
+        "intro_activation_mix"
+      ],
+      "source_library": {
+        "best_context": [
+          "intro",
+          "long_intro",
+          "reintro",
+          "instrumental_break",
+          "post_chorus_interlude",
+          "short_high_energy_gap",
+          "high_energy_break"
+        ],
+        "requires": {
+          "min_bars": 4.0,
+          "max_bars": 8.0,
+          "allowed_bars": [
+            4,
+            6,
+            8
+          ],
+          "vocal_density": "low",
+          "energy": "high"
+        },
+        "duration": {
+          "preferred_bars": 4,
+          "preferred_counts": 16,
+          "count_unit": "beat",
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "short_gap_under_4_bars",
+          "dense_vocal",
+          "formal_live",
+          "restrained_live_style"
+        ],
+        "risk": "high",
+        "intensity": 0.96,
+        "typical_text": "Lin Xiu MIX phrase; fill exact chant text after local validation."
+      },
+      "notes": [
+        "Screenshot placement: Lin Xiu is an intro/activation MIX."
+      ]
+    },
+    "hogwarts_mix": {
+      "display_name": "Hogwarts MIX",
+      "category": "mix",
+      "role": "mix",
+      "description": "Hogwarts MIX is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "solo",
+        "bridge"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {
+        "song_tradition_any": [
+          "hogwarts_mix",
+          "Hogwarts MIX"
+        ],
+        "audience_experience_any": [
+          "experienced"
+        ]
+      },
+      "if_context_missing": "penalize",
+      "ooc_risk": "high",
+      "semantic_tags": [
+        "mix",
+        "risk_high",
+        "long",
+        "needs_low_vocal_density",
+        "solo_mix",
+        "clear_barline",
+        "long_interlude_mix"
+      ],
+      "source_library": {
+        "best_context": [
+          "long_intro",
+          "extended_instrumental",
+          "instrumental_break",
+          "high_energy_break",
+          "pre_final_chorus_gap"
+        ],
+        "requires": {
+          "min_bars": 8.0,
+          "max_bars": 9.0,
+          "allowed_bars": [
+            8,
+            9
+          ],
+          "vocal_density": "low_or_gap",
+          "energy": "high"
+        },
+        "duration": {
+          "preferred_bars": 8,
+          "preferred_counts": 32,
+          "count_unit": "beat",
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "short_gap_under_8_bars",
+          "dense_vocal",
+          "formal_live",
+          "restrained_live_style"
+        ],
+        "risk": "high",
+        "intensity": 0.96,
+        "typical_text": "Hogwarts MIX phrase; fill exact chant text after local validation."
+      },
+      "notes": [
+        "Screenshot placement: Hogwarts MIX is for long instrumental/interlude gaps."
+      ]
+    },
+    "sae_mix": {
+      "display_name": "Sae MIX",
+      "category": "mix",
+      "role": "mix",
+      "description": "Sae MIX is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {
+        "franchise_any": [
+          "BanG Dream"
+        ],
+        "artist_any": [
+          "Poppin'Party"
+        ],
+        "song_tag_any": [
+          "sae_mix",
+          "poppin_party_tradition"
+        ]
+      },
+      "if_context_missing": "forbid",
+      "ooc_risk": "high",
+      "semantic_tags": [
+        "mix",
+        "risk_medium",
+        "needs_low_vocal_density",
+        "franchise_specific",
+        "solo_mix",
+        "clear_barline"
+      ],
+      "source_library": {
+        "best_context": [
+          "verse",
+          "mid_energy_vocal",
+          "instrumental_break",
+          "short_high_energy_gap"
+        ],
+        "requires": {
+          "min_bars": 3.0,
+          "max_bars": 3.0,
+          "allowed_bars": [
+            3
+          ],
+          "vocal_density": "low_or_gap",
+          "beat_stability": "high"
+        },
+        "duration": {
+          "preferred_bars": 3,
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_3_bars",
+          "quiet_ballad"
+        ],
+        "risk": "medium",
+        "intensity": 0.9,
+        "typical_text": "Sae MIX phrase; fill exact chant text after local validation."
+      },
+      "notes": [
+        "Franchise-specific or unit-specific. Do not recommend outside matching metadata.",
+        "Allowed in solo sections when the beat grid and bar count are clear; keep existing duration, risk, and context requirements."
+      ]
+    },
+    "chokokoro_call": {
+      "display_name": "Chokokoro Call",
+      "category": "rhythmcall",
+      "role": "rhythmcall",
+      "description": "A call based on 'Choco Cornet' (chocolate horn pastry), strongly associated with Yamabuki Saaya (Saya) from BanG Dream! Poppin'Party. The call references Saya's family bakery and her love of chocolate cornets.",
+      "when_to_use": "Verses in BanG Dream! Poppin'Party songs, especially Saya-focused songs. Character-specific call — verify character context before assigning.",
+      "when_not_to_use": "Non-BanG Dream! songs. Songs from other franchises. Non-Saya character songs within BanG Dream!.",
+      "allowed_structures": [
+        "verse"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "post_chorus",
+        "instrumental",
+        "instrumental_break",
+        "bridge"
+      ],
+      "forbidden_structures": [
+        "intro",
+        "pre_chorus",
+        "pre_chorus_build",
+        "outro",
+        "solo"
+      ],
+      "requires_context": {
+        "franchise_any": [
+          "BanG Dream"
+        ],
+        "artist_any": [
+          "Poppin'Party"
+        ],
+        "character_any": [
+          "Yamabuki Saaya",
+          "Saaya",
+          "山吹沙绫",
+          "山吹沙綾"
+        ],
+        "song_tag_any": [
+          "chocolate_cornet",
+          "bakery",
+          "saaya"
+        ]
+      },
+      "if_context_missing": "forbid",
+      "ooc_risk": "very_high",
+      "semantic_tags": [
+        "rhythmcall",
+        "risk_low",
+        "one_bar",
+        "franchise_specific"
+      ],
+      "source_library": {
+        "best_context": [
+          "verse",
+          "mid_energy_vocal",
+          "short_vocal_hook",
+          "call_and_response"
+        ],
+        "requires": {
+          "min_bars": 1.0,
+          "max_bars": 1.0,
+          "vocal_density": "gap",
+          "beat_stability": "high",
+          "allowed_bars": [
+            1
+          ]
+        },
+        "duration": {
+          "preferred_bars": 1,
+          "strict_bars": false,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "quiet_ballad"
+        ],
+        "risk": "low",
+        "intensity": 0.58,
+        "typical_text": "Chokokoro call phrase; fill exact chant text after local validation."
+      },
+      "cultural_ties": {
+        "character_tie": "Yamabuki Saaya (BanG Dream! Poppin'Party)",
+        "franchise_tie": "BanG Dream! (Poppin'Party specific)"
+      },
+      "notes": [
+        "Strongly tied to Saaya/chocolate cornet context. Never use as a generic cute call."
+      ]
+    },
+    "jyajya_mix": {
+      "display_name": "Jya Jya MIX",
+      "category": "mix",
+      "role": "mix",
+      "description": "A singer-specific MIX associated with Liyuu. Do not treat it as a generic Jya Jya / guitar-flavored MIX.",
+      "when_to_use": "Only for Liyuu songs or live contexts where this MIX is part of the accepted call tradition.",
+      "when_not_to_use": "Non-Liyuu songs, even if the section is rock-style, guitar-heavy, or technically fits the bar length.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "pre_chorus_build",
+        "pre_chorus",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse"
+      ],
+      "requires_context": {
+        "artist_any": [
+          "Liyuu",
+          "黎狱",
+          "黎獄",
+          "リーユウ"
+        ],
+        "song_tradition_any": [
+          "jyajya_mix",
+          "liyuu_jyajya_mix"
+        ]
+      },
+      "if_context_missing": "forbid",
+      "ooc_risk": "very_high",
+      "semantic_tags": [
+        "mix",
+        "risk_medium",
+        "needs_low_vocal_density",
+        "artist_specific",
+        "liyuu_specific",
+        "pre_chorus_mix",
+        "build_mix",
+        "tension_ramp",
+        "high_tension_mix",
+        "solo_mix",
+        "clear_barline"
+      ],
+      "source_library": {
+        "best_context": [
+          "pre_chorus",
+          "pre_chorus_build",
+          "chorus_entry",
+          "high_tension_gap"
+        ],
+        "requires": {
+          "min_bars": 3.5,
+          "max_bars": 3.5,
+          "allowed_bars": [
+            3.5
+          ],
+          "vocal_density": "low_or_gap",
+          "beat_stability": "high"
+        },
+        "duration": {
+          "preferred_bars": 3.5,
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_3_5_bars",
+          "quiet_ballad"
+        ],
+        "risk": "medium",
+        "intensity": 0.9,
+        "typical_text": "Jya Jya MIX phrase; fill exact chant text after local validation."
+      },
+      "cultural_ties": {
+        "character_tie": "none",
+        "franchise_tie": "Liyuu live/call tradition"
+      },
+      "notes": [
+        "Liyuu-specific MIX. Keep it out of generic pre-chorus/build filler unless metadata explicitly identifies a Liyuu song or accepted Liyuu call tradition."
+      ]
+    },
+    "popipa_mix": {
+      "display_name": "Popipa MIX",
+      "category": "mix",
+      "role": "mix",
+      "description": "Popipa MIX is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "bridge",
+        "pre_chorus_build",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus"
+      ],
+      "requires_context": {
+        "franchise_any": [
+          "BanG Dream"
+        ],
+        "artist_any": [
+          "Poppin'Party"
+        ],
+        "song_tag_any": [
+          "poppin_party",
+          "popipa"
+        ]
+      },
+      "if_context_missing": "forbid",
+      "ooc_risk": "high",
+      "semantic_tags": [
+        "mix",
+        "risk_high",
+        "long",
+        "needs_low_vocal_density",
+        "franchise_specific",
+        "build_mix",
+        "tension_ramp",
+        "solo_mix",
+        "clear_barline"
+      ],
+      "source_library": {
+        "best_context": [
+          "bridge",
+          "instrumental_break",
+          "extended_instrumental",
+          "high_energy_break",
+          "pre_final_chorus_gap"
+        ],
+        "requires": {
+          "min_bars": 8.0,
+          "max_bars": 8.0,
+          "allowed_bars": [
+            8
+          ],
+          "vocal_density": "low_or_gap",
+          "energy": "high"
+        },
+        "duration": {
+          "preferred_bars": 8,
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "short_gap",
+          "dense_vocal",
+          "restrained_live_style"
+        ],
+        "risk": "high",
+        "intensity": 0.94,
+        "typical_text": "Popipa MIX phrase; fill exact chant text after local validation."
+      },
+      "notes": [
+        "Franchise-specific or unit-specific. Do not recommend outside matching metadata.",
+        "Pre-chorus/build-compatible when bar fit, vocal gap, beat stability, and cultural/live context all match.",
+        "Allowed in solo sections when the beat grid and bar count are clear; keep existing duration, risk, and context requirements."
+      ]
+    },
+    "popipapipopa": {
+      "display_name": "Popipa Pipopa",
+      "category": "rhythmcall",
+      "role": "rhythmcall",
+      "description": "A call mimicking the sound of Poppin'Party's name, or a playful vocalization pattern. Light and bouncy.",
+      "when_to_use": "BanG Dream! Poppin'Party songs. Bridges or lighter sections.",
+      "when_not_to_use": "Non-BanG Dream! contexts unless the sound pattern genuinely fits.",
+      "allowed_structures": [
+        "bridge",
+        "chorus",
+        "post_chorus"
+      ],
+      "discouraged_structures": [
+        "verse",
+        "instrumental",
+        "instrumental_break"
+      ],
+      "forbidden_structures": [
+        "intro",
+        "pre_chorus",
+        "pre_chorus_build",
+        "outro",
+        "solo"
+      ],
+      "requires_context": {
+        "franchise_any": [
+          "BanG Dream"
+        ],
+        "artist_any": [
+          "Poppin'Party"
+        ],
+        "song_tag_any": [
+          "poppin_party",
+          "popipa"
+        ]
+      },
+      "if_context_missing": "forbid",
+      "ooc_risk": "high",
+      "semantic_tags": [
+        "rhythmcall",
+        "risk_low",
+        "one_bar",
+        "franchise_specific"
+      ],
+      "source_library": {
+        "best_context": [
+          "bridge",
+          "chant",
+          "short_vocal_hook",
+          "call_and_response",
+          "chorus_entry"
+        ],
+        "requires": {
+          "min_bars": 1.0,
+          "max_bars": 1.0,
+          "vocal_density": "gap",
+          "beat_stability": "high",
+          "allowed_bars": [
+            1
+          ]
+        },
+        "duration": {
+          "preferred_bars": 1,
+          "strict_bars": false,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "quiet_ballad"
+        ],
+        "risk": "low",
+        "intensity": 0.62,
+        "typical_text": "Popipa pipopa phrase; fill exact chant text after local validation."
+      },
+      "legacy_ids": [
+        "popipa_pipopa"
+      ],
+      "cultural_ties": {
+        "character_tie": "BanG Dream! Poppin'Party (loose)",
+        "franchise_tie": "BanG Dream!"
+      },
+      "notes": [
+        "Franchise-specific or unit-specific. Do not recommend outside matching metadata."
+      ]
+    },
+    "takamatsu_mix": {
+      "display_name": "Takamatsu MIX",
+      "category": "mix",
+      "role": "mix",
+      "description": "Takamatsu MIX is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "pre_chorus",
+        "pre_chorus_build",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse"
+      ],
+      "requires_context": {
+        "franchise_any": [
+          "BanG Dream"
+        ],
+        "artist_any": [
+          "MyGO!!!!!"
+        ],
+        "character_any": [
+          "Takamatsu Tomori",
+          "Tomori",
+          "高松灯"
+        ],
+        "song_tag_any": [
+          "takamatsu_mix",
+          "mygo"
+        ]
+      },
+      "if_context_missing": "forbid",
+      "ooc_risk": "very_high",
+      "semantic_tags": [
+        "mix",
+        "risk_high",
+        "needs_low_vocal_density",
+        "franchise_specific",
+        "pre_chorus_mix",
+        "build_mix",
+        "tension_ramp",
+        "high_tension_mix",
+        "solo_mix",
+        "clear_barline"
+      ],
+      "source_library": {
+        "best_context": [
+          "verse",
+          "pre_chorus",
+          "pre_chorus_build",
+          "chorus_entry",
+          "high_tension_gap"
+        ],
+        "requires": {
+          "min_bars": 7.0,
+          "max_bars": 7.0,
+          "vocal_density": "low_or_gap",
+          "beat_stability": "high",
+          "allowed_bars": [
+            7
+          ]
+        },
+        "duration": {
+          "preferred_bars": 7,
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_7_bars",
+          "quiet_ballad"
+        ],
+        "risk": "high",
+        "intensity": 0.94,
+        "typical_text": "Takamatsu MIX phrase; fill exact chant text after local validation."
+      },
+      "notes": [
+        "Franchise-specific or unit-specific. Do not recommend outside matching metadata.",
+        "Pre-chorus/build-compatible when bar fit, vocal gap, beat stability, and cultural/live context all match.",
+        "Allowed in pre-chorus/build as a high-tension MIX; apply risk/context requirements before ranking.",
+        "Allowed in solo sections when the beat grid and bar count are clear; keep existing duration, risk, and context requirements."
+      ]
+    },
+    "bandor_mix": {
+      "display_name": "Bandor MIX",
+      "category": "mix",
+      "role": "mix",
+      "description": "Bandor MIX is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {
+        "franchise_any": [
+          "BanG Dream"
+        ],
+        "song_tag_any": [
+          "bandori",
+          "bang_dream"
+        ]
+      },
+      "if_context_missing": "forbid",
+      "ooc_risk": "high",
+      "semantic_tags": [
+        "mix",
+        "risk_high",
+        "needs_low_vocal_density",
+        "franchise_specific",
+        "solo_mix",
+        "clear_barline"
+      ],
+      "source_library": {
+        "best_context": [
+          "post_chorus",
+          "post_chorus_interlude",
+          "instrumental_break",
+          "high_energy_break"
+        ],
+        "requires": {
+          "min_bars": 4.0,
+          "max_bars": 4.0,
+          "vocal_density": "low_or_gap",
+          "beat_stability": "high",
+          "allowed_bars": [
+            4
+          ]
+        },
+        "duration": {
+          "preferred_bars": 4,
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_4_bars",
+          "quiet_ballad"
+        ],
+        "risk": "high",
+        "intensity": 0.93,
+        "typical_text": "Bandor MIX phrase; fill exact chant text after local validation."
+      },
+      "notes": [
+        "Franchise-specific or unit-specific. Do not recommend outside matching metadata.",
+        "Allowed in solo sections when the beat grid and bar count are clear; keep existing duration, risk, and context requirements."
+      ]
+    },
+    "highclap": {
+      "display_name": "High Clap",
+      "category": "mix",
+      "role": "mix",
+      "description": "High Clap is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "pre_chorus",
+        "pre_chorus_build",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse"
+      ],
+      "requires_context": {
+        "song_tradition_any": [
+          "highclap",
+          "High Clap"
+        ],
+        "audience_experience_any": [
+          "experienced"
+        ]
+      },
+      "if_context_missing": "penalize",
+      "ooc_risk": "high",
+      "semantic_tags": [
+        "mix",
+        "risk_high",
+        "short",
+        "needs_low_vocal_density",
+        "pre_chorus_mix",
+        "build_mix",
+        "tension_ramp",
+        "solo_mix",
+        "clear_barline"
+      ],
+      "source_library": {
+        "best_context": [
+          "solo",
+          "instrumental_break",
+          "high_energy_break",
+          "chorus_entry"
+        ],
+        "requires": {
+          "min_bars": 1.0,
+          "max_bars": 2.0,
+          "allowed_bars": [
+            1,
+            2
+          ],
+          "vocal_density": "low_or_gap",
+          "beat_stability": "high"
+        },
+        "duration": {
+          "preferred_bars": 1,
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "quiet_ballad"
+        ],
+        "risk": "high",
+        "intensity": 0.78,
+        "typical_text": "High-clap movement/action treated as an er-kai MIX action."
+      },
+      "notes": [
+        "Pre-chorus/build-compatible when bar fit, vocal gap, beat stability, and cultural/live context all match.",
+        "Allowed in solo sections when the beat grid and bar count are clear; keep existing duration, risk, and context requirements."
+      ]
+    },
+    "sekai_konton_mix": {
+      "display_name": "Sekai Konton MIX",
+      "category": "mix",
+      "role": "mix",
+      "description": "Sekai Konton MIX is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "bridge",
+        "chorus",
+        "post_chorus",
+        "instrumental",
+        "instrumental_break",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "intro",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {
+        "song_tradition_any": [
+          "sekai_konton_mix",
+          "Sekai Konton MIX"
+        ],
+        "audience_experience_any": [
+          "experienced"
+        ]
+      },
+      "if_context_missing": "penalize",
+      "ooc_risk": "high",
+      "semantic_tags": [
+        "mix",
+        "risk_high",
+        "long",
+        "needs_low_vocal_density",
+        "solo_mix",
+        "clear_barline",
+        "ochi_sabi_mix"
+      ],
+      "source_library": {
+        "best_context": [
+          "bridge",
+          "chorus",
+          "final_chorus",
+          "pre_final_chorus_gap",
+          "high_energy_break"
+        ],
+        "requires": {
+          "min_bars": 8.0,
+          "max_bars": 8.0,
+          "bar_multiple": 8,
+          "allowed_bars": [
+            8
+          ],
+          "vocal_density": "low",
+          "energy": "high"
+        },
+        "duration": {
+          "preferred_bars": 8,
+          "strict_bars": true,
+          "strict_bar_multiple": true,
+          "can_compress": false,
+          "can_extend": false,
+          "preferred_counts": 32,
+          "count_unit": "beat"
+        },
+        "avoid": [
+          "short_gap_under_8_bars",
+          "dense_vocal",
+          "formal_live",
+          "restrained_live_style"
+        ],
+        "risk": "high",
+        "intensity": 0.98,
+        "typical_text": "Sekai Konton MIX phrase in romanized form."
+      },
+      "notes": [
+        "Screenshot placement: Chaos/Konton is an ochi-sabi MIX, not an outro-only MIX."
+      ]
+    },
+    "sekai_konton_mix_first_half": {
+      "display_name": "Sekai Konton MIX First Half",
+      "category": "mix",
+      "role": "mix",
+      "description": "Sekai Konton MIX First Half is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "bridge",
+        "chorus",
+        "post_chorus",
+        "instrumental",
+        "instrumental_break",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "intro",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {
+        "song_tradition_any": [
+          "sekai_konton_mix_first_half",
+          "Sekai Konton MIX First Half"
+        ],
+        "audience_experience_any": [
+          "experienced"
+        ]
+      },
+      "if_context_missing": "penalize",
+      "ooc_risk": "high",
+      "semantic_tags": [
+        "mix",
+        "risk_high",
+        "needs_low_vocal_density",
+        "solo_mix",
+        "clear_barline",
+        "ochi_sabi_mix"
+      ],
+      "source_library": {
+        "best_context": [
+          "bridge",
+          "chorus",
+          "final_chorus",
+          "pre_final_chorus_gap",
+          "high_energy_break"
+        ],
+        "requires": {
+          "min_bars": 4.0,
+          "max_bars": 4.0,
+          "vocal_density": "low",
+          "energy": "high",
+          "allowed_bars": [
+            4
+          ]
+        },
+        "duration": {
+          "preferred_bars": 4,
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false,
+          "preferred_counts": 16,
+          "count_unit": "beat"
+        },
+        "avoid": [
+          "short_gap_under_4_bars",
+          "dense_vocal",
+          "formal_live",
+          "restrained_live_style"
+        ],
+        "risk": "high",
+        "intensity": 0.96,
+        "typical_text": "Sekai Konton MIX first-half phrase in romanized form."
+      },
+      "notes": [
+        "Screenshot placement: the short Konton variant supports 4-eight-count ochi-sabi slots."
+      ]
+    },
+    "ietora": {
+      "display_name": "Ietora",
+      "category": "mix",
+      "role": "mix",
+      "description": "Ietora is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "pre_chorus",
+        "pre_chorus_build",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse"
+      ],
+      "requires_context": {
+        "live_policy_any": [
+          "allows_ietora"
+        ],
+        "song_tag_any": [
+          "ietora_tradition"
+        ]
+      },
+      "if_context_missing": "penalize",
+      "ooc_risk": "high",
+      "semantic_tags": [
+        "mix",
+        "risk_high",
+        "short",
+        "needs_low_vocal_density",
+        "pre_chorus_mix",
+        "build_mix",
+        "tension_ramp",
+        "high_risk_build_mix",
+        "solo_mix",
+        "clear_barline"
+      ],
+      "source_library": {
+        "best_context": [
+          "pre_chorus",
+          "pre_chorus_build",
+          "chorus_entry",
+          "high_tension_gap"
+        ],
+        "requires": {
+          "min_bars": 1.0,
+          "max_bars": 2.0,
+          "energy_trend": "rising",
+          "vocal_density": "low_or_gap",
+          "allowed_bars": [
+            1,
+            2
+          ]
+        },
+        "duration": {
+          "preferred_bars": 1,
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "artist_bans_ietora",
+          "quiet_ballad",
+          "dense_vocal"
+        ],
+        "risk": "high",
+        "intensity": 0.95,
+        "typical_text": "Ie Tiger!"
+      },
+      "notes": [
+        "Pre-chorus/build-compatible when bar fit, vocal gap, beat stability, and cultural/live context all match.",
+        "Ie Tiger is a strong pre-chorus/build option only when live policy and song tradition allow it; otherwise penalize or suppress it.",
+        "Allowed in solo sections when the beat grid and bar count are clear; keep existing duration, risk, and context requirements."
+      ]
+    },
+    "tiger_fire_activation": {
+      "display_name": "Tiger-Fire Activation Standard MIX",
+      "category": "mix",
+      "role": "mix",
+      "description": "Tiger-Fire Activation Standard MIX is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "medium",
+      "semantic_tags": [
+        "mix",
+        "risk_medium",
+        "long",
+        "needs_low_vocal_density",
+        "solo_mix",
+        "clear_barline"
+      ],
+      "source_library": {
+        "best_context": [
+          "post_chorus_interlude",
+          "instrumental_break",
+          "reintro"
+        ],
+        "requires": {
+          "min_bars": 8.0,
+          "max_bars": 10.0,
+          "vocal_density": "low",
+          "beat_stability": "high",
+          "allowed_bars": [
+            8,
+            10
+          ]
+        },
+        "duration": {
+          "preferred_bars": 8,
+          "preferred_counts": 32,
+          "count_unit": "beat",
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_8_bars"
+        ],
+        "risk": "medium",
+        "intensity": 0.9,
+        "typical_text": "Tiger! Fire! ..."
+      },
+      "notes": [
+        "Allowed in solo sections when the beat grid and bar count are clear; keep existing duration, risk, and context requirements."
+      ]
+    },
+    "short_tiger_fire_activation": {
+      "display_name": "Short Tiger Fire Activation",
+      "category": "mix",
+      "role": "mix",
+      "description": "Short Tiger Fire Activation is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "pre_chorus_build",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge",
+        "outro",
+        "pre_chorus"
+      ],
+      "forbidden_structures": [
+        "verse"
+      ],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "medium",
+      "semantic_tags": [
+        "mix",
+        "risk_medium",
+        "short",
+        "needs_low_vocal_density",
+        "solo_mix",
+        "clear_barline"
+      ],
+      "source_library": {
+        "best_context": [
+          "post_chorus_interlude",
+          "instrumental_break",
+          "reintro",
+          "short_high_energy_gap"
+        ],
+        "requires": {
+          "min_bars": 2.0,
+          "max_bars": 2.0,
+          "vocal_density": "low",
+          "beat_stability": "high",
+          "allowed_bars": [
+            2
+          ]
+        },
+        "duration": {
+          "preferred_bars": 2,
+          "preferred_counts": 8,
+          "count_unit": "beat",
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_8_beats",
+          "quiet_ballad"
+        ],
+        "risk": "medium",
+        "intensity": 0.9,
+        "typical_text": "Tiger! Fire!"
+      },
+      "notes": [
+        "Allowed in solo sections when the beat grid and bar count are clear; keep existing duration, risk, and context requirements."
+      ]
+    },
+    "haiseno_activation": {
+      "display_name": "Haiseno Activation",
+      "category": "mix",
+      "role": "mix",
+      "description": "Haiseno Activation is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "pre_chorus_build",
+        "pre_chorus",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse"
+      ],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "medium",
+      "semantic_tags": [
+        "mix",
+        "risk_medium",
+        "short",
+        "needs_low_vocal_density",
+        "pre_chorus_mix",
+        "build_mix",
+        "tension_ramp",
+        "solo_mix",
+        "clear_barline"
+      ],
+      "source_library": {
+        "best_context": [
+          "post_chorus_interlude",
+          "instrumental_break",
+          "reintro",
+          "short_high_energy_gap",
+          "chorus_entry"
+        ],
+        "requires": {
+          "min_bars": 1.0,
+          "max_bars": 2.0,
+          "allowed_bars": [
+            1,
+            2
+          ],
+          "vocal_density": "low",
+          "beat_stability": "high"
+        },
+        "duration": {
+          "preferred_bars": 1,
+          "preferred_counts": 8,
+          "count_unit": "beat",
+          "preferred_eight_counts": 2,
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_4_beats",
+          "quiet_ballad"
+        ],
+        "risk": "medium",
+        "intensity": 0.9,
+        "typical_text": "Haiseno activation phrase for a 1 or 2 eight-count gap."
+      },
+      "notes": [
+        "Pre-chorus/build-compatible when bar fit, vocal gap, beat stability, and cultural/live context all match.",
+        "Allowed in solo sections when the beat grid and bar count are clear; keep existing duration, risk, and context requirements."
+      ]
+    },
+    "mouikai": {
+      "display_name": "Mou Ikkai",
+      "category": "mix",
+      "role": "mix",
+      "description": "Mou Ikkai is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "pre_chorus_build",
+        "pre_chorus",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse"
+      ],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "medium",
+      "semantic_tags": [
+        "mix",
+        "risk_medium",
+        "one_bar",
+        "needs_low_vocal_density",
+        "pre_chorus_mix",
+        "build_mix",
+        "tension_ramp",
+        "solo_mix",
+        "clear_barline"
+      ],
+      "source_library": {
+        "best_context": [
+          "pre_chorus",
+          "pre_chorus_build",
+          "short_high_energy_gap",
+          "chorus_entry",
+          "instrumental_break",
+          "post_chorus_interlude"
+        ],
+        "requires": {
+          "min_bars": 1.0,
+          "max_bars": 1.0,
+          "allowed_bars": [
+            1
+          ],
+          "vocal_density": "low",
+          "beat_stability": "high"
+        },
+        "duration": {
+          "preferred_bars": 1,
+          "preferred_counts": 4,
+          "count_unit": "beat",
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_1_bar",
+          "quiet_ballad"
+        ],
+        "risk": "medium",
+        "intensity": 0.82,
+        "typical_text": "Mou ikkai!"
+      },
+      "notes": [
+        "Pre-chorus/build-compatible when bar fit, vocal gap, beat stability, and cultural/live context all match.",
+        "Allowed in solo sections when the beat grid and bar count are clear; keep existing duration, risk, and context requirements."
+      ]
+    },
+    "bismarck_mix_first_half": {
+      "display_name": "Bismarck Koujou First Half",
+      "category": "mix",
+      "role": "mix",
+      "description": "Bismarck Koujou First Half is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "pre_chorus",
+        "pre_chorus_build",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse"
+      ],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "medium",
+      "semantic_tags": [
+        "mix",
+        "risk_medium",
+        "short",
+        "needs_low_vocal_density",
+        "solo_mix",
+        "clear_barline",
+        "pre_chorus_exception",
+        "pre_chorus_mix",
+        "build_mix",
+        "tension_ramp",
+        "high_tension_mix"
+      ],
+      "source_library": {
+        "best_context": [
+          "pre_chorus",
+          "pre_chorus_build",
+          "chorus_entry",
+          "high_tension_gap",
+          "short_high_energy_gap"
+        ],
+        "requires": {
+          "min_bars": 2.0,
+          "max_bars": 2.0,
+          "vocal_density": "low",
+          "beat_stability": "high",
+          "allowed_bars": [
+            2
+          ]
+        },
+        "duration": {
+          "preferred_bars": 2,
+          "preferred_counts": 8,
+          "count_unit": "beat",
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_2_bars",
+          "quiet_ballad"
+        ],
+        "risk": "medium",
+        "intensity": 0.9,
+        "typical_text": "Takamaruyo Takamaruyo / TakamaruHikumaruBisumaruku"
+      },
+      "notes": [
+        "Project exception: the short first half can support pre-chorus/build slots."
+      ]
+    },
+    "bismarck_mix": {
+      "display_name": "Bismarck Koujou",
+      "category": "mix",
+      "role": "mix",
+      "description": "Bismarck Koujou is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "verse",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "medium",
+      "semantic_tags": [
+        "mix",
+        "risk_medium",
+        "long",
+        "needs_low_vocal_density",
+        "solo_mix",
+        "clear_barline",
+        "verse_mix"
+      ],
+      "source_library": {
+        "best_context": [
+          "verse",
+          "mid_energy_vocal",
+          "long_vocal_gap"
+        ],
+        "requires": {
+          "min_bars": 6.0,
+          "max_bars": 6.0,
+          "allowed_bars": [
+            6
+          ],
+          "vocal_density": "low",
+          "beat_stability": "high"
+        },
+        "duration": {
+          "preferred_bars": 6,
+          "preferred_counts": 48,
+          "count_unit": "double_time_call_count",
+          "preferred_eight_counts": 6,
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_6_call_eight_counts",
+          "quiet_ballad"
+        ],
+        "risk": "medium",
+        "intensity": 0.92,
+        "typical_text": "Takamaruyo Takamaruyo / TakamaruHikumaruBisumaruku / Shijima-ru Arushindo / Kazudansu Ni-haiO-hai(P) / Kanchu-hai U-ronhai / Nachuraruhai Aikyanfurai(跳起)"
+      },
+      "notes": [
+        "Screenshot placement: Bismarck koujou is a verse MIX; use only when the verse has a clean long gap."
+      ]
+    },
+    "bismarck+kanzenseniki_mix": {
+      "display_name": "Bismarck + Kanzenseniki MIX",
+      "category": "mix",
+      "role": "mix",
+      "description": "A longer, more complex MIX combining 'Bismarck' and 'Kanzenseniki' patterns. More elaborate than standard MIX. Named after warship references common in anisong call culture.",
+      "when_to_use": "Long instrumental breaks (8+ bars). Songs with military/marching themes. When the audience expects something beyond standard MIX.",
+      "when_not_to_use": "Short breaks. Soft/gentle songs. Pre-chorus/build sections without enough bar length, beat stability, or tradition for a complex MIX.",
+      "allowed_structures": [
+        "bridge",
+        "chorus",
+        "post_chorus",
+        "instrumental",
+        "instrumental_break",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "intro",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "medium",
+      "semantic_tags": [
+        "mix",
+        "risk_medium",
+        "long",
+        "needs_low_vocal_density",
+        "solo_mix",
+        "clear_barline",
+        "ochi_sabi_mix"
+      ],
+      "source_library": {
+        "best_context": [
+          "bridge",
+          "chorus",
+          "final_chorus",
+          "pre_final_chorus_gap",
+          "high_energy_break"
+        ],
+        "requires": {
+          "min_bars": 8.0,
+          "max_bars": 8.0,
+          "allowed_bars": [
+            8
+          ],
+          "vocal_density": "low_or_gap",
+          "beat_stability": "high"
+        },
+        "duration": {
+          "preferred_bars": 8,
+          "preferred_counts": 64,
+          "count_unit": "double_time_call_count",
+          "preferred_eight_counts": 8,
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_8_call_eight_counts",
+          "quiet_ballad"
+        ],
+        "risk": "medium",
+        "intensity": 0.94,
+        "typical_text": "Hirabaruyo Hirabaruyo / TakabaruHirabaruBisubaruku / Tanaka-ru Ozoshindo / Barudansu Yu-haiYa-hai / Nyanchuuhai U-zonhai / Barubaruhai Daichanfurai"
+      },
+      "legacy_ids": [
+        "bismarck_kanzenseniki_mix"
+      ],
+      "cultural_ties": {
+        "character_tie": "universal",
+        "franchise_tie": "universal"
+      },
+      "notes": [
+        "Screenshot placement: Bismarck full/Kanzenseniki is an ochi-sabi MIX."
+      ]
+    },
+    "aiai_mix": {
+      "display_name": "Aiai MIX",
+      "category": "mix",
+      "role": "mix",
+      "description": "Aiai MIX is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "chorus",
+        "post_chorus"
+      ],
+      "discouraged_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "solo",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "medium",
+      "semantic_tags": [
+        "mix",
+        "risk_medium",
+        "short",
+        "needs_low_vocal_density",
+        "solo_mix",
+        "clear_barline",
+        "chorus_mix"
+      ],
+      "source_library": {
+        "best_context": [
+          "chorus",
+          "repeated_chorus",
+          "final_chorus",
+          "chorus_entry",
+          "post_chorus"
+        ],
+        "requires": {
+          "min_bars": 2.0,
+          "max_bars": 2.0,
+          "bar_multiple": 2,
+          "allowed_bars": [
+            2
+          ],
+          "vocal_density": "low",
+          "beat_stability": "high"
+        },
+        "duration": {
+          "preferred_bars": 2,
+          "strict_bars": true,
+          "strict_bar_multiple": true,
+          "can_compress": false,
+          "can_extend": false,
+          "preferred_counts": 8,
+          "count_unit": "beat"
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_2_bars",
+          "quiet_ballad"
+        ],
+        "risk": "medium",
+        "intensity": 0.9,
+        "typical_text": "Aiai-style short MIX phrase in romanized form."
+      },
+      "notes": [
+        "Screenshot placement: Aiai/Imi-fumei family is a chorus MIX."
+      ]
+    },
+    "imi_fumei_ai_mix": {
+      "display_name": "Imi Fumei Ai MIX",
+      "category": "mix",
+      "role": "mix",
+      "description": "Imi Fumei Ai MIX is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "chorus",
+        "post_chorus"
+      ],
+      "discouraged_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "solo",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "medium",
+      "semantic_tags": [
+        "mix",
+        "risk_medium",
+        "short",
+        "needs_low_vocal_density",
+        "solo_mix",
+        "clear_barline",
+        "chorus_mix"
+      ],
+      "source_library": {
+        "best_context": [
+          "chorus",
+          "repeated_chorus",
+          "final_chorus",
+          "chorus_entry",
+          "post_chorus"
+        ],
+        "requires": {
+          "min_bars": 2.0,
+          "max_bars": 2.0,
+          "allowed_bars": [
+            2
+          ],
+          "vocal_density": "low",
+          "beat_stability": "high"
+        },
+        "duration": {
+          "preferred_bars": 2,
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false,
+          "preferred_counts": 8,
+          "count_unit": "beat"
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_2_bars",
+          "quiet_ballad"
+        ],
+        "risk": "medium",
+        "intensity": 0.9,
+        "typical_text": "Imi fumei ai MIX phrase in romanized form."
+      },
+      "notes": [
+        "Screenshot placement: Aiai/Imi-fumei family is a chorus MIX."
+      ]
+    },
+    "pan_mix": {
+      "display_name": "Pan MIX",
+      "category": "mix",
+      "role": "mix",
+      "description": "Pan MIX is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "solo",
+        "bridge"
+      ],
+      "discouraged_structures": [
+        "intro",
+        "chorus",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "medium",
+      "semantic_tags": [
+        "mix",
+        "risk_medium",
+        "needs_low_vocal_density",
+        "solo_mix",
+        "clear_barline",
+        "short_interlude_mix"
+      ],
+      "source_library": {
+        "best_context": [
+          "instrumental_break",
+          "post_chorus_interlude",
+          "short_high_energy_gap"
+        ],
+        "requires": {
+          "min_bars": 4.0,
+          "max_bars": 4.0,
+          "vocal_density": "low",
+          "beat_stability": "high",
+          "allowed_bars": [
+            4
+          ]
+        },
+        "duration": {
+          "preferred_bars": 4,
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false,
+          "preferred_counts": 16,
+          "count_unit": "beat"
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_4_bars",
+          "quiet_ballad"
+        ],
+        "risk": "medium",
+        "intensity": 0.9,
+        "typical_text": "Pan MIX phrase in romanized form."
+      },
+      "notes": [
+        "Screenshot placement: Pan MIX is a short interlude MIX."
+      ]
+    },
+    "gozen_ichiban_mix": {
+      "display_name": "Gozen Ichiban MIX",
+      "category": "mix",
+      "role": "mix",
+      "description": "A MIX pattern themed around 'number one in the morning'. Has a distinct rhythmic feel and specific call phrases. Less common than standard MIX or Jya Jya MIX.",
+      "when_to_use": "Bridge sections. Specific songs where this MIX pattern is traditionally used.",
+      "when_not_to_use": "General-purpose allocation. Songs where this MIX is not culturally established.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "bridge",
+        "pre_chorus_build",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus"
+      ],
+      "requires_context": {
+        "song_tradition_any": [
+          "gozen_ichiban_mix",
+          "Gozen Ichiban MIX"
+        ],
+        "audience_experience_any": [
+          "experienced"
+        ]
+      },
+      "if_context_missing": "penalize",
+      "ooc_risk": "high",
+      "semantic_tags": [
+        "mix",
+        "risk_medium",
+        "needs_low_vocal_density",
+        "build_mix",
+        "tension_ramp",
+        "solo_mix",
+        "clear_barline"
+      ],
+      "source_library": {
+        "best_context": [
+          "intro",
+          "instrumental_break",
+          "post_chorus_interlude",
+          "high_energy_break",
+          "pre_final_chorus_gap"
+        ],
+        "requires": {
+          "min_bars": 4.0,
+          "max_bars": 4.0,
+          "vocal_density": "low",
+          "beat_stability": "high",
+          "allowed_bars": [
+            4
+          ]
+        },
+        "duration": {
+          "preferred_bars": 4,
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_4_bars",
+          "quiet_ballad"
+        ],
+        "risk": "medium",
+        "intensity": 0.92,
+        "typical_text": "Gozen Ichiban MIX phrase in romanized form."
+      },
+      "cultural_ties": {
+        "character_tie": "universal (but song-specific tradition)",
+        "franchise_tie": "universal"
+      },
+      "notes": [
+        "Pre-chorus/build-compatible when bar fit, vocal gap, beat stability, and cultural/live context all match.",
+        "Allowed in solo sections when the beat grid and bar count are clear; keep existing duration, risk, and context requirements."
+      ]
+    },
+    "bariyado_mix": {
+      "display_name": "Bariyado MIX",
+      "category": "mix",
+      "role": "mix",
+      "description": "Bariyado MIX is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "pre_chorus_build",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus"
+      ],
+      "requires_context": {
+        "song_tradition_any": [
+          "bariyado_mix",
+          "Bariyado MIX"
+        ],
+        "audience_experience_any": [
+          "experienced"
+        ]
+      },
+      "if_context_missing": "penalize",
+      "ooc_risk": "high",
+      "semantic_tags": [
+        "mix",
+        "risk_medium",
+        "long",
+        "needs_low_vocal_density",
+        "build_mix",
+        "tension_ramp",
+        "solo_mix",
+        "clear_barline"
+      ],
+      "source_library": {
+        "best_context": [
+          "long_intro",
+          "instrumental_break",
+          "extended_instrumental",
+          "high_energy_break",
+          "pre_final_chorus_gap"
+        ],
+        "requires": {
+          "min_bars": 8,
+          "max_bars": 8,
+          "vocal_density": "low",
+          "beat_stability": "high",
+          "allowed_bars": [
+            8
+          ]
+        },
+        "duration": {
+          "preferred_bars": 8,
+          "preferred_counts": 32,
+          "count_unit": "beat",
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_8_bars",
+          "quiet_ballad"
+        ],
+        "risk": "medium",
+        "intensity": 0.94,
+        "typical_text": "Bariyado MIX phrase in romanized form."
+      },
+      "notes": [
+        "Pre-chorus/build-compatible when bar fit, vocal gap, beat stability, and cultural/live context all match.",
+        "Allowed in solo sections when the beat grid and bar count are clear; keep existing duration, risk, and context requirements."
+      ]
+    },
+    "tsunagaridai_mix": {
+      "display_name": "Tsunagaridai MIX",
+      "category": "mix",
+      "role": "mix",
+      "description": "Tsunagaridai MIX is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "pre_chorus",
+        "pre_chorus_build",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse"
+      ],
+      "requires_context": {
+        "song_tradition_any": [
+          "tsunagaridai_mix",
+          "Tsunagaridai MIX"
+        ],
+        "audience_experience_any": [
+          "experienced"
+        ]
+      },
+      "if_context_missing": "penalize",
+      "ooc_risk": "high",
+      "semantic_tags": [
+        "mix",
+        "risk_high",
+        "long",
+        "needs_low_vocal_density",
+        "solo_mix",
+        "clear_barline",
+        "long_interlude_mix",
+        "pre_chorus_mix",
+        "build_mix",
+        "tension_ramp",
+        "high_tension_mix"
+      ],
+      "source_library": {
+        "best_context": [
+          "long_intro",
+          "extended_instrumental",
+          "instrumental_break",
+          "high_energy_break",
+          "pre_final_chorus_gap"
+        ],
+        "requires": {
+          "min_bars": 8.0,
+          "max_bars": 8.0,
+          "allowed_bars": [
+            8
+          ],
+          "vocal_density": "low",
+          "beat_stability": "high"
+        },
+        "duration": {
+          "preferred_bars": 8,
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false,
+          "preferred_counts": 32,
+          "count_unit": "beat"
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_8_bars",
+          "quiet_ballad"
+        ],
+        "risk": "high",
+        "intensity": 0.95,
+        "typical_text": "Tsunagaritai Tsunagaritai / Yappari 〇〇〇to Tsunagaritai / Tsunagaritai Tsunagaritai / Yappari 〇〇〇to Tsunagaritai"
+      },
+      "notes": [
+        "Screenshot placement: Tsunagaritai is primarily a long interlude MIX; project keeps the explicit pre-chorus exception for clean 8-count build slots."
+      ]
+    },
+    "gachikoi_koujou": {
+      "display_name": "Gachikoi Koujou",
+      "category": "mix",
+      "role": "mix",
+      "description": "Gachikoi Koujou is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "outro",
+        "post_chorus",
+        "instrumental",
+        "instrumental_break",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "intro",
+        "chorus",
+        "bridge"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {
+        "song_tradition_any": [
+          "gachikoi_koujou",
+          "Gachikoi Koujou"
+        ],
+        "audience_experience_any": [
+          "experienced"
+        ]
+      },
+      "if_context_missing": "penalize",
+      "ooc_risk": "high",
+      "semantic_tags": [
+        "mix",
+        "risk_high",
+        "long",
+        "needs_low_vocal_density",
+        "solo_mix",
+        "clear_barline",
+        "outro_koujou"
+      ],
+      "source_library": {
+        "best_context": [
+          "outro",
+          "high_energy_outro",
+          "post_chorus_interlude",
+          "instrumental_break"
+        ],
+        "requires": {
+          "min_bars": 8.0,
+          "max_bars": 9.0,
+          "vocal_density": "low",
+          "emotional_style": "oshi_focused",
+          "allowed_bars": [
+            8,
+            9
+          ]
+        },
+        "duration": {
+          "preferred_bars": 8,
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false,
+          "preferred_counts": 32,
+          "count_unit": "beat"
+        },
+        "avoid": [
+          "short_gap_under_8_bars",
+          "dense_vocal",
+          "formal_live"
+        ],
+        "risk": "high",
+        "intensity": 0.92,
+        "typical_text": "A fixed love/oshi speech shouted in a long gap."
+      },
+      "notes": [
+        "Screenshot placement: Gachikoi koujou is an ending/outro speech."
+      ]
+    },
+    "chikipa_mix": {
+      "display_name": "Chikipa MIX",
+      "category": "mix",
+      "role": "mix",
+      "description": "Chikipa MIX is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "solo",
+        "bridge"
+      ],
+      "discouraged_structures": [
+        "intro",
+        "chorus",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {
+        "song_tradition_any": [
+          "chikipa_mix",
+          "Chikipa MIX"
+        ],
+        "audience_experience_any": [
+          "experienced"
+        ]
+      },
+      "if_context_missing": "penalize",
+      "ooc_risk": "high",
+      "semantic_tags": [
+        "mix",
+        "risk_high",
+        "needs_low_vocal_density",
+        "solo_mix",
+        "clear_barline",
+        "short_interlude_mix"
+      ],
+      "source_library": {
+        "best_context": [
+          "instrumental_break",
+          "post_chorus_interlude",
+          "short_high_energy_gap",
+          "high_energy_break"
+        ],
+        "requires": {
+          "min_bars": 4.0,
+          "max_bars": 8.0,
+          "allowed_bars": [
+            4,
+            6,
+            7,
+            8
+          ],
+          "vocal_density": "low_or_gap",
+          "beat_stability": "high"
+        },
+        "duration": {
+          "preferred_bars": 7,
+          "preferred_counts": 28,
+          "count_unit": "beat",
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_4_bars",
+          "quiet_ballad",
+          "formal_live"
+        ],
+        "risk": "high",
+        "intensity": 0.94,
+        "typical_text": "Chikipa MIX phrase in romanized form."
+      },
+      "notes": [
+        "Screenshot placement: Chikipa/Zoo MIX is for short in-song interludes."
+      ]
+    },
+    "wakage_no_itari_mix": {
+      "display_name": "若気の至り MIX",
+      "category": "mix",
+      "role": "mix",
+      "description": "若気の至り MIX is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "intro",
+        "instrumental",
+        "instrumental_break",
+        "post_chorus",
+        "pre_chorus_build",
+        "pre_chorus",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [
+        "verse"
+      ],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "medium",
+      "semantic_tags": [
+        "mix",
+        "risk_medium",
+        "short",
+        "needs_low_vocal_density",
+        "pre_chorus_mix",
+        "build_mix",
+        "tension_ramp",
+        "solo_mix",
+        "clear_barline"
+      ],
+      "source_library": {
+        "best_context": [
+          "instrumental_break",
+          "high_energy_break",
+          "post_chorus_interlude",
+          "pre_chorus_build",
+          "chorus_entry",
+          "short_high_energy_gap"
+        ],
+        "requires": {
+          "min_bars": 2.0,
+          "max_bars": 2.0,
+          "allowed_bars": [
+            2
+          ],
+          "vocal_density": "low_or_gap",
+          "beat_stability": "high"
+        },
+        "duration": {
+          "preferred_bars": 2,
+          "preferred_counts": 8,
+          "count_unit": "beat",
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_2_bars",
+          "quiet_ballad"
+        ],
+        "risk": "medium",
+        "intensity": 0.9,
+        "typical_text": "Wakage no Itari MIX phrase; fill exact chant text after local validation."
+      },
+      "notes": [
+        "Pre-chorus/build-compatible when bar fit, vocal gap, beat stability, and cultural/live context all match.",
+        "Allowed in solo sections when the beat grid and bar count are clear; keep existing duration, risk, and context requirements."
+      ]
+    },
+    "long_zhi_mao": {
+      "display_name": "Long Zhi Mao",
+      "category": "underground_gei",
+      "role": "underground_gei",
+      "description": "Long Zhi Mao is a underground_gei action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "chorus",
+        "post_chorus",
+        "instrumental",
+        "instrumental_break"
+      ],
+      "discouraged_structures": [
+        "intro",
+        "bridge",
+        "outro",
+        "solo"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {
+        "audience_experience_any": [
+          "experienced",
+          "experienced_underground_gei"
+        ],
+        "venue_policy_any": [
+          "allows_large_body_motion"
+        ]
+      },
+      "if_context_missing": "penalize",
+      "ooc_risk": "high",
+      "semantic_tags": [
+        "underground_gei",
+        "risk_high",
+        "body_motion",
+        "experienced_audience"
+      ],
+      "source_library": {
+        "best_context": [
+          "instrumental_break",
+          "high_energy_break",
+          "pre_chorus_build",
+          "post_chorus_interlude"
+        ],
+        "requires": {
+          "min_bars": 4.0,
+          "max_bars": 4.0,
+          "bar_multiple": 4,
+          "allowed_bars": [
+            4
+          ],
+          "vocal_density": "low_or_gap",
+          "beat_stability": "high"
+        },
+        "duration": {
+          "preferred_bars": 4,
+          "preferred_counts": 16,
+          "count_unit": "beat",
+          "strict_bar_multiple": true,
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_16_beats",
+          "formal_live",
+          "quiet_ballad"
+        ],
+        "risk": "high",
+        "intensity": 0.95,
+        "typical_text": "Long Zhi Mao underground-gei movement sequence."
+      },
+      "notes": [
+        "Large body-motion action. Requires experienced audience and enough physical/temporal space."
+      ]
+    },
+    "gongfu_she": {
+      "display_name": "Gongfu She",
+      "category": "underground_gei",
+      "role": "underground_gei",
+      "description": "An underground gei inspired by kung-fu movie gestures. Involves rapid hand movements and poses. Very high energy.",
+      "when_to_use": "Final choruses. Extended instrumental breaks. Maximum energy moments only.",
+      "when_not_to_use": "Same constraints as other underground gei. Never allocate to non-climax sections.",
+      "allowed_structures": [
+        "chorus",
+        "post_chorus",
+        "instrumental",
+        "instrumental_break"
+      ],
+      "discouraged_structures": [
+        "intro",
+        "bridge",
+        "outro",
+        "solo"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {
+        "audience_experience_any": [
+          "experienced",
+          "experienced_underground_gei"
+        ],
+        "venue_policy_any": [
+          "allows_large_body_motion"
+        ]
+      },
+      "if_context_missing": "penalize",
+      "ooc_risk": "high",
+      "semantic_tags": [
+        "underground_gei",
+        "risk_high",
+        "long",
+        "body_motion",
+        "experienced_audience"
+      ],
+      "source_library": {
+        "best_context": [
+          "chorus",
+          "instrumental_break",
+          "high_energy_break",
+          "extended_instrumental"
+        ],
+        "requires": {
+          "min_bars": 8.0,
+          "max_bars": 8.0,
+          "vocal_density": "low_or_gap",
+          "beat_stability": "high",
+          "allowed_bars": [
+            8
+          ]
+        },
+        "duration": {
+          "preferred_bars": 8,
+          "preferred_counts": 32,
+          "count_unit": "beat",
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_32_beats",
+          "formal_live",
+          "quiet_ballad"
+        ],
+        "risk": "high",
+        "intensity": 0.98,
+        "typical_text": "Gongfu She underground-gei movement sequence."
+      },
+      "cultural_ties": {
+        "character_tie": "universal",
+        "franchise_tie": "universal"
+      },
+      "notes": [
+        "Large body-motion action. Requires experienced audience and enough physical/temporal space."
+      ]
+    },
+    "ali_shizi": {
+      "display_name": "Ali Shizi",
+      "category": "underground_gei",
+      "role": "underground_gei",
+      "description": "An underground gei involving hand gestures mimicking lion/dragon movements. Visually impressive but physically demanding.",
+      "when_to_use": "Long instrumental breaks in high-energy songs. Final choruses of epic-feeling songs.",
+      "when_not_to_use": "Same constraints as other underground gei. Never in intro/verse/pre-chorus/bridge/outro.",
+      "allowed_structures": [
+        "chorus",
+        "post_chorus",
+        "instrumental",
+        "instrumental_break"
+      ],
+      "discouraged_structures": [
+        "intro",
+        "bridge",
+        "outro",
+        "solo"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {
+        "audience_experience_any": [
+          "experienced",
+          "experienced_underground_gei"
+        ],
+        "venue_policy_any": [
+          "allows_large_body_motion"
+        ]
+      },
+      "if_context_missing": "penalize",
+      "ooc_risk": "high",
+      "semantic_tags": [
+        "underground_gei",
+        "risk_high",
+        "body_motion",
+        "experienced_audience"
+      ],
+      "source_library": {
+        "best_context": [
+          "chorus",
+          "instrumental_break",
+          "high_energy_break",
+          "pre_chorus_build",
+          "post_chorus_interlude"
+        ],
+        "requires": {
+          "min_bars": 4.0,
+          "max_bars": 4.0,
+          "vocal_density": "low_or_gap",
+          "beat_stability": "high",
+          "allowed_bars": [
+            4
+          ]
+        },
+        "duration": {
+          "preferred_bars": 4,
+          "preferred_counts": 16,
+          "count_unit": "beat",
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_16_beats",
+          "formal_live",
+          "quiet_ballad"
+        ],
+        "risk": "high",
+        "intensity": 0.96,
+        "typical_text": "Ali Shizi underground-gei movement sequence."
+      },
+      "cultural_ties": {
+        "character_tie": "universal",
+        "franchise_tie": "universal"
+      },
+      "notes": [
+        "Large body-motion action. Requires experienced audience and enough physical/temporal space."
+      ]
+    },
+    "heibai_shuangyi": {
+      "display_name": "Heibai Shuangyi",
+      "category": "underground_gei",
+      "role": "underground_gei",
+      "description": "Heibai Shuangyi is a underground_gei action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "chorus",
+        "post_chorus",
+        "instrumental",
+        "instrumental_break"
+      ],
+      "discouraged_structures": [
+        "intro",
+        "bridge",
+        "outro",
+        "solo"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {
+        "audience_experience_any": [
+          "experienced",
+          "experienced_underground_gei"
+        ],
+        "venue_policy_any": [
+          "allows_large_body_motion"
+        ]
+      },
+      "if_context_missing": "penalize",
+      "ooc_risk": "high",
+      "semantic_tags": [
+        "underground_gei",
+        "risk_high",
+        "body_motion",
+        "experienced_audience"
+      ],
+      "source_library": {
+        "best_context": [
+          "chorus",
+          "instrumental_break",
+          "high_energy_break",
+          "pre_chorus_build",
+          "post_chorus_interlude"
+        ],
+        "requires": {
+          "min_bars": 4.0,
+          "max_bars": 4.0,
+          "vocal_density": "low_or_gap",
+          "beat_stability": "high",
+          "allowed_bars": [
+            4
+          ]
+        },
+        "duration": {
+          "preferred_bars": 4,
+          "preferred_counts": 16,
+          "count_unit": "beat",
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_16_beats",
+          "formal_live",
+          "quiet_ballad"
+        ],
+        "risk": "high",
+        "intensity": 0.96,
+        "typical_text": "Heibai Shuangyi underground-gei movement sequence."
+      },
+      "notes": [
+        "Large body-motion action. Requires experienced audience and enough physical/temporal space."
+      ]
+    },
+    "cun_zheng": {
+      "display_name": "Cun Zheng",
+      "category": "underground_gei",
+      "role": "underground_gei",
+      "description": "Cun Zheng is a underground_gei action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "chorus",
+        "post_chorus",
+        "instrumental",
+        "instrumental_break"
+      ],
+      "discouraged_structures": [
+        "intro",
+        "bridge",
+        "outro",
+        "solo"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {
+        "audience_experience_any": [
+          "experienced",
+          "experienced_underground_gei"
+        ],
+        "venue_policy_any": [
+          "allows_large_body_motion"
+        ]
+      },
+      "if_context_missing": "penalize",
+      "ooc_risk": "high",
+      "semantic_tags": [
+        "underground_gei",
+        "risk_high",
+        "body_motion",
+        "experienced_audience"
+      ],
+      "source_library": {
+        "best_context": [
+          "instrumental_break",
+          "high_energy_break",
+          "pre_chorus_build",
+          "post_chorus_interlude"
+        ],
+        "requires": {
+          "min_bars": 4.0,
+          "max_bars": 4.0,
+          "bar_multiple": 4,
+          "allowed_bars": [
+            4
+          ],
+          "vocal_density": "low_or_gap",
+          "beat_stability": "high"
+        },
+        "duration": {
+          "preferred_bars": 4,
+          "preferred_counts": 16,
+          "count_unit": "beat",
+          "strict_bar_multiple": true,
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_16_beats",
+          "formal_live",
+          "quiet_ballad"
+        ],
+        "risk": "high",
+        "intensity": 0.95,
+        "typical_text": "Cun Zheng underground-gei movement sequence."
+      },
+      "notes": [
+        "Large body-motion action. Requires experienced audience and enough physical/temporal space."
+      ]
+    },
+    "lei_she": {
+      "display_name": "Lei She",
+      "category": "underground_gei",
+      "role": "underground_gei",
+      "description": "Lei She is a underground_gei action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "chorus",
+        "post_chorus",
+        "instrumental",
+        "instrumental_break"
+      ],
+      "discouraged_structures": [
+        "intro",
+        "bridge",
+        "outro",
+        "solo"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {
+        "audience_experience_any": [
+          "experienced",
+          "experienced_underground_gei"
+        ],
+        "venue_policy_any": [
+          "allows_large_body_motion"
+        ]
+      },
+      "if_context_missing": "penalize",
+      "ooc_risk": "high",
+      "semantic_tags": [
+        "underground_gei",
+        "risk_high",
+        "body_motion",
+        "experienced_audience"
+      ],
+      "source_library": {
+        "best_context": [
+          "instrumental_break",
+          "high_energy_break",
+          "pre_chorus_build",
+          "post_chorus_interlude"
+        ],
+        "requires": {
+          "min_bars": 4.0,
+          "max_bars": 4.0,
+          "bar_multiple": 4,
+          "allowed_bars": [
+            4
+          ],
+          "vocal_density": "low_or_gap",
+          "beat_stability": "high"
+        },
+        "duration": {
+          "preferred_bars": 4,
+          "preferred_counts": 16,
+          "count_unit": "beat",
+          "strict_bar_multiple": true,
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_16_beats",
+          "formal_live",
+          "quiet_ballad"
+        ],
+        "risk": "high",
+        "intensity": 0.95,
+        "typical_text": "Lei She underground-gei movement sequence."
+      },
+      "notes": [
+        "Large body-motion action. Requires experienced audience and enough physical/temporal space."
+      ]
+    },
+    "luo_man_si": {
+      "display_name": "Luo Man Si",
+      "category": "underground_gei",
+      "role": "underground_gei",
+      "description": "Luo Man Si is a underground_gei action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "chorus",
+        "post_chorus",
+        "instrumental",
+        "instrumental_break"
+      ],
+      "discouraged_structures": [
+        "intro",
+        "bridge",
+        "outro",
+        "solo"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {
+        "audience_experience_any": [
+          "experienced",
+          "experienced_underground_gei"
+        ],
+        "venue_policy_any": [
+          "allows_large_body_motion"
+        ]
+      },
+      "if_context_missing": "penalize",
+      "ooc_risk": "high",
+      "semantic_tags": [
+        "underground_gei",
+        "risk_high",
+        "body_motion",
+        "experienced_audience"
+      ],
+      "source_library": {
+        "best_context": [
+          "instrumental_break",
+          "high_energy_break",
+          "pre_chorus_build",
+          "post_chorus_interlude"
+        ],
+        "requires": {
+          "min_bars": 4.0,
+          "max_bars": 4.0,
+          "bar_multiple": 4,
+          "allowed_bars": [
+            4
+          ],
+          "vocal_density": "low_or_gap",
+          "beat_stability": "high"
+        },
+        "duration": {
+          "preferred_bars": 4,
+          "preferred_counts": 16,
+          "count_unit": "beat",
+          "strict_bar_multiple": true,
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_16_beats",
+          "formal_live",
+          "quiet_ballad"
+        ],
+        "risk": "high",
+        "intensity": 0.95,
+        "typical_text": "Luo Man Si underground-gei movement sequence."
+      },
+      "notes": [
+        "Large body-motion action. Requires experienced audience and enough physical/temporal space."
+      ]
+    },
+    "dian_bo_she": {
+      "display_name": "Dian Bo She",
+      "category": "underground_gei",
+      "role": "underground_gei",
+      "description": "A complex underground gei (fan-developed performance art) involving rhythmic body movements and coordinated chants. 'Dian Bo She' involves a pointing/shooting gesture pattern. High difficulty — not for casual audiences.",
+      "when_to_use": "Long chorus sections (final chorus preferred). Songs with strong, steady beats suitable for coordinated gei. Audience must be experienced.",
+      "when_not_to_use": "Intros, verses, pre-chorus, bridges, outros. Casual or beginner-oriented contexts. Songs where the gei doesn't match the beat pattern.",
+      "allowed_structures": [
+        "chorus",
+        "post_chorus",
+        "instrumental",
+        "instrumental_break"
+      ],
+      "discouraged_structures": [
+        "intro",
+        "bridge",
+        "outro",
+        "solo"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {
+        "audience_experience_any": [
+          "experienced",
+          "experienced_underground_gei"
+        ],
+        "venue_policy_any": [
+          "allows_large_body_motion"
+        ]
+      },
+      "if_context_missing": "penalize",
+      "ooc_risk": "high",
+      "semantic_tags": [
+        "underground_gei",
+        "risk_high",
+        "long",
+        "body_motion",
+        "experienced_audience"
+      ],
+      "source_library": {
+        "best_context": [
+          "instrumental_break",
+          "high_energy_break",
+          "long_intro",
+          "extended_instrumental"
+        ],
+        "requires": {
+          "min_bars": 8.0,
+          "max_bars": 8.0,
+          "bar_multiple": 8,
+          "allowed_bars": [
+            8
+          ],
+          "vocal_density": "low_or_gap",
+          "beat_stability": "high"
+        },
+        "duration": {
+          "preferred_bars": 8,
+          "preferred_counts": 32,
+          "count_unit": "beat",
+          "strict_bars": true,
+          "strict_bar_multiple": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_16_beats",
+          "formal_live",
+          "quiet_ballad"
+        ],
+        "risk": "high",
+        "intensity": 0.98,
+        "typical_text": "Dian Bo She underground-gei movement sequence."
+      },
+      "cultural_ties": {
+        "character_tie": "universal",
+        "franchise_tie": "universal"
+      },
+      "notes": [
+        "Large body-motion action. Requires experienced audience and enough physical/temporal space."
+      ]
+    },
+    "zi_he_she": {
+      "display_name": "Zi He She",
+      "category": "underground_gei",
+      "role": "underground_gei",
+      "description": "Zi He She is a underground_gei action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "chorus",
+        "post_chorus",
+        "instrumental",
+        "instrumental_break"
+      ],
+      "discouraged_structures": [
+        "intro",
+        "bridge",
+        "outro",
+        "solo"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {
+        "audience_experience_any": [
+          "experienced",
+          "experienced_underground_gei"
+        ],
+        "venue_policy_any": [
+          "allows_large_body_motion"
+        ]
+      },
+      "if_context_missing": "penalize",
+      "ooc_risk": "high",
+      "semantic_tags": [
+        "underground_gei",
+        "risk_high",
+        "long",
+        "body_motion",
+        "experienced_audience"
+      ],
+      "source_library": {
+        "best_context": [
+          "instrumental_break",
+          "high_energy_break",
+          "long_intro",
+          "extended_instrumental"
+        ],
+        "requires": {
+          "min_bars": 8.0,
+          "max_bars": 8.0,
+          "vocal_density": "low_or_gap",
+          "beat_stability": "high",
+          "allowed_bars": [
+            8
+          ]
+        },
+        "duration": {
+          "preferred_bars": 8,
+          "preferred_counts": 32,
+          "count_unit": "beat",
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_32_beats",
+          "formal_live",
+          "quiet_ballad"
+        ],
+        "risk": "high",
+        "intensity": 0.98,
+        "typical_text": "Zi He She underground-gei movement sequence."
+      },
+      "notes": [
+        "Large body-motion action. Requires experienced audience and enough physical/temporal space."
+      ]
+    },
+    "chan_she": {
+      "display_name": "Chan She",
+      "category": "underground_gei",
+      "role": "underground_gei",
+      "description": "Chan She is a underground_gei action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "chorus",
+        "post_chorus",
+        "instrumental",
+        "instrumental_break"
+      ],
+      "discouraged_structures": [
+        "intro",
+        "bridge",
+        "outro",
+        "solo"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {
+        "audience_experience_any": [
+          "experienced",
+          "experienced_underground_gei"
+        ],
+        "venue_policy_any": [
+          "allows_large_body_motion"
+        ]
+      },
+      "if_context_missing": "penalize",
+      "ooc_risk": "high",
+      "semantic_tags": [
+        "underground_gei",
+        "risk_high",
+        "long",
+        "body_motion",
+        "experienced_audience"
+      ],
+      "source_library": {
+        "best_context": [
+          "instrumental_break",
+          "high_energy_break",
+          "long_intro",
+          "extended_instrumental"
+        ],
+        "requires": {
+          "min_bars": 8.0,
+          "max_bars": 8.0,
+          "vocal_density": "low_or_gap",
+          "beat_stability": "high",
+          "allowed_bars": [
+            8
+          ]
+        },
+        "duration": {
+          "preferred_bars": 8,
+          "preferred_counts": 32,
+          "count_unit": "beat",
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_32_beats",
+          "formal_live",
+          "quiet_ballad"
+        ],
+        "risk": "high",
+        "intensity": 0.98,
+        "typical_text": "Chan She underground-gei movement sequence."
+      },
+      "notes": [
+        "Large body-motion action. Requires experienced audience and enough physical/temporal space."
+      ]
+    },
+    "tian_zhao": {
+      "display_name": "Tian Zhao",
+      "category": "underground_gei",
+      "role": "underground_gei",
+      "description": "Tian Zhao is a underground_gei action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "chorus",
+        "post_chorus",
+        "instrumental",
+        "instrumental_break"
+      ],
+      "discouraged_structures": [
+        "intro",
+        "bridge",
+        "outro",
+        "solo"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {
+        "audience_experience_any": [
+          "experienced",
+          "experienced_underground_gei"
+        ],
+        "venue_policy_any": [
+          "allows_large_body_motion"
+        ]
+      },
+      "if_context_missing": "penalize",
+      "ooc_risk": "high",
+      "semantic_tags": [
+        "underground_gei",
+        "risk_high",
+        "body_motion",
+        "experienced_audience"
+      ],
+      "source_library": {
+        "best_context": [
+          "chorus",
+          "instrumental_break",
+          "high_energy_break",
+          "extended_instrumental"
+        ],
+        "requires": {
+          "min_bars": 4.0,
+          "max_bars": 4.0,
+          "vocal_density": "low_or_gap",
+          "beat_stability": "high",
+          "bar_multiple": 4,
+          "allowed_bars": [
+            4
+          ]
+        },
+        "duration": {
+          "preferred_bars": 4,
+          "preferred_counts": 16,
+          "count_unit": "beat",
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false,
+          "strict_bar_multiple": true
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_32_beats",
+          "formal_live",
+          "quiet_ballad"
+        ],
+        "risk": "high",
+        "intensity": 0.98,
+        "typical_text": "Tian Zhao underground-gei movement sequence."
+      },
+      "notes": [
+        "Large body-motion action. Requires experienced audience and enough physical/temporal space."
+      ]
+    },
+    "tian_qu_short": {
+      "display_name": "Tian Qu Short",
+      "category": "underground_gei",
+      "role": "underground_gei",
+      "description": "Tian Qu Short is a underground_gei action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "instrumental",
+        "instrumental_break"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "post_chorus",
+        "intro",
+        "bridge",
+        "outro",
+        "solo"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {
+        "audience_experience_any": [
+          "experienced",
+          "experienced_underground_gei"
+        ],
+        "venue_policy_any": [
+          "allows_large_body_motion"
+        ]
+      },
+      "if_context_missing": "penalize",
+      "ooc_risk": "high",
+      "semantic_tags": [
+        "underground_gei",
+        "risk_high",
+        "long",
+        "body_motion",
+        "experienced_audience"
+      ],
+      "source_library": {
+        "best_context": [
+          "instrumental_break",
+          "high_energy_break",
+          "extended_instrumental",
+          "pre_final_chorus_gap"
+        ],
+        "requires": {
+          "min_bars": 12.0,
+          "max_bars": 12.0,
+          "vocal_density": "low_or_gap",
+          "beat_stability": "high",
+          "allowed_bars": [
+            12
+          ]
+        },
+        "duration": {
+          "preferred_bars": 12,
+          "preferred_counts": 48,
+          "count_unit": "beat",
+          "preferred_eight_counts": 6,
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_48_beats",
+          "formal_live",
+          "quiet_ballad"
+        ],
+        "risk": "high",
+        "intensity": 0.98,
+        "typical_text": "Tian Qu underground-gei movement sequence, short 6 eight-count version."
+      },
+      "notes": [
+        "Large body-motion action. Requires experienced audience and enough physical/temporal space."
+      ]
+    },
+    "tian_qu_long": {
+      "display_name": "Tian Qu Long",
+      "category": "underground_gei",
+      "role": "underground_gei",
+      "description": "An underground gei with a 'dragon soaring to heaven' theme. Elaborate choreography. One of the most visually complex gei.",
+      "when_to_use": "Very long instrumental breaks (16+ bars). Only for experienced audience contexts.",
+      "when_not_to_use": "Same constraints as other underground gei. Especially never in short sections.",
+      "allowed_structures": [
+        "instrumental",
+        "instrumental_break"
+      ],
+      "discouraged_structures": [
+        "chorus",
+        "post_chorus",
+        "intro",
+        "bridge",
+        "outro",
+        "solo"
+      ],
+      "forbidden_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build"
+      ],
+      "requires_context": {
+        "audience_experience_any": [
+          "experienced",
+          "experienced_underground_gei"
+        ],
+        "venue_policy_any": [
+          "allows_large_body_motion"
+        ]
+      },
+      "if_context_missing": "penalize",
+      "ooc_risk": "high",
+      "semantic_tags": [
+        "underground_gei",
+        "risk_high",
+        "long",
+        "body_motion",
+        "experienced_audience"
+      ],
+      "source_library": {
+        "best_context": [
+          "instrumental_break",
+          "high_energy_break",
+          "extended_instrumental",
+          "pre_final_chorus_gap"
+        ],
+        "requires": {
+          "min_bars": 20.0,
+          "max_bars": 20.0,
+          "vocal_density": "low_or_gap",
+          "beat_stability": "high",
+          "allowed_bars": [
+            20
+          ]
+        },
+        "duration": {
+          "preferred_bars": 20,
+          "preferred_counts": 80,
+          "count_unit": "beat",
+          "preferred_eight_counts": 10,
+          "strict_bars": true,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "short_gap_under_80_beats",
+          "formal_live",
+          "quiet_ballad"
+        ],
+        "risk": "high",
+        "intensity": 0.99,
+        "typical_text": "Tian Qu underground-gei movement sequence, long 10 eight-count version."
+      },
+      "cultural_ties": {
+        "character_tie": "universal",
+        "franchise_tie": "universal"
+      },
+      "notes": [
+        "Large body-motion action. Requires experienced audience and enough physical/temporal space."
+      ]
+    },
+    "ppph": {
+      "display_name": "PPPH",
+      "category": "rhythmcall",
+      "role": "rhythmcall",
+      "description": "A call pattern alternating between clapping and shouting, following the rhythm 'Pan! Pa-Pan! Hyu~!' Very common in idol/anisong live culture.",
+      "when_to_use": "Verses and instrumental breaks in high-energy songs. Universal enough for most idol/anisong contexts.",
+      "when_not_to_use": "Ballads or very slow songs. Dense or fragile build-ups where the call would cover the ramp instead of supporting it.",
+      "allowed_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build",
+        "chorus"
+      ],
+      "discouraged_structures": [
+        "intro",
+        "post_chorus",
+        "instrumental",
+        "instrumental_break",
+        "solo",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "low",
+      "semantic_tags": [
+        "rhythmcall",
+        "risk_low",
+        "short"
+      ],
+      "source_library": {
+        "best_context": [
+          "verse",
+          "pre_chorus",
+          "mid_energy_vocal"
+        ],
+        "requires": {
+          "min_bars": 2.0,
+          "max_bars": 2.0,
+          "vocal_density": "medium",
+          "beat_stability": "high",
+          "allowed_bars": [
+            2
+          ]
+        },
+        "duration": {
+          "preferred_bars": 2,
+          "strict_bars": false,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "very_dense_vocal",
+          "quiet_ballad"
+        ],
+        "risk": "low",
+        "intensity": 0.55,
+        "typical_text": "Pan-pa-pan, hyu!"
+      },
+      "cultural_ties": {
+        "character_tie": "universal",
+        "franchise_tie": "universal"
+      },
+      "notes": []
+    },
+    "fuwa_fuwa": {
+      "display_name": "Fuwa Fuwa",
+      "category": "rhythmcall",
+      "role": "rhythmcall",
+      "description": "A soft, floating call where the audience sways and chants 'Fuwa Fuwa' following the gentle rhythm. Has a dreamy, floating quality.",
+      "when_to_use": "Chorus sections of softer, more melodic songs. Songs with 'fuwa fuwa' aesthetic.",
+      "when_not_to_use": "Hard rock or intense songs. Pre-chorus build-up.",
+      "allowed_structures": [
+        "chorus",
+        "post_chorus"
+      ],
+      "discouraged_structures": [
+        "intro",
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build",
+        "instrumental",
+        "instrumental_break",
+        "solo",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "low",
+      "semantic_tags": [
+        "rhythmcall",
+        "risk_low",
+        "long"
+      ],
+      "source_library": {
+        "best_context": [
+          "chorus",
+          "repeated_chorus"
+        ],
+        "requires": {
+          "min_bars": 0.5,
+          "max_bars": 16,
+          "energy": "medium_high",
+          "vocal_density": "can_overlap"
+        },
+        "duration": {
+          "preferred_bars": 4,
+          "strict_bars": false,
+          "can_compress": true,
+          "can_extend": true
+        },
+        "avoid": [
+          "serious_ballad",
+          "low_energy_chorus"
+        ],
+        "risk": "low",
+        "intensity": 0.6,
+        "typical_text": "Fuwa fuwa!"
+      },
+      "cultural_ties": {
+        "character_tie": "universal",
+        "franchise_tie": "universal"
+      },
+      "notes": []
+    },
+    "fufu_call": {
+      "display_name": "Fu Fu Fu Call",
+      "category": "rhythmcall",
+      "role": "rhythmcall",
+      "description": "A short rhythmic 'Fu! Fu! Fu!' call following the beat. Quick and punchy.",
+      "when_to_use": "Pre-chorus build-up (as a simple rhythmic pulse). Short instrumental breaks.",
+      "when_not_to_use": "Verses where lyrics need focus. Outro.",
+      "allowed_structures": [
+        "pre_chorus_build",
+        "chorus",
+        "post_chorus",
+        "instrumental_break"
+      ],
+      "discouraged_structures": [
+        "intro",
+        "verse",
+        "pre_chorus",
+        "instrumental",
+        "solo",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "low",
+      "semantic_tags": [
+        "rhythmcall",
+        "risk_low",
+        "one_bar"
+      ],
+      "source_library": {
+        "best_context": [
+          "pre_chorus_build",
+          "chant",
+          "drum_hit_accent",
+          "chorus_entry"
+        ],
+        "requires": {
+          "min_bars": 1.0,
+          "max_bars": 1.0,
+          "energy": "rising",
+          "beat_stability": "high",
+          "allowed_bars": [
+            1
+          ]
+        },
+        "duration": {
+          "preferred_bars": 1,
+          "strict_bars": false,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "quiet_ballad",
+          "dense_vocal",
+          "no_accent_hits"
+        ],
+        "risk": "low",
+        "intensity": 0.62,
+        "typical_text": "Fu! Fu! Fu!"
+      },
+      "legacy_ids": [
+        "fufufu_call"
+      ],
+      "cultural_ties": {
+        "character_tie": "universal",
+        "franchise_tie": "universal"
+      },
+      "notes": []
+    },
+    "hai_hai": {
+      "display_name": "Hai Hai",
+      "category": "rhythmcall",
+      "role": "rhythmcall",
+      "description": "A universal call-and-response where the performer says 'Hai!' and the audience repeats 'Hai!' in rhythm. Simple, iconic, works everywhere.",
+      "when_to_use": "Chorus openings, simple high-energy response slots, and light verse/pre-chorus fill when the vocal line leaves enough rhythmic room.",
+      "when_not_to_use": "Quiet sections, fragile lyric moments, or dense vocals where repeated response calls would cover the singer.",
+      "allowed_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build",
+        "chorus",
+        "post_chorus",
+        "instrumental_break"
+      ],
+      "discouraged_structures": [
+        "intro",
+        "instrumental",
+        "solo",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "low",
+      "semantic_tags": [
+        "rhythmcall",
+        "risk_low",
+        "short"
+      ],
+      "source_library": {
+        "best_context": [
+          "chorus",
+          "post_chorus",
+          "instrumental_riff"
+        ],
+        "requires": {
+          "min_bars": 1.0,
+          "max_bars": 2.0,
+          "energy": "medium_high",
+          "beat_stability": "high",
+          "allowed_bars": [
+            1,
+            2
+          ]
+        },
+        "duration": {
+          "preferred_bars": 1,
+          "strict_bars": false,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "quiet_ballad",
+          "important_lyric_line"
+        ],
+        "risk": "low",
+        "intensity": 0.65,
+        "typical_text": "Hai! Hai!"
+      },
+      "cultural_ties": {
+        "character_tie": "universal",
+        "franchise_tie": "universal"
+      },
+      "notes": [
+        "Can serve as a generic 'military call' style filler in verse/pre-chorus; keep it sparse around dense vocals."
+      ]
+    },
+    "o_call": {
+      "display_name": "O Call",
+      "category": "rhythmcall",
+      "role": "rhythmcall",
+      "description": "A universal opening call where the audience shouts a sustained 'Ooooooo~!' following the vocal melody. Signals recognition of the song and builds anticipation.",
+      "when_to_use": "Intro of any song. The first thing the audience does when recognizing a song.",
+      "when_not_to_use": "Mid-song. Verses or choruses. After the song is already established.",
+      "allowed_structures": [
+        "intro",
+        "instrumental_break",
+        "chorus"
+      ],
+      "discouraged_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build",
+        "post_chorus",
+        "instrumental",
+        "solo",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "low",
+      "semantic_tags": [
+        "rhythmcall",
+        "risk_low"
+      ],
+      "source_library": {
+        "best_context": [
+          "chant",
+          "intro",
+          "instrumental_riff",
+          "call_and_response"
+        ],
+        "requires": {
+          "min_bars": 0.5,
+          "max_bars": 4,
+          "energy": "medium_high",
+          "beat_stability": "high"
+        },
+        "duration": {
+          "preferred_bars": 1,
+          "strict_bars": false,
+          "can_compress": true,
+          "can_extend": true
+        },
+        "avoid": [
+          "quiet_ballad",
+          "dense_vocal"
+        ],
+        "risk": "low",
+        "intensity": 0.6,
+        "typical_text": "O! O! O! O!"
+      },
+      "cultural_ties": {
+        "character_tie": "universal",
+        "franchise_tie": "universal"
+      },
+      "notes": []
+    },
+    "oi_oi": {
+      "display_name": "Oi Oi",
+      "category": "rhythmcall",
+      "role": "rhythmcall",
+      "description": "The most basic call: 'Oi! Oi!' shouted in rhythm. The default go-to when nothing fancier is needed.",
+      "when_to_use": "Instrumental breaks, rock chorus pulses, and sparse verse/pre-chorus call slots where a simple military-call feel is wanted.",
+      "when_not_to_use": "Quiet or emotional sections.",
+      "allowed_structures": [
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build",
+        "chorus",
+        "instrumental_break",
+        "outro"
+      ],
+      "discouraged_structures": [
+        "intro",
+        "post_chorus",
+        "instrumental",
+        "solo",
+        "bridge"
+      ],
+      "forbidden_structures": [],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "low",
+      "semantic_tags": [
+        "rhythmcall",
+        "risk_low"
+      ],
+      "source_library": {
+        "best_context": [
+          "rock_chorus",
+          "instrumental_break",
+          "high_energy_outro"
+        ],
+        "requires": {
+          "min_bars": 1.0,
+          "max_bars": 4.0,
+          "energy": "high",
+          "beat_stability": "high",
+          "allowed_bars": [
+            1,
+            2,
+            4
+          ]
+        },
+        "duration": {
+          "preferred_bars": 2,
+          "strict_bars": false,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "cute_soft_chorus",
+          "quiet_ballad"
+        ],
+        "risk": "low",
+        "intensity": 0.75,
+        "typical_text": "Oi! Oi!"
+      },
+      "legacy_ids": [
+        "oioi"
+      ],
+      "cultural_ties": {
+        "character_tie": "universal",
+        "franchise_tie": "universal"
+      },
+      "notes": [
+        "Can serve as a generic 'military call' style filler in verse/pre-chorus; prefer short sparse placements over full-section repetition."
+      ]
+    },
+    "clap": {
+      "display_name": "Clap",
+      "category": "rhythmcall",
+      "role": "rhythmcall",
+      "description": "Simple hand clapping following the beat. The most universal participatory action.",
+      "when_to_use": "Anywhere that needs a gentle, universal rhythm marker. Bridges, transitional sections.",
+      "when_not_to_use": "Sections where clapping would clash with the music's natural rhythm.",
+      "allowed_structures": [
+        "verse",
+        "pre_chorus",
+        "chorus",
+        "post_chorus",
+        "bridge",
+        "outro",
+        "instrumental_break"
+      ],
+      "discouraged_structures": [
+        "intro",
+        "pre_chorus_build",
+        "instrumental",
+        "solo"
+      ],
+      "forbidden_structures": [],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "low",
+      "semantic_tags": [
+        "rhythmcall",
+        "risk_low",
+        "long"
+      ],
+      "source_library": {
+        "best_context": [
+          "verse",
+          "chorus",
+          "bridge",
+          "outro"
+        ],
+        "requires": {
+          "min_bars": 1.0,
+          "max_bars": 8.0,
+          "beat_stability": "high",
+          "allowed_bars": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            8
+          ]
+        },
+        "duration": {
+          "preferred_bars": 2,
+          "strict_bars": false,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "silent_break",
+          "very_quiet_section"
+        ],
+        "risk": "low",
+        "intensity": 0.35,
+        "typical_text": "Clap on beat or backbeat."
+      },
+      "cultural_ties": {
+        "character_tie": "universal",
+        "franchise_tie": "universal"
+      },
+      "notes": []
+    },
+    "name_call": {
+      "display_name": "Name Call",
+      "category": "rhythmcall",
+      "role": "rhythmcall",
+      "description": "Name Call is a rhythmcall action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "verse",
+        "chorus",
+        "post_chorus",
+        "bridge",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "intro",
+        "pre_chorus",
+        "pre_chorus_build",
+        "instrumental",
+        "instrumental_break",
+        "outro"
+      ],
+      "forbidden_structures": [],
+      "requires_context": {
+        "metadata_any": [
+          "member_or_unit_name",
+          "focused_character",
+          "oshi_name"
+        ]
+      },
+      "if_context_missing": "forbid",
+      "ooc_risk": "high",
+      "semantic_tags": [
+        "rhythmcall",
+        "risk_medium",
+        "short"
+      ],
+      "source_library": {
+        "best_context": [
+          "solo_line_gap",
+          "post_phrase_gap",
+          "member_focus"
+        ],
+        "requires": {
+          "min_bars": 1.0,
+          "max_bars": 2.0,
+          "metadata": "member_or_unit_name",
+          "vocal_density": "gap",
+          "allowed_bars": [
+            1,
+            2
+          ]
+        },
+        "duration": {
+          "preferred_bars": 1,
+          "strict_bars": false,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "unknown_member_focus",
+          "dense_vocal"
+        ],
+        "risk": "medium",
+        "intensity": 0.55,
+        "typical_text": "<member_name>!"
+      },
+      "notes": []
+    },
+    "vocal_chant": {
+      "display_name": "Vocal Chant",
+      "category": "rhythmcall",
+      "role": "rhythmcall",
+      "description": "Vocal Chant is a rhythmcall action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "verse",
+        "chorus",
+        "post_chorus"
+      ],
+      "discouraged_structures": [
+        "intro",
+        "pre_chorus",
+        "pre_chorus_build",
+        "instrumental",
+        "instrumental_break",
+        "solo",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "low",
+      "semantic_tags": [
+        "rhythmcall",
+        "risk_low",
+        "one_bar"
+      ],
+      "source_library": {
+        "best_context": [
+          "chant",
+          "vocal_chant",
+          "call_and_response",
+          "short_vocal_hook"
+        ],
+        "requires": {
+          "min_bars": 1.0,
+          "max_bars": 1.0,
+          "vocal_density": "chant",
+          "lyric_familiarity": "medium",
+          "allowed_bars": [
+            1
+          ]
+        },
+        "duration": {
+          "preferred_bars": 1,
+          "strict_bars": false,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_melody_line",
+          "quiet_listening_section",
+          "unknown_lyrics"
+        ],
+        "risk": "low",
+        "intensity": 0.5,
+        "typical_text": "Follow the short chant or shouted phrase already present in the song."
+      },
+      "notes": []
+    },
+    "aizuchi": {
+      "display_name": "Aizuchi Call",
+      "category": "rhythmcall",
+      "role": "rhythmcall",
+      "description": "Aizuchi Call is a rhythmcall action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "verse",
+        "chorus",
+        "post_chorus"
+      ],
+      "discouraged_structures": [
+        "intro",
+        "pre_chorus",
+        "pre_chorus_build",
+        "instrumental",
+        "instrumental_break",
+        "solo",
+        "bridge",
+        "outro"
+      ],
+      "forbidden_structures": [],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "low",
+      "semantic_tags": [
+        "rhythmcall",
+        "risk_low",
+        "long"
+      ],
+      "source_library": {
+        "best_context": [
+          "post_phrase_gap",
+          "chorus_gap",
+          "catchy_hook"
+        ],
+        "requires": {
+          "min_bars": 1,
+          "max_bars": 8,
+          "vocal_density": "gap",
+          "lyric_or_phrase_pattern": "preferred"
+        },
+        "duration": {
+          "preferred_bars": 1,
+          "strict_bars": false,
+          "can_compress": true,
+          "can_extend": false
+        },
+        "avoid": [
+          "dense_vocal",
+          "unknown_gap_timing"
+        ],
+        "risk": "low",
+        "intensity": 0.5,
+        "typical_text": "Short response in lyric gaps."
+      },
+      "notes": []
+    },
+    "kecha": {
+      "display_name": "Kecha",
+      "category": "rhythmcall",
+      "role": "rhythmcall",
+      "description": "Kecha is a rhythmcall action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "chorus",
+        "bridge",
+        "solo"
+      ],
+      "discouraged_structures": [
+        "intro",
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build",
+        "post_chorus",
+        "instrumental",
+        "instrumental_break",
+        "outro"
+      ],
+      "forbidden_structures": [],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "low",
+      "semantic_tags": [
+        "rhythmcall",
+        "risk_low",
+        "long"
+      ],
+      "source_library": {
+        "best_context": [
+          "emotional_solo",
+          "ballad_chorus",
+          "oshi_focus"
+        ],
+        "requires": {
+          "min_bars": 4,
+          "max_bars": 32,
+          "energy": "low_to_medium",
+          "vocal_density": "can_overlap"
+        },
+        "duration": {
+          "preferred_bars": 4,
+          "strict_bars": false,
+          "can_compress": false,
+          "can_extend": true
+        },
+        "avoid": [
+          "high_speed_mix_section",
+          "aggressive_chorus"
+        ],
+        "risk": "low",
+        "intensity": 0.3,
+        "typical_text": "Forward-reaching oshi gesture rather than shouted text."
+      },
+      "notes": []
+    },
+    "sing_along": {
+      "display_name": "Sing Along",
+      "category": "rhythmcall",
+      "role": "rhythmcall",
+      "description": "Sing Along is a rhythmcall action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
+      "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
+      "allowed_structures": [
+        "chorus",
+        "post_chorus",
+        "outro"
+      ],
+      "discouraged_structures": [
+        "intro",
+        "verse",
+        "pre_chorus",
+        "pre_chorus_build",
+        "instrumental",
+        "instrumental_break",
+        "solo",
+        "bridge"
+      ],
+      "forbidden_structures": [],
+      "requires_context": {},
+      "if_context_missing": "allow",
+      "ooc_risk": "low",
+      "semantic_tags": [
+        "rhythmcall",
+        "risk_low",
+        "long"
+      ],
+      "source_library": {
+        "best_context": [
+          "chorus",
+          "final_chorus",
+          "anthem_hook",
+          "outro"
+        ],
+        "requires": {
+          "min_bars": 1.0,
+          "max_bars": 8.0,
+          "vocal_density": "can_overlap",
+          "lyric_familiarity": "high",
+          "allowed_bars": [
+            1,
+            2,
+            3,
+            4,
+            8
+          ]
+        },
+        "duration": {
+          "preferred_bars": 2,
+          "strict_bars": false,
+          "can_compress": false,
+          "can_extend": false
+        },
+        "avoid": [
+          "solo_line_focus",
+          "quiet_listening_section",
+          "unknown_lyrics"
+        ],
+        "risk": "low",
+        "intensity": 0.45,
+        "typical_text": "Sing the main hook or chorus melody with the crowd."
+      },
+      "notes": []
+    }
+  }
+}

@@ -1,0 +1,3996 @@
+{
+  "job_id": "example_brushupbrassup",
+  "song": {
+    "song_id": "brushupbrassup",
+    "title": "brushupbrassup",
+    "audio_filename": "brushupbrassup.mp3",
+    "duration": 264.61,
+    "tempo": 150.0,
+    "bar_count": 164
+  },
+  "method": {
+    "structure": "muq_bar_coarse_frozen_candidate",
+    "actions": "support_rule_recommender",
+    "run_id": "muq_seed46_110songs_tail_merge",
+    "notes": [
+      "Uses the current frozen bar-level MuQ coarse checkpoint.",
+      "Support actions are selected by the explainable rule-based recommender."
+    ]
+  },
+  "pipeline_status": "current_model",
+  "signal_process": {
+    "status": "current_model",
+    "structure": "muq_bar_coarse_support",
+    "rows": 164,
+    "music_segments": 16,
+    "call_spans": 16,
+    "actions": 32,
+    "steps": [
+      {
+        "name": "Audio decode",
+        "detail": "Load uploaded audio and preserve it for synchronized playback."
+      },
+      {
+        "name": "Downbeat grid",
+        "detail": "Run allin1 for beat/downbeat timing; extend the tail grid when needed."
+      },
+      {
+        "name": "MuQ embeddings",
+        "detail": "Extract frozen MuQ layers 4/8/12 with chunked audio inference and pool them to bars."
+      },
+      {
+        "name": "Structure model",
+        "detail": "Apply the frozen 7-class bar-level coarse checkpoint with merge post-processing."
+      },
+      {
+        "name": "Support planning",
+        "detail": "Use the rule-based support recommender and action library to fill each section."
+      }
+    ],
+    "fallback_reason": "paper-test prediction"
+  },
+  "music_segments": [
+    {
+      "start": 1.4,
+      "end": 22.21,
+      "music_label": "intro",
+      "struct_label": "intro",
+      "source": "bar_coarse"
+    },
+    {
+      "start": 22.21,
+      "end": 43.0,
+      "music_label": "verse",
+      "struct_label": "verse",
+      "source": "bar_coarse"
+    },
+    {
+      "start": 43.0,
+      "end": 54.2,
+      "music_label": "pre_chorus",
+      "struct_label": "pre_chorus",
+      "source": "bar_coarse"
+    },
+    {
+      "start": 54.2,
+      "end": 78.2,
+      "music_label": "chorus",
+      "struct_label": "chorus",
+      "source": "bar_coarse"
+    },
+    {
+      "start": 78.2,
+      "end": 83.0,
+      "music_label": "instrumental",
+      "struct_label": "instrumental",
+      "source": "bar_coarse"
+    },
+    {
+      "start": 83.0,
+      "end": 100.61,
+      "music_label": "verse",
+      "struct_label": "verse",
+      "source": "bar_coarse"
+    },
+    {
+      "start": 100.61,
+      "end": 115.0,
+      "music_label": "pre_chorus",
+      "struct_label": "pre_chorus",
+      "source": "bar_coarse"
+    },
+    {
+      "start": 115.0,
+      "end": 140.61,
+      "music_label": "chorus",
+      "struct_label": "chorus",
+      "source": "bar_coarse"
+    },
+    {
+      "start": 140.61,
+      "end": 155.01,
+      "music_label": "instrumental",
+      "struct_label": "instrumental",
+      "source": "bar_coarse"
+    },
+    {
+      "start": 155.01,
+      "end": 177.41,
+      "music_label": "chorus",
+      "struct_label": "chorus",
+      "source": "bar_coarse"
+    },
+    {
+      "start": 177.41,
+      "end": 190.2,
+      "music_label": "instrumental",
+      "struct_label": "instrumental",
+      "source": "bar_coarse"
+    },
+    {
+      "start": 190.2,
+      "end": 203.0,
+      "music_label": "verse",
+      "struct_label": "verse",
+      "source": "bar_coarse"
+    },
+    {
+      "start": 203.0,
+      "end": 219.8,
+      "music_label": "pre_chorus",
+      "struct_label": "pre_chorus",
+      "source": "bar_coarse"
+    },
+    {
+      "start": 219.8,
+      "end": 247.0,
+      "music_label": "chorus",
+      "struct_label": "chorus",
+      "source": "bar_coarse"
+    },
+    {
+      "start": 247.0,
+      "end": 256.61,
+      "music_label": "outro",
+      "struct_label": "outro",
+      "source": "bar_coarse"
+    },
+    {
+      "start": 256.61,
+      "end": 264.61,
+      "music_label": "instrumental",
+      "struct_label": "instrumental",
+      "source": "bar_coarse"
+    }
+  ],
+  "call_spans": [
+    {
+      "start": 1.4,
+      "end": 22.21,
+      "call_role": "mix",
+      "music_label_context": "intro",
+      "allin1_struct_context": "intro",
+      "bar_start": null,
+      "bar_end": null,
+      "bars": 13.0,
+      "method": "bar_coarse_support",
+      "recommended_actions": [
+        "bismarck_mix"
+      ],
+      "action_plan": [
+        {
+          "start": 1.4,
+          "end": 20.61,
+          "time": "00:01.40-00:20.61",
+          "action_id": "bismarck_mix",
+          "display_name": "Bismarck Koujou",
+          "typical_text": "Takamaruyo Takamaruyo / TakamaruHikumaruBisumaruku / Shijima-ru Arushindo / Kazudansu Ni-haiO-hai(P) / Kanchu-hai U-ronhai / Nachuraruhai Aikyanfurai(跳起)",
+          "risk": "medium",
+          "bar_count": 12.0,
+          "tutorial_text": {
+            "source": "MixAndCall",
+            "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+            "source_title": "高低call [ 俾斯麦口上 ] [ ビスマルク口上 ]",
+            "language": "romaji",
+            "full_text": "Takamaruyo Takamaruyo\nTakamaruHikumaruBisumaruku\nShijima-ru Arushindo\nKazudansu Ni-haiO-hai(P)\nKanchu-hai U-ronhai\nNachuraruhai Aikyanfurai(跳起)",
+            "bars": [
+              "Takamaruyo Takamaruyo",
+              "TakamaruHikumaruBisumaruku",
+              "Shijima-ru Arushindo",
+              "Kazudansu Ni-haiO-hai(P)",
+              "Kanchu-hai U-ronhai",
+              "Nachuraruhai Aikyanfurai(跳起)"
+            ]
+          },
+          "confidence": 1.0,
+          "mode": "support_recommendation"
+        }
+      ],
+      "action_candidates": [
+        {
+          "section_index": 1,
+          "section_label": "intro",
+          "section_start": 1.4,
+          "section_end": 22.21,
+          "section_estimated_bars": 13.0,
+          "start": 1.4,
+          "end": 20.61,
+          "fit_bars": 12.0,
+          "action_fit_bars": 12.0,
+          "action_id": "bismarck_mix",
+          "action_name": "Bismarck Koujou",
+          "category": "mix",
+          "risk": "medium",
+          "confidence": 1.0,
+          "reason": "section=intro; estimated_bars=13.0; matched_context=high_energy_break,intro; category=mix; arrangement=single_section_primary",
+          "warnings": [],
+          "arrangement_role": "primary",
+          "arrangement_mode": "single_section_primary",
+          "planned_section_indices": [
+            1
+          ],
+          "planned_section_labels": [
+            "intro"
+          ]
+        }
+      ],
+      "action_selection": {
+        "mode": "support_rule_recommender",
+        "min_confidence": 0.5,
+        "max_per_section": 3
+      }
+    },
+    {
+      "start": 22.21,
+      "end": 43.0,
+      "call_role": "rhythmcall",
+      "music_label_context": "verse",
+      "allin1_struct_context": "verse",
+      "bar_start": null,
+      "bar_end": null,
+      "bars": 13.0,
+      "method": "bar_coarse_support",
+      "recommended_actions": [
+        "ppph",
+        "oi_oi",
+        "hai_hai",
+        "clap"
+      ],
+      "action_plan": [
+        {
+          "start": 28.61,
+          "end": 31.81,
+          "time": "00:28.61-00:31.81",
+          "action_id": "ppph",
+          "display_name": "PPPH",
+          "typical_text": "Pan-pa-pan, hyu!",
+          "risk": "low",
+          "bar_count": 2.0,
+          "tutorial_text": null,
+          "confidence": 0.906,
+          "mode": "support_recommendation"
+        },
+        {
+          "start": 22.21,
+          "end": 25.41,
+          "time": "00:22.21-00:25.41",
+          "action_id": "oi_oi",
+          "display_name": "Oi Oi",
+          "typical_text": "Oi! Oi!",
+          "risk": "low",
+          "bar_count": 2.0,
+          "tutorial_text": null,
+          "confidence": 0.892,
+          "mode": "support_recommendation"
+        },
+        {
+          "start": 41.4,
+          "end": 43.0,
+          "time": "00:41.40-00:43.00",
+          "action_id": "hai_hai",
+          "display_name": "Hai Hai",
+          "typical_text": "Hai! Hai!",
+          "risk": "low",
+          "bar_count": 1.0,
+          "tutorial_text": null,
+          "confidence": 0.889,
+          "mode": "support_recommendation"
+        },
+        {
+          "start": 35.0,
+          "end": 38.2,
+          "time": "00:35.00-00:38.20",
+          "action_id": "clap",
+          "display_name": "Clap",
+          "typical_text": "Clap on beat or backbeat.",
+          "risk": "low",
+          "bar_count": 2.0,
+          "tutorial_text": null,
+          "confidence": 0.88,
+          "mode": "support_recommendation"
+        }
+      ],
+      "action_candidates": [
+        {
+          "section_index": 2,
+          "section_label": "verse",
+          "section_start": 22.21,
+          "section_end": 43.0,
+          "section_estimated_bars": 13.0,
+          "start": 28.61,
+          "end": 31.81,
+          "fit_bars": 2.0,
+          "action_fit_bars": 2.0,
+          "action_id": "ppph",
+          "action_name": "PPPH",
+          "category": "rhythmcall",
+          "risk": "low",
+          "confidence": 0.906,
+          "reason": "section=verse; estimated_bars=13.0; matched_context=mid_energy_vocal,verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_2",
+          "warnings": [],
+          "arrangement_role": "primary",
+          "arrangement_mode": "verse_sparse_call_fill",
+          "arrangement_slot": "verse_fill_2",
+          "planned_section_indices": [
+            2
+          ],
+          "planned_section_labels": [
+            "verse"
+          ]
+        },
+        {
+          "section_index": 2,
+          "section_label": "verse",
+          "section_start": 22.21,
+          "section_end": 43.0,
+          "section_estimated_bars": 13.0,
+          "start": 22.21,
+          "end": 25.41,
+          "fit_bars": 2.0,
+          "action_fit_bars": 2.0,
+          "action_id": "oi_oi",
+          "action_name": "Oi Oi",
+          "category": "rhythmcall",
+          "risk": "low",
+          "confidence": 0.892,
+          "reason": "section=verse; estimated_bars=13.0; matched_context=verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_1",
+          "warnings": [],
+          "arrangement_role": "primary",
+          "arrangement_mode": "verse_sparse_call_fill",
+          "arrangement_slot": "verse_fill_1",
+          "planned_section_indices": [
+            2
+          ],
+          "planned_section_labels": [
+            "verse"
+          ]
+        },
+        {
+          "section_index": 2,
+          "section_label": "verse",
+          "section_start": 22.21,
+          "section_end": 43.0,
+          "section_estimated_bars": 13.0,
+          "start": 41.4,
+          "end": 43.0,
+          "fit_bars": 1.0,
+          "action_fit_bars": 1.0,
+          "action_id": "hai_hai",
+          "action_name": "Hai Hai",
+          "category": "rhythmcall",
+          "risk": "low",
+          "confidence": 0.889,
+          "reason": "section=verse; estimated_bars=13.0; matched_context=verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_4",
+          "warnings": [],
+          "arrangement_role": "primary",
+          "arrangement_mode": "verse_sparse_call_fill",
+          "arrangement_slot": "verse_fill_4",
+          "planned_section_indices": [
+            2
+          ],
+          "planned_section_labels": [
+            "verse"
+          ]
+        },
+        {
+          "section_index": 2,
+          "section_label": "verse",
+          "section_start": 22.21,
+          "section_end": 43.0,
+          "section_estimated_bars": 13.0,
+          "start": 35.0,
+          "end": 38.2,
+          "fit_bars": 2.0,
+          "action_fit_bars": 2.0,
+          "action_id": "clap",
+          "action_name": "Clap",
+          "category": "rhythmcall",
+          "risk": "low",
+          "confidence": 0.88,
+          "reason": "section=verse; estimated_bars=13.0; matched_context=verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_3",
+          "warnings": [],
+          "arrangement_role": "primary",
+          "arrangement_mode": "verse_sparse_call_fill",
+          "arrangement_slot": "verse_fill_3",
+          "planned_section_indices": [
+            2
+          ],
+          "planned_section_labels": [
+            "verse"
+          ]
+        }
+      ],
+      "action_selection": {
+        "mode": "support_rule_recommender",
+        "min_confidence": 0.5,
+        "max_per_section": 3
+      }
+    },
+    {
+      "start": 43.0,
+      "end": 54.2,
+      "call_role": "mix",
+      "music_label_context": "pre_chorus",
+      "allin1_struct_context": "pre_chorus",
+      "bar_start": null,
+      "bar_end": null,
+      "bars": 7.0,
+      "method": "bar_coarse_support",
+      "recommended_actions": [
+        "jp_mix_seigyaku_dt",
+        "ppph",
+        "ietora"
+      ],
+      "action_plan": [
+        {
+          "start": 46.2,
+          "end": 52.6,
+          "time": "00:46.20-00:52.60",
+          "action_id": "jp_mix_seigyaku_dt",
+          "display_name": "Japanese MIX Forward-Reverse Double Time",
+          "typical_text": "_Jyokyo Tobi Kasen Shindou / _Ama Sen'i JinzouHiTora",
+          "risk": "medium",
+          "bar_count": 4.0,
+          "tutorial_text": {
+            "source": "MixAndCall",
+            "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+            "source_title": "ジャパニーズmix逆打ち",
+            "language": "romaji",
+            "full_text": "_Jyokyo Tobi Kasen Shindou\n_Ama Sen'i JinzouHiTora",
+            "bars": [
+              "_Jyokyo Tobi Kasen Shindou",
+              "_Ama Sen'i JinzouHiTora"
+            ]
+          },
+          "confidence": 1.0,
+          "mode": "support_recommendation"
+        },
+        {
+          "start": 43.0,
+          "end": 46.2,
+          "time": "00:43.00-00:46.20",
+          "action_id": "ppph",
+          "display_name": "PPPH",
+          "typical_text": "Pan-pa-pan, hyu!",
+          "risk": "low",
+          "bar_count": 2.0,
+          "tutorial_text": null,
+          "confidence": 0.956,
+          "mode": "support_recommendation"
+        },
+        {
+          "start": 52.6,
+          "end": 54.2,
+          "time": "00:52.60-00:54.20",
+          "action_id": "ietora",
+          "display_name": "Ietora",
+          "typical_text": "_Yettaiga Yettaiga / _YettaigaFaiboWaipa / _Ye Ye Ye Ye / _YettaigaFaiboWaipa",
+          "risk": "high",
+          "bar_count": 1.0,
+          "tutorial_text": {
+            "source": "MixAndCall",
+            "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+            "source_title": "家虎 [ イェッタイガー ]",
+            "language": "romaji",
+            "full_text": "_Yettaiga Yettaiga\n_YettaigaFaiboWaipa\n_Ye Ye Ye Ye\n_YettaigaFaiboWaipa",
+            "bars": [
+              "_Yettaiga Yettaiga",
+              "_YettaigaFaiboWaipa",
+              "_Ye Ye Ye Ye",
+              "_YettaigaFaiboWaipa"
+            ]
+          },
+          "confidence": 0.869,
+          "mode": "support_recommendation"
+        }
+      ],
+      "action_candidates": [
+        {
+          "section_index": 3,
+          "section_label": "pre_chorus",
+          "section_start": 43.0,
+          "section_end": 54.2,
+          "section_estimated_bars": 7.0,
+          "start": 46.2,
+          "end": 52.6,
+          "fit_bars": 4.0,
+          "action_fit_bars": 4.0,
+          "action_id": "jp_mix_seigyaku_dt",
+          "action_name": "Japanese MIX Forward-Reverse Double Time",
+          "category": "mix",
+          "risk": "medium",
+          "confidence": 1.0,
+          "reason": "section=pre_chorus; estimated_bars=7.0; matched_context=chorus_entry; category=mix; arrangement=prechorus_build_mix_fill; arrangement_slot=middle_build",
+          "warnings": [],
+          "arrangement_role": "primary",
+          "arrangement_mode": "prechorus_build_mix_fill",
+          "arrangement_slot": "middle_build",
+          "planned_section_indices": [
+            3
+          ],
+          "planned_section_labels": [
+            "pre_chorus"
+          ]
+        },
+        {
+          "section_index": 3,
+          "section_label": "pre_chorus",
+          "section_start": 43.0,
+          "section_end": 54.2,
+          "section_estimated_bars": 7.0,
+          "start": 43.0,
+          "end": 46.2,
+          "fit_bars": 2.0,
+          "action_fit_bars": 2.0,
+          "action_id": "ppph",
+          "action_name": "PPPH",
+          "category": "rhythmcall",
+          "risk": "low",
+          "confidence": 0.956,
+          "reason": "section=pre_chorus; estimated_bars=7.0; matched_context=pre_chorus; category=rhythmcall; arrangement=prechorus_build_fill; arrangement_slot=opening_call",
+          "warnings": [],
+          "arrangement_role": "primary",
+          "arrangement_mode": "prechorus_build_fill",
+          "arrangement_slot": "opening_call",
+          "planned_section_indices": [
+            3
+          ],
+          "planned_section_labels": [
+            "pre_chorus"
+          ]
+        },
+        {
+          "section_index": 3,
+          "section_label": "pre_chorus",
+          "section_start": 43.0,
+          "section_end": 54.2,
+          "section_estimated_bars": 7.0,
+          "start": 52.6,
+          "end": 54.2,
+          "fit_bars": 1.0,
+          "action_fit_bars": 1.0,
+          "action_id": "ietora",
+          "action_name": "Ietora",
+          "category": "mix",
+          "risk": "high",
+          "confidence": 0.869,
+          "reason": "section=pre_chorus; estimated_bars=7.0; matched_context=chorus_entry,pre_chorus,pre_chorus_build; semantic=context_missing_penalty; category=mix; arrangement=prechorus_chorus_entry_fill; arrangement_slot=chorus_entry",
+          "warnings": [
+            "high-risk action; venue/fandom policy should override",
+            "semantic context missing; action kept with penalty"
+          ],
+          "arrangement_role": "primary",
+          "arrangement_mode": "prechorus_chorus_entry_fill",
+          "arrangement_slot": "chorus_entry",
+          "planned_section_indices": [
+            3
+          ],
+          "planned_section_labels": [
+            "pre_chorus"
+          ]
+        }
+      ],
+      "action_selection": {
+        "mode": "support_rule_recommender",
+        "min_confidence": 0.5,
+        "max_per_section": 3
+      }
+    },
+    {
+      "start": 54.2,
+      "end": 78.2,
+      "call_role": "underground_gei",
+      "music_label_context": "chorus",
+      "allin1_struct_context": "chorus",
+      "bar_start": null,
+      "bar_end": null,
+      "bars": 15.0,
+      "method": "bar_coarse_support",
+      "recommended_actions": [
+        "gongfu_she",
+        "dian_bo_she"
+      ],
+      "action_plan": [
+        {
+          "start": 54.2,
+          "end": 67.0,
+          "time": "00:54.20-01:07.00",
+          "action_id": "gongfu_she",
+          "display_name": "Gongfu She",
+          "typical_text": "Gongfu She underground-gei movement sequence.",
+          "risk": "high",
+          "bar_count": 8.0,
+          "tutorial_text": null,
+          "confidence": 1.0,
+          "mode": "support_recommendation"
+        },
+        {
+          "start": 67.0,
+          "end": 79.8,
+          "time": "01:07.00-01:19.80",
+          "action_id": "dian_bo_she",
+          "display_name": "Dian Bo She",
+          "typical_text": "Dian Bo She underground-gei movement sequence.",
+          "risk": "high",
+          "bar_count": 8.0,
+          "tutorial_text": null,
+          "confidence": 0.709,
+          "mode": "support_recommendation"
+        }
+      ],
+      "action_candidates": [
+        {
+          "section_index": 4,
+          "section_label": "chorus",
+          "section_start": 54.2,
+          "section_end": 78.2,
+          "section_estimated_bars": 15.0,
+          "start": 54.2,
+          "end": 67.0,
+          "fit_bars": 8.0,
+          "action_fit_bars": 8.0,
+          "action_id": "gongfu_she",
+          "action_name": "Gongfu She",
+          "category": "underground_gei",
+          "risk": "high",
+          "confidence": 1.0,
+          "reason": "section=chorus; estimated_bars=15.0; matched_context=chorus; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=1/2",
+          "warnings": [
+            "high-risk action; venue/fandom policy should override",
+            "chorus is forced to underground-gei for dense callbook mode",
+            "semantic context missing; action kept with penalty"
+          ],
+          "arrangement_role": "primary",
+          "arrangement_mode": "non_overlapping_gei_chain",
+          "arrangement_slot": "1/2",
+          "planned_section_indices": [
+            4
+          ],
+          "planned_section_labels": [
+            "chorus"
+          ]
+        },
+        {
+          "section_index": 4,
+          "section_label": "chorus",
+          "section_start": 54.2,
+          "section_end": 78.2,
+          "section_estimated_bars": 15.0,
+          "start": 67.0,
+          "end": 79.8,
+          "fit_bars": 8.0,
+          "action_fit_bars": 8.0,
+          "action_id": "dian_bo_she",
+          "action_name": "Dian Bo She",
+          "category": "underground_gei",
+          "risk": "high",
+          "confidence": 0.709,
+          "reason": "section=chorus; estimated_bars=15.0; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=2/2; arrangement=borrows_adjacent_section",
+          "warnings": [
+            "high-risk action; venue/fandom policy should override",
+            "chorus is forced to underground-gei for dense callbook mode",
+            "semantic context missing; action kept with penalty",
+            "planned action crosses adjacent structure boundary to complete a bar phrase"
+          ],
+          "arrangement_role": "primary",
+          "arrangement_mode": "non_overlapping_gei_chain",
+          "arrangement_slot": "2/2",
+          "planned_section_indices": [
+            4,
+            5
+          ],
+          "planned_section_labels": [
+            "chorus",
+            "instrumental"
+          ]
+        }
+      ],
+      "action_selection": {
+        "mode": "support_rule_recommender",
+        "min_confidence": 0.5,
+        "max_per_section": 3
+      }
+    },
+    {
+      "start": 78.2,
+      "end": 83.0,
+      "call_role": "underground_gei",
+      "music_label_context": "instrumental",
+      "allin1_struct_context": "instrumental",
+      "bar_start": null,
+      "bar_end": null,
+      "bars": 15.0,
+      "method": "bar_coarse_support",
+      "recommended_actions": [
+        "dian_bo_she"
+      ],
+      "action_plan": [
+        {
+          "start": 67.0,
+          "end": 79.8,
+          "time": "01:07.00-01:19.80",
+          "action_id": "dian_bo_she",
+          "display_name": "Dian Bo She",
+          "typical_text": "Dian Bo She underground-gei movement sequence.",
+          "risk": "high",
+          "bar_count": 8.0,
+          "tutorial_text": null,
+          "confidence": 0.709,
+          "mode": "support_recommendation"
+        }
+      ],
+      "action_candidates": [
+        {
+          "section_index": 4,
+          "section_label": "chorus",
+          "section_start": 54.2,
+          "section_end": 78.2,
+          "section_estimated_bars": 15.0,
+          "start": 67.0,
+          "end": 79.8,
+          "fit_bars": 8.0,
+          "action_fit_bars": 8.0,
+          "action_id": "dian_bo_she",
+          "action_name": "Dian Bo She",
+          "category": "underground_gei",
+          "risk": "high",
+          "confidence": 0.709,
+          "reason": "section=chorus; estimated_bars=15.0; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=2/2; arrangement=borrows_adjacent_section",
+          "warnings": [
+            "high-risk action; venue/fandom policy should override",
+            "chorus is forced to underground-gei for dense callbook mode",
+            "semantic context missing; action kept with penalty",
+            "planned action crosses adjacent structure boundary to complete a bar phrase"
+          ],
+          "arrangement_role": "primary",
+          "arrangement_mode": "non_overlapping_gei_chain",
+          "arrangement_slot": "2/2",
+          "planned_section_indices": [
+            4,
+            5
+          ],
+          "planned_section_labels": [
+            "chorus",
+            "instrumental"
+          ]
+        }
+      ],
+      "action_selection": {
+        "mode": "support_rule_recommender",
+        "min_confidence": 0.5,
+        "max_per_section": 3
+      }
+    },
+    {
+      "start": 83.0,
+      "end": 100.61,
+      "call_role": "rhythmcall",
+      "music_label_context": "verse",
+      "allin1_struct_context": "verse",
+      "bar_start": null,
+      "bar_end": null,
+      "bars": 11.0,
+      "method": "bar_coarse_support",
+      "recommended_actions": [
+        "ppph",
+        "oi_oi",
+        "clap"
+      ],
+      "action_plan": [
+        {
+          "start": 89.4,
+          "end": 92.61,
+          "time": "01:29.40-01:32.61",
+          "action_id": "ppph",
+          "display_name": "PPPH",
+          "typical_text": "Pan-pa-pan, hyu!",
+          "risk": "low",
+          "bar_count": 2.0,
+          "tutorial_text": null,
+          "confidence": 0.906,
+          "mode": "support_recommendation"
+        },
+        {
+          "start": 83.0,
+          "end": 86.2,
+          "time": "01:23.00-01:26.20",
+          "action_id": "oi_oi",
+          "display_name": "Oi Oi",
+          "typical_text": "Oi! Oi!",
+          "risk": "low",
+          "bar_count": 2.0,
+          "tutorial_text": null,
+          "confidence": 0.892,
+          "mode": "support_recommendation"
+        },
+        {
+          "start": 95.81,
+          "end": 99.01,
+          "time": "01:35.81-01:39.01",
+          "action_id": "clap",
+          "display_name": "Clap",
+          "typical_text": "Clap on beat or backbeat.",
+          "risk": "low",
+          "bar_count": 2.0,
+          "tutorial_text": null,
+          "confidence": 0.88,
+          "mode": "support_recommendation"
+        }
+      ],
+      "action_candidates": [
+        {
+          "section_index": 6,
+          "section_label": "verse",
+          "section_start": 83.0,
+          "section_end": 100.61,
+          "section_estimated_bars": 11.0,
+          "start": 89.4,
+          "end": 92.61,
+          "fit_bars": 2.0,
+          "action_fit_bars": 2.0,
+          "action_id": "ppph",
+          "action_name": "PPPH",
+          "category": "rhythmcall",
+          "risk": "low",
+          "confidence": 0.906,
+          "reason": "section=verse; estimated_bars=11.0; matched_context=mid_energy_vocal,verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_2",
+          "warnings": [],
+          "arrangement_role": "primary",
+          "arrangement_mode": "verse_sparse_call_fill",
+          "arrangement_slot": "verse_fill_2",
+          "planned_section_indices": [
+            6
+          ],
+          "planned_section_labels": [
+            "verse"
+          ]
+        },
+        {
+          "section_index": 6,
+          "section_label": "verse",
+          "section_start": 83.0,
+          "section_end": 100.61,
+          "section_estimated_bars": 11.0,
+          "start": 83.0,
+          "end": 86.2,
+          "fit_bars": 2.0,
+          "action_fit_bars": 2.0,
+          "action_id": "oi_oi",
+          "action_name": "Oi Oi",
+          "category": "rhythmcall",
+          "risk": "low",
+          "confidence": 0.892,
+          "reason": "section=verse; estimated_bars=11.0; matched_context=verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_1",
+          "warnings": [],
+          "arrangement_role": "primary",
+          "arrangement_mode": "verse_sparse_call_fill",
+          "arrangement_slot": "verse_fill_1",
+          "planned_section_indices": [
+            6
+          ],
+          "planned_section_labels": [
+            "verse"
+          ]
+        },
+        {
+          "section_index": 6,
+          "section_label": "verse",
+          "section_start": 83.0,
+          "section_end": 100.61,
+          "section_estimated_bars": 11.0,
+          "start": 95.81,
+          "end": 99.01,
+          "fit_bars": 2.0,
+          "action_fit_bars": 2.0,
+          "action_id": "clap",
+          "action_name": "Clap",
+          "category": "rhythmcall",
+          "risk": "low",
+          "confidence": 0.88,
+          "reason": "section=verse; estimated_bars=11.0; matched_context=verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_3",
+          "warnings": [],
+          "arrangement_role": "primary",
+          "arrangement_mode": "verse_sparse_call_fill",
+          "arrangement_slot": "verse_fill_3",
+          "planned_section_indices": [
+            6
+          ],
+          "planned_section_labels": [
+            "verse"
+          ]
+        }
+      ],
+      "action_selection": {
+        "mode": "support_rule_recommender",
+        "min_confidence": 0.5,
+        "max_per_section": 3
+      }
+    },
+    {
+      "start": 100.61,
+      "end": 115.0,
+      "call_role": "mix",
+      "music_label_context": "pre_chorus",
+      "allin1_struct_context": "pre_chorus",
+      "bar_start": null,
+      "bar_end": null,
+      "bars": 9.0,
+      "method": "bar_coarse_support",
+      "recommended_actions": [
+        "jp_mix_seigyaku_dt",
+        "ppph",
+        "ietora"
+      ],
+      "action_plan": [
+        {
+          "start": 103.81,
+          "end": 110.2,
+          "time": "01:43.81-01:50.20",
+          "action_id": "jp_mix_seigyaku_dt",
+          "display_name": "Japanese MIX Forward-Reverse Double Time",
+          "typical_text": "_Jyokyo Tobi Kasen Shindou / _Ama Sen'i JinzouHiTora",
+          "risk": "medium",
+          "bar_count": 4.0,
+          "tutorial_text": {
+            "source": "MixAndCall",
+            "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+            "source_title": "ジャパニーズmix逆打ち",
+            "language": "romaji",
+            "full_text": "_Jyokyo Tobi Kasen Shindou\n_Ama Sen'i JinzouHiTora",
+            "bars": [
+              "_Jyokyo Tobi Kasen Shindou",
+              "_Ama Sen'i JinzouHiTora"
+            ]
+          },
+          "confidence": 1.0,
+          "mode": "support_recommendation"
+        },
+        {
+          "start": 100.61,
+          "end": 103.81,
+          "time": "01:40.61-01:43.81",
+          "action_id": "ppph",
+          "display_name": "PPPH",
+          "typical_text": "Pan-pa-pan, hyu!",
+          "risk": "low",
+          "bar_count": 2.0,
+          "tutorial_text": null,
+          "confidence": 0.956,
+          "mode": "support_recommendation"
+        },
+        {
+          "start": 113.4,
+          "end": 115.0,
+          "time": "01:53.40-01:55.00",
+          "action_id": "ietora",
+          "display_name": "Ietora",
+          "typical_text": "_Yettaiga Yettaiga / _YettaigaFaiboWaipa / _Ye Ye Ye Ye / _YettaigaFaiboWaipa",
+          "risk": "high",
+          "bar_count": 1.0,
+          "tutorial_text": {
+            "source": "MixAndCall",
+            "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+            "source_title": "家虎 [ イェッタイガー ]",
+            "language": "romaji",
+            "full_text": "_Yettaiga Yettaiga\n_YettaigaFaiboWaipa\n_Ye Ye Ye Ye\n_YettaigaFaiboWaipa",
+            "bars": [
+              "_Yettaiga Yettaiga",
+              "_YettaigaFaiboWaipa",
+              "_Ye Ye Ye Ye",
+              "_YettaigaFaiboWaipa"
+            ]
+          },
+          "confidence": 0.869,
+          "mode": "support_recommendation"
+        }
+      ],
+      "action_candidates": [
+        {
+          "section_index": 7,
+          "section_label": "pre_chorus",
+          "section_start": 100.61,
+          "section_end": 115.0,
+          "section_estimated_bars": 9.0,
+          "start": 103.81,
+          "end": 110.2,
+          "fit_bars": 4.0,
+          "action_fit_bars": 4.0,
+          "action_id": "jp_mix_seigyaku_dt",
+          "action_name": "Japanese MIX Forward-Reverse Double Time",
+          "category": "mix",
+          "risk": "medium",
+          "confidence": 1.0,
+          "reason": "section=pre_chorus; estimated_bars=9.0; matched_context=chorus_entry; category=mix; arrangement=prechorus_build_mix_fill; arrangement_slot=middle_build",
+          "warnings": [],
+          "arrangement_role": "primary",
+          "arrangement_mode": "prechorus_build_mix_fill",
+          "arrangement_slot": "middle_build",
+          "planned_section_indices": [
+            7
+          ],
+          "planned_section_labels": [
+            "pre_chorus"
+          ]
+        },
+        {
+          "section_index": 7,
+          "section_label": "pre_chorus",
+          "section_start": 100.61,
+          "section_end": 115.0,
+          "section_estimated_bars": 9.0,
+          "start": 100.61,
+          "end": 103.81,
+          "fit_bars": 2.0,
+          "action_fit_bars": 2.0,
+          "action_id": "ppph",
+          "action_name": "PPPH",
+          "category": "rhythmcall",
+          "risk": "low",
+          "confidence": 0.956,
+          "reason": "section=pre_chorus; estimated_bars=9.0; matched_context=pre_chorus; category=rhythmcall; arrangement=prechorus_build_fill; arrangement_slot=opening_call",
+          "warnings": [],
+          "arrangement_role": "primary",
+          "arrangement_mode": "prechorus_build_fill",
+          "arrangement_slot": "opening_call",
+          "planned_section_indices": [
+            7
+          ],
+          "planned_section_labels": [
+            "pre_chorus"
+          ]
+        },
+        {
+          "section_index": 7,
+          "section_label": "pre_chorus",
+          "section_start": 100.61,
+          "section_end": 115.0,
+          "section_estimated_bars": 9.0,
+          "start": 113.4,
+          "end": 115.0,
+          "fit_bars": 1.0,
+          "action_fit_bars": 1.0,
+          "action_id": "ietora",
+          "action_name": "Ietora",
+          "category": "mix",
+          "risk": "high",
+          "confidence": 0.869,
+          "reason": "section=pre_chorus; estimated_bars=9.0; matched_context=chorus_entry,pre_chorus,pre_chorus_build; semantic=context_missing_penalty; category=mix; arrangement=prechorus_chorus_entry_fill; arrangement_slot=chorus_entry",
+          "warnings": [
+            "high-risk action; venue/fandom policy should override",
+            "semantic context missing; action kept with penalty"
+          ],
+          "arrangement_role": "primary",
+          "arrangement_mode": "prechorus_chorus_entry_fill",
+          "arrangement_slot": "chorus_entry",
+          "planned_section_indices": [
+            7
+          ],
+          "planned_section_labels": [
+            "pre_chorus"
+          ]
+        }
+      ],
+      "action_selection": {
+        "mode": "support_rule_recommender",
+        "min_confidence": 0.5,
+        "max_per_section": 3
+      }
+    },
+    {
+      "start": 115.0,
+      "end": 140.61,
+      "call_role": "underground_gei",
+      "music_label_context": "chorus",
+      "allin1_struct_context": "chorus",
+      "bar_start": null,
+      "bar_end": null,
+      "bars": 16.0,
+      "method": "bar_coarse_support",
+      "recommended_actions": [
+        "zi_he_she",
+        "chan_she"
+      ],
+      "action_plan": [
+        {
+          "start": 115.0,
+          "end": 127.8,
+          "time": "01:55.00-02:07.80",
+          "action_id": "zi_he_she",
+          "display_name": "Zi He She",
+          "typical_text": "Zi He She underground-gei movement sequence.",
+          "risk": "high",
+          "bar_count": 8.0,
+          "tutorial_text": null,
+          "confidence": 0.889,
+          "mode": "support_recommendation"
+        },
+        {
+          "start": 127.8,
+          "end": 140.6,
+          "time": "02:07.80-02:20.60",
+          "action_id": "chan_she",
+          "display_name": "Chan She",
+          "typical_text": "Chan She underground-gei movement sequence.",
+          "risk": "high",
+          "bar_count": 8.0,
+          "tutorial_text": null,
+          "confidence": 0.889,
+          "mode": "support_recommendation"
+        }
+      ],
+      "action_candidates": [
+        {
+          "section_index": 8,
+          "section_label": "chorus",
+          "section_start": 115.0,
+          "section_end": 140.61,
+          "section_estimated_bars": 16.0,
+          "start": 115.0,
+          "end": 127.8,
+          "fit_bars": 8.0,
+          "action_fit_bars": 8.0,
+          "action_id": "zi_he_she",
+          "action_name": "Zi He She",
+          "category": "underground_gei",
+          "risk": "high",
+          "confidence": 0.889,
+          "reason": "section=chorus; estimated_bars=14.0; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; gei_chain=continues_neighbor_gei; gei_chain=bridges_neighbor_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=1/6",
+          "warnings": [
+            "high-risk action; venue/fandom policy should override",
+            "chorus is forced to underground-gei for dense callbook mode",
+            "semantic context missing; action kept with penalty"
+          ],
+          "arrangement_role": "primary",
+          "arrangement_mode": "non_overlapping_gei_chain",
+          "arrangement_slot": "1/6",
+          "planned_section_indices": [
+            8
+          ],
+          "planned_section_labels": [
+            "chorus"
+          ]
+        },
+        {
+          "section_index": 8,
+          "section_label": "chorus",
+          "section_start": 115.0,
+          "section_end": 140.61,
+          "section_estimated_bars": 16.0,
+          "start": 127.8,
+          "end": 140.6,
+          "fit_bars": 8.0,
+          "action_fit_bars": 8.0,
+          "action_id": "chan_she",
+          "action_name": "Chan She",
+          "category": "underground_gei",
+          "risk": "high",
+          "confidence": 0.889,
+          "reason": "section=chorus; estimated_bars=14.0; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; gei_chain=continues_neighbor_gei; gei_chain=bridges_neighbor_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=2/6",
+          "warnings": [
+            "high-risk action; venue/fandom policy should override",
+            "chorus is forced to underground-gei for dense callbook mode",
+            "semantic context missing; action kept with penalty"
+          ],
+          "arrangement_role": "primary",
+          "arrangement_mode": "non_overlapping_gei_chain",
+          "arrangement_slot": "2/6",
+          "planned_section_indices": [
+            8
+          ],
+          "planned_section_labels": [
+            "chorus"
+          ]
+        }
+      ],
+      "action_selection": {
+        "mode": "support_rule_recommender",
+        "min_confidence": 0.5,
+        "max_per_section": 3
+      }
+    },
+    {
+      "start": 140.61,
+      "end": 155.01,
+      "call_role": "underground_gei",
+      "music_label_context": "instrumental",
+      "allin1_struct_context": "instrumental",
+      "bar_start": null,
+      "bar_end": null,
+      "bars": 9.0,
+      "method": "bar_coarse_support",
+      "recommended_actions": [
+        "ali_shizi",
+        "heibai_shuangyi",
+        "tian_zhao"
+      ],
+      "action_plan": [
+        {
+          "start": 140.6,
+          "end": 147.0,
+          "time": "02:20.60-02:27.00",
+          "action_id": "ali_shizi",
+          "display_name": "Ali Shizi",
+          "typical_text": "Ali Shizi underground-gei movement sequence.",
+          "risk": "high",
+          "bar_count": 4.0,
+          "tutorial_text": null,
+          "confidence": 1.0,
+          "mode": "support_recommendation"
+        },
+        {
+          "start": 147.0,
+          "end": 153.4,
+          "time": "02:27.00-02:33.40",
+          "action_id": "heibai_shuangyi",
+          "display_name": "Heibai Shuangyi",
+          "typical_text": "Heibai Shuangyi underground-gei movement sequence.",
+          "risk": "high",
+          "bar_count": 4.0,
+          "tutorial_text": null,
+          "confidence": 1.0,
+          "mode": "support_recommendation"
+        },
+        {
+          "start": 153.4,
+          "end": 159.8,
+          "time": "02:33.40-02:39.80",
+          "action_id": "tian_zhao",
+          "display_name": "Tian Zhao",
+          "typical_text": "Tian Zhao underground-gei movement sequence.",
+          "risk": "high",
+          "bar_count": 4.0,
+          "tutorial_text": null,
+          "confidence": 1.0,
+          "mode": "support_recommendation"
+        }
+      ],
+      "action_candidates": [
+        {
+          "section_index": 9,
+          "section_label": "instrumental",
+          "section_start": 140.61,
+          "section_end": 155.01,
+          "section_estimated_bars": 9.0,
+          "start": 140.6,
+          "end": 147.0,
+          "fit_bars": 4.0,
+          "action_fit_bars": 4.0,
+          "action_id": "ali_shizi",
+          "action_name": "Ali Shizi",
+          "category": "underground_gei",
+          "risk": "high",
+          "confidence": 1.0,
+          "reason": "section=chorus; estimated_bars=16.0; matched_context=chorus; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; gei_chain=continues_neighbor_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=3/6",
+          "warnings": [
+            "high-risk action; venue/fandom policy should override",
+            "chorus is forced to underground-gei for dense callbook mode",
+            "semantic context missing; action kept with penalty"
+          ],
+          "arrangement_role": "primary",
+          "arrangement_mode": "non_overlapping_gei_chain",
+          "arrangement_slot": "3/6",
+          "planned_section_indices": [
+            9
+          ],
+          "planned_section_labels": [
+            "instrumental"
+          ]
+        },
+        {
+          "section_index": 9,
+          "section_label": "instrumental",
+          "section_start": 140.61,
+          "section_end": 155.01,
+          "section_estimated_bars": 9.0,
+          "start": 147.0,
+          "end": 153.4,
+          "fit_bars": 4.0,
+          "action_fit_bars": 4.0,
+          "action_id": "heibai_shuangyi",
+          "action_name": "Heibai Shuangyi",
+          "category": "underground_gei",
+          "risk": "high",
+          "confidence": 1.0,
+          "reason": "section=chorus; estimated_bars=16.0; matched_context=chorus; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; gei_chain=continues_neighbor_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=4/6",
+          "warnings": [
+            "high-risk action; venue/fandom policy should override",
+            "chorus is forced to underground-gei for dense callbook mode",
+            "semantic context missing; action kept with penalty"
+          ],
+          "arrangement_role": "primary",
+          "arrangement_mode": "non_overlapping_gei_chain",
+          "arrangement_slot": "4/6",
+          "planned_section_indices": [
+            9
+          ],
+          "planned_section_labels": [
+            "instrumental"
+          ]
+        },
+        {
+          "section_index": 9,
+          "section_label": "instrumental",
+          "section_start": 140.61,
+          "section_end": 155.01,
+          "section_estimated_bars": 9.0,
+          "start": 153.4,
+          "end": 159.8,
+          "fit_bars": 4.0,
+          "action_fit_bars": 4.0,
+          "action_id": "tian_zhao",
+          "action_name": "Tian Zhao",
+          "category": "underground_gei",
+          "risk": "high",
+          "confidence": 1.0,
+          "reason": "section=chorus; estimated_bars=16.0; matched_context=chorus; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; gei_chain=continues_neighbor_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=5/6; arrangement=borrows_adjacent_section",
+          "warnings": [
+            "high-risk action; venue/fandom policy should override",
+            "chorus is forced to underground-gei for dense callbook mode",
+            "semantic context missing; action kept with penalty",
+            "planned action crosses adjacent structure boundary to complete a bar phrase"
+          ],
+          "arrangement_role": "primary",
+          "arrangement_mode": "non_overlapping_gei_chain",
+          "arrangement_slot": "5/6",
+          "planned_section_indices": [
+            9,
+            10
+          ],
+          "planned_section_labels": [
+            "instrumental",
+            "chorus"
+          ]
+        }
+      ],
+      "action_selection": {
+        "mode": "support_rule_recommender",
+        "min_confidence": 0.5,
+        "max_per_section": 3
+      }
+    },
+    {
+      "start": 155.01,
+      "end": 177.41,
+      "call_role": "underground_gei",
+      "music_label_context": "chorus",
+      "allin1_struct_context": "chorus",
+      "bar_start": null,
+      "bar_end": null,
+      "bars": 9.0,
+      "method": "bar_coarse_support",
+      "recommended_actions": [
+        "tian_zhao",
+        "long_zhi_mao"
+      ],
+      "action_plan": [
+        {
+          "start": 153.4,
+          "end": 159.8,
+          "time": "02:33.40-02:39.80",
+          "action_id": "tian_zhao",
+          "display_name": "Tian Zhao",
+          "typical_text": "Tian Zhao underground-gei movement sequence.",
+          "risk": "high",
+          "bar_count": 4.0,
+          "tutorial_text": null,
+          "confidence": 1.0,
+          "mode": "support_recommendation"
+        },
+        {
+          "start": 159.8,
+          "end": 166.2,
+          "time": "02:39.80-02:46.20",
+          "action_id": "long_zhi_mao",
+          "display_name": "Long Zhi Mao",
+          "typical_text": "Long Zhi Mao underground-gei movement sequence.",
+          "risk": "high",
+          "bar_count": 4.0,
+          "tutorial_text": null,
+          "confidence": 0.889,
+          "mode": "support_recommendation"
+        }
+      ],
+      "action_candidates": [
+        {
+          "section_index": 9,
+          "section_label": "instrumental",
+          "section_start": 140.61,
+          "section_end": 155.01,
+          "section_estimated_bars": 9.0,
+          "start": 153.4,
+          "end": 159.8,
+          "fit_bars": 4.0,
+          "action_fit_bars": 4.0,
+          "action_id": "tian_zhao",
+          "action_name": "Tian Zhao",
+          "category": "underground_gei",
+          "risk": "high",
+          "confidence": 1.0,
+          "reason": "section=chorus; estimated_bars=16.0; matched_context=chorus; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; gei_chain=continues_neighbor_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=5/6; arrangement=borrows_adjacent_section",
+          "warnings": [
+            "high-risk action; venue/fandom policy should override",
+            "chorus is forced to underground-gei for dense callbook mode",
+            "semantic context missing; action kept with penalty",
+            "planned action crosses adjacent structure boundary to complete a bar phrase"
+          ],
+          "arrangement_role": "primary",
+          "arrangement_mode": "non_overlapping_gei_chain",
+          "arrangement_slot": "5/6",
+          "planned_section_indices": [
+            9,
+            10
+          ],
+          "planned_section_labels": [
+            "instrumental",
+            "chorus"
+          ]
+        },
+        {
+          "section_index": 10,
+          "section_label": "chorus",
+          "section_start": 155.01,
+          "section_end": 177.41,
+          "section_estimated_bars": 14.0,
+          "start": 159.8,
+          "end": 166.2,
+          "fit_bars": 4.0,
+          "action_fit_bars": 4.0,
+          "action_id": "long_zhi_mao",
+          "action_name": "Long Zhi Mao",
+          "category": "underground_gei",
+          "risk": "high",
+          "confidence": 0.889,
+          "reason": "section=instrumental; estimated_bars=9.0; matched_context=high_energy_break,instrumental_break,post_chorus_interlude; semantic=context_missing_penalty; category=underground_gei; gei_chain=continues_neighbor_gei; gei_chain=bridges_neighbor_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=6/6",
+          "warnings": [
+            "high-risk action; venue/fandom policy should override",
+            "semantic context missing; action kept with penalty"
+          ],
+          "arrangement_role": "primary",
+          "arrangement_mode": "non_overlapping_gei_chain",
+          "arrangement_slot": "6/6",
+          "planned_section_indices": [
+            10
+          ],
+          "planned_section_labels": [
+            "chorus"
+          ]
+        }
+      ],
+      "action_selection": {
+        "mode": "support_rule_recommender",
+        "min_confidence": 0.5,
+        "max_per_section": 3
+      }
+    },
+    {
+      "start": 177.41,
+      "end": 190.2,
+      "call_role": "mix",
+      "music_label_context": "instrumental",
+      "allin1_struct_context": "instrumental",
+      "bar_start": null,
+      "bar_end": null,
+      "bars": 8.0,
+      "method": "bar_coarse_support",
+      "recommended_actions": [
+        "standard_mix_long"
+      ],
+      "action_plan": [
+        {
+          "start": 177.41,
+          "end": 187.0,
+          "time": "02:57.41-03:07.00",
+          "action_id": "standard_mix_long",
+          "display_name": "Standard MIX +2-bar Extension",
+          "typical_text": "A~yosshaikuzo / _Taiga Faiya Saiba Faiba / _Daiba Baiba Jya-jya- / Faibo Waipa Yesukureipa",
+          "risk": "medium",
+          "bar_count": 6.0,
+          "tutorial_text": {
+            "source": "MixAndCall",
+            "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+            "source_title": "スタンダードmix尺+2小節",
+            "language": "romaji",
+            "full_text": "A~yosshaikuzo\n_Taiga Faiya Saiba Faiba\n_Daiba Baiba Jya-jya-\nFaibo Waipa Yesukureipa",
+            "bars": [
+              "A~yosshaikuzo",
+              "_Taiga Faiya Saiba Faiba",
+              "_Daiba Baiba Jya-jya-",
+              "Faibo Waipa Yesukureipa"
+            ]
+          },
+          "confidence": 0.92,
+          "mode": "support_recommendation"
+        }
+      ],
+      "action_candidates": [
+        {
+          "section_index": 11,
+          "section_label": "instrumental",
+          "section_start": 177.41,
+          "section_end": 190.2,
+          "section_estimated_bars": 8.0,
+          "start": 177.41,
+          "end": 187.0,
+          "fit_bars": 6.0,
+          "action_fit_bars": 6.0,
+          "action_id": "standard_mix_long",
+          "action_name": "Standard MIX +2-bar Extension",
+          "category": "mix",
+          "risk": "medium",
+          "confidence": 0.92,
+          "reason": "section=instrumental; estimated_bars=8.0; matched_context=high_energy_break,instrumental_break,post_chorus_interlude; category=mix; gei_chain=competes_with_neighbor_gei; arrangement=single_section_primary",
+          "warnings": [],
+          "arrangement_role": "primary",
+          "arrangement_mode": "single_section_primary",
+          "planned_section_indices": [
+            11
+          ],
+          "planned_section_labels": [
+            "instrumental"
+          ]
+        }
+      ],
+      "action_selection": {
+        "mode": "support_rule_recommender",
+        "min_confidence": 0.5,
+        "max_per_section": 3
+      }
+    },
+    {
+      "start": 190.2,
+      "end": 203.0,
+      "call_role": "rhythmcall",
+      "music_label_context": "verse",
+      "allin1_struct_context": "verse",
+      "bar_start": null,
+      "bar_end": null,
+      "bars": 8.0,
+      "method": "bar_coarse_support",
+      "recommended_actions": [
+        "ppph",
+        "oi_oi"
+      ],
+      "action_plan": [
+        {
+          "start": 196.6,
+          "end": 199.8,
+          "time": "03:16.60-03:19.80",
+          "action_id": "ppph",
+          "display_name": "PPPH",
+          "typical_text": "Pan-pa-pan, hyu!",
+          "risk": "low",
+          "bar_count": 2.0,
+          "tutorial_text": null,
+          "confidence": 0.906,
+          "mode": "support_recommendation"
+        },
+        {
+          "start": 190.2,
+          "end": 193.4,
+          "time": "03:10.20-03:13.40",
+          "action_id": "oi_oi",
+          "display_name": "Oi Oi",
+          "typical_text": "Oi! Oi!",
+          "risk": "low",
+          "bar_count": 2.0,
+          "tutorial_text": null,
+          "confidence": 0.892,
+          "mode": "support_recommendation"
+        }
+      ],
+      "action_candidates": [
+        {
+          "section_index": 12,
+          "section_label": "verse",
+          "section_start": 190.2,
+          "section_end": 203.0,
+          "section_estimated_bars": 8.0,
+          "start": 196.6,
+          "end": 199.8,
+          "fit_bars": 2.0,
+          "action_fit_bars": 2.0,
+          "action_id": "ppph",
+          "action_name": "PPPH",
+          "category": "rhythmcall",
+          "risk": "low",
+          "confidence": 0.906,
+          "reason": "section=verse; estimated_bars=8.0; matched_context=mid_energy_vocal,verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_2",
+          "warnings": [],
+          "arrangement_role": "primary",
+          "arrangement_mode": "verse_sparse_call_fill",
+          "arrangement_slot": "verse_fill_2",
+          "planned_section_indices": [
+            12
+          ],
+          "planned_section_labels": [
+            "verse"
+          ]
+        },
+        {
+          "section_index": 12,
+          "section_label": "verse",
+          "section_start": 190.2,
+          "section_end": 203.0,
+          "section_estimated_bars": 8.0,
+          "start": 190.2,
+          "end": 193.4,
+          "fit_bars": 2.0,
+          "action_fit_bars": 2.0,
+          "action_id": "oi_oi",
+          "action_name": "Oi Oi",
+          "category": "rhythmcall",
+          "risk": "low",
+          "confidence": 0.892,
+          "reason": "section=verse; estimated_bars=8.0; matched_context=verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_1",
+          "warnings": [],
+          "arrangement_role": "primary",
+          "arrangement_mode": "verse_sparse_call_fill",
+          "arrangement_slot": "verse_fill_1",
+          "planned_section_indices": [
+            12
+          ],
+          "planned_section_labels": [
+            "verse"
+          ]
+        }
+      ],
+      "action_selection": {
+        "mode": "support_rule_recommender",
+        "min_confidence": 0.5,
+        "max_per_section": 3
+      }
+    },
+    {
+      "start": 203.0,
+      "end": 219.8,
+      "call_role": "mix",
+      "music_label_context": "pre_chorus",
+      "allin1_struct_context": "pre_chorus",
+      "bar_start": null,
+      "bar_end": null,
+      "bars": 10.0,
+      "method": "bar_coarse_support",
+      "recommended_actions": [
+        "jp_mix_seigyaku_dt",
+        "ppph",
+        "ietora"
+      ],
+      "action_plan": [
+        {
+          "start": 206.36,
+          "end": 213.08,
+          "time": "03:26.36-03:33.08",
+          "action_id": "jp_mix_seigyaku_dt",
+          "display_name": "Japanese MIX Forward-Reverse Double Time",
+          "typical_text": "_Jyokyo Tobi Kasen Shindou / _Ama Sen'i JinzouHiTora",
+          "risk": "medium",
+          "bar_count": 4.0,
+          "tutorial_text": {
+            "source": "MixAndCall",
+            "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+            "source_title": "ジャパニーズmix逆打ち",
+            "language": "romaji",
+            "full_text": "_Jyokyo Tobi Kasen Shindou\n_Ama Sen'i JinzouHiTora",
+            "bars": [
+              "_Jyokyo Tobi Kasen Shindou",
+              "_Ama Sen'i JinzouHiTora"
+            ]
+          },
+          "confidence": 1.0,
+          "mode": "support_recommendation"
+        },
+        {
+          "start": 203.0,
+          "end": 206.36,
+          "time": "03:23.00-03:26.36",
+          "action_id": "ppph",
+          "display_name": "PPPH",
+          "typical_text": "Pan-pa-pan, hyu!",
+          "risk": "low",
+          "bar_count": 2.0,
+          "tutorial_text": null,
+          "confidence": 0.956,
+          "mode": "support_recommendation"
+        },
+        {
+          "start": 218.12,
+          "end": 219.8,
+          "time": "03:38.12-03:39.80",
+          "action_id": "ietora",
+          "display_name": "Ietora",
+          "typical_text": "_Yettaiga Yettaiga / _YettaigaFaiboWaipa / _Ye Ye Ye Ye / _YettaigaFaiboWaipa",
+          "risk": "high",
+          "bar_count": 1.0,
+          "tutorial_text": {
+            "source": "MixAndCall",
+            "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+            "source_title": "家虎 [ イェッタイガー ]",
+            "language": "romaji",
+            "full_text": "_Yettaiga Yettaiga\n_YettaigaFaiboWaipa\n_Ye Ye Ye Ye\n_YettaigaFaiboWaipa",
+            "bars": [
+              "_Yettaiga Yettaiga",
+              "_YettaigaFaiboWaipa",
+              "_Ye Ye Ye Ye",
+              "_YettaigaFaiboWaipa"
+            ]
+          },
+          "confidence": 0.869,
+          "mode": "support_recommendation"
+        }
+      ],
+      "action_candidates": [
+        {
+          "section_index": 13,
+          "section_label": "pre_chorus",
+          "section_start": 203.0,
+          "section_end": 219.8,
+          "section_estimated_bars": 10.0,
+          "start": 206.36,
+          "end": 213.08,
+          "fit_bars": 4.0,
+          "action_fit_bars": 4.0,
+          "action_id": "jp_mix_seigyaku_dt",
+          "action_name": "Japanese MIX Forward-Reverse Double Time",
+          "category": "mix",
+          "risk": "medium",
+          "confidence": 1.0,
+          "reason": "section=pre_chorus; estimated_bars=10.0; matched_context=chorus_entry; category=mix; arrangement=prechorus_build_mix_fill; arrangement_slot=middle_build",
+          "warnings": [],
+          "arrangement_role": "primary",
+          "arrangement_mode": "prechorus_build_mix_fill",
+          "arrangement_slot": "middle_build",
+          "planned_section_indices": [
+            13
+          ],
+          "planned_section_labels": [
+            "pre_chorus"
+          ]
+        },
+        {
+          "section_index": 13,
+          "section_label": "pre_chorus",
+          "section_start": 203.0,
+          "section_end": 219.8,
+          "section_estimated_bars": 10.0,
+          "start": 203.0,
+          "end": 206.36,
+          "fit_bars": 2.0,
+          "action_fit_bars": 2.0,
+          "action_id": "ppph",
+          "action_name": "PPPH",
+          "category": "rhythmcall",
+          "risk": "low",
+          "confidence": 0.956,
+          "reason": "section=pre_chorus; estimated_bars=10.0; matched_context=pre_chorus; category=rhythmcall; arrangement=prechorus_build_fill; arrangement_slot=opening_call",
+          "warnings": [],
+          "arrangement_role": "primary",
+          "arrangement_mode": "prechorus_build_fill",
+          "arrangement_slot": "opening_call",
+          "planned_section_indices": [
+            13
+          ],
+          "planned_section_labels": [
+            "pre_chorus"
+          ]
+        },
+        {
+          "section_index": 13,
+          "section_label": "pre_chorus",
+          "section_start": 203.0,
+          "section_end": 219.8,
+          "section_estimated_bars": 10.0,
+          "start": 218.12,
+          "end": 219.8,
+          "fit_bars": 1.0,
+          "action_fit_bars": 1.0,
+          "action_id": "ietora",
+          "action_name": "Ietora",
+          "category": "mix",
+          "risk": "high",
+          "confidence": 0.869,
+          "reason": "section=pre_chorus; estimated_bars=10.0; matched_context=chorus_entry,pre_chorus,pre_chorus_build; semantic=context_missing_penalty; category=mix; arrangement=prechorus_chorus_entry_fill; arrangement_slot=chorus_entry",
+          "warnings": [
+            "high-risk action; venue/fandom policy should override",
+            "semantic context missing; action kept with penalty"
+          ],
+          "arrangement_role": "primary",
+          "arrangement_mode": "prechorus_chorus_entry_fill",
+          "arrangement_slot": "chorus_entry",
+          "planned_section_indices": [
+            13
+          ],
+          "planned_section_labels": [
+            "pre_chorus"
+          ]
+        }
+      ],
+      "action_selection": {
+        "mode": "support_rule_recommender",
+        "min_confidence": 0.5,
+        "max_per_section": 3
+      }
+    },
+    {
+      "start": 219.8,
+      "end": 247.0,
+      "call_role": "underground_gei",
+      "music_label_context": "chorus",
+      "allin1_struct_context": "chorus",
+      "bar_start": null,
+      "bar_end": null,
+      "bars": 17.0,
+      "method": "bar_coarse_support",
+      "recommended_actions": [
+        "cun_zheng",
+        "lei_she"
+      ],
+      "action_plan": [
+        {
+          "start": 219.8,
+          "end": 226.2,
+          "time": "03:39.80-03:46.20",
+          "action_id": "cun_zheng",
+          "display_name": "Cun Zheng",
+          "typical_text": "Cun Zheng underground-gei movement sequence.",
+          "risk": "high",
+          "bar_count": 4.0,
+          "tutorial_text": null,
+          "confidence": 0.708,
+          "mode": "support_recommendation"
+        },
+        {
+          "start": 226.2,
+          "end": 232.6,
+          "time": "03:46.20-03:52.60",
+          "action_id": "lei_she",
+          "display_name": "Lei She",
+          "typical_text": "Lei She underground-gei movement sequence.",
+          "risk": "high",
+          "bar_count": 4.0,
+          "tutorial_text": null,
+          "confidence": 0.708,
+          "mode": "support_recommendation"
+        }
+      ],
+      "action_candidates": [
+        {
+          "section_index": 14,
+          "section_label": "chorus",
+          "section_start": 219.8,
+          "section_end": 247.0,
+          "section_estimated_bars": 17.0,
+          "start": 219.8,
+          "end": 226.2,
+          "fit_bars": 4.0,
+          "action_fit_bars": 4.0,
+          "action_id": "cun_zheng",
+          "action_name": "Cun Zheng",
+          "category": "underground_gei",
+          "risk": "high",
+          "confidence": 0.708,
+          "reason": "section=chorus; estimated_bars=17.0; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=1/2",
+          "warnings": [
+            "high-risk action; venue/fandom policy should override",
+            "chorus is forced to underground-gei for dense callbook mode",
+            "semantic context missing; action kept with penalty"
+          ],
+          "arrangement_role": "primary",
+          "arrangement_mode": "non_overlapping_gei_chain",
+          "arrangement_slot": "1/2",
+          "planned_section_indices": [
+            14
+          ],
+          "planned_section_labels": [
+            "chorus"
+          ]
+        },
+        {
+          "section_index": 14,
+          "section_label": "chorus",
+          "section_start": 219.8,
+          "section_end": 247.0,
+          "section_estimated_bars": 17.0,
+          "start": 226.2,
+          "end": 232.6,
+          "fit_bars": 4.0,
+          "action_fit_bars": 4.0,
+          "action_id": "lei_she",
+          "action_name": "Lei She",
+          "category": "underground_gei",
+          "risk": "high",
+          "confidence": 0.708,
+          "reason": "section=chorus; estimated_bars=17.0; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=2/2",
+          "warnings": [
+            "high-risk action; venue/fandom policy should override",
+            "chorus is forced to underground-gei for dense callbook mode",
+            "semantic context missing; action kept with penalty"
+          ],
+          "arrangement_role": "primary",
+          "arrangement_mode": "non_overlapping_gei_chain",
+          "arrangement_slot": "2/2",
+          "planned_section_indices": [
+            14
+          ],
+          "planned_section_labels": [
+            "chorus"
+          ]
+        }
+      ],
+      "action_selection": {
+        "mode": "support_rule_recommender",
+        "min_confidence": 0.5,
+        "max_per_section": 3
+      }
+    },
+    {
+      "start": 247.0,
+      "end": 256.61,
+      "call_role": "rhythmcall",
+      "music_label_context": "outro",
+      "allin1_struct_context": "outro",
+      "bar_start": null,
+      "bar_end": null,
+      "bars": 6.0,
+      "method": "bar_coarse_support",
+      "recommended_actions": [
+        "oi_oi"
+      ],
+      "action_plan": [
+        {
+          "start": 247.0,
+          "end": 250.2,
+          "time": "04:07.00-04:10.20",
+          "action_id": "oi_oi",
+          "display_name": "Oi Oi",
+          "typical_text": "Oi! Oi!",
+          "risk": "low",
+          "bar_count": 2.0,
+          "tutorial_text": null,
+          "confidence": 0.962,
+          "mode": "support_recommendation"
+        }
+      ],
+      "action_candidates": [
+        {
+          "section_index": 15,
+          "section_label": "outro",
+          "section_start": 247.0,
+          "section_end": 256.61,
+          "section_estimated_bars": 6.0,
+          "start": 247.0,
+          "end": 250.2,
+          "fit_bars": 2.0,
+          "action_fit_bars": 2.0,
+          "action_id": "oi_oi",
+          "action_name": "Oi Oi",
+          "category": "rhythmcall",
+          "risk": "low",
+          "confidence": 0.962,
+          "reason": "section=outro; estimated_bars=6.0; matched_context=high_energy_outro; category=rhythmcall; arrangement=single_section_primary",
+          "warnings": [],
+          "arrangement_role": "primary",
+          "arrangement_mode": "single_section_primary",
+          "planned_section_indices": [
+            15
+          ],
+          "planned_section_labels": [
+            "outro"
+          ]
+        }
+      ],
+      "action_selection": {
+        "mode": "support_rule_recommender",
+        "min_confidence": 0.5,
+        "max_per_section": 3
+      }
+    },
+    {
+      "start": 256.61,
+      "end": 264.61,
+      "call_role": "mix",
+      "music_label_context": "instrumental",
+      "allin1_struct_context": "instrumental",
+      "bar_start": null,
+      "bar_end": null,
+      "bars": 5.0,
+      "method": "bar_coarse_support",
+      "recommended_actions": [
+        "standard_mix"
+      ],
+      "action_plan": [
+        {
+          "start": 256.61,
+          "end": 263.01,
+          "time": "04:16.61-04:23.01",
+          "action_id": "standard_mix",
+          "display_name": "Standard MIX",
+          "typical_text": "A~yosshaikuzo / _Taiga Faiya Saiba Faiba / _Daiba Baiba Jya-jya- / Fai-bo-Wai-pa",
+          "risk": "medium",
+          "bar_count": 4.0,
+          "tutorial_text": {
+            "source": "MixAndCall",
+            "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+            "source_title": "英语mix [ スタンダードmix ] [ 英語mix ]",
+            "language": "romaji",
+            "full_text": "A~yosshaikuzo\n_Taiga Faiya Saiba Faiba\n_Daiba Baiba Jya-jya-\nFai-bo-Wai-pa",
+            "bars": [
+              "A~yosshaikuzo",
+              "_Taiga Faiya Saiba Faiba",
+              "_Daiba Baiba Jya-jya-",
+              "Fai-bo-Wai-pa"
+            ]
+          },
+          "confidence": 1.0,
+          "mode": "support_recommendation"
+        }
+      ],
+      "action_candidates": [
+        {
+          "section_index": 16,
+          "section_label": "instrumental",
+          "section_start": 256.61,
+          "section_end": 264.61,
+          "section_estimated_bars": 5.0,
+          "start": 256.61,
+          "end": 263.01,
+          "fit_bars": 4.0,
+          "action_fit_bars": 4.0,
+          "action_id": "standard_mix",
+          "action_name": "Standard MIX",
+          "category": "mix",
+          "risk": "medium",
+          "confidence": 1.0,
+          "reason": "section=instrumental; estimated_bars=5.0; matched_context=instrumental_break,post_chorus_interlude; category=mix; arrangement=single_section_primary",
+          "warnings": [],
+          "arrangement_role": "primary",
+          "arrangement_mode": "single_section_primary",
+          "planned_section_indices": [
+            16
+          ],
+          "planned_section_labels": [
+            "instrumental"
+          ]
+        }
+      ],
+      "action_selection": {
+        "mode": "support_rule_recommender",
+        "min_confidence": 0.5,
+        "max_per_section": 3
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "start": 1.4,
+      "end": 20.61,
+      "time": "00:01.40-00:20.61",
+      "action_id": "bismarck_mix",
+      "display_name": "Bismarck Koujou",
+      "role": "mix",
+      "music_label": "intro",
+      "struct_label": "intro",
+      "risk": "medium",
+      "bar_count": 12.0,
+      "typical_text": "Takamaruyo Takamaruyo / TakamaruHikumaruBisumaruku / Shijima-ru Arushindo / Kazudansu Ni-haiO-hai(P) / Kanchu-hai U-ronhai / Nachuraruhai Aikyanfurai(跳起)",
+      "tutorial_text": {
+        "source": "MixAndCall",
+        "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+        "source_title": "高低call [ 俾斯麦口上 ] [ ビスマルク口上 ]",
+        "language": "romaji",
+        "full_text": "Takamaruyo Takamaruyo\nTakamaruHikumaruBisumaruku\nShijima-ru Arushindo\nKazudansu Ni-haiO-hai(P)\nKanchu-hai U-ronhai\nNachuraruhai Aikyanfurai(跳起)",
+        "bars": [
+          "Takamaruyo Takamaruyo",
+          "TakamaruHikumaruBisumaruku",
+          "Shijima-ru Arushindo",
+          "Kazudansu Ni-haiO-hai(P)",
+          "Kanchu-hai U-ronhai",
+          "Nachuraruhai Aikyanfurai(跳起)"
+        ]
+      },
+      "confidence": 1.0,
+      "mode": "support_recommendation",
+      "section_index": 1,
+      "notes": "section=intro; estimated_bars=13.0; matched_context=high_energy_break,intro; category=mix; arrangement=single_section_primary"
+    },
+    {
+      "start": 22.21,
+      "end": 25.41,
+      "time": "00:22.21-00:25.41",
+      "action_id": "oi_oi",
+      "display_name": "Oi Oi",
+      "role": "rhythmcall",
+      "music_label": "verse",
+      "struct_label": "verse",
+      "risk": "low",
+      "bar_count": 2.0,
+      "typical_text": "Oi! Oi!",
+      "tutorial_text": null,
+      "confidence": 0.892,
+      "mode": "support_recommendation",
+      "section_index": 2,
+      "notes": "section=verse; estimated_bars=13.0; matched_context=verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_1"
+    },
+    {
+      "start": 28.61,
+      "end": 31.81,
+      "time": "00:28.61-00:31.81",
+      "action_id": "ppph",
+      "display_name": "PPPH",
+      "role": "rhythmcall",
+      "music_label": "verse",
+      "struct_label": "verse",
+      "risk": "low",
+      "bar_count": 2.0,
+      "typical_text": "Pan-pa-pan, hyu!",
+      "tutorial_text": null,
+      "confidence": 0.906,
+      "mode": "support_recommendation",
+      "section_index": 2,
+      "notes": "section=verse; estimated_bars=13.0; matched_context=mid_energy_vocal,verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_2"
+    },
+    {
+      "start": 35.0,
+      "end": 38.2,
+      "time": "00:35.00-00:38.20",
+      "action_id": "clap",
+      "display_name": "Clap",
+      "role": "rhythmcall",
+      "music_label": "verse",
+      "struct_label": "verse",
+      "risk": "low",
+      "bar_count": 2.0,
+      "typical_text": "Clap on beat or backbeat.",
+      "tutorial_text": null,
+      "confidence": 0.88,
+      "mode": "support_recommendation",
+      "section_index": 2,
+      "notes": "section=verse; estimated_bars=13.0; matched_context=verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_3"
+    },
+    {
+      "start": 41.4,
+      "end": 43.0,
+      "time": "00:41.40-00:43.00",
+      "action_id": "hai_hai",
+      "display_name": "Hai Hai",
+      "role": "rhythmcall",
+      "music_label": "verse",
+      "struct_label": "verse",
+      "risk": "low",
+      "bar_count": 1.0,
+      "typical_text": "Hai! Hai!",
+      "tutorial_text": null,
+      "confidence": 0.889,
+      "mode": "support_recommendation",
+      "section_index": 2,
+      "notes": "section=verse; estimated_bars=13.0; matched_context=verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_4"
+    },
+    {
+      "start": 43.0,
+      "end": 46.2,
+      "time": "00:43.00-00:46.20",
+      "action_id": "ppph",
+      "display_name": "PPPH",
+      "role": "rhythmcall",
+      "music_label": "pre_chorus",
+      "struct_label": "pre_chorus",
+      "risk": "low",
+      "bar_count": 2.0,
+      "typical_text": "Pan-pa-pan, hyu!",
+      "tutorial_text": null,
+      "confidence": 0.956,
+      "mode": "support_recommendation",
+      "section_index": 3,
+      "notes": "section=pre_chorus; estimated_bars=7.0; matched_context=pre_chorus; category=rhythmcall; arrangement=prechorus_build_fill; arrangement_slot=opening_call"
+    },
+    {
+      "start": 46.2,
+      "end": 52.6,
+      "time": "00:46.20-00:52.60",
+      "action_id": "jp_mix_seigyaku_dt",
+      "display_name": "Japanese MIX Forward-Reverse Double Time",
+      "role": "mix",
+      "music_label": "pre_chorus",
+      "struct_label": "pre_chorus",
+      "risk": "medium",
+      "bar_count": 4.0,
+      "typical_text": "_Jyokyo Tobi Kasen Shindou / _Ama Sen'i JinzouHiTora",
+      "tutorial_text": {
+        "source": "MixAndCall",
+        "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+        "source_title": "ジャパニーズmix逆打ち",
+        "language": "romaji",
+        "full_text": "_Jyokyo Tobi Kasen Shindou\n_Ama Sen'i JinzouHiTora",
+        "bars": [
+          "_Jyokyo Tobi Kasen Shindou",
+          "_Ama Sen'i JinzouHiTora"
+        ]
+      },
+      "confidence": 1.0,
+      "mode": "support_recommendation",
+      "section_index": 3,
+      "notes": "section=pre_chorus; estimated_bars=7.0; matched_context=chorus_entry; category=mix; arrangement=prechorus_build_mix_fill; arrangement_slot=middle_build"
+    },
+    {
+      "start": 52.6,
+      "end": 54.2,
+      "time": "00:52.60-00:54.20",
+      "action_id": "ietora",
+      "display_name": "Ietora",
+      "role": "mix",
+      "music_label": "pre_chorus",
+      "struct_label": "pre_chorus",
+      "risk": "high",
+      "bar_count": 1.0,
+      "typical_text": "_Yettaiga Yettaiga / _YettaigaFaiboWaipa / _Ye Ye Ye Ye / _YettaigaFaiboWaipa",
+      "tutorial_text": {
+        "source": "MixAndCall",
+        "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+        "source_title": "家虎 [ イェッタイガー ]",
+        "language": "romaji",
+        "full_text": "_Yettaiga Yettaiga\n_YettaigaFaiboWaipa\n_Ye Ye Ye Ye\n_YettaigaFaiboWaipa",
+        "bars": [
+          "_Yettaiga Yettaiga",
+          "_YettaigaFaiboWaipa",
+          "_Ye Ye Ye Ye",
+          "_YettaigaFaiboWaipa"
+        ]
+      },
+      "confidence": 0.869,
+      "mode": "support_recommendation",
+      "section_index": 3,
+      "notes": "section=pre_chorus; estimated_bars=7.0; matched_context=chorus_entry,pre_chorus,pre_chorus_build; semantic=context_missing_penalty; category=mix; arrangement=prechorus_chorus_entry_fill; arrangement_slot=chorus_entry; high-risk action; venue/fandom policy should override; semantic context missing; action kept with penalty"
+    },
+    {
+      "start": 54.2,
+      "end": 67.0,
+      "time": "00:54.20-01:07.00",
+      "action_id": "gongfu_she",
+      "display_name": "Gongfu She",
+      "role": "underground_gei",
+      "music_label": "chorus",
+      "struct_label": "chorus",
+      "risk": "high",
+      "bar_count": 8.0,
+      "typical_text": "Gongfu She underground-gei movement sequence.",
+      "tutorial_text": null,
+      "confidence": 1.0,
+      "mode": "support_recommendation",
+      "section_index": 4,
+      "notes": "section=chorus; estimated_bars=15.0; matched_context=chorus; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=1/2; high-risk action; venue/fandom policy should override; chorus is forced to underground-gei for dense callbook mode; semantic context missing; action kept with penalty"
+    },
+    {
+      "start": 67.0,
+      "end": 79.8,
+      "time": "01:07.00-01:19.80",
+      "action_id": "dian_bo_she",
+      "display_name": "Dian Bo She",
+      "role": "underground_gei",
+      "music_label": "chorus+instrumental",
+      "struct_label": "chorus+instrumental",
+      "risk": "high",
+      "bar_count": 8.0,
+      "typical_text": "Dian Bo She underground-gei movement sequence.",
+      "tutorial_text": null,
+      "confidence": 0.709,
+      "mode": "support_recommendation",
+      "section_index": 4,
+      "notes": "section=chorus; estimated_bars=15.0; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=2/2; arrangement=borrows_adjacent_section; high-risk action; venue/fandom policy should override; chorus is forced to underground-gei for dense callbook mode; semantic context missing; action kept with penalty; planned action crosses adjacent structure boundary to complete a bar phrase"
+    },
+    {
+      "start": 83.0,
+      "end": 86.2,
+      "time": "01:23.00-01:26.20",
+      "action_id": "oi_oi",
+      "display_name": "Oi Oi",
+      "role": "rhythmcall",
+      "music_label": "verse",
+      "struct_label": "verse",
+      "risk": "low",
+      "bar_count": 2.0,
+      "typical_text": "Oi! Oi!",
+      "tutorial_text": null,
+      "confidence": 0.892,
+      "mode": "support_recommendation",
+      "section_index": 6,
+      "notes": "section=verse; estimated_bars=11.0; matched_context=verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_1"
+    },
+    {
+      "start": 89.4,
+      "end": 92.61,
+      "time": "01:29.40-01:32.61",
+      "action_id": "ppph",
+      "display_name": "PPPH",
+      "role": "rhythmcall",
+      "music_label": "verse",
+      "struct_label": "verse",
+      "risk": "low",
+      "bar_count": 2.0,
+      "typical_text": "Pan-pa-pan, hyu!",
+      "tutorial_text": null,
+      "confidence": 0.906,
+      "mode": "support_recommendation",
+      "section_index": 6,
+      "notes": "section=verse; estimated_bars=11.0; matched_context=mid_energy_vocal,verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_2"
+    },
+    {
+      "start": 95.81,
+      "end": 99.01,
+      "time": "01:35.81-01:39.01",
+      "action_id": "clap",
+      "display_name": "Clap",
+      "role": "rhythmcall",
+      "music_label": "verse",
+      "struct_label": "verse",
+      "risk": "low",
+      "bar_count": 2.0,
+      "typical_text": "Clap on beat or backbeat.",
+      "tutorial_text": null,
+      "confidence": 0.88,
+      "mode": "support_recommendation",
+      "section_index": 6,
+      "notes": "section=verse; estimated_bars=11.0; matched_context=verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_3"
+    },
+    {
+      "start": 100.61,
+      "end": 103.81,
+      "time": "01:40.61-01:43.81",
+      "action_id": "ppph",
+      "display_name": "PPPH",
+      "role": "rhythmcall",
+      "music_label": "pre_chorus",
+      "struct_label": "pre_chorus",
+      "risk": "low",
+      "bar_count": 2.0,
+      "typical_text": "Pan-pa-pan, hyu!",
+      "tutorial_text": null,
+      "confidence": 0.956,
+      "mode": "support_recommendation",
+      "section_index": 7,
+      "notes": "section=pre_chorus; estimated_bars=9.0; matched_context=pre_chorus; category=rhythmcall; arrangement=prechorus_build_fill; arrangement_slot=opening_call"
+    },
+    {
+      "start": 103.81,
+      "end": 110.2,
+      "time": "01:43.81-01:50.20",
+      "action_id": "jp_mix_seigyaku_dt",
+      "display_name": "Japanese MIX Forward-Reverse Double Time",
+      "role": "mix",
+      "music_label": "pre_chorus",
+      "struct_label": "pre_chorus",
+      "risk": "medium",
+      "bar_count": 4.0,
+      "typical_text": "_Jyokyo Tobi Kasen Shindou / _Ama Sen'i JinzouHiTora",
+      "tutorial_text": {
+        "source": "MixAndCall",
+        "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+        "source_title": "ジャパニーズmix逆打ち",
+        "language": "romaji",
+        "full_text": "_Jyokyo Tobi Kasen Shindou\n_Ama Sen'i JinzouHiTora",
+        "bars": [
+          "_Jyokyo Tobi Kasen Shindou",
+          "_Ama Sen'i JinzouHiTora"
+        ]
+      },
+      "confidence": 1.0,
+      "mode": "support_recommendation",
+      "section_index": 7,
+      "notes": "section=pre_chorus; estimated_bars=9.0; matched_context=chorus_entry; category=mix; arrangement=prechorus_build_mix_fill; arrangement_slot=middle_build"
+    },
+    {
+      "start": 113.4,
+      "end": 115.0,
+      "time": "01:53.40-01:55.00",
+      "action_id": "ietora",
+      "display_name": "Ietora",
+      "role": "mix",
+      "music_label": "pre_chorus",
+      "struct_label": "pre_chorus",
+      "risk": "high",
+      "bar_count": 1.0,
+      "typical_text": "_Yettaiga Yettaiga / _YettaigaFaiboWaipa / _Ye Ye Ye Ye / _YettaigaFaiboWaipa",
+      "tutorial_text": {
+        "source": "MixAndCall",
+        "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+        "source_title": "家虎 [ イェッタイガー ]",
+        "language": "romaji",
+        "full_text": "_Yettaiga Yettaiga\n_YettaigaFaiboWaipa\n_Ye Ye Ye Ye\n_YettaigaFaiboWaipa",
+        "bars": [
+          "_Yettaiga Yettaiga",
+          "_YettaigaFaiboWaipa",
+          "_Ye Ye Ye Ye",
+          "_YettaigaFaiboWaipa"
+        ]
+      },
+      "confidence": 0.869,
+      "mode": "support_recommendation",
+      "section_index": 7,
+      "notes": "section=pre_chorus; estimated_bars=9.0; matched_context=chorus_entry,pre_chorus,pre_chorus_build; semantic=context_missing_penalty; category=mix; arrangement=prechorus_chorus_entry_fill; arrangement_slot=chorus_entry; high-risk action; venue/fandom policy should override; semantic context missing; action kept with penalty"
+    },
+    {
+      "start": 115.0,
+      "end": 127.8,
+      "time": "01:55.00-02:07.80",
+      "action_id": "zi_he_she",
+      "display_name": "Zi He She",
+      "role": "underground_gei",
+      "music_label": "chorus",
+      "struct_label": "chorus",
+      "risk": "high",
+      "bar_count": 8.0,
+      "typical_text": "Zi He She underground-gei movement sequence.",
+      "tutorial_text": null,
+      "confidence": 0.889,
+      "mode": "support_recommendation",
+      "section_index": 8,
+      "notes": "section=chorus; estimated_bars=14.0; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; gei_chain=continues_neighbor_gei; gei_chain=bridges_neighbor_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=1/6; high-risk action; venue/fandom policy should override; chorus is forced to underground-gei for dense callbook mode; semantic context missing; action kept with penalty"
+    },
+    {
+      "start": 127.8,
+      "end": 140.6,
+      "time": "02:07.80-02:20.60",
+      "action_id": "chan_she",
+      "display_name": "Chan She",
+      "role": "underground_gei",
+      "music_label": "chorus",
+      "struct_label": "chorus",
+      "risk": "high",
+      "bar_count": 8.0,
+      "typical_text": "Chan She underground-gei movement sequence.",
+      "tutorial_text": null,
+      "confidence": 0.889,
+      "mode": "support_recommendation",
+      "section_index": 8,
+      "notes": "section=chorus; estimated_bars=14.0; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; gei_chain=continues_neighbor_gei; gei_chain=bridges_neighbor_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=2/6; high-risk action; venue/fandom policy should override; chorus is forced to underground-gei for dense callbook mode; semantic context missing; action kept with penalty"
+    },
+    {
+      "start": 140.6,
+      "end": 147.0,
+      "time": "02:20.60-02:27.00",
+      "action_id": "ali_shizi",
+      "display_name": "Ali Shizi",
+      "role": "underground_gei",
+      "music_label": "instrumental",
+      "struct_label": "instrumental",
+      "risk": "high",
+      "bar_count": 4.0,
+      "typical_text": "Ali Shizi underground-gei movement sequence.",
+      "tutorial_text": null,
+      "confidence": 1.0,
+      "mode": "support_recommendation",
+      "section_index": 9,
+      "notes": "section=chorus; estimated_bars=16.0; matched_context=chorus; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; gei_chain=continues_neighbor_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=3/6; high-risk action; venue/fandom policy should override; chorus is forced to underground-gei for dense callbook mode; semantic context missing; action kept with penalty"
+    },
+    {
+      "start": 147.0,
+      "end": 153.4,
+      "time": "02:27.00-02:33.40",
+      "action_id": "heibai_shuangyi",
+      "display_name": "Heibai Shuangyi",
+      "role": "underground_gei",
+      "music_label": "instrumental",
+      "struct_label": "instrumental",
+      "risk": "high",
+      "bar_count": 4.0,
+      "typical_text": "Heibai Shuangyi underground-gei movement sequence.",
+      "tutorial_text": null,
+      "confidence": 1.0,
+      "mode": "support_recommendation",
+      "section_index": 9,
+      "notes": "section=chorus; estimated_bars=16.0; matched_context=chorus; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; gei_chain=continues_neighbor_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=4/6; high-risk action; venue/fandom policy should override; chorus is forced to underground-gei for dense callbook mode; semantic context missing; action kept with penalty"
+    },
+    {
+      "start": 153.4,
+      "end": 159.8,
+      "time": "02:33.40-02:39.80",
+      "action_id": "tian_zhao",
+      "display_name": "Tian Zhao",
+      "role": "underground_gei",
+      "music_label": "instrumental+chorus",
+      "struct_label": "instrumental+chorus",
+      "risk": "high",
+      "bar_count": 4.0,
+      "typical_text": "Tian Zhao underground-gei movement sequence.",
+      "tutorial_text": null,
+      "confidence": 1.0,
+      "mode": "support_recommendation",
+      "section_index": 9,
+      "notes": "section=chorus; estimated_bars=16.0; matched_context=chorus; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; gei_chain=continues_neighbor_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=5/6; arrangement=borrows_adjacent_section; high-risk action; venue/fandom policy should override; chorus is forced to underground-gei for dense callbook mode; semantic context missing; action kept with penalty; planned action crosses adjacent structure boundary to complete a bar phrase"
+    },
+    {
+      "start": 159.8,
+      "end": 166.2,
+      "time": "02:39.80-02:46.20",
+      "action_id": "long_zhi_mao",
+      "display_name": "Long Zhi Mao",
+      "role": "underground_gei",
+      "music_label": "chorus",
+      "struct_label": "chorus",
+      "risk": "high",
+      "bar_count": 4.0,
+      "typical_text": "Long Zhi Mao underground-gei movement sequence.",
+      "tutorial_text": null,
+      "confidence": 0.889,
+      "mode": "support_recommendation",
+      "section_index": 10,
+      "notes": "section=instrumental; estimated_bars=9.0; matched_context=high_energy_break,instrumental_break,post_chorus_interlude; semantic=context_missing_penalty; category=underground_gei; gei_chain=continues_neighbor_gei; gei_chain=bridges_neighbor_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=6/6; high-risk action; venue/fandom policy should override; semantic context missing; action kept with penalty"
+    },
+    {
+      "start": 177.41,
+      "end": 187.0,
+      "time": "02:57.41-03:07.00",
+      "action_id": "standard_mix_long",
+      "display_name": "Standard MIX +2-bar Extension",
+      "role": "mix",
+      "music_label": "instrumental",
+      "struct_label": "instrumental",
+      "risk": "medium",
+      "bar_count": 6.0,
+      "typical_text": "A~yosshaikuzo / _Taiga Faiya Saiba Faiba / _Daiba Baiba Jya-jya- / Faibo Waipa Yesukureipa",
+      "tutorial_text": {
+        "source": "MixAndCall",
+        "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+        "source_title": "スタンダードmix尺+2小節",
+        "language": "romaji",
+        "full_text": "A~yosshaikuzo\n_Taiga Faiya Saiba Faiba\n_Daiba Baiba Jya-jya-\nFaibo Waipa Yesukureipa",
+        "bars": [
+          "A~yosshaikuzo",
+          "_Taiga Faiya Saiba Faiba",
+          "_Daiba Baiba Jya-jya-",
+          "Faibo Waipa Yesukureipa"
+        ]
+      },
+      "confidence": 0.92,
+      "mode": "support_recommendation",
+      "section_index": 11,
+      "notes": "section=instrumental; estimated_bars=8.0; matched_context=high_energy_break,instrumental_break,post_chorus_interlude; category=mix; gei_chain=competes_with_neighbor_gei; arrangement=single_section_primary"
+    },
+    {
+      "start": 190.2,
+      "end": 193.4,
+      "time": "03:10.20-03:13.40",
+      "action_id": "oi_oi",
+      "display_name": "Oi Oi",
+      "role": "rhythmcall",
+      "music_label": "verse",
+      "struct_label": "verse",
+      "risk": "low",
+      "bar_count": 2.0,
+      "typical_text": "Oi! Oi!",
+      "tutorial_text": null,
+      "confidence": 0.892,
+      "mode": "support_recommendation",
+      "section_index": 12,
+      "notes": "section=verse; estimated_bars=8.0; matched_context=verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_1"
+    },
+    {
+      "start": 196.6,
+      "end": 199.8,
+      "time": "03:16.60-03:19.80",
+      "action_id": "ppph",
+      "display_name": "PPPH",
+      "role": "rhythmcall",
+      "music_label": "verse",
+      "struct_label": "verse",
+      "risk": "low",
+      "bar_count": 2.0,
+      "typical_text": "Pan-pa-pan, hyu!",
+      "tutorial_text": null,
+      "confidence": 0.906,
+      "mode": "support_recommendation",
+      "section_index": 12,
+      "notes": "section=verse; estimated_bars=8.0; matched_context=mid_energy_vocal,verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_2"
+    },
+    {
+      "start": 203.0,
+      "end": 206.36,
+      "time": "03:23.00-03:26.36",
+      "action_id": "ppph",
+      "display_name": "PPPH",
+      "role": "rhythmcall",
+      "music_label": "pre_chorus",
+      "struct_label": "pre_chorus",
+      "risk": "low",
+      "bar_count": 2.0,
+      "typical_text": "Pan-pa-pan, hyu!",
+      "tutorial_text": null,
+      "confidence": 0.956,
+      "mode": "support_recommendation",
+      "section_index": 13,
+      "notes": "section=pre_chorus; estimated_bars=10.0; matched_context=pre_chorus; category=rhythmcall; arrangement=prechorus_build_fill; arrangement_slot=opening_call"
+    },
+    {
+      "start": 206.36,
+      "end": 213.08,
+      "time": "03:26.36-03:33.08",
+      "action_id": "jp_mix_seigyaku_dt",
+      "display_name": "Japanese MIX Forward-Reverse Double Time",
+      "role": "mix",
+      "music_label": "pre_chorus",
+      "struct_label": "pre_chorus",
+      "risk": "medium",
+      "bar_count": 4.0,
+      "typical_text": "_Jyokyo Tobi Kasen Shindou / _Ama Sen'i JinzouHiTora",
+      "tutorial_text": {
+        "source": "MixAndCall",
+        "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+        "source_title": "ジャパニーズmix逆打ち",
+        "language": "romaji",
+        "full_text": "_Jyokyo Tobi Kasen Shindou\n_Ama Sen'i JinzouHiTora",
+        "bars": [
+          "_Jyokyo Tobi Kasen Shindou",
+          "_Ama Sen'i JinzouHiTora"
+        ]
+      },
+      "confidence": 1.0,
+      "mode": "support_recommendation",
+      "section_index": 13,
+      "notes": "section=pre_chorus; estimated_bars=10.0; matched_context=chorus_entry; category=mix; arrangement=prechorus_build_mix_fill; arrangement_slot=middle_build"
+    },
+    {
+      "start": 218.12,
+      "end": 219.8,
+      "time": "03:38.12-03:39.80",
+      "action_id": "ietora",
+      "display_name": "Ietora",
+      "role": "mix",
+      "music_label": "pre_chorus",
+      "struct_label": "pre_chorus",
+      "risk": "high",
+      "bar_count": 1.0,
+      "typical_text": "_Yettaiga Yettaiga / _YettaigaFaiboWaipa / _Ye Ye Ye Ye / _YettaigaFaiboWaipa",
+      "tutorial_text": {
+        "source": "MixAndCall",
+        "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+        "source_title": "家虎 [ イェッタイガー ]",
+        "language": "romaji",
+        "full_text": "_Yettaiga Yettaiga\n_YettaigaFaiboWaipa\n_Ye Ye Ye Ye\n_YettaigaFaiboWaipa",
+        "bars": [
+          "_Yettaiga Yettaiga",
+          "_YettaigaFaiboWaipa",
+          "_Ye Ye Ye Ye",
+          "_YettaigaFaiboWaipa"
+        ]
+      },
+      "confidence": 0.869,
+      "mode": "support_recommendation",
+      "section_index": 13,
+      "notes": "section=pre_chorus; estimated_bars=10.0; matched_context=chorus_entry,pre_chorus,pre_chorus_build; semantic=context_missing_penalty; category=mix; arrangement=prechorus_chorus_entry_fill; arrangement_slot=chorus_entry; high-risk action; venue/fandom policy should override; semantic context missing; action kept with penalty"
+    },
+    {
+      "start": 219.8,
+      "end": 226.2,
+      "time": "03:39.80-03:46.20",
+      "action_id": "cun_zheng",
+      "display_name": "Cun Zheng",
+      "role": "underground_gei",
+      "music_label": "chorus",
+      "struct_label": "chorus",
+      "risk": "high",
+      "bar_count": 4.0,
+      "typical_text": "Cun Zheng underground-gei movement sequence.",
+      "tutorial_text": null,
+      "confidence": 0.708,
+      "mode": "support_recommendation",
+      "section_index": 14,
+      "notes": "section=chorus; estimated_bars=17.0; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=1/2; high-risk action; venue/fandom policy should override; chorus is forced to underground-gei for dense callbook mode; semantic context missing; action kept with penalty"
+    },
+    {
+      "start": 226.2,
+      "end": 232.6,
+      "time": "03:46.20-03:52.60",
+      "action_id": "lei_she",
+      "display_name": "Lei She",
+      "role": "underground_gei",
+      "music_label": "chorus",
+      "struct_label": "chorus",
+      "risk": "high",
+      "bar_count": 4.0,
+      "typical_text": "Lei She underground-gei movement sequence.",
+      "tutorial_text": null,
+      "confidence": 0.708,
+      "mode": "support_recommendation",
+      "section_index": 14,
+      "notes": "section=chorus; estimated_bars=17.0; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=2/2; high-risk action; venue/fandom policy should override; chorus is forced to underground-gei for dense callbook mode; semantic context missing; action kept with penalty"
+    },
+    {
+      "start": 247.0,
+      "end": 250.2,
+      "time": "04:07.00-04:10.20",
+      "action_id": "oi_oi",
+      "display_name": "Oi Oi",
+      "role": "rhythmcall",
+      "music_label": "outro",
+      "struct_label": "outro",
+      "risk": "low",
+      "bar_count": 2.0,
+      "typical_text": "Oi! Oi!",
+      "tutorial_text": null,
+      "confidence": 0.962,
+      "mode": "support_recommendation",
+      "section_index": 15,
+      "notes": "section=outro; estimated_bars=6.0; matched_context=high_energy_outro; category=rhythmcall; arrangement=single_section_primary"
+    },
+    {
+      "start": 256.61,
+      "end": 263.01,
+      "time": "04:16.61-04:23.01",
+      "action_id": "standard_mix",
+      "display_name": "Standard MIX",
+      "role": "mix",
+      "music_label": "instrumental",
+      "struct_label": "instrumental",
+      "risk": "medium",
+      "bar_count": 4.0,
+      "typical_text": "A~yosshaikuzo / _Taiga Faiya Saiba Faiba / _Daiba Baiba Jya-jya- / Fai-bo-Wai-pa",
+      "tutorial_text": {
+        "source": "MixAndCall",
+        "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
+        "source_title": "英语mix [ スタンダードmix ] [ 英語mix ]",
+        "language": "romaji",
+        "full_text": "A~yosshaikuzo\n_Taiga Faiya Saiba Faiba\n_Daiba Baiba Jya-jya-\nFai-bo-Wai-pa",
+        "bars": [
+          "A~yosshaikuzo",
+          "_Taiga Faiya Saiba Faiba",
+          "_Daiba Baiba Jya-jya-",
+          "Fai-bo-Wai-pa"
+        ]
+      },
+      "confidence": 1.0,
+      "mode": "support_recommendation",
+      "section_index": 16,
+      "notes": "section=instrumental; estimated_bars=5.0; matched_context=instrumental_break,post_chorus_interlude; category=mix; arrangement=single_section_primary"
+    }
+  ],
+  "prediction": {
+    "song_id": "brushupbrassup",
+    "target_level": "coarse",
+    "ground_truth_fine": [
+      {
+        "start": 0.0,
+        "end": 22.21,
+        "label": "intro",
+        "coarse_label": "intro"
+      },
+      {
+        "start": 22.21,
+        "end": 35.0,
+        "label": "verse",
+        "coarse_label": "verse"
+      },
+      {
+        "start": 35.0,
+        "end": 47.8,
+        "label": "pre_chorus",
+        "coarse_label": "pre_chorus"
+      },
+      {
+        "start": 47.8,
+        "end": 51.0,
+        "label": "pre_chorus_build",
+        "coarse_label": "pre_chorus"
+      },
+      {
+        "start": 51.0,
+        "end": 76.6,
+        "label": "chorus",
+        "coarse_label": "chorus"
+      },
+      {
+        "start": 76.6,
+        "end": 83.0,
+        "label": "instrumental_break",
+        "coarse_label": "instrumental"
+      },
+      {
+        "start": 83.0,
+        "end": 95.8,
+        "label": "verse",
+        "coarse_label": "verse"
+      },
+      {
+        "start": 95.8,
+        "end": 108.6,
+        "label": "pre_chorus",
+        "coarse_label": "pre_chorus"
+      },
+      {
+        "start": 108.6,
+        "end": 111.8,
+        "label": "pre_chorus_build",
+        "coarse_label": "pre_chorus"
+      },
+      {
+        "start": 111.8,
+        "end": 137.4,
+        "label": "chorus",
+        "coarse_label": "chorus"
+      },
+      {
+        "start": 137.4,
+        "end": 151.8,
+        "label": "instrumental_break",
+        "coarse_label": "instrumental"
+      },
+      {
+        "start": 151.8,
+        "end": 190.2,
+        "label": "solo",
+        "coarse_label": "instrumental"
+      },
+      {
+        "start": 190.2,
+        "end": 206.96,
+        "label": "bridge",
+        "coarse_label": "bridge"
+      },
+      {
+        "start": 206.96,
+        "end": 245.41,
+        "label": "chorus",
+        "coarse_label": "chorus"
+      },
+      {
+        "start": 245.41,
+        "end": 264.61,
+        "label": "outro",
+        "coarse_label": "outro"
+      }
+    ],
+    "ground_truth": [
+      {
+        "start": 0.0,
+        "end": 22.21,
+        "label": "intro"
+      },
+      {
+        "start": 22.21,
+        "end": 35.0,
+        "label": "verse"
+      },
+      {
+        "start": 35.0,
+        "end": 51.0,
+        "label": "pre_chorus"
+      },
+      {
+        "start": 51.0,
+        "end": 76.6,
+        "label": "chorus"
+      },
+      {
+        "start": 76.6,
+        "end": 83.0,
+        "label": "instrumental"
+      },
+      {
+        "start": 83.0,
+        "end": 95.8,
+        "label": "verse"
+      },
+      {
+        "start": 95.8,
+        "end": 111.8,
+        "label": "pre_chorus"
+      },
+      {
+        "start": 111.8,
+        "end": 137.4,
+        "label": "chorus"
+      },
+      {
+        "start": 137.4,
+        "end": 190.2,
+        "label": "instrumental"
+      },
+      {
+        "start": 190.2,
+        "end": 206.96,
+        "label": "bridge"
+      },
+      {
+        "start": 206.96,
+        "end": 245.41,
+        "label": "chorus"
+      },
+      {
+        "start": 245.41,
+        "end": 264.61,
+        "label": "outro"
+      }
+    ],
+    "predicted": [
+      {
+        "start": 1.4,
+        "end": 22.21,
+        "label": "intro"
+      },
+      {
+        "start": 22.21,
+        "end": 43.0,
+        "label": "verse"
+      },
+      {
+        "start": 43.0,
+        "end": 54.2,
+        "label": "pre_chorus"
+      },
+      {
+        "start": 54.2,
+        "end": 78.2,
+        "label": "chorus"
+      },
+      {
+        "start": 78.2,
+        "end": 83.0,
+        "label": "instrumental"
+      },
+      {
+        "start": 83.0,
+        "end": 100.61,
+        "label": "verse"
+      },
+      {
+        "start": 100.61,
+        "end": 115.0,
+        "label": "pre_chorus"
+      },
+      {
+        "start": 115.0,
+        "end": 140.61,
+        "label": "chorus"
+      },
+      {
+        "start": 140.61,
+        "end": 155.01,
+        "label": "instrumental"
+      },
+      {
+        "start": 155.01,
+        "end": 177.41,
+        "label": "chorus"
+      },
+      {
+        "start": 177.41,
+        "end": 190.2,
+        "label": "instrumental"
+      },
+      {
+        "start": 190.2,
+        "end": 203.0,
+        "label": "verse"
+      },
+      {
+        "start": 203.0,
+        "end": 219.8,
+        "label": "pre_chorus"
+      },
+      {
+        "start": 219.8,
+        "end": 247.0,
+        "label": "chorus"
+      },
+      {
+        "start": 247.0,
+        "end": 256.61,
+        "label": "outro"
+      },
+      {
+        "start": 256.61,
+        "end": 264.61,
+        "label": "instrumental"
+      }
+    ]
+  },
+  "support": {
+    "song_id": "brushupbrassup",
+    "source_prediction": "train\\predictions_bar_coarse_muq_paper_test\\brushupbrassup.prediction.json",
+    "library": "knowledge\\call_mix_library.json",
+    "bar_estimation": {
+      "bar_estimation": "struct_downbeats",
+      "struct": "train\\struct\\brushupbrassup.json",
+      "downbeat_count": 165
+    },
+    "policy": {
+      "max_per_section": 3,
+      "min_confidence": 0.5,
+      "action_semantics": "knowledge\\action_semantics.json",
+      "semantic_actions_loaded": 75,
+      "enable_underground_gei": true,
+      "chorus_underground_gei": "forced_full_section_dense_callbook",
+      "keepspace_policy": "fallback_only_when_no_active_candidate_survives",
+      "pre_chorus_mix": "preferred_tension_ramp",
+      "solo_mix": "preferred_clear_barline_instrumental",
+      "underground_gei_chain_coherence": "rerank_to_avoid_gei_callmix_gei_interruptions",
+      "arrangement_policy": "non_overlapping_primary_timeline",
+      "gei_arrangement": "plan adjacent chorus/post_chorus/instrumental chains as bar-length slots, preferring 8-bar underground-gei phrases and borrowing adjacent sections when needed",
+      "verse_prechorus_fill": "sparse non-overlapping call/mix slots: verse prefers generic military-call style rhythmcalls; pre_chorus uses opening calls, build MIX, and optional chorus-entry Ietora/Haiseno-style accents",
+      "underground_gei_action_uniqueness": "same underground-gei action_id appears at most once per song in the primary plan",
+      "candidate_pool_size_per_section": 16
+    },
+    "recommendations": [
+      {
+        "section_index": 1,
+        "section_label": "intro",
+        "section_start": 1.4,
+        "section_end": 22.21,
+        "section_estimated_bars": 13.0,
+        "start": 1.4,
+        "end": 20.61,
+        "fit_bars": 12.0,
+        "action_fit_bars": 12.0,
+        "action_id": "bismarck_mix",
+        "action_name": "Bismarck Koujou",
+        "category": "mix",
+        "risk": "medium",
+        "confidence": 1.0,
+        "reason": "section=intro; estimated_bars=13.0; matched_context=high_energy_break,intro; category=mix; arrangement=single_section_primary",
+        "warnings": [],
+        "arrangement_role": "primary",
+        "arrangement_mode": "single_section_primary",
+        "planned_section_indices": [
+          1
+        ],
+        "planned_section_labels": [
+          "intro"
+        ]
+      },
+      {
+        "section_index": 2,
+        "section_label": "verse",
+        "section_start": 22.21,
+        "section_end": 43.0,
+        "section_estimated_bars": 13.0,
+        "start": 22.21,
+        "end": 25.41,
+        "fit_bars": 2.0,
+        "action_fit_bars": 2.0,
+        "action_id": "oi_oi",
+        "action_name": "Oi Oi",
+        "category": "rhythmcall",
+        "risk": "low",
+        "confidence": 0.892,
+        "reason": "section=verse; estimated_bars=13.0; matched_context=verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_1",
+        "warnings": [],
+        "arrangement_role": "primary",
+        "arrangement_mode": "verse_sparse_call_fill",
+        "arrangement_slot": "verse_fill_1",
+        "planned_section_indices": [
+          2
+        ],
+        "planned_section_labels": [
+          "verse"
+        ]
+      },
+      {
+        "section_index": 2,
+        "section_label": "verse",
+        "section_start": 22.21,
+        "section_end": 43.0,
+        "section_estimated_bars": 13.0,
+        "start": 28.61,
+        "end": 31.81,
+        "fit_bars": 2.0,
+        "action_fit_bars": 2.0,
+        "action_id": "ppph",
+        "action_name": "PPPH",
+        "category": "rhythmcall",
+        "risk": "low",
+        "confidence": 0.906,
+        "reason": "section=verse; estimated_bars=13.0; matched_context=mid_energy_vocal,verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_2",
+        "warnings": [],
+        "arrangement_role": "primary",
+        "arrangement_mode": "verse_sparse_call_fill",
+        "arrangement_slot": "verse_fill_2",
+        "planned_section_indices": [
+          2
+        ],
+        "planned_section_labels": [
+          "verse"
+        ]
+      },
+      {
+        "section_index": 2,
+        "section_label": "verse",
+        "section_start": 22.21,
+        "section_end": 43.0,
+        "section_estimated_bars": 13.0,
+        "start": 35.0,
+        "end": 38.2,
+        "fit_bars": 2.0,
+        "action_fit_bars": 2.0,
+        "action_id": "clap",
+        "action_name": "Clap",
+        "category": "rhythmcall",
+        "risk": "low",
+        "confidence": 0.88,
+        "reason": "section=verse; estimated_bars=13.0; matched_context=verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_3",
+        "warnings": [],
+        "arrangement_role": "primary",
+        "arrangement_mode": "verse_sparse_call_fill",
+        "arrangement_slot": "verse_fill_3",
+        "planned_section_indices": [
+          2
+        ],
+        "planned_section_labels": [
+          "verse"
+        ]
+      },
+      {
+        "section_index": 2,
+        "section_label": "verse",
+        "section_start": 22.21,
+        "section_end": 43.0,
+        "section_estimated_bars": 13.0,
+        "start": 41.4,
+        "end": 43.0,
+        "fit_bars": 1.0,
+        "action_fit_bars": 1.0,
+        "action_id": "hai_hai",
+        "action_name": "Hai Hai",
+        "category": "rhythmcall",
+        "risk": "low",
+        "confidence": 0.889,
+        "reason": "section=verse; estimated_bars=13.0; matched_context=verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_4",
+        "warnings": [],
+        "arrangement_role": "primary",
+        "arrangement_mode": "verse_sparse_call_fill",
+        "arrangement_slot": "verse_fill_4",
+        "planned_section_indices": [
+          2
+        ],
+        "planned_section_labels": [
+          "verse"
+        ]
+      },
+      {
+        "section_index": 3,
+        "section_label": "pre_chorus",
+        "section_start": 43.0,
+        "section_end": 54.2,
+        "section_estimated_bars": 7.0,
+        "start": 43.0,
+        "end": 46.2,
+        "fit_bars": 2.0,
+        "action_fit_bars": 2.0,
+        "action_id": "ppph",
+        "action_name": "PPPH",
+        "category": "rhythmcall",
+        "risk": "low",
+        "confidence": 0.956,
+        "reason": "section=pre_chorus; estimated_bars=7.0; matched_context=pre_chorus; category=rhythmcall; arrangement=prechorus_build_fill; arrangement_slot=opening_call",
+        "warnings": [],
+        "arrangement_role": "primary",
+        "arrangement_mode": "prechorus_build_fill",
+        "arrangement_slot": "opening_call",
+        "planned_section_indices": [
+          3
+        ],
+        "planned_section_labels": [
+          "pre_chorus"
+        ]
+      },
+      {
+        "section_index": 3,
+        "section_label": "pre_chorus",
+        "section_start": 43.0,
+        "section_end": 54.2,
+        "section_estimated_bars": 7.0,
+        "start": 46.2,
+        "end": 52.6,
+        "fit_bars": 4.0,
+        "action_fit_bars": 4.0,
+        "action_id": "jp_mix_seigyaku_dt",
+        "action_name": "Japanese MIX Forward-Reverse Double Time",
+        "category": "mix",
+        "risk": "medium",
+        "confidence": 1.0,
+        "reason": "section=pre_chorus; estimated_bars=7.0; matched_context=chorus_entry; category=mix; arrangement=prechorus_build_mix_fill; arrangement_slot=middle_build",
+        "warnings": [],
+        "arrangement_role": "primary",
+        "arrangement_mode": "prechorus_build_mix_fill",
+        "arrangement_slot": "middle_build",
+        "planned_section_indices": [
+          3
+        ],
+        "planned_section_labels": [
+          "pre_chorus"
+        ]
+      },
+      {
+        "section_index": 3,
+        "section_label": "pre_chorus",
+        "section_start": 43.0,
+        "section_end": 54.2,
+        "section_estimated_bars": 7.0,
+        "start": 52.6,
+        "end": 54.2,
+        "fit_bars": 1.0,
+        "action_fit_bars": 1.0,
+        "action_id": "ietora",
+        "action_name": "Ietora",
+        "category": "mix",
+        "risk": "high",
+        "confidence": 0.869,
+        "reason": "section=pre_chorus; estimated_bars=7.0; matched_context=chorus_entry,pre_chorus,pre_chorus_build; semantic=context_missing_penalty; category=mix; arrangement=prechorus_chorus_entry_fill; arrangement_slot=chorus_entry",
+        "warnings": [
+          "high-risk action; venue/fandom policy should override",
+          "semantic context missing; action kept with penalty"
+        ],
+        "arrangement_role": "primary",
+        "arrangement_mode": "prechorus_chorus_entry_fill",
+        "arrangement_slot": "chorus_entry",
+        "planned_section_indices": [
+          3
+        ],
+        "planned_section_labels": [
+          "pre_chorus"
+        ]
+      },
+      {
+        "section_index": 4,
+        "section_label": "chorus",
+        "section_start": 54.2,
+        "section_end": 78.2,
+        "section_estimated_bars": 15.0,
+        "start": 54.2,
+        "end": 67.0,
+        "fit_bars": 8.0,
+        "action_fit_bars": 8.0,
+        "action_id": "gongfu_she",
+        "action_name": "Gongfu She",
+        "category": "underground_gei",
+        "risk": "high",
+        "confidence": 1.0,
+        "reason": "section=chorus; estimated_bars=15.0; matched_context=chorus; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=1/2",
+        "warnings": [
+          "high-risk action; venue/fandom policy should override",
+          "chorus is forced to underground-gei for dense callbook mode",
+          "semantic context missing; action kept with penalty"
+        ],
+        "arrangement_role": "primary",
+        "arrangement_mode": "non_overlapping_gei_chain",
+        "arrangement_slot": "1/2",
+        "planned_section_indices": [
+          4
+        ],
+        "planned_section_labels": [
+          "chorus"
+        ]
+      },
+      {
+        "section_index": 4,
+        "section_label": "chorus",
+        "section_start": 54.2,
+        "section_end": 78.2,
+        "section_estimated_bars": 15.0,
+        "start": 67.0,
+        "end": 79.8,
+        "fit_bars": 8.0,
+        "action_fit_bars": 8.0,
+        "action_id": "dian_bo_she",
+        "action_name": "Dian Bo She",
+        "category": "underground_gei",
+        "risk": "high",
+        "confidence": 0.709,
+        "reason": "section=chorus; estimated_bars=15.0; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=2/2; arrangement=borrows_adjacent_section",
+        "warnings": [
+          "high-risk action; venue/fandom policy should override",
+          "chorus is forced to underground-gei for dense callbook mode",
+          "semantic context missing; action kept with penalty",
+          "planned action crosses adjacent structure boundary to complete a bar phrase"
+        ],
+        "arrangement_role": "primary",
+        "arrangement_mode": "non_overlapping_gei_chain",
+        "arrangement_slot": "2/2",
+        "planned_section_indices": [
+          4,
+          5
+        ],
+        "planned_section_labels": [
+          "chorus",
+          "instrumental"
+        ]
+      },
+      {
+        "section_index": 6,
+        "section_label": "verse",
+        "section_start": 83.0,
+        "section_end": 100.61,
+        "section_estimated_bars": 11.0,
+        "start": 83.0,
+        "end": 86.2,
+        "fit_bars": 2.0,
+        "action_fit_bars": 2.0,
+        "action_id": "oi_oi",
+        "action_name": "Oi Oi",
+        "category": "rhythmcall",
+        "risk": "low",
+        "confidence": 0.892,
+        "reason": "section=verse; estimated_bars=11.0; matched_context=verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_1",
+        "warnings": [],
+        "arrangement_role": "primary",
+        "arrangement_mode": "verse_sparse_call_fill",
+        "arrangement_slot": "verse_fill_1",
+        "planned_section_indices": [
+          6
+        ],
+        "planned_section_labels": [
+          "verse"
+        ]
+      },
+      {
+        "section_index": 6,
+        "section_label": "verse",
+        "section_start": 83.0,
+        "section_end": 100.61,
+        "section_estimated_bars": 11.0,
+        "start": 89.4,
+        "end": 92.61,
+        "fit_bars": 2.0,
+        "action_fit_bars": 2.0,
+        "action_id": "ppph",
+        "action_name": "PPPH",
+        "category": "rhythmcall",
+        "risk": "low",
+        "confidence": 0.906,
+        "reason": "section=verse; estimated_bars=11.0; matched_context=mid_energy_vocal,verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_2",
+        "warnings": [],
+        "arrangement_role": "primary",
+        "arrangement_mode": "verse_sparse_call_fill",
+        "arrangement_slot": "verse_fill_2",
+        "planned_section_indices": [
+          6
+        ],
+        "planned_section_labels": [
+          "verse"
+        ]
+      },
+      {
+        "section_index": 6,
+        "section_label": "verse",
+        "section_start": 83.0,
+        "section_end": 100.61,
+        "section_estimated_bars": 11.0,
+        "start": 95.81,
+        "end": 99.01,
+        "fit_bars": 2.0,
+        "action_fit_bars": 2.0,
+        "action_id": "clap",
+        "action_name": "Clap",
+        "category": "rhythmcall",
+        "risk": "low",
+        "confidence": 0.88,
+        "reason": "section=verse; estimated_bars=11.0; matched_context=verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_3",
+        "warnings": [],
+        "arrangement_role": "primary",
+        "arrangement_mode": "verse_sparse_call_fill",
+        "arrangement_slot": "verse_fill_3",
+        "planned_section_indices": [
+          6
+        ],
+        "planned_section_labels": [
+          "verse"
+        ]
+      },
+      {
+        "section_index": 7,
+        "section_label": "pre_chorus",
+        "section_start": 100.61,
+        "section_end": 115.0,
+        "section_estimated_bars": 9.0,
+        "start": 100.61,
+        "end": 103.81,
+        "fit_bars": 2.0,
+        "action_fit_bars": 2.0,
+        "action_id": "ppph",
+        "action_name": "PPPH",
+        "category": "rhythmcall",
+        "risk": "low",
+        "confidence": 0.956,
+        "reason": "section=pre_chorus; estimated_bars=9.0; matched_context=pre_chorus; category=rhythmcall; arrangement=prechorus_build_fill; arrangement_slot=opening_call",
+        "warnings": [],
+        "arrangement_role": "primary",
+        "arrangement_mode": "prechorus_build_fill",
+        "arrangement_slot": "opening_call",
+        "planned_section_indices": [
+          7
+        ],
+        "planned_section_labels": [
+          "pre_chorus"
+        ]
+      },
+      {
+        "section_index": 7,
+        "section_label": "pre_chorus",
+        "section_start": 100.61,
+        "section_end": 115.0,
+        "section_estimated_bars": 9.0,
+        "start": 103.81,
+        "end": 110.2,
+        "fit_bars": 4.0,
+        "action_fit_bars": 4.0,
+        "action_id": "jp_mix_seigyaku_dt",
+        "action_name": "Japanese MIX Forward-Reverse Double Time",
+        "category": "mix",
+        "risk": "medium",
+        "confidence": 1.0,
+        "reason": "section=pre_chorus; estimated_bars=9.0; matched_context=chorus_entry; category=mix; arrangement=prechorus_build_mix_fill; arrangement_slot=middle_build",
+        "warnings": [],
+        "arrangement_role": "primary",
+        "arrangement_mode": "prechorus_build_mix_fill",
+        "arrangement_slot": "middle_build",
+        "planned_section_indices": [
+          7
+        ],
+        "planned_section_labels": [
+          "pre_chorus"
+        ]
+      },
+      {
+        "section_index": 7,
+        "section_label": "pre_chorus",
+        "section_start": 100.61,
+        "section_end": 115.0,
+        "section_estimated_bars": 9.0,
+        "start": 113.4,
+        "end": 115.0,
+        "fit_bars": 1.0,
+        "action_fit_bars": 1.0,
+        "action_id": "ietora",
+        "action_name": "Ietora",
+        "category": "mix",
+        "risk": "high",
+        "confidence": 0.869,
+        "reason": "section=pre_chorus; estimated_bars=9.0; matched_context=chorus_entry,pre_chorus,pre_chorus_build; semantic=context_missing_penalty; category=mix; arrangement=prechorus_chorus_entry_fill; arrangement_slot=chorus_entry",
+        "warnings": [
+          "high-risk action; venue/fandom policy should override",
+          "semantic context missing; action kept with penalty"
+        ],
+        "arrangement_role": "primary",
+        "arrangement_mode": "prechorus_chorus_entry_fill",
+        "arrangement_slot": "chorus_entry",
+        "planned_section_indices": [
+          7
+        ],
+        "planned_section_labels": [
+          "pre_chorus"
+        ]
+      },
+      {
+        "section_index": 8,
+        "section_label": "chorus",
+        "section_start": 115.0,
+        "section_end": 140.61,
+        "section_estimated_bars": 16.0,
+        "start": 115.0,
+        "end": 127.8,
+        "fit_bars": 8.0,
+        "action_fit_bars": 8.0,
+        "action_id": "zi_he_she",
+        "action_name": "Zi He She",
+        "category": "underground_gei",
+        "risk": "high",
+        "confidence": 0.889,
+        "reason": "section=chorus; estimated_bars=14.0; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; gei_chain=continues_neighbor_gei; gei_chain=bridges_neighbor_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=1/6",
+        "warnings": [
+          "high-risk action; venue/fandom policy should override",
+          "chorus is forced to underground-gei for dense callbook mode",
+          "semantic context missing; action kept with penalty"
+        ],
+        "arrangement_role": "primary",
+        "arrangement_mode": "non_overlapping_gei_chain",
+        "arrangement_slot": "1/6",
+        "planned_section_indices": [
+          8
+        ],
+        "planned_section_labels": [
+          "chorus"
+        ]
+      },
+      {
+        "section_index": 8,
+        "section_label": "chorus",
+        "section_start": 115.0,
+        "section_end": 140.61,
+        "section_estimated_bars": 16.0,
+        "start": 127.8,
+        "end": 140.6,
+        "fit_bars": 8.0,
+        "action_fit_bars": 8.0,
+        "action_id": "chan_she",
+        "action_name": "Chan She",
+        "category": "underground_gei",
+        "risk": "high",
+        "confidence": 0.889,
+        "reason": "section=chorus; estimated_bars=14.0; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; gei_chain=continues_neighbor_gei; gei_chain=bridges_neighbor_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=2/6",
+        "warnings": [
+          "high-risk action; venue/fandom policy should override",
+          "chorus is forced to underground-gei for dense callbook mode",
+          "semantic context missing; action kept with penalty"
+        ],
+        "arrangement_role": "primary",
+        "arrangement_mode": "non_overlapping_gei_chain",
+        "arrangement_slot": "2/6",
+        "planned_section_indices": [
+          8
+        ],
+        "planned_section_labels": [
+          "chorus"
+        ]
+      },
+      {
+        "section_index": 9,
+        "section_label": "instrumental",
+        "section_start": 140.61,
+        "section_end": 155.01,
+        "section_estimated_bars": 9.0,
+        "start": 140.6,
+        "end": 147.0,
+        "fit_bars": 4.0,
+        "action_fit_bars": 4.0,
+        "action_id": "ali_shizi",
+        "action_name": "Ali Shizi",
+        "category": "underground_gei",
+        "risk": "high",
+        "confidence": 1.0,
+        "reason": "section=chorus; estimated_bars=16.0; matched_context=chorus; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; gei_chain=continues_neighbor_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=3/6",
+        "warnings": [
+          "high-risk action; venue/fandom policy should override",
+          "chorus is forced to underground-gei for dense callbook mode",
+          "semantic context missing; action kept with penalty"
+        ],
+        "arrangement_role": "primary",
+        "arrangement_mode": "non_overlapping_gei_chain",
+        "arrangement_slot": "3/6",
+        "planned_section_indices": [
+          9
+        ],
+        "planned_section_labels": [
+          "instrumental"
+        ]
+      },
+      {
+        "section_index": 9,
+        "section_label": "instrumental",
+        "section_start": 140.61,
+        "section_end": 155.01,
+        "section_estimated_bars": 9.0,
+        "start": 147.0,
+        "end": 153.4,
+        "fit_bars": 4.0,
+        "action_fit_bars": 4.0,
+        "action_id": "heibai_shuangyi",
+        "action_name": "Heibai Shuangyi",
+        "category": "underground_gei",
+        "risk": "high",
+        "confidence": 1.0,
+        "reason": "section=chorus; estimated_bars=16.0; matched_context=chorus; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; gei_chain=continues_neighbor_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=4/6",
+        "warnings": [
+          "high-risk action; venue/fandom policy should override",
+          "chorus is forced to underground-gei for dense callbook mode",
+          "semantic context missing; action kept with penalty"
+        ],
+        "arrangement_role": "primary",
+        "arrangement_mode": "non_overlapping_gei_chain",
+        "arrangement_slot": "4/6",
+        "planned_section_indices": [
+          9
+        ],
+        "planned_section_labels": [
+          "instrumental"
+        ]
+      },
+      {
+        "section_index": 9,
+        "section_label": "instrumental",
+        "section_start": 140.61,
+        "section_end": 155.01,
+        "section_estimated_bars": 9.0,
+        "start": 153.4,
+        "end": 159.8,
+        "fit_bars": 4.0,
+        "action_fit_bars": 4.0,
+        "action_id": "tian_zhao",
+        "action_name": "Tian Zhao",
+        "category": "underground_gei",
+        "risk": "high",
+        "confidence": 1.0,
+        "reason": "section=chorus; estimated_bars=16.0; matched_context=chorus; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; gei_chain=continues_neighbor_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=5/6; arrangement=borrows_adjacent_section",
+        "warnings": [
+          "high-risk action; venue/fandom policy should override",
+          "chorus is forced to underground-gei for dense callbook mode",
+          "semantic context missing; action kept with penalty",
+          "planned action crosses adjacent structure boundary to complete a bar phrase"
+        ],
+        "arrangement_role": "primary",
+        "arrangement_mode": "non_overlapping_gei_chain",
+        "arrangement_slot": "5/6",
+        "planned_section_indices": [
+          9,
+          10
+        ],
+        "planned_section_labels": [
+          "instrumental",
+          "chorus"
+        ]
+      },
+      {
+        "section_index": 10,
+        "section_label": "chorus",
+        "section_start": 155.01,
+        "section_end": 177.41,
+        "section_estimated_bars": 14.0,
+        "start": 159.8,
+        "end": 166.2,
+        "fit_bars": 4.0,
+        "action_fit_bars": 4.0,
+        "action_id": "long_zhi_mao",
+        "action_name": "Long Zhi Mao",
+        "category": "underground_gei",
+        "risk": "high",
+        "confidence": 0.889,
+        "reason": "section=instrumental; estimated_bars=9.0; matched_context=high_energy_break,instrumental_break,post_chorus_interlude; semantic=context_missing_penalty; category=underground_gei; gei_chain=continues_neighbor_gei; gei_chain=bridges_neighbor_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=6/6",
+        "warnings": [
+          "high-risk action; venue/fandom policy should override",
+          "semantic context missing; action kept with penalty"
+        ],
+        "arrangement_role": "primary",
+        "arrangement_mode": "non_overlapping_gei_chain",
+        "arrangement_slot": "6/6",
+        "planned_section_indices": [
+          10
+        ],
+        "planned_section_labels": [
+          "chorus"
+        ]
+      },
+      {
+        "section_index": 11,
+        "section_label": "instrumental",
+        "section_start": 177.41,
+        "section_end": 190.2,
+        "section_estimated_bars": 8.0,
+        "start": 177.41,
+        "end": 187.0,
+        "fit_bars": 6.0,
+        "action_fit_bars": 6.0,
+        "action_id": "standard_mix_long",
+        "action_name": "Standard MIX +2-bar Extension",
+        "category": "mix",
+        "risk": "medium",
+        "confidence": 0.92,
+        "reason": "section=instrumental; estimated_bars=8.0; matched_context=high_energy_break,instrumental_break,post_chorus_interlude; category=mix; gei_chain=competes_with_neighbor_gei; arrangement=single_section_primary",
+        "warnings": [],
+        "arrangement_role": "primary",
+        "arrangement_mode": "single_section_primary",
+        "planned_section_indices": [
+          11
+        ],
+        "planned_section_labels": [
+          "instrumental"
+        ]
+      },
+      {
+        "section_index": 12,
+        "section_label": "verse",
+        "section_start": 190.2,
+        "section_end": 203.0,
+        "section_estimated_bars": 8.0,
+        "start": 190.2,
+        "end": 193.4,
+        "fit_bars": 2.0,
+        "action_fit_bars": 2.0,
+        "action_id": "oi_oi",
+        "action_name": "Oi Oi",
+        "category": "rhythmcall",
+        "risk": "low",
+        "confidence": 0.892,
+        "reason": "section=verse; estimated_bars=8.0; matched_context=verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_1",
+        "warnings": [],
+        "arrangement_role": "primary",
+        "arrangement_mode": "verse_sparse_call_fill",
+        "arrangement_slot": "verse_fill_1",
+        "planned_section_indices": [
+          12
+        ],
+        "planned_section_labels": [
+          "verse"
+        ]
+      },
+      {
+        "section_index": 12,
+        "section_label": "verse",
+        "section_start": 190.2,
+        "section_end": 203.0,
+        "section_estimated_bars": 8.0,
+        "start": 196.6,
+        "end": 199.8,
+        "fit_bars": 2.0,
+        "action_fit_bars": 2.0,
+        "action_id": "ppph",
+        "action_name": "PPPH",
+        "category": "rhythmcall",
+        "risk": "low",
+        "confidence": 0.906,
+        "reason": "section=verse; estimated_bars=8.0; matched_context=mid_energy_vocal,verse; category=rhythmcall; arrangement=verse_sparse_call_fill; arrangement_slot=verse_fill_2",
+        "warnings": [],
+        "arrangement_role": "primary",
+        "arrangement_mode": "verse_sparse_call_fill",
+        "arrangement_slot": "verse_fill_2",
+        "planned_section_indices": [
+          12
+        ],
+        "planned_section_labels": [
+          "verse"
+        ]
+      },
+      {
+        "section_index": 13,
+        "section_label": "pre_chorus",
+        "section_start": 203.0,
+        "section_end": 219.8,
+        "section_estimated_bars": 10.0,
+        "start": 203.0,
+        "end": 206.36,
+        "fit_bars": 2.0,
+        "action_fit_bars": 2.0,
+        "action_id": "ppph",
+        "action_name": "PPPH",
+        "category": "rhythmcall",
+        "risk": "low",
+        "confidence": 0.956,
+        "reason": "section=pre_chorus; estimated_bars=10.0; matched_context=pre_chorus; category=rhythmcall; arrangement=prechorus_build_fill; arrangement_slot=opening_call",
+        "warnings": [],
+        "arrangement_role": "primary",
+        "arrangement_mode": "prechorus_build_fill",
+        "arrangement_slot": "opening_call",
+        "planned_section_indices": [
+          13
+        ],
+        "planned_section_labels": [
+          "pre_chorus"
+        ]
+      },
+      {
+        "section_index": 13,
+        "section_label": "pre_chorus",
+        "section_start": 203.0,
+        "section_end": 219.8,
+        "section_estimated_bars": 10.0,
+        "start": 206.36,
+        "end": 213.08,
+        "fit_bars": 4.0,
+        "action_fit_bars": 4.0,
+        "action_id": "jp_mix_seigyaku_dt",
+        "action_name": "Japanese MIX Forward-Reverse Double Time",
+        "category": "mix",
+        "risk": "medium",
+        "confidence": 1.0,
+        "reason": "section=pre_chorus; estimated_bars=10.0; matched_context=chorus_entry; category=mix; arrangement=prechorus_build_mix_fill; arrangement_slot=middle_build",
+        "warnings": [],
+        "arrangement_role": "primary",
+        "arrangement_mode": "prechorus_build_mix_fill",
+        "arrangement_slot": "middle_build",
+        "planned_section_indices": [
+          13
+        ],
+        "planned_section_labels": [
+          "pre_chorus"
+        ]
+      },
+      {
+        "section_index": 13,
+        "section_label": "pre_chorus",
+        "section_start": 203.0,
+        "section_end": 219.8,
+        "section_estimated_bars": 10.0,
+        "start": 218.12,
+        "end": 219.8,
+        "fit_bars": 1.0,
+        "action_fit_bars": 1.0,
+        "action_id": "ietora",
+        "action_name": "Ietora",
+        "category": "mix",
+        "risk": "high",
+        "confidence": 0.869,
+        "reason": "section=pre_chorus; estimated_bars=10.0; matched_context=chorus_entry,pre_chorus,pre_chorus_build; semantic=context_missing_penalty; category=mix; arrangement=prechorus_chorus_entry_fill; arrangement_slot=chorus_entry",
+        "warnings": [
+          "high-risk action; venue/fandom policy should override",
+          "semantic context missing; action kept with penalty"
+        ],
+        "arrangement_role": "primary",
+        "arrangement_mode": "prechorus_chorus_entry_fill",
+        "arrangement_slot": "chorus_entry",
+        "planned_section_indices": [
+          13
+        ],
+        "planned_section_labels": [
+          "pre_chorus"
+        ]
+      },
+      {
+        "section_index": 14,
+        "section_label": "chorus",
+        "section_start": 219.8,
+        "section_end": 247.0,
+        "section_estimated_bars": 17.0,
+        "start": 219.8,
+        "end": 226.2,
+        "fit_bars": 4.0,
+        "action_fit_bars": 4.0,
+        "action_id": "cun_zheng",
+        "action_name": "Cun Zheng",
+        "category": "underground_gei",
+        "risk": "high",
+        "confidence": 0.708,
+        "reason": "section=chorus; estimated_bars=17.0; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=1/2",
+        "warnings": [
+          "high-risk action; venue/fandom policy should override",
+          "chorus is forced to underground-gei for dense callbook mode",
+          "semantic context missing; action kept with penalty"
+        ],
+        "arrangement_role": "primary",
+        "arrangement_mode": "non_overlapping_gei_chain",
+        "arrangement_slot": "1/2",
+        "planned_section_indices": [
+          14
+        ],
+        "planned_section_labels": [
+          "chorus"
+        ]
+      },
+      {
+        "section_index": 14,
+        "section_label": "chorus",
+        "section_start": 219.8,
+        "section_end": 247.0,
+        "section_estimated_bars": 17.0,
+        "start": 226.2,
+        "end": 232.6,
+        "fit_bars": 4.0,
+        "action_fit_bars": 4.0,
+        "action_id": "lei_she",
+        "action_name": "Lei She",
+        "category": "underground_gei",
+        "risk": "high",
+        "confidence": 0.708,
+        "reason": "section=chorus; estimated_bars=17.0; coverage=full_section; semantic=context_missing_penalty; category=underground_gei; arrangement=non_overlapping_gei_chain; arrangement_slot=2/2",
+        "warnings": [
+          "high-risk action; venue/fandom policy should override",
+          "chorus is forced to underground-gei for dense callbook mode",
+          "semantic context missing; action kept with penalty"
+        ],
+        "arrangement_role": "primary",
+        "arrangement_mode": "non_overlapping_gei_chain",
+        "arrangement_slot": "2/2",
+        "planned_section_indices": [
+          14
+        ],
+        "planned_section_labels": [
+          "chorus"
+        ]
+      },
+      {
+        "section_index": 15,
+        "section_label": "outro",
+        "section_start": 247.0,
+        "section_end": 256.61,
+        "section_estimated_bars": 6.0,
+        "start": 247.0,
+        "end": 250.2,
+        "fit_bars": 2.0,
+        "action_fit_bars": 2.0,
+        "action_id": "oi_oi",
+        "action_name": "Oi Oi",
+        "category": "rhythmcall",
+        "risk": "low",
+        "confidence": 0.962,
+        "reason": "section=outro; estimated_bars=6.0; matched_context=high_energy_outro; category=rhythmcall; arrangement=single_section_primary",
+        "warnings": [],
+        "arrangement_role": "primary",
+        "arrangement_mode": "single_section_primary",
+        "planned_section_indices": [
+          15
+        ],
+        "planned_section_labels": [
+          "outro"
+        ]
+      },
+      {
+        "section_index": 16,
+        "section_label": "instrumental",
+        "section_start": 256.61,
+        "section_end": 264.61,
+        "section_estimated_bars": 5.0,
+        "start": 256.61,
+        "end": 263.01,
+        "fit_bars": 4.0,
+        "action_fit_bars": 4.0,
+        "action_id": "standard_mix",
+        "action_name": "Standard MIX",
+        "category": "mix",
+        "risk": "medium",
+        "confidence": 1.0,
+        "reason": "section=instrumental; estimated_bars=5.0; matched_context=instrumental_break,post_chorus_interlude; category=mix; arrangement=single_section_primary",
+        "warnings": [],
+        "arrangement_role": "primary",
+        "arrangement_mode": "single_section_primary",
+        "planned_section_indices": [
+          16
+        ],
+        "planned_section_labels": [
+          "instrumental"
+        ]
+      }
+    ]
+  },
+  "model_meta": {
+    "duration_s": 264.61,
+    "bar_count": 164,
+    "tempo": 150.0,
+    "struct_status": {
+      "status": "stored_prediction",
+      "detail": "paper-test prediction"
+    },
+    "model": {
+      "backbone": "muq",
+      "backbone_model": "OpenMuQ/MuQ-large-msd-iter",
+      "target_level": "coarse",
+      "labels": [
+        "bridge",
+        "chorus",
+        "instrumental",
+        "intro",
+        "outro",
+        "pre_chorus",
+        "verse"
+      ],
+      "pool_mode": "meanmaxstd",
+      "feature_layers": [
+        4,
+        8,
+        12
+      ],
+      "mert_layers": null,
+      "muq_layers": [
+        4,
+        8,
+        12
+      ],
+      "muq_chunk_seconds": 30.0,
+      "muq_overlap_seconds": 1.0,
+      "seed": 46,
+      "n_songs": 110,
+      "split": {
+        "train": 85,
+        "validation": 10,
+        "dev_test": 5,
+        "paper_test": 10
+      },
+      "run_id": "muq_seed46_110songs_tail_merge"
+    }
+  },
+  "markdown": "# YesTiger Tutorial Plan: brushupbrassup\n\n| Time | Section | Role | Action | Bars | Risk | Confidence | Text |\n|---:|---|---|---|---:|---|---:|---|\n| 00:01.40-00:20.61 | intro | mix | Bismarck Koujou | 12.0 | medium | 1.000 | Takamaruyo Takamaruyo / TakamaruHikumaruBisumaruku / Shijima-ru Arushindo / Kazudansu Ni-haiO-hai(P) / Kanchu-hai U-ronhai / Nachuraruhai Aikyanfurai(跳起) |\n| 00:22.21-00:25.41 | verse | rhythmcall | Oi Oi | 2.0 | low | 0.892 | Oi! Oi! |\n| 00:28.61-00:31.81 | verse | rhythmcall | PPPH | 2.0 | low | 0.906 | Pan-pa-pan, hyu! |\n| 00:35.00-00:38.20 | verse | rhythmcall | Clap | 2.0 | low | 0.880 | Clap on beat or backbeat. |\n| 00:41.40-00:43.00 | verse | rhythmcall | Hai Hai | 1.0 | low | 0.889 | Hai! Hai! |\n| 00:43.00-00:46.20 | pre_chorus | rhythmcall | PPPH | 2.0 | low | 0.956 | Pan-pa-pan, hyu! |\n| 00:46.20-00:52.60 | pre_chorus | mix | Japanese MIX Forward-Reverse Double Time | 4.0 | medium | 1.000 | _Jyokyo Tobi Kasen Shindou / _Ama Sen'i JinzouHiTora |\n| 00:52.60-00:54.20 | pre_chorus | mix | Ietora | 1.0 | high | 0.869 | _Yettaiga Yettaiga / _YettaigaFaiboWaipa / _Ye Ye Ye Ye / _YettaigaFaiboWaipa |\n| 00:54.20-01:07.00 | chorus | underground_gei | Gongfu She | 8.0 | high | 1.000 | Gongfu She underground-gei movement sequence. |\n| 01:07.00-01:19.80 | chorus+instrumental | underground_gei | Dian Bo She | 8.0 | high | 0.709 | Dian Bo She underground-gei movement sequence. |\n| 01:23.00-01:26.20 | verse | rhythmcall | Oi Oi | 2.0 | low | 0.892 | Oi! Oi! |\n| 01:29.40-01:32.61 | verse | rhythmcall | PPPH | 2.0 | low | 0.906 | Pan-pa-pan, hyu! |\n| 01:35.81-01:39.01 | verse | rhythmcall | Clap | 2.0 | low | 0.880 | Clap on beat or backbeat. |\n| 01:40.61-01:43.81 | pre_chorus | rhythmcall | PPPH | 2.0 | low | 0.956 | Pan-pa-pan, hyu! |\n| 01:43.81-01:50.20 | pre_chorus | mix | Japanese MIX Forward-Reverse Double Time | 4.0 | medium | 1.000 | _Jyokyo Tobi Kasen Shindou / _Ama Sen'i JinzouHiTora |\n| 01:53.40-01:55.00 | pre_chorus | mix | Ietora | 1.0 | high | 0.869 | _Yettaiga Yettaiga / _YettaigaFaiboWaipa / _Ye Ye Ye Ye / _YettaigaFaiboWaipa |\n| 01:55.00-02:07.80 | chorus | underground_gei | Zi He She | 8.0 | high | 0.889 | Zi He She underground-gei movement sequence. |\n| 02:07.80-02:20.60 | chorus | underground_gei | Chan She | 8.0 | high | 0.889 | Chan She underground-gei movement sequence. |\n| 02:20.60-02:27.00 | instrumental | underground_gei | Ali Shizi | 4.0 | high | 1.000 | Ali Shizi underground-gei movement sequence. |\n| 02:27.00-02:33.40 | instrumental | underground_gei | Heibai Shuangyi | 4.0 | high | 1.000 | Heibai Shuangyi underground-gei movement sequence. |\n| 02:33.40-02:39.80 | instrumental+chorus | underground_gei | Tian Zhao | 4.0 | high | 1.000 | Tian Zhao underground-gei movement sequence. |\n| 02:39.80-02:46.20 | chorus | underground_gei | Long Zhi Mao | 4.0 | high | 0.889 | Long Zhi Mao underground-gei movement sequence. |\n| 02:57.41-03:07.00 | instrumental | mix | Standard MIX +2-bar Extension | 6.0 | medium | 0.920 | A~yosshaikuzo / _Taiga Faiya Saiba Faiba / _Daiba Baiba Jya-jya- / Faibo Waipa Yesukureipa |\n| 03:10.20-03:13.40 | verse | rhythmcall | Oi Oi | 2.0 | low | 0.892 | Oi! Oi! |\n| 03:16.60-03:19.80 | verse | rhythmcall | PPPH | 2.0 | low | 0.906 | Pan-pa-pan, hyu! |\n| 03:23.00-03:26.36 | pre_chorus | rhythmcall | PPPH | 2.0 | low | 0.956 | Pan-pa-pan, hyu! |\n| 03:26.36-03:33.08 | pre_chorus | mix | Japanese MIX Forward-Reverse Double Time | 4.0 | medium | 1.000 | _Jyokyo Tobi Kasen Shindou / _Ama Sen'i JinzouHiTora |\n| 03:38.12-03:39.80 | pre_chorus | mix | Ietora | 1.0 | high | 0.869 | _Yettaiga Yettaiga / _YettaigaFaiboWaipa / _Ye Ye Ye Ye / _YettaigaFaiboWaipa |\n| 03:39.80-03:46.20 | chorus | underground_gei | Cun Zheng | 4.0 | high | 0.708 | Cun Zheng underground-gei movement sequence. |\n| 03:46.20-03:52.60 | chorus | underground_gei | Lei She | 4.0 | high | 0.708 | Lei She underground-gei movement sequence. |\n| 04:07.00-04:10.20 | outro | rhythmcall | Oi Oi | 2.0 | low | 0.962 | Oi! Oi! |\n| 04:16.61-04:23.01 | instrumental | mix | Standard MIX | 4.0 | medium | 1.000 | A~yosshaikuzo / _Taiga Faiya Saiba Faiba / _Daiba Baiba Jya-jya- / Fai-bo-Wai-pa |\n",
+  "audio_url": "/api/example-audio/brushupbrassup",
+  "downloads": {}
+}

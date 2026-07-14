@@ -1,0 +1,109 @@
+{
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "shinjinruiwakasosekainoyumeomiruka",
+    "title": "Shinjinrui wa Kasoku Sekai no Yume wo Miruka",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/shinjinruiwakasosekainoyumeomiruka.mp3",
+    "bpm": 90,
+    "call_bpm": 90,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  },
+  "segments": [
+    {
+      "start": 1.74,
+      "end": 27.24,
+      "music_label": "intro",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 27.24,
+      "end": 48.58,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 48.58,
+      "end": 53.62,
+      "music_label": "pre_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 53.62,
+      "end": 61.91,
+      "music_label": "pre_chorus_build",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 61.91,
+      "end": 83.08,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 83.08,
+      "end": 105.91,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 105.91,
+      "end": 127.25,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 127.25,
+      "end": 132.59,
+      "music_label": "pre_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 132.59,
+      "end": 140.57,
+      "music_label": "pre_chorus_build",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 140.57,
+      "end": 159.24,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 159.24,
+      "end": 177.98,
+      "music_label": "bridge",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 177.98,
+      "end": 211.08,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 211.08,
+      "end": 232.74,
+      "music_label": "outro",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 232.74,
+      "end": 236.77,
+      "music_label": "end",
+      "notes": "manually_reviewed_from_struct; annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "call_spans": [],
+  "annotation": {
+    "annotator": "",
+    "reviewed": true,
+    "review_date": "2026-06-17",
+    "notes": "Structure-only annotation.",
+    "call_bpm": 90,
+    "call_bar_multiplier": 1.0
+  }
+}

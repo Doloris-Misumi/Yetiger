@@ -1,0 +1,92 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 10.6,
+      "music_label": "intro"
+    },
+    {
+      "start": 10.6,
+      "end": 29.34,
+      "music_label": "verse"
+    },
+    {
+      "start": 29.34,
+      "end": 36.37,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 36.37,
+      "end": 41.05,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 41.05,
+      "end": 59.79,
+      "music_label": "chorus"
+    },
+    {
+      "start": 59.79,
+      "end": 64.47,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 64.47,
+      "end": 83.2,
+      "music_label": "verse"
+    },
+    {
+      "start": 83.2,
+      "end": 90.23,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 90.23,
+      "end": 94.91,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 94.91,
+      "end": 113.64,
+      "music_label": "chorus"
+    },
+    {
+      "start": 113.64,
+      "end": 137.05,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 137.05,
+      "end": 174.52,
+      "music_label": "chorus"
+    },
+    {
+      "start": 174.52,
+      "end": 176.86,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 176.86,
+      "end": 178.03,
+      "music_label": "outro"
+    },
+    {
+      "start": 178.03,
+      "end": 183.79,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "daten",
+    "title": "daten",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/daten.mp3",
+    "bpm": 102,
+    "call_bpm": 102,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  }
+}

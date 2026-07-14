@@ -1,0 +1,87 @@
+{
+  "segments": [
+    {
+      "start": 0.76,
+      "end": 17.33,
+      "music_label": "intro"
+    },
+    {
+      "start": 17.33,
+      "end": 39.64,
+      "music_label": "verse"
+    },
+    {
+      "start": 39.64,
+      "end": 50.81,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 50.81,
+      "end": 60.22,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 60.22,
+      "end": 82.9,
+      "music_label": "chorus"
+    },
+    {
+      "start": 82.9,
+      "end": 94.07,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 94.07,
+      "end": 116.38,
+      "music_label": "bridge"
+    },
+    {
+      "start": 116.38,
+      "end": 127.56,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 127.56,
+      "end": 149.87,
+      "music_label": "chorus"
+    },
+    {
+      "start": 149.87,
+      "end": 183.36,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 183.36,
+      "end": 203.95,
+      "music_label": "bridge"
+    },
+    {
+      "start": 203.95,
+      "end": 226.61,
+      "music_label": "chorus"
+    },
+    {
+      "start": 226.61,
+      "end": 239.9,
+      "music_label": "outro"
+    },
+    {
+      "start": 239.9,
+      "end": 242.0,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "vipmonster",
+    "title": "vipmonster",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/vipmonster.mp3",
+    "bpm": 171,
+    "call_bpm": 85.5,
+    "call_bar_multiplier": 0.5,
+    "meter": "4/4"
+  }
+}

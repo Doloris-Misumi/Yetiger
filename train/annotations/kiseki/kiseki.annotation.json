@@ -1,0 +1,103 @@
+{
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "kiseki",
+    "title": "Kiseki",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/Kiseki.mp3",
+    "bpm": 85,
+    "call_bpm": 85,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  },
+  "segments": [
+    {
+      "start": 0.66,
+      "end": 23.24,
+      "music_label": "intro",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 23.24,
+      "end": 68.43,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 68.43,
+      "end": 74.08,
+      "music_label": "pre_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 74.08,
+      "end": 119.25,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 119.25,
+      "end": 122.07,
+      "music_label": "post_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 122.07,
+      "end": 167.25,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 167.25,
+      "end": 172.9,
+      "music_label": "pre_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 172.9,
+      "end": 218.07,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 218.07,
+      "end": 220.19,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 220.19,
+      "end": 249.13,
+      "music_label": "bridge",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 249.13,
+      "end": 297.14,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 297.14,
+      "end": 305.25,
+      "music_label": "post_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 305.25,
+      "end": 312.54,
+      "music_label": "end",
+      "notes": "manually_reviewed_from_struct; annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "call_spans": [],
+  "annotation": {
+    "annotator": "",
+    "reviewed": true,
+    "review_date": "2026-06-16",
+    "notes": "Structure-only annotation.",
+    "call_bpm": 85,
+    "call_bar_multiplier": 1.0
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "ourai",
+    "title": "Ourai",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/ourai.mp3",
+    "bpm": 90,
+    "call_bpm": 90,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  },
+  "segments": [
+    {
+      "start": 2.46,
+      "end": 23.81,
+      "music_label": "intro",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 23.81,
+      "end": 55.8,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 55.8,
+      "end": 77.12,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 77.12,
+      "end": 87.77,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 87.77,
+      "end": 119.79,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 119.79,
+      "end": 141.14,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 141.14,
+      "end": 143.86,
+      "music_label": "post_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 143.86,
+      "end": 152.1,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 152.1,
+      "end": 184.95,
+      "music_label": "bridge",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 184.95,
+      "end": 208.96,
+      "music_label": "solo",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 208.96,
+      "end": 281.76,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct; merged_adjacent; merged_adjacent"
+    },
+    {
+      "start": 281.76,
+      "end": 294.51,
+      "music_label": "outro",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 294.51,
+      "end": 298.15,
+      "music_label": "end",
+      "notes": "manually_reviewed_from_struct; annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "call_spans": [],
+  "annotation": {
+    "annotator": "",
+    "reviewed": true,
+    "review_date": "2026-06-16",
+    "notes": "Structure-only annotation.",
+    "call_bpm": 90,
+    "call_bar_multiplier": 1.0
+  }
+}

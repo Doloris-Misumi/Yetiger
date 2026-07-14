@@ -1,0 +1,87 @@
+{
+  "segments": [
+    {
+      "start": 2.05,
+      "end": 23.94,
+      "music_label": "verse"
+    },
+    {
+      "start": 23.94,
+      "end": 46.46,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 46.46,
+      "end": 49.94,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 49.94,
+      "end": 90.94,
+      "music_label": "chorus"
+    },
+    {
+      "start": 90.94,
+      "end": 101.85,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 101.85,
+      "end": 123.67,
+      "music_label": "verse"
+    },
+    {
+      "start": 123.67,
+      "end": 146.86,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 146.86,
+      "end": 149.58,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 149.58,
+      "end": 174.12,
+      "music_label": "chorus"
+    },
+    {
+      "start": 174.12,
+      "end": 196.62,
+      "music_label": "bridge"
+    },
+    {
+      "start": 196.62,
+      "end": 206.85,
+      "music_label": "solo"
+    },
+    {
+      "start": 206.85,
+      "end": 247.74,
+      "music_label": "chorus"
+    },
+    {
+      "start": 247.74,
+      "end": 258.18,
+      "music_label": "outro"
+    },
+    {
+      "start": 258.18,
+      "end": 266.42,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "shiori",
+    "title": "shiori",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/shiori.mp3",
+    "bpm": 88,
+    "call_bpm": 88,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  }
+}

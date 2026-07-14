@@ -1,0 +1,82 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 21.71,
+      "music_label": "intro"
+    },
+    {
+      "start": 21.71,
+      "end": 40.91,
+      "music_label": "verse"
+    },
+    {
+      "start": 40.91,
+      "end": 49.31,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 49.31,
+      "end": 54.12,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 54.12,
+      "end": 80.51,
+      "music_label": "chorus"
+    },
+    {
+      "start": 80.51,
+      "end": 93.4,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 93.4,
+      "end": 112.91,
+      "music_label": "verse"
+    },
+    {
+      "start": 112.91,
+      "end": 129.71,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 129.71,
+      "end": 136.92,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 136.92,
+      "end": 146.52,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 146.52,
+      "end": 172.91,
+      "music_label": "chorus"
+    },
+    {
+      "start": 172.91,
+      "end": 183.41,
+      "music_label": "outro"
+    },
+    {
+      "start": 183.41,
+      "end": 185.02,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "komyuchakkafire",
+    "title": "komyuchakkafire",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/komyuchakkafire.mp3",
+    "bpm": 100,
+    "call_bpm": 100,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  }
+}

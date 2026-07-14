@@ -1,0 +1,87 @@
+{
+  "segments": [
+    {
+      "start": 0.48,
+      "end": 20.31,
+      "music_label": "verse"
+    },
+    {
+      "start": 20.31,
+      "end": 25.26,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 25.26,
+      "end": 27.71,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 27.71,
+      "end": 67.32,
+      "music_label": "chorus"
+    },
+    {
+      "start": 67.32,
+      "end": 69.8,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 69.8,
+      "end": 72.27,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 72.27,
+      "end": 92.06,
+      "music_label": "verse"
+    },
+    {
+      "start": 92.06,
+      "end": 97.0,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 97.0,
+      "end": 99.46,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 99.46,
+      "end": 139.06,
+      "music_label": "chorus"
+    },
+    {
+      "start": 139.06,
+      "end": 161.34,
+      "music_label": "bridge"
+    },
+    {
+      "start": 161.34,
+      "end": 221.96,
+      "music_label": "chorus"
+    },
+    {
+      "start": 221.96,
+      "end": 241.77,
+      "music_label": "outro"
+    },
+    {
+      "start": 241.77,
+      "end": 245.4,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "pilgrim",
+    "title": "pilgrim",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/pilgrim.mp3",
+    "bpm": 97,
+    "call_bpm": 97,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  }
+}

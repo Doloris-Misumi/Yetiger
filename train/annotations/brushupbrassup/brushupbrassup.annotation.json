@@ -1,0 +1,97 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 22.21,
+      "music_label": "intro"
+    },
+    {
+      "start": 22.21,
+      "end": 35.0,
+      "music_label": "verse"
+    },
+    {
+      "start": 35.0,
+      "end": 47.8,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 47.8,
+      "end": 51.0,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 51.0,
+      "end": 76.6,
+      "music_label": "chorus"
+    },
+    {
+      "start": 76.6,
+      "end": 83.0,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 83.0,
+      "end": 95.8,
+      "music_label": "verse"
+    },
+    {
+      "start": 95.8,
+      "end": 108.6,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 108.6,
+      "end": 111.8,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 111.8,
+      "end": 137.4,
+      "music_label": "chorus"
+    },
+    {
+      "start": 137.4,
+      "end": 151.8,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 151.8,
+      "end": 190.2,
+      "music_label": "solo"
+    },
+    {
+      "start": 190.2,
+      "end": 206.96,
+      "music_label": "bridge"
+    },
+    {
+      "start": 206.96,
+      "end": 245.41,
+      "music_label": "chorus"
+    },
+    {
+      "start": 245.41,
+      "end": 264.61,
+      "music_label": "outro"
+    },
+    {
+      "start": 264.61,
+      "end": 270.66,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "brushupbrassup",
+    "title": "brushupbrassup",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/brushupbrassup.mp3",
+    "bpm": 150,
+    "call_bpm": 75.0,
+    "call_bar_multiplier": 0.5,
+    "meter": "4/4"
+  }
+}

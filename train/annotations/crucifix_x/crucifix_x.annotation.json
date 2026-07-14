@@ -1,0 +1,92 @@
+{
+  "segments": [
+    {
+      "start": 0.59,
+      "end": 40.79,
+      "music_label": "intro"
+    },
+    {
+      "start": 40.79,
+      "end": 59.44,
+      "music_label": "verse"
+    },
+    {
+      "start": 59.44,
+      "end": 68.75,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 68.75,
+      "end": 78.07,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 78.07,
+      "end": 111.85,
+      "music_label": "chorus"
+    },
+    {
+      "start": 111.85,
+      "end": 121.15,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 121.15,
+      "end": 140.4,
+      "music_label": "bridge"
+    },
+    {
+      "start": 140.4,
+      "end": 173.0,
+      "music_label": "chorus"
+    },
+    {
+      "start": 173.0,
+      "end": 196.32,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 196.32,
+      "end": 214.82,
+      "music_label": "solo"
+    },
+    {
+      "start": 214.82,
+      "end": 233.6,
+      "music_label": "bridge"
+    },
+    {
+      "start": 233.6,
+      "end": 275.55,
+      "music_label": "chorus"
+    },
+    {
+      "start": 275.55,
+      "end": 280.21,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 280.21,
+      "end": 296.52,
+      "music_label": "outro"
+    },
+    {
+      "start": 296.52,
+      "end": 299.2,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "crucifix_x",
+    "title": "crucifix_x",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/crucifix_x.mp3",
+    "bpm": 103,
+    "call_bpm": 103,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  }
+}

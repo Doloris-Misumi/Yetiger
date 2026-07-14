@@ -1,0 +1,117 @@
+{
+  "segments": [
+    {
+      "start": 0.41,
+      "end": 25.35,
+      "music_label": "intro"
+    },
+    {
+      "start": 25.35,
+      "end": 37.83,
+      "music_label": "verse"
+    },
+    {
+      "start": 37.83,
+      "end": 44.06,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 44.06,
+      "end": 56.52,
+      "music_label": "verse"
+    },
+    {
+      "start": 56.52,
+      "end": 62.76,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 62.76,
+      "end": 69.0,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 69.0,
+      "end": 94.13,
+      "music_label": "chorus"
+    },
+    {
+      "start": 94.13,
+      "end": 97.24,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 97.24,
+      "end": 106.4,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 106.4,
+      "end": 118.86,
+      "music_label": "bridge"
+    },
+    {
+      "start": 118.86,
+      "end": 125.09,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 125.09,
+      "end": 131.34,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 131.34,
+      "end": 156.26,
+      "music_label": "chorus"
+    },
+    {
+      "start": 156.26,
+      "end": 159.39,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 159.39,
+      "end": 168.73,
+      "music_label": "solo"
+    },
+    {
+      "start": 168.73,
+      "end": 193.67,
+      "music_label": "bridge"
+    },
+    {
+      "start": 193.67,
+      "end": 218.61,
+      "music_label": "chorus"
+    },
+    {
+      "start": 218.61,
+      "end": 223.48,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 223.48,
+      "end": 235.92,
+      "music_label": "outro"
+    },
+    {
+      "start": 235.92,
+      "end": 238.37,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "requiem_for_fate",
+    "title": "requiem_for_fate",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/requiem_for_fate.mp3",
+    "bpm": 77,
+    "call_bpm": 77,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 5.7,
+      "music_label": "intro"
+    },
+    {
+      "start": 5.7,
+      "end": 20.71,
+      "music_label": "chorus"
+    },
+    {
+      "start": 20.71,
+      "end": 28.52,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 28.52,
+      "end": 48.2,
+      "music_label": "verse"
+    },
+    {
+      "start": 48.2,
+      "end": 60.55,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 60.55,
+      "end": 64.45,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 64.45,
+      "end": 89.45,
+      "music_label": "chorus"
+    },
+    {
+      "start": 89.45,
+      "end": 99.45,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 99.45,
+      "end": 119.45,
+      "music_label": "verse"
+    },
+    {
+      "start": 119.45,
+      "end": 131.96,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 131.96,
+      "end": 135.7,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 135.7,
+      "end": 160.71,
+      "music_label": "chorus"
+    },
+    {
+      "start": 160.71,
+      "end": 170.7,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 170.7,
+      "end": 193.04,
+      "music_label": "bridge"
+    },
+    {
+      "start": 193.04,
+      "end": 218.2,
+      "music_label": "chorus"
+    },
+    {
+      "start": 218.2,
+      "end": 243.21,
+      "music_label": "outro"
+    },
+    {
+      "start": 243.21,
+      "end": 247.8,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "bravejewel",
+    "title": "bravejewel",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/bravejewel.mp3",
+    "bpm": 95,
+    "call_bpm": 95,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  }
+}

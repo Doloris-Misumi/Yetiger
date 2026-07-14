@@ -1,0 +1,92 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 10.91,
+      "music_label": "intro"
+    },
+    {
+      "start": 10.91,
+      "end": 29.79,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 29.79,
+      "end": 50.72,
+      "music_label": "verse"
+    },
+    {
+      "start": 50.72,
+      "end": 71.93,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 71.93,
+      "end": 83.64,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 83.64,
+      "end": 88.33,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 88.33,
+      "end": 107.35,
+      "music_label": "chorus"
+    },
+    {
+      "start": 107.35,
+      "end": 123.45,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 123.45,
+      "end": 148.16,
+      "music_label": "bridge"
+    },
+    {
+      "start": 148.16,
+      "end": 164.41,
+      "music_label": "solo"
+    },
+    {
+      "start": 164.41,
+      "end": 183.15,
+      "music_label": "chorus"
+    },
+    {
+      "start": 183.15,
+      "end": 202.78,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 202.78,
+      "end": 228.88,
+      "music_label": "chorus"
+    },
+    {
+      "start": 228.88,
+      "end": 231.79,
+      "music_label": "outro"
+    },
+    {
+      "start": 231.79,
+      "end": 234.54,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "repaint",
+    "title": "repaint",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/repaint.mp3",
+    "bpm": 102,
+    "call_bpm": 102,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  }
+}

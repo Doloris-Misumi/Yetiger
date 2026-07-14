@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>YesTiger Web Studio</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <h1>YesTiger Web Studio</h1>
+          <p id="statusLine">就绪</p>
+        </div>
+        <div class="top-actions">
+          <a class="back-link" href="./index.html">← 返回入口</a>
+          <select id="exampleSelect" aria-label="Example songs">
+            <option value="">示例歌曲</option>
+          </select>
+          <button id="loadExampleBtn" type="button">加载</button>
+        </div>
+      </header>
+
+      <section class="workspace">
+        <aside class="control-panel">
+          <form id="uploadForm" class="upload-form">
+            <label id="dropZone" class="drop-zone" for="audioInput">
+              <input id="audioInput" name="audio" type="file" accept="audio/*" />
+              <span class="drop-title">拖放音频</span>
+              <span id="fileName" class="drop-meta">mp3 / wav / flac</span>
+            </label>
+            <label class="field-label">
+              歌曲名
+              <input id="titleInput" name="title" type="text" placeholder="输入歌曲名称" />
+            </label>
+            <button id="analyzeBtn" type="submit">开始分析</button>
+          </form>
+
+          <div class="stats-grid">
+            <div>
+              <span>时长</span>
+              <strong id="durationStat">-</strong>
+            </div>
+            <div>
+              <span>速度</span>
+              <strong id="tempoStat">-</strong>
+            </div>
+            <div>
+              <span>小节</span>
+              <strong id="barsStat">-</strong>
+            </div>
+            <div>
+              <span>动作</span>
+              <strong id="actionsStat">-</strong>
+            </div>
+          </div>
+
+          <div class="process-panel">
+            <div class="process-head">
+              <h2>分析流水线</h2>
+              <span id="pipelineBadge" class="pipeline-badge">空闲</span>
+            </div>
+            <div id="methodLine" class="method-line">尚未加载分析</div>
+            <ol id="processSteps" class="process-steps"></ol>
+          </div>
+
+          <div class="export-panel">
+            <button id="exportJsonBtn" type="button" disabled>导出 JSON</button>
+            <button id="exportMdBtn" type="button" disabled>导出 MD</button>
+          </div>
+
+        </aside>
+
+        <section class="main-panel">
+          <div class="preview-panel">
+            <canvas id="videoCanvas" width="1280" height="720"></canvas>
+            <div id="geiVideoOverlay" class="gei-video-overlay" hidden>
+              <video id="geiVideoPlayer" muted playsinline></video>
+            </div>
+            <audio id="callAudioPlayer" hidden></audio>
+            <audio id="audioPlayer" controls preload="auto" crossorigin="anonymous"></audio>
+            <div class="media-actions">
+              <button id="exportVideoBtn" class="video-export-btn" type="button" disabled>下载教学视频 (.mp4)</button>
+              <button id="recordBtn" type="button" disabled>录制 WebM</button>
+              <span id="recordHint" class="record-hint">请先加载分析</span>
+            </div>
+          </div>
+
+          <div class="timeline-header">
+            <h2>动作时间线</h2>
+            <div id="currentAction" class="current-action">未加载动作</div>
+          </div>
+
+          <div class="timeline-wrap">
+            <div class="timeline-filters" id="timelineFilters" hidden>
+              <label>筛选: </label>
+              <button class="filter-chip active" data-role="all">全部</button>
+              <button class="filter-chip" data-role="keepspace">留白</button>
+              <button class="filter-chip" data-role="rhythmcall">节奏 call</button>
+              <button class="filter-chip" data-role="mix">MIX</button>
+              <button class="filter-chip" data-role="underground_gei">地下艺</button>
+            </div>
+            <table id="timelineTable">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>时间</th>
+                  <th>段落</th>
+                  <th>角色</th>
+                  <th>动作</th>
+                  <th>小节</th>
+                  <th>风险</th>
+                  <th>文本</th>
+                </tr>
+              </thead>
+              <tbody id="timelineBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <aside class="right-panel" id="rightPanel" hidden>
+          <div class="structure-editor" id="structureEditor">
+            <div class="process-head">
+              <h2>结构编辑器</h2>
+              <span id="editBadge" class="pipeline-badge" data-status="idle">自动</span>
+            </div>
+            <ol id="segmentList" class="segment-list"></ol>
+            <button id="addSegmentBtn" type="button" class="add-segment-btn">+ 添加段落</button>
+            <button id="saveBtn" type="button" disabled class="add-segment-btn" style="border-style:solid;border-color:#17202a;background:#17202a;color:#fff;font-weight:600;">保存编辑</button>
+          </div>
+
+          <div class="notes-panel">
+            <div class="process-head">
+              <h2>备注 Notes</h2>
+              <span id="notesBadge" class="pipeline-badge" style="display:none">Edited</span>
+            </div>
+            <ol id="notesList" class="notes-list"></ol>
+            <button id="addNoteBtn" type="button" class="add-segment-btn">+ 添加备注</button>
+            <button id="saveNotesBtn" type="button" disabled class="add-segment-btn" style="border-style:solid;border-color:#17202a;background:#17202a;color:#fff;font-weight:600;">保存备注</button>
+          </div>
+        </aside>
+      </section>
+    </main>
+    <script src="./config.js"></script>
+    <script src="./app.js?v=mp4-export-20260708"></script>
+  </body>
+</html>

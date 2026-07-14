@@ -1,0 +1,131 @@
+{
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "dokimekiexperience",
+    "title": "Dokimeki Experience",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/dokimekiexperience.mp3",
+    "bpm": 90,
+    "meter": "4/4",
+    "call_bpm": 90,
+    "call_bar_multiplier": 1.0
+  },
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 15.86,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct; merged_adjacent"
+    },
+    {
+      "start": 15.86,
+      "end": 29.2,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 29.2,
+      "end": 39.86,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 39.86,
+      "end": 55.85,
+      "music_label": "pre_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 55.85,
+      "end": 62.54,
+      "music_label": "pre_chorus_build",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 62.54,
+      "end": 87.89,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 87.89,
+      "end": 90.54,
+      "music_label": "post_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 90.54,
+      "end": 98.53,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 98.53,
+      "end": 109.2,
+      "music_label": "verse",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 109.2,
+      "end": 125.2,
+      "music_label": "pre_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 125.2,
+      "end": 131.86,
+      "music_label": "pre_chorus_build",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 131.86,
+      "end": 157.22,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 157.22,
+      "end": 159.88,
+      "music_label": "post_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 159.88,
+      "end": 170.53,
+      "music_label": "instrumental_break",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 170.53,
+      "end": 185.19,
+      "music_label": "bridge",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 185.19,
+      "end": 233.21,
+      "music_label": "chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 233.21,
+      "end": 238.53,
+      "music_label": "post_chorus",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 238.53,
+      "end": 251.04,
+      "music_label": "outro",
+      "notes": "manually_reviewed_from_struct"
+    },
+    {
+      "start": 251.04,
+      "end": 257.08,
+      "music_label": "end",
+      "notes": "manually_reviewed_from_struct; annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "call_spans": []
+}

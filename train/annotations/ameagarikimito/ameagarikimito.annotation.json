@@ -1,0 +1,96 @@
+{
+  "segments": [
+    {
+      "start": 1.35,
+      "end": 21.78,
+      "music_label": "intro"
+    },
+    {
+      "start": 21.78,
+      "end": 42.22,
+      "music_label": "verse"
+    },
+    {
+      "start": 42.22,
+      "end": 52.43,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 52.43,
+      "end": 57.52,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 57.52,
+      "end": 98.39,
+      "music_label": "chorus"
+    },
+    {
+      "start": 98.39,
+      "end": 100.94,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 100.94,
+      "end": 108.59,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 108.59,
+      "end": 129.03,
+      "music_label": "verse"
+    },
+    {
+      "start": 129.03,
+      "end": 139.24,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 139.24,
+      "end": 144.34,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 144.34,
+      "end": 185.2,
+      "music_label": "chorus"
+    },
+    {
+      "start": 185.2,
+      "end": 205.61,
+      "music_label": "bridge"
+    },
+    {
+      "start": 205.61,
+      "end": 246.47,
+      "music_label": "chorus"
+    },
+    {
+      "start": 246.47,
+      "end": 249.03,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 249.03,
+      "end": 259.25,
+      "music_label": "outro"
+    },
+    {
+      "start": 259.25,
+      "end": 265.91,
+      "music_label": "end"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "ameagarikimito",
+    "title": "ameagarikimito",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/ameagarikimito.mp3",
+    "bpm": 94,
+    "call_bpm": 94,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  }
+}

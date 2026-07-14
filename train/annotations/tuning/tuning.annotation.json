@@ -1,0 +1,102 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 4.98,
+      "music_label": "intro"
+    },
+    {
+      "start": 4.98,
+      "end": 24.67,
+      "music_label": "verse"
+    },
+    {
+      "start": 24.67,
+      "end": 29.6,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 29.6,
+      "end": 34.22,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 34.22,
+      "end": 54.21,
+      "music_label": "chorus"
+    },
+    {
+      "start": 54.21,
+      "end": 59.14,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 59.14,
+      "end": 64.05,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 64.05,
+      "end": 73.91,
+      "music_label": "verse"
+    },
+    {
+      "start": 73.91,
+      "end": 78.83,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 78.83,
+      "end": 83.75,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 83.75,
+      "end": 93.6,
+      "music_label": "chorus"
+    },
+    {
+      "start": 93.6,
+      "end": 104.67,
+      "music_label": "solo"
+    },
+    {
+      "start": 104.67,
+      "end": 124.37,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 124.37,
+      "end": 161.29,
+      "music_label": "bridge"
+    },
+    {
+      "start": 161.29,
+      "end": 190.84,
+      "music_label": "chorus"
+    },
+    {
+      "start": 190.84,
+      "end": 195.76,
+      "music_label": "outro"
+    },
+    {
+      "start": 195.76,
+      "end": 196.02,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "tuning",
+    "title": "tuning",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/tuning.mp3",
+    "bpm": 97,
+    "call_bpm": 97,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  }
+}

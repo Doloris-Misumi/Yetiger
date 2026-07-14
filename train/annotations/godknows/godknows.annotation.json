@@ -1,0 +1,391 @@
+{
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "godknows",
+    "title": "God knows...",
+    "artist": "Aya Hirano",
+    "franchise": "suzumiya_haruhi",
+    "audio_path": "train/songs/Godknows.mp3",
+    "bpm": 150,
+    "call_bpm": 75,
+    "call_bar_multiplier": 0.5,
+    "meter": "4/4"
+  },
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 27.82,
+      "music_label": "intro",
+      "notes": ""
+    },
+    {
+      "start": 27.82,
+      "end": 53.41,
+      "music_label": "verse",
+      "notes": ""
+    },
+    {
+      "start": 53.41,
+      "end": 63.01,
+      "music_label": "pre_chorus",
+      "notes": ""
+    },
+    {
+      "start": 63.01,
+      "end": 66.21,
+      "music_label": "pre_chorus_build",
+      "notes": ""
+    },
+    {
+      "start": 66.21,
+      "end": 95.01,
+      "music_label": "chorus",
+      "notes": ""
+    },
+    {
+      "start": 95.01,
+      "end": 120.61,
+      "music_label": "instrumental_break",
+      "notes": ""
+    },
+    {
+      "start": 120.61,
+      "end": 146.21,
+      "music_label": "verse",
+      "notes": ""
+    },
+    {
+      "start": 146.21,
+      "end": 155.82,
+      "music_label": "pre_chorus",
+      "notes": ""
+    },
+    {
+      "start": 155.82,
+      "end": 159.02,
+      "music_label": "pre_chorus_build",
+      "notes": ""
+    },
+    {
+      "start": 159.02,
+      "end": 187.81,
+      "music_label": "chorus",
+      "notes": ""
+    },
+    {
+      "start": 187.81,
+      "end": 213.42,
+      "music_label": "bridge",
+      "notes": ""
+    },
+    {
+      "start": 213.42,
+      "end": 216.61,
+      "music_label": "pre_chorus_build",
+      "notes": ""
+    },
+    {
+      "start": 216.61,
+      "end": 245.41,
+      "music_label": "chorus",
+      "notes": ""
+    },
+    {
+      "start": 245.41,
+      "end": 269.42,
+      "music_label": "outro",
+      "notes": ""
+    },
+    {
+      "start": 269.42,
+      "end": 279.06,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "call_spans": [
+    {
+      "start": 0.0,
+      "end": 2.33,
+      "call_role": "keepspace",
+      "recommended_actions": [],
+      "notes": ""
+    },
+    {
+      "start": 2.33,
+      "end": 27.82,
+      "call_role": "mix",
+      "recommended_actions": [
+        "lin_xiu_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 27.82,
+      "end": 47.02,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "clap"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 47.02,
+      "end": 50.22,
+      "call_role": "mix",
+      "recommended_actions": [
+        "haiseno_activation"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 50.22,
+      "end": 53.41,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "hai_hai"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 53.41,
+      "end": 59.82,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "ppph"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 59.82,
+      "end": 66.21,
+      "call_role": "mix",
+      "recommended_actions": [
+        "ietora"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 66.21,
+      "end": 79.01,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "lei_she"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 79.01,
+      "end": 91.81,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "cun_zheng"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 91.81,
+      "end": 95.01,
+      "call_role": "keepspace",
+      "recommended_actions": [],
+      "notes": ""
+    },
+    {
+      "start": 95.01,
+      "end": 107.81,
+      "call_role": "mix",
+      "recommended_actions": [
+        "standard_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 107.81,
+      "end": 114.22,
+      "call_role": "mix",
+      "recommended_actions": [
+        "japanese_mix_second_half"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 114.22,
+      "end": 120.61,
+      "call_role": "mix",
+      "recommended_actions": [
+        "ainu_second_half_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 120.61,
+      "end": 139.82,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "clap"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 139.82,
+      "end": 143.02,
+      "call_role": "mix",
+      "recommended_actions": [
+        "haiseno_activation"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 143.02,
+      "end": 146.21,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "hai_hai"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 146.21,
+      "end": 152.62,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "ppph"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 152.62,
+      "end": 159.02,
+      "call_role": "mix",
+      "recommended_actions": [
+        "ietora"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 159.02,
+      "end": 162.22,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "fufu_call"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 162.22,
+      "end": 165.42,
+      "call_role": "keepspace",
+      "recommended_actions": [],
+      "notes": ""
+    },
+    {
+      "start": 165.42,
+      "end": 171.81,
+      "call_role": "mix",
+      "recommended_actions": [
+        "aiai_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 171.81,
+      "end": 175.02,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "fufu_call"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 175.02,
+      "end": 184.61,
+      "call_role": "keepspace",
+      "recommended_actions": [],
+      "notes": ""
+    },
+    {
+      "start": 184.61,
+      "end": 187.81,
+      "call_role": "mix",
+      "recommended_actions": [
+        "haiseno_activation"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 187.81,
+      "end": 213.42,
+      "call_role": "mix",
+      "recommended_actions": [
+        "kaho_sanren_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 213.42,
+      "end": 216.61,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "sing_along"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 216.61,
+      "end": 219.81,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "fufu_call"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 219.81,
+      "end": 223.01,
+      "call_role": "keepspace",
+      "recommended_actions": [],
+      "notes": ""
+    },
+    {
+      "start": 223.01,
+      "end": 229.42,
+      "call_role": "mix",
+      "recommended_actions": [
+        "aiai_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 229.42,
+      "end": 232.61,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "fufu_call"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 232.61,
+      "end": 245.41,
+      "call_role": "keepspace",
+      "recommended_actions": [],
+      "notes": ""
+    },
+    {
+      "start": 245.41,
+      "end": 270.85,
+      "call_role": "mix",
+      "recommended_actions": [
+        "shuumaku_kahen_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 270.85,
+      "end": 279.06,
+      "call_role": "keepspace",
+      "recommended_actions": [],
+      "notes": ""
+    }
+  ]
+}

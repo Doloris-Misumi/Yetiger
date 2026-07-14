@@ -1,0 +1,112 @@
+{
+  "segments": [
+    {
+      "start": 0.4,
+      "end": 31.04,
+      "music_label": "intro"
+    },
+    {
+      "start": 31.04,
+      "end": 44.47,
+      "music_label": "verse"
+    },
+    {
+      "start": 44.47,
+      "end": 57.89,
+      "music_label": "verse"
+    },
+    {
+      "start": 57.89,
+      "end": 67.97,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 67.97,
+      "end": 71.32,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 71.32,
+      "end": 98.18,
+      "music_label": "chorus"
+    },
+    {
+      "start": 98.18,
+      "end": 114.96,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 114.96,
+      "end": 141.81,
+      "music_label": "verse"
+    },
+    {
+      "start": 141.81,
+      "end": 151.89,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 151.89,
+      "end": 155.23,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 155.23,
+      "end": 168.66,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 168.66,
+      "end": 185.45,
+      "music_label": "solo"
+    },
+    {
+      "start": 185.45,
+      "end": 212.3,
+      "music_label": "chorus"
+    },
+    {
+      "start": 212.3,
+      "end": 225.72,
+      "music_label": "chorus"
+    },
+    {
+      "start": 225.72,
+      "end": 239.15,
+      "music_label": "chorus"
+    },
+    {
+      "start": 239.15,
+      "end": 252.58,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 252.58,
+      "end": 266.01,
+      "music_label": "outro"
+    },
+    {
+      "start": 266.01,
+      "end": 282.82,
+      "music_label": "outro"
+    },
+    {
+      "start": 282.82,
+      "end": 289.07,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "hidamariroodonaito",
+    "title": "hidamariroodonaito",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/hidamariroodonaito.mp3",
+    "bpm": 143,
+    "call_bpm": 71.5,
+    "call_bar_multiplier": 0.5,
+    "meter": "4/4"
+  }
+}

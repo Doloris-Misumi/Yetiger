@@ -1,0 +1,297 @@
+{
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "ishizue_no_hanakanmuri",
+    "title": "礎の花冠",
+    "artist": "Roselia",
+    "franchise": "",
+    "audio_path": "train/songs/ishizue_no_hanakanmuri.mp3",
+    "bpm": 176,
+    "call_bpm": 88,
+    "call_bar_multiplier": 0.5,
+    "meter": "4/4"
+  },
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 14.39,
+      "music_label": "intro",
+      "notes": ""
+    },
+    {
+      "start": 14.39,
+      "end": 36.45,
+      "music_label": "verse",
+      "notes": "yukina | lisa"
+    },
+    {
+      "start": 36.45,
+      "end": 58.53,
+      "music_label": "pre_chorus",
+      "notes": ""
+    },
+    {
+      "start": 58.53,
+      "end": 64.04,
+      "music_label": "pre_chorus_build",
+      "notes": ""
+    },
+    {
+      "start": 64.04,
+      "end": 86.1,
+      "music_label": "chorus",
+      "notes": ""
+    },
+    {
+      "start": 86.1,
+      "end": 94.39,
+      "music_label": "instrumental_break",
+      "notes": "local 3_4 feel"
+    },
+    {
+      "start": 94.39,
+      "end": 105.43,
+      "music_label": "verse",
+      "notes": ""
+    },
+    {
+      "start": 105.43,
+      "end": 113.7,
+      "music_label": "pre_chorus",
+      "notes": ""
+    },
+    {
+      "start": 113.7,
+      "end": 116.42,
+      "music_label": "pre_chorus_build",
+      "notes": ""
+    },
+    {
+      "start": 116.42,
+      "end": 138.52,
+      "music_label": "chorus",
+      "notes": ""
+    },
+    {
+      "start": 138.52,
+      "end": 149.56,
+      "music_label": "instrumental_break",
+      "notes": ""
+    },
+    {
+      "start": 149.56,
+      "end": 159.21,
+      "music_label": "solo",
+      "notes": ""
+    },
+    {
+      "start": 159.21,
+      "end": 181.29,
+      "music_label": "bridge",
+      "notes": ""
+    },
+    {
+      "start": 181.29,
+      "end": 186.79,
+      "music_label": "pre_chorus_build",
+      "notes": ""
+    },
+    {
+      "start": 186.79,
+      "end": 236.46,
+      "music_label": "chorus",
+      "notes": ""
+    },
+    {
+      "start": 236.46,
+      "end": 239.23,
+      "music_label": "post_chorus",
+      "notes": ""
+    },
+    {
+      "start": 239.23,
+      "end": 241.99,
+      "music_label": "outro",
+      "notes": ""
+    },
+    {
+      "start": 241.99,
+      "end": 246.94,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "call_spans": [
+    {
+      "start": 14.39,
+      "end": 25.42,
+      "call_role": "mix",
+      "recommended_actions": [
+        "gozen_ichiban_mix"
+      ],
+      "notes": "yukina"
+    },
+    {
+      "start": 25.42,
+      "end": 36.45,
+      "call_role": "mix",
+      "recommended_actions": [
+        "gozen_ichiban_mix"
+      ],
+      "notes": "lisa"
+    },
+    {
+      "start": 36.45,
+      "end": 58.53,
+      "call_role": "mix",
+      "recommended_actions": [
+        "kaho_sanren_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 58.53,
+      "end": 64.04,
+      "call_role": "mix",
+      "recommended_actions": [
+        "ietora"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 64.04,
+      "end": 86.1,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "dian_bo_she"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 98.52,
+      "end": 105.43,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "name_call"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 105.43,
+      "end": 113.7,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "ppph"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 113.7,
+      "end": 116.42,
+      "call_role": "mix",
+      "recommended_actions": [
+        "ietora"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 117.83,
+      "end": 119.22,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "fufu_call"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 120.6,
+      "end": 121.98,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "fuwa_fuwa"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 121.98,
+      "end": 127.5,
+      "call_role": "mix",
+      "recommended_actions": [
+        "aiai_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 127.5,
+      "end": 138.52,
+      "call_role": "mix",
+      "recommended_actions": [
+        "bariyado_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 138.52,
+      "end": 149.56,
+      "call_role": "mix",
+      "recommended_actions": [
+        "ainu_kahen_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 159.21,
+      "end": 181.29,
+      "call_role": "mix",
+      "recommended_actions": [
+        "sekai_konton_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 181.29,
+      "end": 186.79,
+      "call_role": "mix",
+      "recommended_actions": [
+        "ietora"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 186.79,
+      "end": 197.84,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "tian_zhao"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 197.84,
+      "end": 214.39,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "tian_qu_short"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 214.39,
+      "end": 225.42,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "cun_zheng"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 225.42,
+      "end": 236.46,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "lei_she"
+      ],
+      "notes": ""
+    }
+  ]
+}

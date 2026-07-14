@@ -1,0 +1,97 @@
+{
+  "segments": [
+    {
+      "start": 0.91,
+      "end": 16.79,
+      "music_label": "intro"
+    },
+    {
+      "start": 16.79,
+      "end": 37.88,
+      "music_label": "verse"
+    },
+    {
+      "start": 37.88,
+      "end": 51.07,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 51.07,
+      "end": 56.34,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 56.34,
+      "end": 87.99,
+      "music_label": "chorus"
+    },
+    {
+      "start": 87.99,
+      "end": 93.27,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 93.27,
+      "end": 114.38,
+      "music_label": "verse"
+    },
+    {
+      "start": 114.38,
+      "end": 127.55,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 127.55,
+      "end": 132.83,
+      "music_label": "verse"
+    },
+    {
+      "start": 132.83,
+      "end": 154.09,
+      "music_label": "chorus"
+    },
+    {
+      "start": 154.09,
+      "end": 156.56,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 156.56,
+      "end": 159.2,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 159.2,
+      "end": 180.3,
+      "music_label": "bridge"
+    },
+    {
+      "start": 180.3,
+      "end": 214.58,
+      "music_label": "chorus"
+    },
+    {
+      "start": 214.58,
+      "end": 217.38,
+      "music_label": "outro"
+    },
+    {
+      "start": 217.38,
+      "end": 222.1,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "heroic_advent",
+    "title": "heroic_advent",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/heroic_advent.mp3",
+    "bpm": 182,
+    "call_bpm": 91.0,
+    "call_bar_multiplier": 0.5,
+    "meter": "4/4"
+  }
+}

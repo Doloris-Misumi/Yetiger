@@ -1,0 +1,83 @@
+{
+  "frozen_at": "2026-07-06T17:38:05+08:00",
+  "status": "current_online_prototype_candidate",
+  "run_id": "muq_seed46_110songs_tail_merge",
+  "checkpoint": "runs/muq_seed46_110songs_tail_merge/checkpoint.pt",
+  "training_metrics": "runs/muq_seed46_110songs_tail_merge/metrics.json",
+  "paper_test_metrics": "test_results_bar_coarse_muq_paper_test_seed46.json",
+  "model": {
+    "backbone": "muq",
+    "backbone_model": "OpenMuQ/MuQ-large-msd-iter",
+    "target_level": "coarse",
+    "labels": [
+      "bridge",
+      "chorus",
+      "instrumental",
+      "intro",
+      "outro",
+      "pre_chorus",
+      "verse"
+    ],
+    "pool_mode": "meanmaxstd",
+    "feature_layers": [4, 8, 12],
+    "mert_layers": null,
+    "muq_layers": [4, 8, 12],
+    "muq_chunk_seconds": 30.0,
+    "muq_overlap_seconds": 1.0,
+    "seed": 46,
+    "n_songs": 110,
+    "split": {
+      "train": 85,
+      "validation": 10,
+      "dev_test": 5,
+      "paper_test": 10
+    }
+  },
+  "inference": {
+    "postprocess": {
+      "mode": "merge",
+      "smoothing_window": 1,
+      "transition_penalty": 0.0,
+      "use_transition_grammar": false,
+      "use_min_duration": true,
+      "min_bars": {
+        "bridge": 2,
+        "chorus": 3,
+        "instrumental": 2,
+        "intro": 2,
+        "outro": 2,
+        "pre_chorus": 2,
+        "verse": 3
+      }
+    },
+    "tail_downbeat_extension": {
+      "enabled": true,
+      "target": "annotation_end",
+      "lookback_bars": 8,
+      "tolerance_s": 0.5,
+      "max_new_downbeats": 64
+    }
+  },
+  "paper_test_summary": {
+    "bar_accuracy_mean": 0.8605,
+    "bar_macro_f1_mean": 0.7446,
+    "segment_macro_f1_mean": 0.7659,
+    "boundary_f1_0_5s_mean": 0.4909,
+    "boundary_f1_3s_mean": 0.7777,
+    "per_class_bar_f1": {
+      "bridge": 0.2608,
+      "chorus": 0.9137,
+      "instrumental": 0.8984,
+      "intro": 0.8196,
+      "outro": 0.7047,
+      "pre_chorus": 0.7339,
+      "verse": 0.8812
+    }
+  },
+  "known_limitations": [
+    "bridge remains weak and should be treated as a soft cue downstream.",
+    "pre_chorus is improved over MERT on seed46 but still needs downstream continuity rules.",
+    "brushupbrassup and dokidokisingout remain useful stress tests for section-boundary robustness."
+  ],
+  "recommended_test_command": "venv\\Scripts\\python.exe test_bar.py --data-dir . --backbone muq --model-path runs\\muq_seed46_110songs_tail_merge\\checkpoint.pt --cache-dir cache --pool-mode meanmaxstd --muq-layers 4 8 12 --muq-chunk-seconds 30 --muq-overlap-seconds 1 --postprocess merge --eval-split paper_test"
+}

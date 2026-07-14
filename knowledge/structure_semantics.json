@@ -1,0 +1,464 @@
+{
+  "_description": "Structured semantic contract for music-section labels used by support action matching.",
+  "_version": "0.2.0",
+  "_note": "Fine labels inherit from coarse labels. Hard filters should apply forbidden categories first, then use discouraged categories as score penalties.",
+  "_coarse_labels": [
+    "bridge",
+    "chorus",
+    "instrumental",
+    "intro",
+    "outro",
+    "pre_chorus",
+    "verse"
+  ],
+  "_fine_labels": [
+    "bridge",
+    "chorus",
+    "instrumental_break",
+    "intro",
+    "outro",
+    "post_chorus",
+    "pre_chorus",
+    "pre_chorus_build",
+    "solo",
+    "verse"
+  ],
+  "_arrangement_rules": {
+    "underground_gei_continuity": {
+      "description": "Underground-gei sections should feel like a continuous physical phrase when adjacent high-energy sections support it. Avoid repeatedly starting and stopping underground-gei with ordinary call/MIX in between.",
+      "chainable_labels": [
+        "chorus",
+        "post_chorus",
+        "instrumental",
+        "instrumental_break"
+      ],
+      "avoid_patterns": [
+        [
+          "underground_gei",
+          "mix",
+          "underground_gei"
+        ],
+        [
+          "underground_gei",
+          "rhythmcall",
+          "underground_gei"
+        ]
+      ],
+      "policy": "If both neighboring chainable sections strongly support underground-gei, boost underground-gei continuation in the middle chainable section and penalize non-gei interruptions. Use call/MIX as a transition only when the gei chain naturally starts or ends."
+    }
+  },
+  "intro": {
+    "level": "coarse_and_fine",
+    "inherits": null,
+    "coarse_label": "intro",
+    "phase": "recognition_opening",
+    "description": "The song opening where the audience recognizes the track and settles into the tempo.",
+    "vibe": [
+      "anticipation",
+      "recognition",
+      "settling_in"
+    ],
+    "typical_duration_bars": {
+      "min": 4,
+      "max": 16
+    },
+    "allowed_categories": [
+      "keepspace",
+      "rhythmcall",
+      "mix"
+    ],
+    "discouraged_categories": [
+      "underground_gei"
+    ],
+    "forbidden_categories": [],
+    "preferred_action_traits": [
+      "simple",
+      "iconic",
+      "known_intro_tradition"
+    ],
+    "forbidden_action_traits": [
+      "complex_choreography_without_song_tradition"
+    ],
+    "notes": [
+      "Use a signature intro call or short MIX only when the song/context supports it."
+    ]
+  },
+  "verse": {
+    "level": "coarse_and_fine",
+    "inherits": null,
+    "coarse_label": "verse",
+    "phase": "lyric_narrative",
+    "description": "The narrative body of the song where lyrics and vocal phrasing need space.",
+    "vibe": [
+      "listening",
+      "narrative",
+      "moderate_energy"
+    ],
+    "typical_duration_bars": {
+      "min": 8,
+      "max": 32
+    },
+    "allowed_categories": [
+      "keepspace",
+      "rhythmcall"
+    ],
+    "discouraged_categories": [
+      "mix"
+    ],
+    "forbidden_categories": [
+      "underground_gei"
+    ],
+    "preferred_action_traits": [
+      "light_response",
+      "post_phrase_gap",
+      "character_specific_only_with_context"
+    ],
+    "forbidden_action_traits": [
+      "dense_mix",
+      "large_body_gei"
+    ],
+    "notes": [
+      "Character-specific calls are acceptable only when metadata proves the character/franchise fit."
+    ]
+  },
+  "pre_chorus": {
+    "level": "coarse_and_fine",
+    "inherits": null,
+    "coarse_label": "pre_chorus",
+    "phase": "tension_build",
+    "description": "The build-up before chorus. Its main musical job is tension accumulation and energy transfer from verse into chorus, so a well-timed MIX can be more appropriate than silence.",
+    "vibe": [
+      "building",
+      "anticipation",
+      "rising_energy"
+    ],
+    "typical_duration_bars": {
+      "min": 4,
+      "max": 16
+    },
+    "allowed_categories": [
+      "rhythmcall",
+      "mix"
+    ],
+    "discouraged_categories": [
+      "keepspace"
+    ],
+    "forbidden_categories": [
+      "underground_gei"
+    ],
+    "preferred_action_traits": [
+      "rising_mix",
+      "leadin_mix",
+      "exact_bar_fit",
+      "chorus_entry_support"
+    ],
+    "forbidden_action_traits": [
+      "large_body_gei",
+      "duration_mismatch",
+      "contextless_franchise_specific_mix"
+    ],
+    "notes": [
+      "Pre-chorus should usually keep momentum rather than keep space. Prefer MIX or short rhythm calls that pull energy into the chorus.",
+      "Do not insert underground gei here. High-risk or franchise-specific MIX still needs matching song/live context."
+    ]
+  },
+  "pre_chorus_build": {
+    "level": "fine",
+    "inherits": "pre_chorus",
+    "coarse_label": "pre_chorus",
+    "phase": "late_tension_build",
+    "description": "The late pre-chorus ramp immediately before chorus entry. This is often a strong setup point for short, risky, or tradition-specific MIX such as Ie Tiger when the live policy and song context allow it.",
+    "vibe": [
+      "compressed_build",
+      "high_tension",
+      "before_release"
+    ],
+    "typical_duration_bars": {
+      "min": 1,
+      "max": 8
+    },
+    "allowed_categories": [
+      "mix",
+      "rhythmcall"
+    ],
+    "discouraged_categories": [
+      "keepspace"
+    ],
+    "forbidden_categories": [
+      "underground_gei"
+    ],
+    "preferred_action_traits": [
+      "high_tension_mix",
+      "ietora_when_allowed",
+      "jya_jya_mix",
+      "short_leadin",
+      "chorus_entry_support"
+    ],
+    "forbidden_action_traits": [
+      "underground_gei",
+      "duration_mismatch",
+      "artist_banned_ietora"
+    ],
+    "notes": [
+      "Build sections can carry high-risk MIX when they are short, rhythmically locked, and culturally allowed.",
+      "Keep space should be a fallback only when the vocal line is too dense, the song is restrained, or context is missing."
+    ]
+  },
+  "chorus": {
+    "level": "coarse_and_fine",
+    "inherits": null,
+    "coarse_label": "chorus",
+    "phase": "hook_release",
+    "description": "The main hook and emotional release of the song.",
+    "vibe": [
+      "release",
+      "high_energy",
+      "memorable_hook"
+    ],
+    "typical_duration_bars": {
+      "min": 8,
+      "max": 32
+    },
+    "allowed_categories": [
+      "keepspace",
+      "rhythmcall",
+      "underground_gei"
+    ],
+    "discouraged_categories": [
+      "mix"
+    ],
+    "forbidden_categories": [],
+    "preferred_action_traits": [
+      "singable",
+      "high_energy",
+      "audience_familiar"
+    ],
+    "forbidden_action_traits": [
+      "context_specific_without_metadata"
+    ],
+    "notes": [
+      "Underground gei belongs only in high-energy, sufficiently long, experienced-audience contexts."
+    ]
+  },
+  "post_chorus": {
+    "level": "fine",
+    "inherits": "chorus",
+    "coarse_label": "chorus",
+    "phase": "after_hook_interlude",
+    "description": "The after-hook or short interlude following a chorus; often energetic but less lyric-dense.",
+    "vibe": [
+      "afterglow",
+      "interlude",
+      "high_energy_gap"
+    ],
+    "typical_duration_bars": {
+      "min": 2,
+      "max": 16
+    },
+    "allowed_categories": [
+      "keepspace",
+      "rhythmcall",
+      "mix",
+      "underground_gei"
+    ],
+    "discouraged_categories": [],
+    "forbidden_categories": [],
+    "preferred_action_traits": [
+      "short_mix",
+      "simple_call",
+      "known_post_chorus_tradition"
+    ],
+    "forbidden_action_traits": [
+      "overlong_action_in_short_gap"
+    ],
+    "notes": [
+      "This is safer for MIX than the sung chorus when vocals leave enough room."
+    ]
+  },
+  "instrumental": {
+    "level": "coarse",
+    "inherits": null,
+    "coarse_label": "instrumental",
+    "phase": "vocal_gap_or_performance",
+    "description": "A coarse instrumental region without primary lead vocals.",
+    "vibe": [
+      "vocal_gap",
+      "performance_focus",
+      "participation_window"
+    ],
+    "typical_duration_bars": {
+      "min": 4,
+      "max": 32
+    },
+    "allowed_categories": [
+      "keepspace",
+      "rhythmcall",
+      "mix",
+      "underground_gei"
+    ],
+    "discouraged_categories": [],
+    "forbidden_categories": [],
+    "preferred_action_traits": [
+      "bar_fit_exact",
+      "beat_stable",
+      "low_vocal_density"
+    ],
+    "forbidden_action_traits": [
+      "clashing_with_solo_focus"
+    ],
+    "notes": [
+      "MIX is most natural here, but solos may need a quieter treatment."
+    ]
+  },
+  "instrumental_break": {
+    "level": "fine",
+    "inherits": "instrumental",
+    "coarse_label": "instrumental",
+    "phase": "vocal_gap_break",
+    "description": "A non-vocal break, riff, or interlude with room for crowd participation.",
+    "vibe": [
+      "vocal_gap",
+      "beat_stable",
+      "participatory"
+    ],
+    "typical_duration_bars": {
+      "min": 2,
+      "max": 32
+    },
+    "allowed_categories": [
+      "keepspace",
+      "rhythmcall",
+      "mix",
+      "underground_gei"
+    ],
+    "discouraged_categories": [],
+    "forbidden_categories": [],
+    "preferred_action_traits": [
+      "exact_bar_length",
+      "low_vocal_density",
+      "known_mix_template"
+    ],
+    "forbidden_action_traits": [
+      "duration_mismatch"
+    ],
+    "notes": [
+      "Use the library duration requirements strictly; many MIX actions should not be compressed."
+    ]
+  },
+  "solo": {
+    "level": "fine",
+    "inherits": "instrumental",
+    "coarse_label": "instrumental",
+    "phase": "instrument_spotlight",
+    "description": "A focused instrumental solo with clear bar lines. Because the beat grid is often exposed and easy to feel, a well-fitted MIX can be very comfortable here while still respecting the performer.",
+    "vibe": [
+      "spotlight",
+      "musicianship",
+      "clear_barline",
+      "mixable_solo"
+    ],
+    "typical_duration_bars": {
+      "min": 4,
+      "max": 32
+    },
+    "allowed_categories": [
+      "mix",
+      "rhythmcall",
+      "keepspace"
+    ],
+    "discouraged_categories": [
+      "keepspace"
+    ],
+    "forbidden_categories": [
+      "underground_gei"
+    ],
+    "preferred_action_traits": [
+      "clear_barline_mix",
+      "exact_bar_fit",
+      "instrumental_riff_support",
+      "oshi_focus_if_relevant"
+    ],
+    "forbidden_action_traits": [
+      "duration_mismatch",
+      "large_body_gei"
+    ],
+    "notes": [
+      "Prefer MIX when the solo has a stable beat and clean bar count.",
+      "Keep space remains a fallback for emotional or highly expressive solos where chanting would distract."
+    ]
+  },
+  "bridge": {
+    "level": "coarse_and_fine",
+    "inherits": null,
+    "coarse_label": "bridge",
+    "phase": "contrast_transition",
+    "description": "A contrasting section that often dips, reflects, or redirects before the final stretch.",
+    "vibe": [
+      "contrast",
+      "reflection",
+      "transition"
+    ],
+    "typical_duration_bars": {
+      "min": 4,
+      "max": 16
+    },
+    "allowed_categories": [
+      "keepspace",
+      "rhythmcall"
+    ],
+    "discouraged_categories": [
+      "mix",
+      "underground_gei"
+    ],
+    "forbidden_categories": [],
+    "preferred_action_traits": [
+      "moderate",
+      "light_clap",
+      "known_bridge_tradition"
+    ],
+    "forbidden_action_traits": [
+      "unmotivated_climax_action"
+    ],
+    "notes": [
+      "Bridge-specific MIX needs song tradition or a clear vocal gap; otherwise keep it restrained."
+    ]
+  },
+  "outro": {
+    "level": "coarse_and_fine",
+    "inherits": null,
+    "coarse_label": "outro",
+    "phase": "closure",
+    "description": "The closing section where the song resolves or fades.",
+    "vibe": [
+      "closure",
+      "farewell",
+      "resolution"
+    ],
+    "typical_duration_bars": {
+      "min": 2,
+      "max": 16
+    },
+    "allowed_categories": [
+      "keepspace",
+      "rhythmcall"
+    ],
+    "discouraged_categories": [
+      "mix"
+    ],
+    "forbidden_categories": [
+      "underground_gei"
+    ],
+    "preferred_action_traits": [
+      "simple",
+      "farewell",
+      "sing_along_if_known"
+    ],
+    "forbidden_action_traits": [
+      "new_complex_action",
+      "underground_gei"
+    ],
+    "notes": [
+      "Only use ending MIX when there is a known high-energy outro tradition."
+    ]
+  }
+}

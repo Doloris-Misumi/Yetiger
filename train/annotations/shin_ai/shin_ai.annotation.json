@@ -1,0 +1,112 @@
+{
+  "segments": [
+    {
+      "start": 0.76,
+      "end": 24.67,
+      "music_label": "intro"
+    },
+    {
+      "start": 24.67,
+      "end": 54.67,
+      "music_label": "verse"
+    },
+    {
+      "start": 54.67,
+      "end": 65.11,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 65.11,
+      "end": 72.06,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 72.06,
+      "end": 103.37,
+      "music_label": "chorus"
+    },
+    {
+      "start": 103.37,
+      "end": 106.85,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 106.85,
+      "end": 110.32,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 110.32,
+      "end": 125.98,
+      "music_label": "verse"
+    },
+    {
+      "start": 125.98,
+      "end": 136.42,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 136.42,
+      "end": 143.37,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 143.37,
+      "end": 167.72,
+      "music_label": "chorus"
+    },
+    {
+      "start": 167.72,
+      "end": 171.2,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 171.2,
+      "end": 174.67,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 174.67,
+      "end": 197.28,
+      "music_label": "bridge"
+    },
+    {
+      "start": 197.28,
+      "end": 212.94,
+      "music_label": "solo"
+    },
+    {
+      "start": 212.94,
+      "end": 230.32,
+      "music_label": "bridge"
+    },
+    {
+      "start": 230.32,
+      "end": 265.11,
+      "music_label": "chorus"
+    },
+    {
+      "start": 265.11,
+      "end": 266.85,
+      "music_label": "outro"
+    },
+    {
+      "start": 266.85,
+      "end": 273.24,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "shin_ai",
+    "title": "shin_ai",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/shin_ai.mp3",
+    "bpm": 140,
+    "call_bpm": 70.0,
+    "call_bar_multiplier": 0.5,
+    "meter": "4/4"
+  }
+}

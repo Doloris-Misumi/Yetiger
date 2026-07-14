@@ -1,0 +1,92 @@
+{
+  "segments": [
+    {
+      "start": 0.68,
+      "end": 10.53,
+      "music_label": "chorus"
+    },
+    {
+      "start": 10.53,
+      "end": 20.37,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 20.37,
+      "end": 40.07,
+      "music_label": "verse"
+    },
+    {
+      "start": 40.07,
+      "end": 44.99,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 44.99,
+      "end": 49.92,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 49.92,
+      "end": 78.22,
+      "music_label": "chorus"
+    },
+    {
+      "start": 78.22,
+      "end": 80.68,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 80.68,
+      "end": 88.07,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 88.07,
+      "end": 108.99,
+      "music_label": "bridge"
+    },
+    {
+      "start": 108.99,
+      "end": 118.84,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 118.84,
+      "end": 126.23,
+      "music_label": "bridge"
+    },
+    {
+      "start": 126.23,
+      "end": 150.84,
+      "music_label": "chorus"
+    },
+    {
+      "start": 150.84,
+      "end": 153.31,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 153.31,
+      "end": 171.77,
+      "music_label": "outro"
+    },
+    {
+      "start": 171.77,
+      "end": 177.02,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "animarupartykaisai-chuu",
+    "title": "animarupartykaisai-chuu",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/animarupartykaisai-chuu.mp3",
+    "bpm": 97,
+    "call_bpm": 97,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  }
+}

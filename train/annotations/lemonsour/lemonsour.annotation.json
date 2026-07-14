@@ -1,0 +1,72 @@
+{
+  "segments": [
+    {
+      "start": 0.91,
+      "end": 16.04,
+      "music_label": "intro"
+    },
+    {
+      "start": 16.04,
+      "end": 46.27,
+      "music_label": "verse"
+    },
+    {
+      "start": 46.27,
+      "end": 53.82,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 53.82,
+      "end": 63.28,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 63.28,
+      "end": 93.51,
+      "music_label": "chorus"
+    },
+    {
+      "start": 93.51,
+      "end": 108.63,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 108.63,
+      "end": 136.97,
+      "music_label": "verse"
+    },
+    {
+      "start": 136.97,
+      "end": 152.09,
+      "music_label": "solo"
+    },
+    {
+      "start": 152.09,
+      "end": 244.7,
+      "music_label": "chorus"
+    },
+    {
+      "start": 244.7,
+      "end": 261.7,
+      "music_label": "outro"
+    },
+    {
+      "start": 261.7,
+      "end": 264.68,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "lemonsour",
+    "title": "lemonsour",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/lemonsour.mp3",
+    "bpm": 128,
+    "call_bpm": 64.0,
+    "call_bar_multiplier": 0.5,
+    "meter": "4/4"
+  }
+}

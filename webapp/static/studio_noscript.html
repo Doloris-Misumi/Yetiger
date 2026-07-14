@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>No Script</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div><h1>No Script Test</h1></div>
+      <div class="top-actions"><a class="back-link" href="./index.html">← 返回入口</a></div>
+    </header>
+    <section class="workspace">
+      <aside class="control-panel">
+        <form class="upload-form">
+          <label class="drop-zone">
+            <input type="file" accept="audio/*" />
+            <span class="drop-title">拖放音频</span>
+          </label>
+          <button type="submit">开始分析</button>
+        </form>
+      </aside>
+      <section class="main-panel">
+        <div class="preview-panel">
+          <canvas id="videoCanvas" width="1280" height="720"></canvas>
+          <audio id="audioPlayer" controls></audio>
+        </div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>

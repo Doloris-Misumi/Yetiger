@@ -1,0 +1,328 @@
+{
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "more_jump_more",
+    "title": "MORE JUMP MORE",
+    "artist": "",
+    "franchise": "project_sekai",
+    "audio_path": "train/songs/MORE_JUMP_MORE.mp3",
+    "bpm": 102,
+    "call_bpm": 102,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  },
+  "segments": [
+    {
+      "start": 0,
+      "end": 1.11,
+      "music_label": "intro",
+      "notes": ""
+    },
+    {
+      "start": 1.11,
+      "end": 10.62,
+      "music_label": "chorus",
+      "notes": ""
+    },
+    {
+      "start": 10.62,
+      "end": 12.99,
+      "music_label": "instrumental_break",
+      "notes": ""
+    },
+    {
+      "start": 12.99,
+      "end": 22.5,
+      "music_label": "instrumental_break",
+      "notes": ""
+    },
+    {
+      "start": 22.5,
+      "end": 41.51,
+      "music_label": "verse",
+      "notes": ""
+    },
+    {
+      "start": 41.51,
+      "end": 51.01,
+      "music_label": "pre_chorus",
+      "notes": ""
+    },
+    {
+      "start": 51.01,
+      "end": 79.53,
+      "music_label": "chorus",
+      "notes": ""
+    },
+
+    {
+      "start": 79.53,
+      "end": 89.04,
+      "music_label": "instrumental_break",
+      "notes": ""
+    },
+    {
+      "start": 89.04,
+      "end": 91.41,
+      "music_label": "instrumental_break",
+      "notes": ""
+    },
+    {
+      "start": 91.41,
+      "end": 110.42,
+      "music_label": "verse",
+      "notes": ""
+    },
+    {
+      "start": 110.42,
+      "end": 129.44,
+      "music_label": "pre_chorus",
+      "notes": ""
+    },
+    {
+      "start": 129.44,
+      "end": 169.82,
+      "music_label": "chorus",
+      "notes": ""
+    },
+    {
+      "start": 169.82,
+      "end": 179.34,
+      "music_label": "outro",
+      "notes": ""
+    },
+    {
+      "start": 179.34,
+      "end": 182.13,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "call_spans": [
+    {
+      "start": 1.11,
+      "end": 5.86,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "name_call"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 5.86,
+      "end": 10.62,
+      "call_role": "mix",
+      "recommended_actions": [
+        "myhontousuke"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 10.62,
+      "end": 12.99,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "vocal_chant"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 12.99,
+      "end": 22.5,
+      "call_role": "mix",
+      "recommended_actions": [
+        "standard_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 22.5,
+      "end": 26.06,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "clap"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 26.06,
+      "end": 27.25,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "vocal_chant"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 27.25,
+      "end": 41.51,
+      "call_role": "mix",
+      "recommended_actions": [
+        "bismarck_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 41.51,
+      "end": 46.26,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "ppph"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 46.26,
+      "end": 51.01,
+      "call_role": "mix",
+      "recommended_actions": [
+        "ietora"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 51.01,
+      "end": 55.76,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "sing_along"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 55.76,
+      "end": 60.52,
+      "call_role": "mix",
+      "recommended_actions": [
+        "aiai_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 60.52,
+      "end": 70.02,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "sing_along"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 70.02,
+      "end": 79.53,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "sing_along"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 79.53,
+      "end": 89.04,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "sing_along"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 89.04,
+      "end": 91.41,
+      "call_role": "mix",
+      "recommended_actions": [
+        "japanese_mix_second_half"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 91.41,
+      "end": 94.97,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "clap"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 94.97,
+      "end": 96.16,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "vocal_chant"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 96.16,
+      "end": 99.73,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "clap"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 99.73,
+      "end": 100.92,
+      "call_role": "rhythmcall",
+      "recommended_actions": [
+        "vocal_chant"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 100.92,
+      "end": 110.42,
+      "call_role": "mix",
+      "recommended_actions": [
+        "pan_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 110.42,
+      "end": 129.44,
+      "call_role": "mix",
+      "recommended_actions": [
+        "tsunagaridai_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 129.44,
+      "end": 138.94,
+      "call_role": "mix",
+      "recommended_actions": [
+        "sekai_konton_mix_first_half"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 138.94,
+      "end": 148.45,
+      "call_role": "underground_gei",
+      "recommended_actions": [
+        "lei_she"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 148.45,
+      "end": 167.45,
+      "call_role": "mix",
+      "recommended_actions": [
+        "ietora_konzetsu_mix"
+      ],
+      "notes": ""
+    },
+    {
+      "start": 169.82,
+      "end": 179.34,
+      "call_role": "mix",
+      "recommended_actions": [
+        "ainu_mix"
+      ],
+      "notes": ""
+    }
+  ]
+}

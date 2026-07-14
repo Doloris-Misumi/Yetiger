@@ -1,0 +1,102 @@
+{
+  "segments": [
+    {
+      "start": 1.72,
+      "end": 11.61,
+      "music_label": "chorus"
+    },
+    {
+      "start": 11.61,
+      "end": 23.98,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 23.98,
+      "end": 46.25,
+      "music_label": "verse"
+    },
+    {
+      "start": 46.25,
+      "end": 56.14,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 56.14,
+      "end": 61.09,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 61.09,
+      "end": 90.78,
+      "music_label": "chorus"
+    },
+    {
+      "start": 90.78,
+      "end": 100.69,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 100.69,
+      "end": 122.95,
+      "music_label": "verse"
+    },
+    {
+      "start": 122.95,
+      "end": 132.85,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 132.85,
+      "end": 137.78,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 137.78,
+      "end": 160.05,
+      "music_label": "chorus"
+    },
+    {
+      "start": 160.05,
+      "end": 172.45,
+      "music_label": "solo"
+    },
+    {
+      "start": 172.45,
+      "end": 192.22,
+      "music_label": "bridge"
+    },
+    {
+      "start": 192.22,
+      "end": 214.5,
+      "music_label": "chorus"
+    },
+    {
+      "start": 214.5,
+      "end": 226.56,
+      "music_label": "chorus"
+    },
+    {
+      "start": 226.56,
+      "end": 244.04,
+      "music_label": "outro"
+    },
+    {
+      "start": 244.04,
+      "end": 249.15,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "dokidokisingout",
+    "title": "dokidokisingout",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/dokidokisingout.mp3",
+    "bpm": 97,
+    "call_bpm": 97,
+    "call_bar_multiplier": 1.0,
+    "meter": "4/4"
+  }
+}

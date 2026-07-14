@@ -1,0 +1,87 @@
+{
+  "segments": [
+    {
+      "start": 2.36,
+      "end": 16.91,
+      "music_label": "intro"
+    },
+    {
+      "start": 16.91,
+      "end": 46.24,
+      "music_label": "verse"
+    },
+    {
+      "start": 46.24,
+      "end": 53.51,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 53.51,
+      "end": 61.0,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 61.0,
+      "end": 90.1,
+      "music_label": "chorus"
+    },
+    {
+      "start": 90.1,
+      "end": 93.73,
+      "music_label": "post_chorus"
+    },
+    {
+      "start": 93.73,
+      "end": 104.42,
+      "music_label": "instrumental_break"
+    },
+    {
+      "start": 104.42,
+      "end": 118.98,
+      "music_label": "verse"
+    },
+    {
+      "start": 118.98,
+      "end": 126.24,
+      "music_label": "pre_chorus"
+    },
+    {
+      "start": 126.24,
+      "end": 133.64,
+      "music_label": "pre_chorus_build"
+    },
+    {
+      "start": 133.64,
+      "end": 151.69,
+      "music_label": "bridge"
+    },
+    {
+      "start": 151.69,
+      "end": 184.19,
+      "music_label": "chorus"
+    },
+    {
+      "start": 184.19,
+      "end": 192.17,
+      "music_label": "outro"
+    },
+    {
+      "start": 192.17,
+      "end": 196.54,
+      "music_label": "end",
+      "notes": "annotation_marker_only; excluded_from_training_and_inference"
+    }
+  ],
+  "annotation_version": "0.2.0",
+  "song": {
+    "song_id": "dongaragasshan",
+    "title": "dongaragasshan",
+    "artist": "",
+    "franchise": "",
+    "audio_path": "train/songs/dongaragasshan.mp3",
+    "bpm": 133,
+    "call_bpm": 66.5,
+    "call_bar_multiplier": 0.5,
+    "meter": "4/4"
+  }
+}
