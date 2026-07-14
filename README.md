@@ -131,7 +131,34 @@ Linux / macOS：
 .venv/bin/python pre_download_models.py
 ```
 
-## 五、常见问题
+## 五、可选示例音频
+
+仓库里包含 10 首示例歌曲的分析 JSON，但不包含商业歌曲 MP3。公开发布时不要把没有授权的原曲音频提交到 GitHub。
+
+如果你有合法来源的示例音频，可以放到：
+
+```text
+example_audio/
+```
+
+文件名使用示例歌曲 ID，例如：
+
+```text
+example_audio/athiscode.mp3
+example_audio/brushupbrassup.mp3
+example_audio/divinespell.mp3
+example_audio/dokidokisingout.mp3
+example_audio/futarikoto.mp3
+example_audio/itsuaietara.mp3
+example_audio/kokokarakokokara.mp3
+example_audio/lemonsour.mp3
+example_audio/shunkansummerday.mp3
+example_audio/soundscape.mp3
+```
+
+支持 `.mp3`、`.wav`、`.flac`、`.m4a`、`.ogg`。添加后重启 YesTiger，再加载示例歌曲，播放器就会使用对应本地音频。
+
+## 六、常见问题
 
 ### 页面只有链接和原生按钮，没有居中布局 / 拖拽区 / canvas
 
@@ -179,7 +206,7 @@ webapp_runs/
 
 备份这个目录即可保留用户数据。
 
-## 六、项目目录
+## 七、项目目录
 
 ```text
 webapp/                 网页与 Python HTTP API

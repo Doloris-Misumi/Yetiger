@@ -56,6 +56,7 @@
               <li>页面会加载示例分析结果，包含音乐段落、动作时间线、canvas 预览和音频播放器。</li>
             </ol>
             <p>示例不会改动你的本地用户数据，适合用来快速确认页面和播放器是否正常。</p>
+            <p>公开仓库默认不包含商业歌曲 MP3。若你有合法来源的示例音频，请放到 <code>example_audio/</code>，文件名使用歌曲 ID，例如 <code>athiscode.mp3</code>、<code>soundscape.mp3</code>。重启 YesTiger 后，示例播放器会自动使用对应本地音频。</p>
           </section>
 
           <section id="analyze" class="readme-section">
@@ -138,6 +139,8 @@
               <dd><code>webapp_runs/jobs/</code></dd>
               <dt>用户自定义 MIX / Call</dt>
               <dd><code>webapp_runs/custom_actions/</code></dd>
+              <dt>可选示例音频</dt>
+              <dd><code>example_audio/</code></dd>
               <dt>模型与特征缓存</dt>
               <dd><code>.hf/</code> 和 <code>webapp_runs/feature_cache/</code></dd>
             </dl>

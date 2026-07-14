@@ -1,6 +1,8 @@
 .venv
 .hf
 webapp_runs
+example_audio/*
+!example_audio/README.md
 __pycache__
 **/__pycache__
 *.pyc

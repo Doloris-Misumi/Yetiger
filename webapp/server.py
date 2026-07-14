@@ -77,6 +77,8 @@ def _get_video_exporter():
 
 
 STATIC_DIR = THIS_DIR / "static"
+EXAMPLE_AUDIO_DIR = Path(os.environ.get("YESTIGER_EXAMPLE_AUDIO_DIR") or (ROOT / "example_audio")).resolve()
+EXAMPLE_AUDIO_SUFFIXES = (".mp3", ".wav", ".flac", ".m4a", ".ogg")
 
 # In-memory job status for async analysis (bypasses Render 30s timeout)
 _job_status = {}
@@ -148,12 +150,18 @@ def guess_type(path: Path) -> str:
 
 
 def example_audio_path(song_id: str) -> Path:
-    annotation_path = _get_analyzer().TRAIN_DIR / "annotations" / song_id / f"{song_id}.annotation.json"
+    safe_song_id = slugify(song_id)
+    for suffix in EXAMPLE_AUDIO_SUFFIXES:
+        candidate = EXAMPLE_AUDIO_DIR / f"{safe_song_id}{suffix}"
+        if candidate.exists():
+            return candidate
+
+    annotation_path = ROOT / "train" / "annotations" / safe_song_id / f"{safe_song_id}.annotation.json"
     raw = None
     if annotation_path.exists():
         data = json.loads(annotation_path.read_text(encoding="utf-8"))
         raw = (data.get("song") or {}).get("audio_path")
-    path = Path(str(raw)) if raw else _get_analyzer().TRAIN_DIR / "songs" / f"{song_id}.mp3"
+    path = Path(str(raw)) if raw else ROOT / "train" / "songs" / f"{safe_song_id}.mp3"
     audio = path if path.is_absolute() else ROOT / path
     if not audio.exists():
         raise FileNotFoundError(audio)
@@ -349,7 +357,16 @@ class YesTigerHandler(BaseHTTPRequestHandler):
                 return
             if path.startswith("/api/example-audio/"):
                 song_id = slugify(path.split("/")[-1])
-                self.send_file(example_audio_path(song_id))
+                try:
+                    self.send_file(example_audio_path(song_id))
+                except FileNotFoundError:
+                    self.send_json({
+                        "error": "example_audio_not_found",
+                        "message": (
+                            f"Put a licensed audio file at example_audio/{song_id}.mp3 "
+                            "or set YESTIGER_EXAMPLE_AUDIO_DIR."
+                        ),
+                    }, status=404)
                 return
             if path.startswith("/api/jobs/"):
                 if path.endswith("/status"):
