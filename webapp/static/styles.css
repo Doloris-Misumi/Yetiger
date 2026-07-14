@@ -985,9 +985,9 @@ tr.has-gei-video td:first-child {
 
 .landing-cards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
-  max-width: 820px;
+  max-width: 1080px;
   width: 100%;
 }
 
@@ -1043,7 +1043,7 @@ tr.has-gei-video td:first-child {
   margin-top: 4px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 900px) {
   .landing-cards {
     grid-template-columns: 1fr;
   }
@@ -1068,6 +1068,159 @@ tr.has-gei-video td:first-child {
 .back-link:hover {
   border-color: #8796a8;
   color: #17202a;
+}
+
+/* ---- README page ---- */
+
+.readme-shell {
+  min-height: 100vh;
+  padding: 28px 24px 48px;
+}
+
+.readme-header {
+  max-width: 1180px;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.readme-kicker {
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.readme-lead {
+  max-width: 720px;
+  margin-top: 8px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.readme-layout {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.readme-nav {
+  position: sticky;
+  top: 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 10px;
+  display: grid;
+  gap: 4px;
+}
+
+.readme-nav a {
+  color: #475467;
+  text-decoration: none;
+  font-size: 13px;
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+
+.readme-nav a:hover {
+  background: #f1f4f8;
+  color: var(--ink);
+}
+
+.readme-content {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.readme-section {
+  padding: 22px 24px;
+  border-bottom: 1px solid var(--line);
+  scroll-margin-top: 18px;
+}
+
+.readme-section:last-child {
+  border-bottom: 0;
+}
+
+.readme-section h2 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.readme-section p,
+.readme-section li,
+.readme-paths {
+  color: #475467;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.readme-section ol,
+.readme-section ul {
+  margin: 0;
+  padding-left: 22px;
+  display: grid;
+  gap: 6px;
+}
+
+.readme-section p {
+  margin-top: 12px;
+}
+
+.readme-section code {
+  font-family: "Cascadia Code", "Consolas", monospace;
+  font-size: 12px;
+  background: #eef2f6;
+  color: #17202a;
+  border: 1px solid #d9e0e7;
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+
+.readme-paths {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 8px 12px;
+  margin: 0;
+}
+
+.readme-paths dt {
+  font-weight: 700;
+  color: #344054;
+}
+
+.readme-paths dd {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .readme-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .readme-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .readme-nav {
+    position: static;
+  }
+
+  .readme-paths {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ═══ MIX Builder ════════════════════════════════════════════════════ */

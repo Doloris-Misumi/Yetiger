@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>YesTiger 使用说明</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="readme-shell">
+      <header class="readme-header">
+        <div>
+          <p class="readme-kicker">YesTiger README</p>
+          <h1>使用说明</h1>
+          <p class="readme-lead">从示例歌曲开始，完成歌曲分析、段落修正、应援动作编辑、备注记录、自定义 MIX 和结果导出。</p>
+        </div>
+        <nav class="top-actions" aria-label="页面导航">
+          <a class="back-link" href="/index.html">返回入口</a>
+          <a class="back-link" href="/studio.html">Web Studio</a>
+          <a class="back-link" href="/builder.html">MIX Builder</a>
+        </nav>
+      </header>
+
+      <section class="readme-layout">
+        <nav class="readme-nav" aria-label="说明目录">
+          <a href="#quick-start">推荐流程</a>
+          <a href="#examples">查看示例</a>
+          <a href="#analyze">分析歌曲</a>
+          <a href="#segments">修改音乐段落</a>
+          <a href="#actions">修改应援动作</a>
+          <a href="#notes">自定义备注</a>
+          <a href="#mix-builder">自定义 MIX</a>
+          <a href="#save-export">保存与导出</a>
+          <a href="#storage">数据位置</a>
+        </nav>
+
+        <article class="readme-content">
+          <section id="quick-start" class="readme-section">
+            <h2>推荐流程</h2>
+            <ol>
+              <li>先进入 Web Studio，加载一首示例歌曲，熟悉时间线和右侧编辑区。</li>
+              <li>上传自己的 mp3、wav 或 flac，填写歌曲名后开始分析。</li>
+              <li>检查自动识别的音乐段落，必要时在右侧结构编辑器里修正。</li>
+              <li>检查动作时间线，替换不合适的应援动作或调整起止时间。</li>
+              <li>添加备注，保存编辑，再导出 JSON、Markdown 或教学视频。</li>
+              <li>需要新 MIX / Call 时，进入 MIX Builder 创建并保存到本地动作库。</li>
+            </ol>
+          </section>
+
+          <section id="examples" class="readme-section">
+            <h2>查看示例歌曲</h2>
+            <ol>
+              <li>打开 Web Studio。</li>
+              <li>在右上角的“示例歌曲”下拉框选择一首歌。</li>
+              <li>点击“加载”。</li>
+              <li>页面会加载示例分析结果，包含音乐段落、动作时间线、canvas 预览和音频播放器。</li>
+            </ol>
+            <p>示例不会改动你的本地用户数据，适合用来快速确认页面和播放器是否正常。</p>
+          </section>
+
+          <section id="analyze" class="readme-section">
+            <h2>分析自己的歌曲</h2>
+            <ol>
+              <li>把音频文件拖到左侧“拖放音频”区域，或者点击该区域选择文件。</li>
+              <li>在“歌曲名”输入框填写标题；不填时会使用文件名。</li>
+              <li>点击“开始分析”。</li>
+              <li>分析完成后，左侧会显示时长、速度、小节数和动作数，中间会显示 canvas、播放器和动作时间线。</li>
+            </ol>
+            <p>第一次分析可能比较慢，因为模型缓存、音频结构分析和特征提取都需要准备。等待时不要关闭终端窗口。</p>
+          </section>
+
+          <section id="segments" class="readme-section">
+            <h2>修改音乐段落</h2>
+            <ol>
+              <li>歌曲加载后，右侧会出现“结构编辑器”。</li>
+              <li>每一行代表一个音乐段落，可以修改开始时间、结束时间和段落标签。</li>
+              <li>常用标签包括 intro、verse、pre_chorus、chorus、bridge、solo、instrumental_break、outro。</li>
+              <li>需要拆分或补充段落时，点击“添加段落”。</li>
+              <li>调整完成后点击“保存编辑”。</li>
+            </ol>
+            <p>音乐段落会影响导出的结果，也会影响你后续理解动作为什么安排在某个位置。</p>
+          </section>
+
+          <section id="actions" class="readme-section">
+            <h2>修改应援动作和种类</h2>
+            <ol>
+              <li>中间的“动作时间线”展示当前歌曲的应援安排。</li>
+              <li>可以直接改每行动作的开始时间、结束时间、段落、动作、风险和文本。</li>
+              <li>动作输入框支持搜索；输入关键词后，从下拉结果里选择一个动作。</li>
+              <li>动作种类包括 keepspace、rhythmcall、mix 和 underground_gei。</li>
+              <li>使用时间线上方的筛选按钮，可以只看某一种动作。</li>
+              <li>使用每行的加号和删除按钮，可以插入或删除动作行。</li>
+            </ol>
+            <p>改完动作后，记得点击右侧的“保存编辑”，否则刷新页面后当前修改不会写入本地结果。</p>
+          </section>
+
+          <section id="notes" class="readme-section">
+            <h2>自定义备注</h2>
+            <ol>
+              <li>歌曲加载后，右侧会出现“备注 Notes”。</li>
+              <li>点击“添加备注”，填写备注的开始时间、结束时间和文字内容。</li>
+              <li>备注适合记录站位、颜色、特殊手势、现场提醒或个人练习要点。</li>
+              <li>完成后点击“保存备注”。</li>
+            </ol>
+            <p>备注会跟随当前歌曲结果保存在本地，可以和 JSON 结果一起备份。</p>
+          </section>
+
+          <section id="mix-builder" class="readme-section">
+            <h2>自定义 MIX / Call</h2>
+            <ol>
+              <li>从首页进入 MIX Builder。</li>
+              <li>填写 MIX 名称、类别、风险、小节数和中文别名。</li>
+              <li>在“小节内容”里逐小节填写喊词。</li>
+              <li>选择适用场景，例如 chorus、intro、bridge 或 instrumental_break。</li>
+              <li>右侧会实时预览生成的动作定义。</li>
+              <li>点击“保存到动作库”，这个动作会进入本机用户动作库。</li>
+            </ol>
+            <p>保存后的自定义动作会写入 <code>webapp_runs/custom_actions/</code>。回到 Web Studio 后，它会出现在动作搜索里，可以被手动选入时间线。</p>
+          </section>
+
+          <section id="save-export" class="readme-section">
+            <h2>保存与导出</h2>
+            <ul>
+              <li>“保存编辑”会保存音乐段落、动作时间线和备注到当前歌曲结果。</li>
+              <li>“导出 JSON”会下载完整结构化结果，适合继续处理或备份。</li>
+              <li>“导出 MD”会下载 Markdown 版 callbook，适合阅读和分享文字方案。</li>
+              <li>“下载教学视频”会用当前 canvas 和动作时间线生成 mp4。</li>
+              <li>“录制 WebM”会从浏览器端录制当前预览，适合快速留档。</li>
+            </ul>
+          </section>
+
+          <section id="storage" class="readme-section">
+            <h2>数据位置</h2>
+            <dl class="readme-paths">
+              <dt>上传音频</dt>
+              <dd><code>webapp_runs/uploads/</code></dd>
+              <dt>分析结果和保存后的编辑</dt>
+              <dd><code>webapp_runs/jobs/</code></dd>
+              <dt>用户自定义 MIX / Call</dt>
+              <dd><code>webapp_runs/custom_actions/</code></dd>
+              <dt>模型与特征缓存</dt>
+              <dd><code>.hf/</code> 和 <code>webapp_runs/feature_cache/</code></dd>
+            </dl>
+            <p>换电脑或重装前，备份 <code>webapp_runs/</code> 就能保留用户上传、编辑结果、备注和自定义动作。</p>
+          </section>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
