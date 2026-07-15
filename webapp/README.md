@@ -19,7 +19,9 @@ webapp/_archive/legacy_loso_webapp_20260630.zip
 ## Run
 
 ```powershell
-.\train\venv\Scripts\python.exe webapp\server.py --host 127.0.0.1 --port 8765
+cd D:\yetiger\yetiger
+powershell -ExecutionPolicy Bypass -File .\setup_windows.ps1
+powershell -ExecutionPolicy Bypass -File .\start_windows.ps1
 ```
 
 Then open:
