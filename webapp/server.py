@@ -310,7 +310,7 @@ class YesTigerHandler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(body)
 
-    def send_file(self, path: Path, download_name: str = None) -> None:
+    def send_file(self, path: Path, download_name: str = None, extra_headers: dict = None) -> None:
         if not path.exists() or not path.is_file():
             self.send_json({"error": "file_not_found"}, status=404)
             return
@@ -334,6 +334,8 @@ class YesTigerHandler(BaseHTTPRequestHandler):
             self.send_header("Content-Range", f"bytes {range_start}-{range_end}/{file_size}")
             self.send_header("Content-Length", str(chunk_size))
             self.send_header("Accept-Ranges", "bytes")
+            for name, value in (extra_headers or {}).items():
+                self.send_header(str(name), str(value))
             if download_name:
                 self.send_header("Content-Disposition", f'attachment; filename="{download_name}"')
             self.end_headers()
@@ -345,6 +347,8 @@ class YesTigerHandler(BaseHTTPRequestHandler):
         self.send_header("Content-Type", content_type)
         self.send_header("Content-Length", str(file_size))
         self.send_header("Accept-Ranges", "bytes")
+        for name, value in (extra_headers or {}).items():
+            self.send_header(str(name), str(value))
         if download_name:
             self.send_header("Content-Disposition", f'attachment; filename="{download_name}"')
         self.end_headers()
@@ -446,7 +450,11 @@ class YesTigerHandler(BaseHTTPRequestHandler):
                 action_id = unquote(path.split("/")[-1]).strip()
                 candidate = call_audio_path(action_id)
                 if candidate and candidate.exists():
-                    self.send_file(candidate)
+                    self.send_file(candidate, extra_headers={
+                        "Cache-Control": "no-store, max-age=0",
+                        "X-YesTiger-Root": str(ROOT),
+                        "X-YesTiger-Audio-File": str(candidate.resolve()),
+                    })
                     return
                 self.send_json({"error": "audio_not_found"}, status=404)
                 return

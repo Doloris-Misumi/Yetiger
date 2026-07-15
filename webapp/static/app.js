@@ -91,6 +91,7 @@ const CALL_AUDIO_MAP = {
   imi_fumei_ai_mix: "/api/call-audio/imi_fumei_ai_mix",
 };
 const missingCallAudioIds = new Set();
+const CALL_AUDIO_VERSION = "20260715-ietora-audible";
 
 function resolveApiBase() {
   const params = new URLSearchParams(window.location.search);
@@ -776,9 +777,10 @@ function updateCallAudio(current, time) {
 function callAudioUrlForAction(current) {
   const actionId = current?.action_id;
   if (!actionId || missingCallAudioIds.has(actionId)) return null;
-  if (CALL_AUDIO_MAP[actionId]) return CALL_AUDIO_MAP[actionId];
-  if (current?.role === "mix") return `/api/call-audio/${encodeURIComponent(actionId)}`;
-  return null;
+  const baseUrl = CALL_AUDIO_MAP[actionId] || (current?.role === "mix" ? `/api/call-audio/${encodeURIComponent(actionId)}` : null);
+  if (!baseUrl) return null;
+  const separator = baseUrl.includes("?") ? "&" : "?";
+  return `${baseUrl}${separator}v=${CALL_AUDIO_VERSION}`;
 }
 
 function drawTeachingCanvas(ctx, width, height, result, current, upcoming, currentMusic, duration, time) {
