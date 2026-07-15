@@ -1152,6 +1152,8 @@ def list_action_library() -> List[Dict[str, Any]]:
             "risk": str(action.get("risk") or "medium"),
             "typical_text": str(action.get("typical_text") or ""),
             "tutorial_text": action.get("tutorial_text"),
+            "aliases": action.get("aliases") or [],
+            "duration": action.get("duration") or {},
             "source": str(action.get("source") or "builtin"),
         }
         for action_id, action in sorted(library.items())

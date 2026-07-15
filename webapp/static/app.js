@@ -90,6 +90,7 @@ const CALL_AUDIO_MAP = {
   aiai_mix: "/api/call-audio/aiai_mix",
   imi_fumei_ai_mix: "/api/call-audio/imi_fumei_ai_mix",
 };
+const missingCallAudioIds = new Set();
 
 function resolveApiBase() {
   const params = new URLSearchParams(window.location.search);
@@ -555,8 +556,30 @@ function recalcBarCount(action) {
   if (!downbeats.length) return;
   const start = Number(action.start) || 0;
   const end = Number(action.end) || start;
-  const count = downbeats.filter((d) => d >= start - 0.01 && d < end + 0.01).length;
-  action.bar_count = count > 0 ? count : null;
+  if (end <= start) {
+    action.bar_count = null;
+    return;
+  }
+  const epsilon = 0.03;
+  let count = 0;
+  for (let i = 0; i < downbeats.length - 1; i++) {
+    const barStart = downbeats[i];
+    const barEnd = downbeats[i + 1];
+    const overlap = Math.min(end, barEnd) - Math.max(start, barStart);
+    if (overlap > epsilon && barEnd > barStart) count += 1;
+  }
+  if (count > 0) {
+    action.bar_count = count;
+    return;
+  }
+  const intervals = [];
+  for (let i = 0; i < downbeats.length - 1; i++) {
+    const length = downbeats[i + 1] - downbeats[i];
+    if (length > 0.2 && length < 20) intervals.push(length);
+  }
+  intervals.sort((a, b) => a - b);
+  const median = intervals.length ? intervals[Math.floor(intervals.length / 2)] : 0;
+  action.bar_count = median > 0 ? Math.max(1, Math.round((end - start) / median)) : null;
 }
 
 function recalcAllBarCounts() {
@@ -708,7 +731,7 @@ function updateGeiVideo(current, time) {
 
 function updateCallAudio(current, time) {
   const actionId = current?.action_id;
-  const audioSrc = CALL_AUDIO_MAP[actionId];
+  const audioSrc = callAudioUrlForAction(current);
   const audio = els.callAudioPlayer;
 
   if (!audioSrc || !current) {
@@ -721,6 +744,11 @@ function updateCallAudio(current, time) {
   const currentSrc = audio.getAttribute("src") || "";
   if (!currentSrc.includes(resolvedAudioSrc)) {
     audio.src = resolvedAudioSrc;
+    audio.onerror = () => {
+      if (actionId) missingCallAudioIds.add(actionId);
+      audio.pause();
+      audio.removeAttribute("src");
+    };
     audio.load();
   }
 
@@ -743,6 +771,14 @@ function updateCallAudio(current, time) {
   if (audio.paused) {
     audio.play().catch(() => {});
   }
+}
+
+function callAudioUrlForAction(current) {
+  const actionId = current?.action_id;
+  if (!actionId || missingCallAudioIds.has(actionId)) return null;
+  if (CALL_AUDIO_MAP[actionId]) return CALL_AUDIO_MAP[actionId];
+  if (current?.role === "mix") return `/api/call-audio/${encodeURIComponent(actionId)}`;
+  return null;
 }
 
 function drawTeachingCanvas(ctx, width, height, result, current, upcoming, currentMusic, duration, time) {
@@ -1352,9 +1388,47 @@ function filterActions(query) {
       const name = String(a.display_name || a.id || "").toLowerCase();
       const cat = String(a.category || "").toLowerCase();
       const id = String(a.id || "").toLowerCase();
-      return name.includes(q) || cat.includes(q) || id.includes(q);
+      const aliases = Array.isArray(a.aliases) ? a.aliases.join(" ").toLowerCase() : "";
+      return name.includes(q) || cat.includes(q) || id.includes(q) || aliases.includes(q);
     })
     .slice(0, 12);
+}
+
+function normalizeActionLookup(value) {
+  return String(value || "").trim().toLowerCase();
+}
+
+function findExactAction(value) {
+  const q = normalizeActionLookup(value);
+  if (!q) return null;
+  return state.actionLibrary.find((action) => {
+    const candidates = [
+      action.id,
+      action.display_name,
+      ...(Array.isArray(action.aliases) ? action.aliases : []),
+    ];
+    return candidates.some((candidate) => normalizeActionLookup(candidate) === q);
+  }) || null;
+}
+
+function preferredBars(action) {
+  const duration = action?.duration || {};
+  const bars = Number(duration.preferred_bars);
+  return duration.strict_bars && Number.isFinite(bars) && bars > 0 ? bars : null;
+}
+
+function applyActionToTimeline(index, action) {
+  const item = state.result?.timeline?.[index];
+  if (!item || !action) return;
+  item.action_id = action.id;
+  item.display_name = action.display_name || action.id;
+  item.role = action.category || item.role || "keepspace";
+  item.risk = action.risk || item.risk || "medium";
+  item.typical_text = action.typical_text || "";
+  item.tutorial_text = action.tutorial_text || null;
+  const bars = preferredBars(action);
+  if (bars !== null) item.bar_count = bars;
+  item.mode = "human_curated";
 }
 
 function bindActionSearchInputs() {
@@ -1427,24 +1501,17 @@ document.addEventListener("click", (e) => {
 function applyActionSelection(input, li) {
   const index = Number(input.dataset.index);
   const actionId = li.dataset.id;
-  const actionName = li.dataset.name;
-  const category = li.dataset.cat;
-  const risk = li.dataset.risk;
-  const text = li.dataset.text;
-  const role = category;
   const action = state.actionLibrary.find((a) => a.id === actionId);
-  const tutorial = action?.tutorial_text || null;
-
-  state.result.timeline[index].action_id = actionId;
-  state.result.timeline[index].display_name = actionName;
-  state.result.timeline[index].role = role;
-  state.result.timeline[index].risk = risk;
-  state.result.timeline[index].typical_text = text;
-  state.result.timeline[index].tutorial_text = tutorial;
-  state.result.timeline[index].mode = "human_curated";
+  applyActionToTimeline(index, action || {
+    id: actionId,
+    display_name: li.dataset.name,
+    category: li.dataset.cat,
+    risk: li.dataset.risk,
+    typical_text: li.dataset.text,
+  });
   state.timelineDirty = true;
 
-  input.value = actionName;
+  input.value = state.result.timeline[index].display_name;
   const dropdown = input.nextElementSibling;
   if (dropdown) dropdown.hidden = true;
   renderTimeline();
@@ -1731,7 +1798,18 @@ function bindEvents() {
     const index = Number(row.dataset.index);
     const field = input.dataset.field;
     if (state.result.timeline[index]) {
-      state.result.timeline[index][field] = input.value;
+      if (input.classList.contains("action-search")) {
+        const matched = findExactAction(input.value);
+        if (matched) {
+          applyActionToTimeline(index, matched);
+        } else {
+          state.result.timeline[index].display_name = input.value;
+          state.result.timeline[index].action_id = "";
+          state.result.timeline[index].mode = "human_curated";
+        }
+      } else {
+        state.result.timeline[index][field] = input.value;
+      }
       state.timelineDirty = true;
     }
   });

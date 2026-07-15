@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+import re
 from typing import Dict, Optional
 
 
@@ -45,4 +46,32 @@ CALL_AUDIO_FILES: Dict[str, Path] = {
 
 
 def call_audio_path(action_id: str) -> Optional[Path]:
-    return CALL_AUDIO_FILES.get(str(action_id or ""))
+    safe_id = str(action_id or "").strip()
+    if not re.fullmatch(r"[A-Za-z0-9_+\-]+", safe_id):
+        return None
+
+    explicit = CALL_AUDIO_FILES.get(safe_id)
+    if explicit and explicit.exists():
+        return explicit
+
+    root = ROOT / "call_audio"
+    action_dir = root / safe_id
+    processed_dir = action_dir / "processed"
+    candidates = [
+        processed_dir / f"{safe_id}_ota_throat_grit_m2.wav",
+        processed_dir / f"{safe_id}.wav",
+        action_dir / f"{safe_id}.wav",
+        action_dir / f"{safe_id}.m4a",
+        action_dir / f"{safe_id}.mp3",
+        root / f"{safe_id}.wav",
+        root / f"{safe_id}.m4a",
+        root / f"{safe_id}.mp3",
+    ]
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
+    if processed_dir.exists():
+        for candidate in sorted(processed_dir.glob("*")):
+            if candidate.suffix.lower() in {".wav", ".m4a", ".mp3", ".flac", ".ogg"}:
+                return candidate
+    return explicit if explicit and explicit.exists() else None
