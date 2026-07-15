@@ -1565,11 +1565,16 @@ async function loadExamples() {
     setStatus("示例已就绪");
   } catch (_apiError) {
     try {
-      data = await fetchJson("/examples/index.json");
+      data = await fetchJson("./examples/index.json");
       setStatus("静态示例就绪");
-    } catch (_staticError) {
-      setStatus("无可用示例");
-      return;
+    } catch (_relativeError) {
+      try {
+        data = await fetchJson("/examples/index.json");
+        setStatus("静态示例就绪");
+      } catch (_staticError) {
+        setStatus("无可用示例");
+        return;
+      }
     }
   }
   for (const song of data.songs || []) {
@@ -1647,11 +1652,17 @@ async function loadExample() {
     setStatus("示例就绪");
   } catch (_error) {
     try {
-      const data = await fetchJson(`/examples/${songId}.json`);
+      const data = await fetchJson(`./examples/${songId}.json`);
       setResult(data, data.audio_url);
       setStatus("静态示例就绪");
-    } catch (error) {
-      setStatus(`错误: ${error.message}`);
+    } catch (_relativeError) {
+      try {
+        const data = await fetchJson(`/examples/${songId}.json`);
+        setResult(data, data.audio_url);
+        setStatus("静态示例就绪");
+      } catch (error) {
+        setStatus(`错误: ${error.message}`);
+      }
     }
   }
 }

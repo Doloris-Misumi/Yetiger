@@ -149,6 +149,34 @@ def guess_type(path: Path) -> str:
     return mimetypes.guess_type(str(path))[0] or "application/octet-stream"
 
 
+def list_static_example_songs():
+    index_path = STATIC_DIR / "examples" / "index.json"
+    if index_path.exists():
+        try:
+            payload = json.loads(index_path.read_text(encoding="utf-8"))
+            songs = payload.get("songs") if isinstance(payload, dict) else None
+            if isinstance(songs, list):
+                return [
+                    {
+                        "song_id": slugify(song.get("song_id") or song.get("title") or ""),
+                        "title": str(song.get("title") or song.get("song_id") or ""),
+                    }
+                    for song in songs
+                    if isinstance(song, dict) and (song.get("song_id") or song.get("title"))
+                ]
+        except Exception as exc:
+            print(f"[examples] failed to read static index: {exc}", flush=True)
+
+    examples_dir = STATIC_DIR / "examples"
+    songs = []
+    for path in sorted(examples_dir.glob("*.json")):
+        if path.name == "index.json":
+            continue
+        song_id = slugify(path.stem)
+        songs.append({"song_id": song_id, "title": song_id})
+    return songs
+
+
 def example_audio_path(song_id: str) -> Path:
     safe_song_id = slugify(song_id)
     for suffix in EXAMPLE_AUDIO_SUFFIXES:
@@ -461,7 +489,7 @@ class YesTigerHandler(BaseHTTPRequestHandler):
         self.end_headers()
 
     def handle_songs(self) -> None:
-        self.send_json({"songs": _get_analyzer().list_example_songs()})
+        self.send_json({"songs": list_static_example_songs()})
 
     def handle_example(self, song_id: str) -> None:
         result = _get_analyzer().load_example_result(song_id)
