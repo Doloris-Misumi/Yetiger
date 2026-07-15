@@ -1560,20 +1560,16 @@ function setResult(result, audioUrl) {
 
 async function loadExamples() {
   let data;
-  if (!API_BASE) {
+  try {
+    data = await fetchJson(apiUrl("/api/songs"));
+    setStatus("示例已就绪");
+  } catch (_apiError) {
     try {
-      data = await fetchJson("./examples/index.json");
+      data = await fetchJson("/examples/index.json");
       setStatus("静态示例就绪");
-    } catch (_error) {
+    } catch (_staticError) {
       setStatus("无可用示例");
       return;
-    }
-  } else {
-    try {
-      data = await fetchJson(apiUrl("/api/songs"));
-    } catch (_error) {
-      data = await fetchJson("/examples/index.json");
-      setStatus("示例已就绪");
     }
   }
   for (const song of data.songs || []) {
@@ -1645,16 +1641,6 @@ async function loadExample() {
   const songId = els.exampleSelect.value;
   if (!songId) return;
   setStatus("正在加载示例...");
-  if (!API_BASE) {
-    try {
-      const data = await fetchJson(`./examples/${songId}.json`);
-      setResult(data, data.audio_url);
-      setStatus("静态示例就绪");
-    } catch (error) {
-      setStatus(`错误: ${error.message}`);
-    }
-    return;
-  }
   try {
     const data = await fetchJson(apiUrl(`/api/examples/${songId}`));
     setResult(data, data.audio_url);

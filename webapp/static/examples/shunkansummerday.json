@@ -159,24 +159,25 @@
       "action_plan": [
         {
           "start": 0.42,
-          "end": 15.58,
-          "time": "00:00.42-00:15.58",
+          "end": 13.05,
+          "time": "00:00.42-00:13.05",
           "action_id": "standard_mix_long",
-          "display_name": "Standard MIX +2-bar Extension",
-          "typical_text": "A~yosshaikuzo / _Taiga Faiya Saiba Faiba / _Daiba Baiba Jya-jya- / Faibo Waipa Yesukureipa",
+          "display_name": "Standard MIX +1-bar Extension",
+          "typical_text": "Uhai Uhai Uhai Uhai/A~yosshaikuzo / Taiga Faiya Saiba Faiba / Daiba Baiba Jya-jya / Faibo Waipa ",
           "risk": "medium",
-          "bar_count": 6.0,
+          "bar_count": 5.0,
           "tutorial_text": {
             "source": "MixAndCall",
             "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
-            "source_title": "スタンダードmix尺+2小節",
+            "source_title": "スタンダードmix尺+1小節",
             "language": "romaji",
-            "full_text": "A~yosshaikuzo\n_Taiga Faiya Saiba Faiba\n_Daiba Baiba Jya-jya-\nFaibo Waipa Yesukureipa",
+            "full_text": "Uhai Uhai Uhai Uhai\nA~yosshaikuzo\nTaiga Faiya Saiba Faiba\nDaiba Baiba Jya-jya-\nFaibo Waipa ",
             "bars": [
+              "Uhai Uhai Uhai Uhai",
               "A~yosshaikuzo",
-              "_Taiga Faiya Saiba Faiba",
-              "_Daiba Baiba Jya-jya-",
-              "Faibo Waipa Yesukureipa"
+              "Taiga Faiya Saiba Faiba",
+              "Daiba Baiba Jya-jya-",
+              "Faibo Waipa "
             ]
           },
           "confidence": 1.0,
@@ -191,11 +192,11 @@
           "section_end": 15.58,
           "section_estimated_bars": 6.0,
           "start": 0.42,
-          "end": 15.58,
-          "fit_bars": 6.0,
-          "action_fit_bars": 6.0,
+          "end": 13.05,
+          "fit_bars": 5.0,
+          "action_fit_bars": 5.0,
           "action_id": "standard_mix_long",
-          "action_name": "Standard MIX +2-bar Extension",
+          "action_name": "Standard MIX +1-bar Extension",
           "category": "mix",
           "risk": "medium",
           "confidence": 1.0,
@@ -1475,27 +1476,28 @@
   "timeline": [
     {
       "start": 0.42,
-      "end": 15.58,
-      "time": "00:00.42-00:15.58",
+      "end": 13.05,
+      "time": "00:00.42-00:13.05",
       "action_id": "standard_mix_long",
-      "display_name": "Standard MIX +2-bar Extension",
+      "display_name": "Standard MIX +1-bar Extension",
       "role": "mix",
       "music_label": "intro",
       "struct_label": "intro",
       "risk": "medium",
-      "bar_count": 6.0,
-      "typical_text": "A~yosshaikuzo / _Taiga Faiya Saiba Faiba / _Daiba Baiba Jya-jya- / Faibo Waipa Yesukureipa",
+      "bar_count": 5.0,
+      "typical_text": "Uhai Uhai Uhai Uhai/A~yosshaikuzo / Taiga Faiya Saiba Faiba / Daiba Baiba Jya-jya / Faibo Waipa ",
       "tutorial_text": {
         "source": "MixAndCall",
         "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
-        "source_title": "スタンダードmix尺+2小節",
+        "source_title": "スタンダードmix尺+1小節",
         "language": "romaji",
-        "full_text": "A~yosshaikuzo\n_Taiga Faiya Saiba Faiba\n_Daiba Baiba Jya-jya-\nFaibo Waipa Yesukureipa",
+        "full_text": "Uhai Uhai Uhai Uhai\nA~yosshaikuzo\nTaiga Faiya Saiba Faiba\nDaiba Baiba Jya-jya-\nFaibo Waipa ",
         "bars": [
+          "Uhai Uhai Uhai Uhai",
           "A~yosshaikuzo",
-          "_Taiga Faiya Saiba Faiba",
-          "_Daiba Baiba Jya-jya-",
-          "Faibo Waipa Yesukureipa"
+          "Taiga Faiya Saiba Faiba",
+          "Daiba Baiba Jya-jya-",
+          "Faibo Waipa "
         ]
       },
       "confidence": 1.0,
@@ -2161,11 +2163,11 @@
         "section_end": 15.58,
         "section_estimated_bars": 6.0,
         "start": 0.42,
-        "end": 15.58,
-        "fit_bars": 6.0,
-        "action_fit_bars": 6.0,
+        "end": 13.05,
+        "fit_bars": 5.0,
+        "action_fit_bars": 5.0,
         "action_id": "standard_mix_long",
-        "action_name": "Standard MIX +2-bar Extension",
+        "action_name": "Standard MIX +1-bar Extension",
         "category": "mix",
         "risk": "medium",
         "confidence": 1.0,
@@ -2798,7 +2800,7 @@
       "run_id": "muq_seed46_110songs_tail_merge"
     }
   },
-  "markdown": "# YesTiger Tutorial Plan: shunkansummerday\n\n| Time | Section | Role | Action | Bars | Risk | Confidence | Text |\n|---:|---|---|---|---:|---|---:|---|\n| 00:00.42-00:15.58 | intro | mix | Standard MIX +2-bar Extension | 6.0 | medium | 1.000 | A~yosshaikuzo / _Taiga Faiya Saiba Faiba / _Daiba Baiba Jya-jya- / Faibo Waipa Yesukureipa |\n| 00:15.58-00:20.63 | verse | rhythmcall | Oi Oi | 2.0 | low | 0.892 | Oi! Oi! |\n| 00:25.69-00:30.74 | verse | rhythmcall | PPPH | 2.0 | low | 0.906 | Pan-pa-pan, hyu! |\n| 00:35.79-00:38.32 | verse | rhythmcall | Hai Hai | 1.0 | low | 0.889 | Hai! Hai! |\n| 00:38.32-00:43.37 | pre_chorus | rhythmcall | PPPH | 2.0 | low | 0.956 | Pan-pa-pan, hyu! |\n| 00:43.37-00:53.47 | pre_chorus | mix | Japanese MIX Forward-Reverse Double Time | 4.0 | medium | 1.000 | _Jyokyo Tobi Kasen Shindou / _Ama Sen'i JinzouHiTora |\n| 00:53.47-00:56.00 | pre_chorus | mix | Ietora | 1.0 | high | 0.869 | _Yettaiga Yettaiga / _YettaigaFaiboWaipa / _Ye Ye Ye Ye / _YettaigaFaiboWaipa |\n| 00:56.00-01:16.22 | chorus | underground_gei | Gongfu She | 8.0 | high | 1.000 | Gongfu She underground-gei movement sequence. |\n| 01:16.22-01:36.44 | chorus+instrumental | underground_gei | Dian Bo She | 8.0 | high | 0.769 | Dian Bo She underground-gei movement sequence. |\n| 01:36.44-01:41.49 | verse | rhythmcall | Oi Oi | 2.0 | low | 0.892 | Oi! Oi! |\n| 01:46.54-01:51.59 | verse | rhythmcall | PPPH | 2.0 | low | 0.906 | Pan-pa-pan, hyu! |\n| 01:56.64-01:59.16 | verse | rhythmcall | Hai Hai | 1.0 | low | 0.889 | Hai! Hai! |\n| 01:59.16-02:04.21 | pre_chorus | rhythmcall | PPPH | 2.0 | low | 0.956 | Pan-pa-pan, hyu! |\n| 02:04.21-02:14.31 | pre_chorus | mix | Japanese MIX Forward-Reverse Double Time | 4.0 | medium | 1.000 | _Jyokyo Tobi Kasen Shindou / _Ama Sen'i JinzouHiTora |\n| 02:14.31-02:16.84 | pre_chorus | mix | Ietora | 1.0 | high | 0.869 | _Yettaiga Yettaiga / _YettaigaFaiboWaipa / _Ye Ye Ye Ye / _YettaigaFaiboWaipa |\n| 02:16.84-02:37.06 | chorus | underground_gei | Zi He She | 8.0 | high | 0.769 | Zi He She underground-gei movement sequence. |\n| 02:37.06-02:57.27 | chorus+instrumental | underground_gei | Chan She | 8.0 | high | 0.769 | Chan She underground-gei movement sequence. |\n| 02:57.27-03:02.32 | bridge | rhythmcall | Clap | 2.0 | low | 0.870 | Clap on beat or backbeat. |\n| 03:12.43-03:17.47 | pre_chorus | rhythmcall | PPPH | 2.0 | low | 0.956 | Pan-pa-pan, hyu! |\n| 03:19.99-03:30.10 | chorus | underground_gei | Ali Shizi | 4.0 | high | 1.000 | Ali Shizi underground-gei movement sequence. |\n| 03:52.84-03:56.64 | outro | rhythmcall | Oi Oi | 2.0 | low | 0.962 | Oi! Oi! |\n",
+  "markdown": "# YesTiger Tutorial Plan: shunkansummerday\n\n| Time | Section | Role | Action | Bars | Risk | Confidence | Text |\n|---:|---|---|---|---:|---|---:|---|\n| 00:00.42-00:13.05 | intro | mix | Standard MIX +1-bar Extension | 5.0 | medium | 1.000 | Uhai Uhai Uhai Uhai/A~yosshaikuzo / Taiga Faiya Saiba Faiba / Daiba Baiba Jya-jya / Faibo Waipa  |\n| 00:15.58-00:20.63 | verse | rhythmcall | Oi Oi | 2.0 | low | 0.892 | Oi! Oi! |\n| 00:25.69-00:30.74 | verse | rhythmcall | PPPH | 2.0 | low | 0.906 | Pan-pa-pan, hyu! |\n| 00:35.79-00:38.32 | verse | rhythmcall | Hai Hai | 1.0 | low | 0.889 | Hai! Hai! |\n| 00:38.32-00:43.37 | pre_chorus | rhythmcall | PPPH | 2.0 | low | 0.956 | Pan-pa-pan, hyu! |\n| 00:43.37-00:53.47 | pre_chorus | mix | Japanese MIX Forward-Reverse Double Time | 4.0 | medium | 1.000 | _Jyokyo Tobi Kasen Shindou / _Ama Sen'i JinzouHiTora |\n| 00:53.47-00:56.00 | pre_chorus | mix | Ietora | 1.0 | high | 0.869 | _Yettaiga Yettaiga / _YettaigaFaiboWaipa / _Ye Ye Ye Ye / _YettaigaFaiboWaipa |\n| 00:56.00-01:16.22 | chorus | underground_gei | Gongfu She | 8.0 | high | 1.000 | Gongfu She underground-gei movement sequence. |\n| 01:16.22-01:36.44 | chorus+instrumental | underground_gei | Dian Bo She | 8.0 | high | 0.769 | Dian Bo She underground-gei movement sequence. |\n| 01:36.44-01:41.49 | verse | rhythmcall | Oi Oi | 2.0 | low | 0.892 | Oi! Oi! |\n| 01:46.54-01:51.59 | verse | rhythmcall | PPPH | 2.0 | low | 0.906 | Pan-pa-pan, hyu! |\n| 01:56.64-01:59.16 | verse | rhythmcall | Hai Hai | 1.0 | low | 0.889 | Hai! Hai! |\n| 01:59.16-02:04.21 | pre_chorus | rhythmcall | PPPH | 2.0 | low | 0.956 | Pan-pa-pan, hyu! |\n| 02:04.21-02:14.31 | pre_chorus | mix | Japanese MIX Forward-Reverse Double Time | 4.0 | medium | 1.000 | _Jyokyo Tobi Kasen Shindou / _Ama Sen'i JinzouHiTora |\n| 02:14.31-02:16.84 | pre_chorus | mix | Ietora | 1.0 | high | 0.869 | _Yettaiga Yettaiga / _YettaigaFaiboWaipa / _Ye Ye Ye Ye / _YettaigaFaiboWaipa |\n| 02:16.84-02:37.06 | chorus | underground_gei | Zi He She | 8.0 | high | 0.769 | Zi He She underground-gei movement sequence. |\n| 02:37.06-02:57.27 | chorus+instrumental | underground_gei | Chan She | 8.0 | high | 0.769 | Chan She underground-gei movement sequence. |\n| 02:57.27-03:02.32 | bridge | rhythmcall | Clap | 2.0 | low | 0.870 | Clap on beat or backbeat. |\n| 03:12.43-03:17.47 | pre_chorus | rhythmcall | PPPH | 2.0 | low | 0.956 | Pan-pa-pan, hyu! |\n| 03:19.99-03:30.10 | chorus | underground_gei | Ali Shizi | 4.0 | high | 1.000 | Ali Shizi underground-gei movement sequence. |\n| 03:52.84-03:56.64 | outro | rhythmcall | Oi Oi | 2.0 | low | 0.962 | Oi! Oi! |\n",
   "audio_url": "/api/example-audio/shunkansummerday",
   "downloads": {}
 }

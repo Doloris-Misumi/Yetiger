@@ -157,11 +157,11 @@
       ]
     },
     "standard_mix_long": {
-      "display_name": "Standard MIX +2-bar Extension",
+      "display_name": "Standard MIX +1-bar Extension",
       "category": "mix",
       "role": "mix",
-      "description": "Same as Standard MIX but with an extra 2 bars added. Used when the instrumental break is longer than 8 bars.",
-      "when_to_use": "Long instrumental breaks (10+ bars).",
+      "description": "Same as Standard MIX but with an extra 1 bar added. Used when the instrumental break has a clear 5-bar slot.",
+      "when_to_use": "Clear 5-bar intro or instrumental breaks.",
       "when_not_to_use": "Same constraints as Standard MIX. Short instrumental breaks.",
       "allowed_structures": [
         "intro",
@@ -607,10 +607,10 @@
       ]
     },
     "japanese_mix_long": {
-      "display_name": "Japanese MIX +2-bar Extension",
+      "display_name": "Japanese MIX +1-bar Extension",
       "category": "mix",
       "role": "mix",
-      "description": "Japanese MIX +2-bar Extension is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
+      "description": "Japanese MIX +1-bar Extension is a mix action from the support library. Use it where the source context hints and duration requirements match; avoid using it as a generic filler.",
       "when_to_use": "Best when section semantics, bar length, vocal density, and cultural context all match the source hints.",
       "when_not_to_use": "Avoid when vocals are dense, bar length does not match, or the action requires missing cultural/song context.",
       "allowed_structures": [

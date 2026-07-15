@@ -723,6 +723,17 @@ def _timeline_from_support(recommendations: Sequence[Dict[str, Any]]) -> List[Di
         action = library.get(action_id, {})
         start = float(recommendation.get("start") or 0.0)
         end = float(recommendation.get("end") or start)
+        bar_count = recommendation.get("fit_bars")
+        if action_id == "standard_mix_long":
+            duration = action.get("duration") if isinstance(action.get("duration"), dict) else {}
+            preferred_bars = duration.get("preferred_bars")
+            old_bars = recommendation.get("action_fit_bars") or recommendation.get("fit_bars")
+            if preferred_bars and old_bars:
+                preferred_bars = float(preferred_bars)
+                old_bars = float(old_bars)
+                bar_count = preferred_bars
+                if old_bars > 0 and end > start and abs(old_bars - preferred_bars) > 0.01:
+                    end = start + (end - start) * (preferred_bars / old_bars)
         if end <= start:
             continue
         category = str(recommendation.get("category") or action.get("category") or "keepspace")
@@ -748,8 +759,8 @@ def _timeline_from_support(recommendations: Sequence[Dict[str, Any]]) -> List[Di
             "time": f"{fmt_time(start)}-{fmt_time(end)}",
             "action_id": action_id,
             "display_name": str(
-                recommendation.get("action_name")
-                or action.get("display_name")
+                action.get("display_name")
+                or recommendation.get("action_name")
                 or action_id
                 or "Keep Space"
             ),
@@ -757,7 +768,7 @@ def _timeline_from_support(recommendations: Sequence[Dict[str, Any]]) -> List[Di
             "music_label": section_label,
             "struct_label": section_label,
             "risk": str(recommendation.get("risk") or action.get("risk") or "medium"),
-            "bar_count": recommendation.get("fit_bars"),
+            "bar_count": bar_count,
             "typical_text": str(action.get("typical_text") or ""),
             "tutorial_text": action.get("tutorial_text"),
             "confidence": recommendation.get("confidence"),
@@ -792,19 +803,30 @@ def _call_spans_from_support(
             action = library.get(action_id, {})
             start = float(rec.get("start") or segment["start"])
             end = float(rec.get("end") or segment["end"])
+            bar_count = rec.get("fit_bars")
+            if action_id == "standard_mix_long":
+                duration = action.get("duration") if isinstance(action.get("duration"), dict) else {}
+                preferred_bars = duration.get("preferred_bars")
+                old_bars = rec.get("action_fit_bars") or rec.get("fit_bars")
+                if preferred_bars and old_bars:
+                    preferred_bars = float(preferred_bars)
+                    old_bars = float(old_bars)
+                    bar_count = preferred_bars
+                    if old_bars > 0 and end > start and abs(old_bars - preferred_bars) > 0.01:
+                        end = start + (end - start) * (preferred_bars / old_bars)
             action_plan.append({
                 "start": round(start, 2),
                 "end": round(end, 2),
                 "time": f"{fmt_time(start)}-{fmt_time(end)}",
                 "action_id": action_id,
                 "display_name": str(
-                    rec.get("action_name")
-                    or action.get("display_name")
+                    action.get("display_name")
+                    or rec.get("action_name")
                     or action_id
                 ),
                 "typical_text": str(action.get("typical_text") or ""),
                 "risk": str(rec.get("risk") or action.get("risk") or "medium"),
-                "bar_count": rec.get("fit_bars"),
+                "bar_count": bar_count,
                 "tutorial_text": action.get("tutorial_text"),
                 "confidence": rec.get("confidence"),
                 "mode": "support_recommendation",
