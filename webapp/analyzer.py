@@ -1160,6 +1160,77 @@ def list_action_library() -> List[Dict[str, Any]]:
     ]
 
 
+def _preferred_bars_from_action(action: Dict[str, Any]) -> Optional[float]:
+    duration = action.get("duration") if isinstance(action.get("duration"), dict) else {}
+    if not duration.get("strict_bars"):
+        return None
+    try:
+        bars = float(duration.get("preferred_bars"))
+    except (TypeError, ValueError):
+        return None
+    return bars if bars > 0 else None
+
+
+def _refresh_action_item_from_library(
+    item: Dict[str, Any],
+    library: Dict[str, Dict[str, Any]],
+    *,
+    update_bar_count: bool = True,
+) -> None:
+    action_id = str(item.get("action_id") or "")
+    action = library.get(action_id)
+    if not action:
+        return
+    category = str(action.get("category") or item.get("role") or "keepspace")
+    item["display_name"] = str(action.get("display_name") or action_id)
+    item["role"] = ROLE_COLORS.get(category, category)
+    item["risk"] = str(action.get("risk") or item.get("risk") or "medium")
+    item["typical_text"] = str(action.get("typical_text") or "")
+    item["tutorial_text"] = action.get("tutorial_text")
+    if update_bar_count:
+        bars = _preferred_bars_from_action(action)
+        if bars is not None:
+            item["bar_count"] = int(bars) if bars.is_integer() else bars
+
+
+def refresh_result_actions_from_library(result: Dict[str, Any]) -> Dict[str, Any]:
+    """Refresh display/action text fields from the current call_mix_library.json."""
+    library = action_library_by_id()
+    for item in result.get("timeline") or []:
+        if isinstance(item, dict):
+            _refresh_action_item_from_library(item, library)
+
+    for span in result.get("call_spans") or []:
+        if not isinstance(span, dict):
+            continue
+        for item in span.get("action_plan") or []:
+            if isinstance(item, dict):
+                _refresh_action_item_from_library(item, library)
+        for candidate in span.get("action_candidates") or []:
+            if not isinstance(candidate, dict):
+                continue
+            action_id = str(candidate.get("action_id") or "")
+            action = library.get(action_id)
+            if not action:
+                continue
+            candidate["action_name"] = str(action.get("display_name") or action_id)
+            candidate["category"] = str(action.get("category") or candidate.get("category") or "keepspace")
+            candidate["risk"] = str(action.get("risk") or candidate.get("risk") or "medium")
+            bars = _preferred_bars_from_action(action)
+            if bars is not None:
+                value = int(bars) if bars.is_integer() else bars
+                if "fit_bars" in candidate:
+                    candidate["fit_bars"] = value
+                if "action_fit_bars" in candidate:
+                    candidate["action_fit_bars"] = value
+
+    result["markdown"] = callbook_to_markdown(
+        result.get("song", {}).get("song_id") or result.get("job_id") or "example",
+        result.get("timeline") or [],
+    )
+    return result
+
+
 def load_example_result(song_id: str) -> Dict[str, Any]:
     support_path = _support_path_for_song(song_id)
     support_payload = read_json(support_path)
@@ -1172,7 +1243,7 @@ def load_example_result(song_id: str) -> Dict[str, Any]:
             result = read_json(static_path)
             result["job_id"] = result.get("job_id") or f"example_{song_id}"
             result.setdefault("downloads", {})
-            return result
+            return refresh_result_actions_from_library(result)
         raise
     audio_path = _prediction_audio_path(song_id)
     duration = max(
@@ -1203,4 +1274,4 @@ def load_example_result(song_id: str) -> Dict[str, Any]:
         audio_path=audio_path,
     )
     result["job_id"] = f"example_{song_id}"
-    return result
+    return refresh_result_actions_from_library(result)

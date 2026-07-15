@@ -186,7 +186,7 @@
           "display_name": "Bismarck Koujou",
           "typical_text": "Takamaruyo Takamaruyo / TakamaruHikumaruBisumaruku / Shijima-ru Arushindo / Kazudansu Ni-haiO-hai(P) / Kanchu-hai U-ronhai / Nachuraruhai Aikyanfurai(跳起)",
           "risk": "medium",
-          "bar_count": 12.0,
+          "bar_count": 6,
           "tutorial_text": {
             "source": "MixAndCall",
             "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
@@ -199,7 +199,7 @@
               "Shijima-ru Arushindo",
               "Kazudansu Ni-haiO-hai(P)",
               "Kanchu-hai U-ronhai",
-              "Nachuraruhai Aikyanfurai(跳起)"
+              "Nachuraruhai Aikyanfurai"
             ]
           },
           "confidence": 1.0,
@@ -215,8 +215,8 @@
           "section_estimated_bars": 13.0,
           "start": 1.4,
           "end": 20.61,
-          "fit_bars": 12.0,
-          "action_fit_bars": 12.0,
+          "fit_bars": 6,
+          "action_fit_bars": 6,
           "action_id": "bismarck_mix",
           "action_name": "Bismarck Koujou",
           "category": "mix",
@@ -448,7 +448,7 @@
           "time": "00:46.20-00:52.60",
           "action_id": "jp_mix_seigyaku_dt",
           "display_name": "Japanese MIX Forward-Reverse Double Time",
-          "typical_text": "_Jyokyo Tobi Kasen Shindou / _Ama Sen'i JinzouHiTora",
+          "typical_text": "Tora Hi Jinzou Sen'i / Ama Shindou KasenTobi / JyokyoTobi Kasen Shindou / Ama Sen'i JinzouHi",
           "risk": "medium",
           "bar_count": 4.0,
           "tutorial_text": {
@@ -456,10 +456,12 @@
             "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
             "source_title": "ジャパニーズmix逆打ち",
             "language": "romaji",
-            "full_text": "_Jyokyo Tobi Kasen Shindou\n_Ama Sen'i JinzouHiTora",
+            "full_text": "Tora Hi Jinzou Sen'i\nAma Shindou KasenTobi\nJyokyoTobi Kasen Shindou\nAma Sen'i JinzouHi",
             "bars": [
-              "_Jyokyo Tobi Kasen Shindou",
-              "_Ama Sen'i JinzouHiTora"
+              "Tora Hi Jinzou Sen'i",
+              "Ama Shindou KasenTobi",
+              "JyokyoTobi Kasen Shindou",
+              "Ama Sen'i JinzouHi"
             ]
           },
           "confidence": 1.0,
@@ -484,20 +486,18 @@
           "time": "00:52.60-00:54.20",
           "action_id": "ietora",
           "display_name": "Ietora",
-          "typical_text": "_Yettaiga Yettaiga / _YettaigaFaiboWaipa / _Ye Ye Ye Ye / _YettaigaFaiboWaipa",
+          "typical_text": "Ie Ie / Iettaiga ",
           "risk": "high",
-          "bar_count": 1.0,
+          "bar_count": 2,
           "tutorial_text": {
             "source": "MixAndCall",
             "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
             "source_title": "家虎 [ イェッタイガー ]",
             "language": "romaji",
-            "full_text": "_Yettaiga Yettaiga\n_YettaigaFaiboWaipa\n_Ye Ye Ye Ye\n_YettaigaFaiboWaipa",
+            "full_text": "Ie Ie\nIettaiga",
             "bars": [
-              "_Yettaiga Yettaiga",
-              "_YettaigaFaiboWaipa",
-              "_Ye Ye Ye Ye",
-              "_YettaigaFaiboWaipa"
+              "Ie Ie",
+              "Iettaiga"
             ]
           },
           "confidence": 0.869,
@@ -567,8 +567,8 @@
           "section_estimated_bars": 7.0,
           "start": 52.6,
           "end": 54.2,
-          "fit_bars": 1.0,
-          "action_fit_bars": 1.0,
+          "fit_bars": 2,
+          "action_fit_bars": 2,
           "action_id": "ietora",
           "action_name": "Ietora",
           "category": "mix",
@@ -948,7 +948,7 @@
           "time": "01:43.81-01:50.20",
           "action_id": "jp_mix_seigyaku_dt",
           "display_name": "Japanese MIX Forward-Reverse Double Time",
-          "typical_text": "_Jyokyo Tobi Kasen Shindou / _Ama Sen'i JinzouHiTora",
+          "typical_text": "Tora Hi Jinzou Sen'i / Ama Shindou KasenTobi / JyokyoTobi Kasen Shindou / Ama Sen'i JinzouHi",
           "risk": "medium",
           "bar_count": 4.0,
           "tutorial_text": {
@@ -956,10 +956,12 @@
             "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
             "source_title": "ジャパニーズmix逆打ち",
             "language": "romaji",
-            "full_text": "_Jyokyo Tobi Kasen Shindou\n_Ama Sen'i JinzouHiTora",
+            "full_text": "Tora Hi Jinzou Sen'i\nAma Shindou KasenTobi\nJyokyoTobi Kasen Shindou\nAma Sen'i JinzouHi",
             "bars": [
-              "_Jyokyo Tobi Kasen Shindou",
-              "_Ama Sen'i JinzouHiTora"
+              "Tora Hi Jinzou Sen'i",
+              "Ama Shindou KasenTobi",
+              "JyokyoTobi Kasen Shindou",
+              "Ama Sen'i JinzouHi"
             ]
           },
           "confidence": 1.0,
@@ -984,20 +986,18 @@
           "time": "01:53.40-01:55.00",
           "action_id": "ietora",
           "display_name": "Ietora",
-          "typical_text": "_Yettaiga Yettaiga / _YettaigaFaiboWaipa / _Ye Ye Ye Ye / _YettaigaFaiboWaipa",
+          "typical_text": "Ie Ie / Iettaiga ",
           "risk": "high",
-          "bar_count": 1.0,
+          "bar_count": 2,
           "tutorial_text": {
             "source": "MixAndCall",
             "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
             "source_title": "家虎 [ イェッタイガー ]",
             "language": "romaji",
-            "full_text": "_Yettaiga Yettaiga\n_YettaigaFaiboWaipa\n_Ye Ye Ye Ye\n_YettaigaFaiboWaipa",
+            "full_text": "Ie Ie\nIettaiga",
             "bars": [
-              "_Yettaiga Yettaiga",
-              "_YettaigaFaiboWaipa",
-              "_Ye Ye Ye Ye",
-              "_YettaigaFaiboWaipa"
+              "Ie Ie",
+              "Iettaiga"
             ]
           },
           "confidence": 0.869,
@@ -1067,8 +1067,8 @@
           "section_estimated_bars": 9.0,
           "start": 113.4,
           "end": 115.0,
-          "fit_bars": 1.0,
-          "action_fit_bars": 1.0,
+          "fit_bars": 2,
+          "action_fit_bars": 2,
           "action_id": "ietora",
           "action_name": "Ietora",
           "category": "mix",
@@ -1683,7 +1683,7 @@
           "time": "03:26.36-03:33.08",
           "action_id": "jp_mix_seigyaku_dt",
           "display_name": "Japanese MIX Forward-Reverse Double Time",
-          "typical_text": "_Jyokyo Tobi Kasen Shindou / _Ama Sen'i JinzouHiTora",
+          "typical_text": "Tora Hi Jinzou Sen'i / Ama Shindou KasenTobi / JyokyoTobi Kasen Shindou / Ama Sen'i JinzouHi",
           "risk": "medium",
           "bar_count": 4.0,
           "tutorial_text": {
@@ -1691,10 +1691,12 @@
             "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
             "source_title": "ジャパニーズmix逆打ち",
             "language": "romaji",
-            "full_text": "_Jyokyo Tobi Kasen Shindou\n_Ama Sen'i JinzouHiTora",
+            "full_text": "Tora Hi Jinzou Sen'i\nAma Shindou KasenTobi\nJyokyoTobi Kasen Shindou\nAma Sen'i JinzouHi",
             "bars": [
-              "_Jyokyo Tobi Kasen Shindou",
-              "_Ama Sen'i JinzouHiTora"
+              "Tora Hi Jinzou Sen'i",
+              "Ama Shindou KasenTobi",
+              "JyokyoTobi Kasen Shindou",
+              "Ama Sen'i JinzouHi"
             ]
           },
           "confidence": 1.0,
@@ -1719,20 +1721,18 @@
           "time": "03:38.12-03:39.80",
           "action_id": "ietora",
           "display_name": "Ietora",
-          "typical_text": "_Yettaiga Yettaiga / _YettaigaFaiboWaipa / _Ye Ye Ye Ye / _YettaigaFaiboWaipa",
+          "typical_text": "Ie Ie / Iettaiga ",
           "risk": "high",
-          "bar_count": 1.0,
+          "bar_count": 2,
           "tutorial_text": {
             "source": "MixAndCall",
             "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
             "source_title": "家虎 [ イェッタイガー ]",
             "language": "romaji",
-            "full_text": "_Yettaiga Yettaiga\n_YettaigaFaiboWaipa\n_Ye Ye Ye Ye\n_YettaigaFaiboWaipa",
+            "full_text": "Ie Ie\nIettaiga",
             "bars": [
-              "_Yettaiga Yettaiga",
-              "_YettaigaFaiboWaipa",
-              "_Ye Ye Ye Ye",
-              "_YettaigaFaiboWaipa"
+              "Ie Ie",
+              "Iettaiga"
             ]
           },
           "confidence": 0.869,
@@ -1802,8 +1802,8 @@
           "section_estimated_bars": 10.0,
           "start": 218.12,
           "end": 219.8,
-          "fit_bars": 1.0,
-          "action_fit_bars": 1.0,
+          "fit_bars": 2,
+          "action_fit_bars": 2,
           "action_id": "ietora",
           "action_name": "Ietora",
           "category": "mix",
@@ -2025,7 +2025,7 @@
           "time": "04:16.61-04:23.01",
           "action_id": "standard_mix",
           "display_name": "Standard MIX",
-          "typical_text": "A~yosshaikuzo / _Taiga Faiya Saiba Faiba / _Daiba Baiba Jya-jya- / Fai-bo-Wai-pa",
+          "typical_text": " Uhai Uhai Uhai Uhai/ A~yosshaikuzo/ Taiga Faiya Saiba Faiba / Daiba Baiba Jya-jya",
           "risk": "medium",
           "bar_count": 4.0,
           "tutorial_text": {
@@ -2033,12 +2033,12 @@
             "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
             "source_title": "英语mix [ スタンダードmix ] [ 英語mix ]",
             "language": "romaji",
-            "full_text": "A~yosshaikuzo\n_Taiga Faiya Saiba Faiba\n_Daiba Baiba Jya-jya-\nFai-bo-Wai-pa",
+            "full_text": "Uhai Uhai Uhai Uhai\nA~yosshaikuzo\nTaiga Faiya Saiba Faiba\nDaiba Baiba Jya-jya",
             "bars": [
+              "Uhai Uhai Uhai Uhai",
               "A~yosshaikuzo",
-              "_Taiga Faiya Saiba Faiba",
-              "_Daiba Baiba Jya-jya-",
-              "Fai-bo-Wai-pa"
+              "Taiga Faiya Saiba Faiba",
+              "Daiba Baiba Jya-jya"
             ]
           },
           "confidence": 1.0,
@@ -2091,7 +2091,7 @@
       "music_label": "intro",
       "struct_label": "intro",
       "risk": "medium",
-      "bar_count": 12.0,
+      "bar_count": 6,
       "typical_text": "Takamaruyo Takamaruyo / TakamaruHikumaruBisumaruku / Shijima-ru Arushindo / Kazudansu Ni-haiO-hai(P) / Kanchu-hai U-ronhai / Nachuraruhai Aikyanfurai(跳起)",
       "tutorial_text": {
         "source": "MixAndCall",
@@ -2105,7 +2105,7 @@
           "Shijima-ru Arushindo",
           "Kazudansu Ni-haiO-hai(P)",
           "Kanchu-hai U-ronhai",
-          "Nachuraruhai Aikyanfurai(跳起)"
+          "Nachuraruhai Aikyanfurai"
         ]
       },
       "confidence": 1.0,
@@ -2214,16 +2214,18 @@
       "struct_label": "pre_chorus",
       "risk": "medium",
       "bar_count": 4.0,
-      "typical_text": "_Jyokyo Tobi Kasen Shindou / _Ama Sen'i JinzouHiTora",
+      "typical_text": "Tora Hi Jinzou Sen'i / Ama Shindou KasenTobi / JyokyoTobi Kasen Shindou / Ama Sen'i JinzouHi",
       "tutorial_text": {
         "source": "MixAndCall",
         "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
         "source_title": "ジャパニーズmix逆打ち",
         "language": "romaji",
-        "full_text": "_Jyokyo Tobi Kasen Shindou\n_Ama Sen'i JinzouHiTora",
+        "full_text": "Tora Hi Jinzou Sen'i\nAma Shindou KasenTobi\nJyokyoTobi Kasen Shindou\nAma Sen'i JinzouHi",
         "bars": [
-          "_Jyokyo Tobi Kasen Shindou",
-          "_Ama Sen'i JinzouHiTora"
+          "Tora Hi Jinzou Sen'i",
+          "Ama Shindou KasenTobi",
+          "JyokyoTobi Kasen Shindou",
+          "Ama Sen'i JinzouHi"
         ]
       },
       "confidence": 1.0,
@@ -2241,19 +2243,17 @@
       "music_label": "pre_chorus",
       "struct_label": "pre_chorus",
       "risk": "high",
-      "bar_count": 1.0,
-      "typical_text": "_Yettaiga Yettaiga / _YettaigaFaiboWaipa / _Ye Ye Ye Ye / _YettaigaFaiboWaipa",
+      "bar_count": 2,
+      "typical_text": "Ie Ie / Iettaiga ",
       "tutorial_text": {
         "source": "MixAndCall",
         "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
         "source_title": "家虎 [ イェッタイガー ]",
         "language": "romaji",
-        "full_text": "_Yettaiga Yettaiga\n_YettaigaFaiboWaipa\n_Ye Ye Ye Ye\n_YettaigaFaiboWaipa",
+        "full_text": "Ie Ie\nIettaiga",
         "bars": [
-          "_Yettaiga Yettaiga",
-          "_YettaigaFaiboWaipa",
-          "_Ye Ye Ye Ye",
-          "_YettaigaFaiboWaipa"
+          "Ie Ie",
+          "Iettaiga"
         ]
       },
       "confidence": 0.869,
@@ -2380,16 +2380,18 @@
       "struct_label": "pre_chorus",
       "risk": "medium",
       "bar_count": 4.0,
-      "typical_text": "_Jyokyo Tobi Kasen Shindou / _Ama Sen'i JinzouHiTora",
+      "typical_text": "Tora Hi Jinzou Sen'i / Ama Shindou KasenTobi / JyokyoTobi Kasen Shindou / Ama Sen'i JinzouHi",
       "tutorial_text": {
         "source": "MixAndCall",
         "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
         "source_title": "ジャパニーズmix逆打ち",
         "language": "romaji",
-        "full_text": "_Jyokyo Tobi Kasen Shindou\n_Ama Sen'i JinzouHiTora",
+        "full_text": "Tora Hi Jinzou Sen'i\nAma Shindou KasenTobi\nJyokyoTobi Kasen Shindou\nAma Sen'i JinzouHi",
         "bars": [
-          "_Jyokyo Tobi Kasen Shindou",
-          "_Ama Sen'i JinzouHiTora"
+          "Tora Hi Jinzou Sen'i",
+          "Ama Shindou KasenTobi",
+          "JyokyoTobi Kasen Shindou",
+          "Ama Sen'i JinzouHi"
         ]
       },
       "confidence": 1.0,
@@ -2407,19 +2409,17 @@
       "music_label": "pre_chorus",
       "struct_label": "pre_chorus",
       "risk": "high",
-      "bar_count": 1.0,
-      "typical_text": "_Yettaiga Yettaiga / _YettaigaFaiboWaipa / _Ye Ye Ye Ye / _YettaigaFaiboWaipa",
+      "bar_count": 2,
+      "typical_text": "Ie Ie / Iettaiga ",
       "tutorial_text": {
         "source": "MixAndCall",
         "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
         "source_title": "家虎 [ イェッタイガー ]",
         "language": "romaji",
-        "full_text": "_Yettaiga Yettaiga\n_YettaigaFaiboWaipa\n_Ye Ye Ye Ye\n_YettaigaFaiboWaipa",
+        "full_text": "Ie Ie\nIettaiga",
         "bars": [
-          "_Yettaiga Yettaiga",
-          "_YettaigaFaiboWaipa",
-          "_Ye Ye Ye Ye",
-          "_YettaigaFaiboWaipa"
+          "Ie Ie",
+          "Iettaiga"
         ]
       },
       "confidence": 0.869,
@@ -2631,16 +2631,18 @@
       "struct_label": "pre_chorus",
       "risk": "medium",
       "bar_count": 4.0,
-      "typical_text": "_Jyokyo Tobi Kasen Shindou / _Ama Sen'i JinzouHiTora",
+      "typical_text": "Tora Hi Jinzou Sen'i / Ama Shindou KasenTobi / JyokyoTobi Kasen Shindou / Ama Sen'i JinzouHi",
       "tutorial_text": {
         "source": "MixAndCall",
         "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
         "source_title": "ジャパニーズmix逆打ち",
         "language": "romaji",
-        "full_text": "_Jyokyo Tobi Kasen Shindou\n_Ama Sen'i JinzouHiTora",
+        "full_text": "Tora Hi Jinzou Sen'i\nAma Shindou KasenTobi\nJyokyoTobi Kasen Shindou\nAma Sen'i JinzouHi",
         "bars": [
-          "_Jyokyo Tobi Kasen Shindou",
-          "_Ama Sen'i JinzouHiTora"
+          "Tora Hi Jinzou Sen'i",
+          "Ama Shindou KasenTobi",
+          "JyokyoTobi Kasen Shindou",
+          "Ama Sen'i JinzouHi"
         ]
       },
       "confidence": 1.0,
@@ -2658,19 +2660,17 @@
       "music_label": "pre_chorus",
       "struct_label": "pre_chorus",
       "risk": "high",
-      "bar_count": 1.0,
-      "typical_text": "_Yettaiga Yettaiga / _YettaigaFaiboWaipa / _Ye Ye Ye Ye / _YettaigaFaiboWaipa",
+      "bar_count": 2,
+      "typical_text": "Ie Ie / Iettaiga ",
       "tutorial_text": {
         "source": "MixAndCall",
         "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
         "source_title": "家虎 [ イェッタイガー ]",
         "language": "romaji",
-        "full_text": "_Yettaiga Yettaiga\n_YettaigaFaiboWaipa\n_Ye Ye Ye Ye\n_YettaigaFaiboWaipa",
+        "full_text": "Ie Ie\nIettaiga",
         "bars": [
-          "_Yettaiga Yettaiga",
-          "_YettaigaFaiboWaipa",
-          "_Ye Ye Ye Ye",
-          "_YettaigaFaiboWaipa"
+          "Ie Ie",
+          "Iettaiga"
         ]
       },
       "confidence": 0.869,
@@ -2743,18 +2743,18 @@
       "struct_label": "instrumental",
       "risk": "medium",
       "bar_count": 4.0,
-      "typical_text": "A~yosshaikuzo / _Taiga Faiya Saiba Faiba / _Daiba Baiba Jya-jya- / Fai-bo-Wai-pa",
+      "typical_text": " Uhai Uhai Uhai Uhai/ A~yosshaikuzo/ Taiga Faiya Saiba Faiba / Daiba Baiba Jya-jya",
       "tutorial_text": {
         "source": "MixAndCall",
         "source_url": "https://dzyxdd.github.io/MixAndCall/mix/mix/",
         "source_title": "英语mix [ スタンダードmix ] [ 英語mix ]",
         "language": "romaji",
-        "full_text": "A~yosshaikuzo\n_Taiga Faiya Saiba Faiba\n_Daiba Baiba Jya-jya-\nFai-bo-Wai-pa",
+        "full_text": "Uhai Uhai Uhai Uhai\nA~yosshaikuzo\nTaiga Faiya Saiba Faiba\nDaiba Baiba Jya-jya",
         "bars": [
+          "Uhai Uhai Uhai Uhai",
           "A~yosshaikuzo",
-          "_Taiga Faiya Saiba Faiba",
-          "_Daiba Baiba Jya-jya-",
-          "Fai-bo-Wai-pa"
+          "Taiga Faiya Saiba Faiba",
+          "Daiba Baiba Jya-jya"
         ]
       },
       "confidence": 1.0,
@@ -3992,7 +3992,7 @@
       "run_id": "muq_seed46_110songs_tail_merge"
     }
   },
-  "markdown": "# YesTiger Tutorial Plan: brushupbrassup\n\n| Time | Section | Role | Action | Bars | Risk | Confidence | Text |\n|---:|---|---|---|---:|---|---:|---|\n| 00:01.40-00:20.61 | intro | mix | Bismarck Koujou | 12.0 | medium | 1.000 | Takamaruyo Takamaruyo / TakamaruHikumaruBisumaruku / Shijima-ru Arushindo / Kazudansu Ni-haiO-hai(P) / Kanchu-hai U-ronhai / Nachuraruhai Aikyanfurai(跳起) |\n| 00:22.21-00:25.41 | verse | rhythmcall | Oi Oi | 2.0 | low | 0.892 | Oi! Oi! |\n| 00:28.61-00:31.81 | verse | rhythmcall | PPPH | 2.0 | low | 0.906 | Pan-pa-pan, hyu! |\n| 00:35.00-00:38.20 | verse | rhythmcall | Clap | 2.0 | low | 0.880 | Clap on beat or backbeat. |\n| 00:41.40-00:43.00 | verse | rhythmcall | Hai Hai | 1.0 | low | 0.889 | Hai! Hai! |\n| 00:43.00-00:46.20 | pre_chorus | rhythmcall | PPPH | 2.0 | low | 0.956 | Pan-pa-pan, hyu! |\n| 00:46.20-00:52.60 | pre_chorus | mix | Japanese MIX Forward-Reverse Double Time | 4.0 | medium | 1.000 | _Jyokyo Tobi Kasen Shindou / _Ama Sen'i JinzouHiTora |\n| 00:52.60-00:54.20 | pre_chorus | mix | Ietora | 1.0 | high | 0.869 | _Yettaiga Yettaiga / _YettaigaFaiboWaipa / _Ye Ye Ye Ye / _YettaigaFaiboWaipa |\n| 00:54.20-01:07.00 | chorus | underground_gei | Gongfu She | 8.0 | high | 1.000 | Gongfu She underground-gei movement sequence. |\n| 01:07.00-01:19.80 | chorus+instrumental | underground_gei | Dian Bo She | 8.0 | high | 0.709 | Dian Bo She underground-gei movement sequence. |\n| 01:23.00-01:26.20 | verse | rhythmcall | Oi Oi | 2.0 | low | 0.892 | Oi! Oi! |\n| 01:29.40-01:32.61 | verse | rhythmcall | PPPH | 2.0 | low | 0.906 | Pan-pa-pan, hyu! |\n| 01:35.81-01:39.01 | verse | rhythmcall | Clap | 2.0 | low | 0.880 | Clap on beat or backbeat. |\n| 01:40.61-01:43.81 | pre_chorus | rhythmcall | PPPH | 2.0 | low | 0.956 | Pan-pa-pan, hyu! |\n| 01:43.81-01:50.20 | pre_chorus | mix | Japanese MIX Forward-Reverse Double Time | 4.0 | medium | 1.000 | _Jyokyo Tobi Kasen Shindou / _Ama Sen'i JinzouHiTora |\n| 01:53.40-01:55.00 | pre_chorus | mix | Ietora | 1.0 | high | 0.869 | _Yettaiga Yettaiga / _YettaigaFaiboWaipa / _Ye Ye Ye Ye / _YettaigaFaiboWaipa |\n| 01:55.00-02:07.80 | chorus | underground_gei | Zi He She | 8.0 | high | 0.889 | Zi He She underground-gei movement sequence. |\n| 02:07.80-02:20.60 | chorus | underground_gei | Chan She | 8.0 | high | 0.889 | Chan She underground-gei movement sequence. |\n| 02:20.60-02:27.00 | instrumental | underground_gei | Ali Shizi | 4.0 | high | 1.000 | Ali Shizi underground-gei movement sequence. |\n| 02:27.00-02:33.40 | instrumental | underground_gei | Heibai Shuangyi | 4.0 | high | 1.000 | Heibai Shuangyi underground-gei movement sequence. |\n| 02:33.40-02:39.80 | instrumental+chorus | underground_gei | Tian Zhao | 4.0 | high | 1.000 | Tian Zhao underground-gei movement sequence. |\n| 02:39.80-02:46.20 | chorus | underground_gei | Long Zhi Mao | 4.0 | high | 0.889 | Long Zhi Mao underground-gei movement sequence. |\n| 02:57.41-03:05.40 | instrumental | mix | Standard MIX +1-bar Extension | 5.0 | medium | 0.920 | Uhai Uhai Uhai Uhai/A~yosshaikuzo / Taiga Faiya Saiba Faiba / Daiba Baiba Jya-jya / Faibo Waipa  |\n| 03:10.20-03:13.40 | verse | rhythmcall | Oi Oi | 2.0 | low | 0.892 | Oi! Oi! |\n| 03:16.60-03:19.80 | verse | rhythmcall | PPPH | 2.0 | low | 0.906 | Pan-pa-pan, hyu! |\n| 03:23.00-03:26.36 | pre_chorus | rhythmcall | PPPH | 2.0 | low | 0.956 | Pan-pa-pan, hyu! |\n| 03:26.36-03:33.08 | pre_chorus | mix | Japanese MIX Forward-Reverse Double Time | 4.0 | medium | 1.000 | _Jyokyo Tobi Kasen Shindou / _Ama Sen'i JinzouHiTora |\n| 03:38.12-03:39.80 | pre_chorus | mix | Ietora | 1.0 | high | 0.869 | _Yettaiga Yettaiga / _YettaigaFaiboWaipa / _Ye Ye Ye Ye / _YettaigaFaiboWaipa |\n| 03:39.80-03:46.20 | chorus | underground_gei | Cun Zheng | 4.0 | high | 0.708 | Cun Zheng underground-gei movement sequence. |\n| 03:46.20-03:52.60 | chorus | underground_gei | Lei She | 4.0 | high | 0.708 | Lei She underground-gei movement sequence. |\n| 04:07.00-04:10.20 | outro | rhythmcall | Oi Oi | 2.0 | low | 0.962 | Oi! Oi! |\n| 04:16.61-04:23.01 | instrumental | mix | Standard MIX | 4.0 | medium | 1.000 | A~yosshaikuzo / _Taiga Faiya Saiba Faiba / _Daiba Baiba Jya-jya- / Fai-bo-Wai-pa |\n",
+  "markdown": "# YesTiger Tutorial Plan: brushupbrassup\n\n| Time | Section | Role | Action | Bars | Risk | Confidence | Text |\n|---:|---|---|---|---:|---|---:|---|\n| 00:01.40-00:20.61 | intro | mix | Bismarck Koujou | 6 | medium | 1.000 | Takamaruyo Takamaruyo / TakamaruHikumaruBisumaruku / Shijima-ru Arushindo / Kazudansu Ni-haiO-hai(P) / Kanchu-hai U-ronhai / Nachuraruhai Aikyanfurai(跳起) |\n| 00:22.21-00:25.41 | verse | rhythmcall | Oi Oi | 2.0 | low | 0.892 | Oi! Oi! |\n| 00:28.61-00:31.81 | verse | rhythmcall | PPPH | 2.0 | low | 0.906 | Pan-pa-pan, hyu! |\n| 00:35.00-00:38.20 | verse | rhythmcall | Clap | 2.0 | low | 0.880 | Clap on beat or backbeat. |\n| 00:41.40-00:43.00 | verse | rhythmcall | Hai Hai | 1.0 | low | 0.889 | Hai! Hai! |\n| 00:43.00-00:46.20 | pre_chorus | rhythmcall | PPPH | 2.0 | low | 0.956 | Pan-pa-pan, hyu! |\n| 00:46.20-00:52.60 | pre_chorus | mix | Japanese MIX Forward-Reverse Double Time | 4.0 | medium | 1.000 | Tora Hi Jinzou Sen'i / Ama Shindou KasenTobi / JyokyoTobi Kasen Shindou / Ama Sen'i JinzouHi |\n| 00:52.60-00:54.20 | pre_chorus | mix | Ietora | 2 | high | 0.869 | Ie Ie / Iettaiga  |\n| 00:54.20-01:07.00 | chorus | underground_gei | Gongfu She | 8.0 | high | 1.000 | Gongfu She underground-gei movement sequence. |\n| 01:07.00-01:19.80 | chorus+instrumental | underground_gei | Dian Bo She | 8.0 | high | 0.709 | Dian Bo She underground-gei movement sequence. |\n| 01:23.00-01:26.20 | verse | rhythmcall | Oi Oi | 2.0 | low | 0.892 | Oi! Oi! |\n| 01:29.40-01:32.61 | verse | rhythmcall | PPPH | 2.0 | low | 0.906 | Pan-pa-pan, hyu! |\n| 01:35.81-01:39.01 | verse | rhythmcall | Clap | 2.0 | low | 0.880 | Clap on beat or backbeat. |\n| 01:40.61-01:43.81 | pre_chorus | rhythmcall | PPPH | 2.0 | low | 0.956 | Pan-pa-pan, hyu! |\n| 01:43.81-01:50.20 | pre_chorus | mix | Japanese MIX Forward-Reverse Double Time | 4.0 | medium | 1.000 | Tora Hi Jinzou Sen'i / Ama Shindou KasenTobi / JyokyoTobi Kasen Shindou / Ama Sen'i JinzouHi |\n| 01:53.40-01:55.00 | pre_chorus | mix | Ietora | 2 | high | 0.869 | Ie Ie / Iettaiga  |\n| 01:55.00-02:07.80 | chorus | underground_gei | Zi He She | 8.0 | high | 0.889 | Zi He She underground-gei movement sequence. |\n| 02:07.80-02:20.60 | chorus | underground_gei | Chan She | 8.0 | high | 0.889 | Chan She underground-gei movement sequence. |\n| 02:20.60-02:27.00 | instrumental | underground_gei | Ali Shizi | 4.0 | high | 1.000 | Ali Shizi underground-gei movement sequence. |\n| 02:27.00-02:33.40 | instrumental | underground_gei | Heibai Shuangyi | 4.0 | high | 1.000 | Heibai Shuangyi underground-gei movement sequence. |\n| 02:33.40-02:39.80 | instrumental+chorus | underground_gei | Tian Zhao | 4.0 | high | 1.000 | Tian Zhao underground-gei movement sequence. |\n| 02:39.80-02:46.20 | chorus | underground_gei | Long Zhi Mao | 4.0 | high | 0.889 | Long Zhi Mao underground-gei movement sequence. |\n| 02:57.41-03:05.40 | instrumental | mix | Standard MIX +1-bar Extension | 5.0 | medium | 0.920 | Uhai Uhai Uhai Uhai/A~yosshaikuzo / Taiga Faiya Saiba Faiba / Daiba Baiba Jya-jya / Faibo Waipa  |\n| 03:10.20-03:13.40 | verse | rhythmcall | Oi Oi | 2.0 | low | 0.892 | Oi! Oi! |\n| 03:16.60-03:19.80 | verse | rhythmcall | PPPH | 2.0 | low | 0.906 | Pan-pa-pan, hyu! |\n| 03:23.00-03:26.36 | pre_chorus | rhythmcall | PPPH | 2.0 | low | 0.956 | Pan-pa-pan, hyu! |\n| 03:26.36-03:33.08 | pre_chorus | mix | Japanese MIX Forward-Reverse Double Time | 4.0 | medium | 1.000 | Tora Hi Jinzou Sen'i / Ama Shindou KasenTobi / JyokyoTobi Kasen Shindou / Ama Sen'i JinzouHi |\n| 03:38.12-03:39.80 | pre_chorus | mix | Ietora | 2 | high | 0.869 | Ie Ie / Iettaiga  |\n| 03:39.80-03:46.20 | chorus | underground_gei | Cun Zheng | 4.0 | high | 0.708 | Cun Zheng underground-gei movement sequence. |\n| 03:46.20-03:52.60 | chorus | underground_gei | Lei She | 4.0 | high | 0.708 | Lei She underground-gei movement sequence. |\n| 04:07.00-04:10.20 | outro | rhythmcall | Oi Oi | 2.0 | low | 0.962 | Oi! Oi! |\n| 04:16.61-04:23.01 | instrumental | mix | Standard MIX | 4.0 | medium | 1.000 |  Uhai Uhai Uhai Uhai/ A~yosshaikuzo/ Taiga Faiya Saiba Faiba / Daiba Baiba Jya-jya |\n",
   "audio_url": "/api/example-audio/brushupbrassup",
   "downloads": {}
 }
