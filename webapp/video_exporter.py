@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import io
+import json
 import math
 import os
 import re
@@ -14,15 +15,27 @@ from typing import Any, Dict, List, Optional, Sequence, Tuple
 from PIL import Image, ImageDraw, ImageFont
 
 try:
-    from audio_assets import CALL_AUDIO_FILES as CALL_AUDIO_MAP
+    import soundfile as sf
+except Exception:  # pragma: no cover - optional duration probe fallback.
+    sf = None
+
+try:
+    from audio_assets import call_audio_path
 except ImportError:  # pragma: no cover - package-style imports in tests/tools.
-    from webapp.audio_assets import CALL_AUDIO_FILES as CALL_AUDIO_MAP
+    from webapp.audio_assets import call_audio_path
 
 
 ROOT = Path(__file__).resolve().parent.parent
 
 WIDTH = 1280
 HEIGHT = 720
+PANEL_GAP = 6
+LEFT_PANEL_WIDTH = 386
+TOP_PANEL_HEIGHT = 430
+MEDIA_PANEL_X = LEFT_PANEL_WIDTH + PANEL_GAP
+MEDIA_PANEL_Y = 0
+MEDIA_PANEL_WIDTH = WIDTH - LEFT_PANEL_WIDTH - PANEL_GAP
+MEDIA_PANEL_HEIGHT = TOP_PANEL_HEIGHT
 GEI_VIDEO_MAP = {
     "long_zhi_mao": ROOT / "gei_video" / "龙之矛.mp4",
     "lei_she": ROOT / "gei_video" / "雷蛇.mp4",
@@ -77,6 +90,52 @@ def resolve_ffmpeg() -> str:
     raise FileNotFoundError("ffmpeg executable not found in .venv or PATH")
 
 
+def audio_duration_seconds(path: Path, ffmpeg: Optional[str] = None) -> Optional[float]:
+    if sf is not None:
+        try:
+            info = sf.info(str(path))
+            duration = float(info.duration)
+            if duration > 0:
+                return duration
+        except Exception:
+            pass
+    if ffmpeg:
+        try:
+            result = subprocess.run(
+                [ffmpeg, "-hide_banner", "-i", str(path)],
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+            text = f"{result.stdout}\n{result.stderr}"
+            match = re.search(r"Duration:\s*(\d+):(\d+):(\d+(?:\.\d+)?)", text)
+            if match:
+                hours, minutes, seconds = match.groups()
+                duration = int(hours) * 3600 + int(minutes) * 60 + float(seconds)
+                if duration > 0:
+                    return duration
+        except Exception:
+            pass
+    return None
+
+
+def atempo_chain(rate: float) -> List[float]:
+    safe = max(0.05, min(32.0, float(rate or 1.0)))
+    chain: List[float] = []
+    while safe > 2.0:
+        chain.append(2.0)
+        safe /= 2.0
+    while safe < 0.5:
+        chain.append(0.5)
+        safe /= 0.5
+    chain.append(safe)
+    return chain
+
+
+def ffnum(value: float) -> str:
+    return f"{float(value):.6f}".rstrip("0").rstrip(".") or "0"
+
+
 def load_gei_frames(video_path: Path, fps: int) -> Tuple[List[Image.Image], float]:
     """Extract all frames from a gei video at given fps. Returns (frames, duration)."""
     tmp = tempfile.mkdtemp(prefix="yetiger_gei_")
@@ -122,51 +181,126 @@ def build_gei_cache(result: Dict[str, Any], fps: int) -> Dict[str, Tuple[List[Im
     return cache
 
 
-def build_call_audio_track(result: Dict[str, Any], duration: float, tmp_dir: Path) -> Optional[Path]:
+def build_call_audio_track(
+    result: Dict[str, Any],
+    duration: float,
+    tmp_dir: Path,
+    report: Optional[Dict[str, Any]] = None,
+) -> Optional[Path]:
     """Generate a mixed call-audio WAV for the full song duration, or None if no calls have audio."""
+    if sf is None:
+        raise RuntimeError("soundfile is required for call audio mixing")
+    import numpy as np
+
     timeline = result.get("timeline") or []
     call_entries = []
     for item in timeline:
         action_id = str(item.get("action_id") or "")
-        audio_path = CALL_AUDIO_MAP.get(action_id)
+        audio_path = call_audio_path(action_id)
         if audio_path and audio_path.exists():
             call_entries.append((item, audio_path))
+    if report is not None:
+        report["root"] = str(ROOT)
+        report["timeline_items"] = len(timeline)
+        report["call_entries"] = [
+            {
+                "action_id": str(item.get("action_id") or ""),
+                "display_name": str(item.get("display_name") or ""),
+                "start": float(item.get("start") or 0.0),
+                "end": float(item.get("end") or 0.0),
+                "audio_path": str(audio_path),
+                "audio_exists": audio_path.exists(),
+            }
+            for item, audio_path in call_entries
+        ]
     if not call_entries:
+        if report is not None:
+            report["call_track"] = None
         return None
 
     ffmpeg = resolve_ffmpeg()
     mixed_path = tmp_dir / "call_mix.wav"
+    sample_rate = 48000
+    channel_count = 2
+    total_samples = max(1, int(math.ceil(duration * sample_rate)))
+    mix = np.zeros((total_samples, channel_count), dtype=np.float32)
 
-    filter_parts = []
+    segment_commands = []
     for idx, (item, audio_path) in enumerate(call_entries):
-        action_start = float(item.get("start") or 0)
-        action_end = float(item.get("end") or action_start + 1)
-        action_duration = max(0.1, action_end - action_start)
-        filter_parts.append(
-            f"[{idx + 1}:a]atempo={min(4.0, max(0.5, 1.0))}[s{idx}];"
-            f"[s{idx}]adelay={int(action_start * 1000)}|{int(action_start * 1000)}:all=1[a{idx}]"
-        )
+        action_start = max(0.0, float(item.get("start") or 0.0))
+        action_end = max(action_start + 0.05, float(item.get("end") or action_start + 1.0))
+        action_duration = max(0.05, action_end - action_start)
+        source_duration = audio_duration_seconds(audio_path, ffmpeg) or action_duration
+        tempo = source_duration / action_duration if action_duration > 0 else 1.0
+        tempo_filters = ",".join(f"atempo={ffnum(part)}" for part in atempo_chain(tempo))
+        fade_duration = min(0.08, max(0.0, action_duration / 4.0))
+        fade_start = max(0.0, action_duration - fade_duration)
+        segment_path = tmp_dir / f"call_segment_{idx:03d}.wav"
+        steps = [
+            f"aresample={sample_rate}",
+            "asetpts=PTS-STARTPTS",
+            tempo_filters,
+            f"apad=whole_dur={ffnum(action_duration)}",
+            f"atrim=duration={ffnum(action_duration)}",
+        ]
+        if fade_duration > 0:
+            steps.append(f"afade=t=out:st={ffnum(fade_start)}:d={ffnum(fade_duration)}")
+        filter_chain = ",".join(steps)
+        cmd = [
+            ffmpeg, "-y", "-hide_banner", "-loglevel", "error",
+            "-i", str(audio_path),
+            "-filter:a", filter_chain,
+            "-t", f"{action_duration:.3f}",
+            "-ar", str(sample_rate),
+            "-ac", str(channel_count),
+            str(segment_path),
+        ]
+        segment_commands.append([str(part) for part in cmd])
+        subprocess.run(cmd, check=True, capture_output=True)
 
-    inputs = []
-    for _, audio_path in call_entries:
-        inputs.extend(["-i", str(audio_path)])
+        segment, segment_rate = sf.read(str(segment_path), always_2d=True, dtype="float32")
+        if segment_rate != sample_rate:
+            raise RuntimeError(f"unexpected call segment sample rate: {segment_rate}")
+        if segment.shape[1] == 1:
+            segment = np.repeat(segment, channel_count, axis=1)
+        elif segment.shape[1] > channel_count:
+            segment = segment[:, :channel_count]
+        expected_samples = max(1, int(round(action_duration * sample_rate)))
+        if len(segment) < expected_samples:
+            pad = np.zeros((expected_samples - len(segment), channel_count), dtype=np.float32)
+            segment = np.vstack([segment, pad])
+        elif len(segment) > expected_samples:
+            segment = segment[:expected_samples]
 
-    amix_inputs = "".join(f"[a{i}]" for i in range(len(call_entries)))
-    filter_complex = ";".join(
-        f"[{i + 1}:a]atempo={min(4.0, max(0.5, 1.0))}[s{i}];"
-        f"[s{i}]adelay={int(float(call_entries[i][0].get('start') or 0) * 1000)}|{int(float(call_entries[i][0].get('start') or 0) * 1000)}:all=1[a{i}]"
-        for i in range(len(call_entries))
-    ) + f";{amix_inputs}amix=inputs={len(call_entries)}:duration=first:dropout_transition=0,volume={min(1.0, 0.8 / max(1, len(call_entries)))}[aout]"
+        offset = max(0, int(round(action_start * sample_rate)))
+        available = max(0, min(len(segment), total_samples - offset))
+        if available > 0:
+            mix[offset:offset + available] += segment[:available]
+        if report is not None:
+            report["call_entries"][idx].update({
+                "action_duration": action_duration,
+                "source_duration": source_duration,
+                "tempo": tempo,
+                "offset_sample": offset,
+                "segment_samples": int(len(segment)),
+                "mixed_samples": int(available),
+                "segment_path": str(segment_path),
+            })
 
-    cmd = [
-        ffmpeg, "-y", "-hide_banner", "-loglevel", "error",
-        *inputs,
-        "-filter_complex", filter_complex,
-        "-map", "[aout]",
-        "-t", f"{duration:.3f}",
-        str(mixed_path),
-    ]
-    subprocess.run(cmd, check=True, capture_output=True)
+    peak = float(np.max(np.abs(mix))) if mix.size else 0.0
+    rms = float(np.sqrt(np.mean(mix * mix))) if mix.size else 0.0
+    if peak > 0.98:
+        mix *= 0.98 / peak
+    sf.write(str(mixed_path), mix, sample_rate, subtype="PCM_16")
+    if report is not None:
+        report["call_track"] = str(mixed_path)
+        report["call_mix_method"] = "python_sample_placement_v2"
+        report["call_segment_commands"] = segment_commands
+        report["call_track_exists"] = mixed_path.exists()
+        report["call_track_peak_before_limit"] = peak
+        report["call_track_rms_before_limit"] = rms
+        if mixed_path.exists():
+            report["call_track_size"] = mixed_path.stat().st_size
     return mixed_path if mixed_path.exists() else None
 
 
@@ -351,6 +485,23 @@ def current_tutorial_cue(action: Optional[Dict[str, Any]], time_s: float) -> Opt
     }
 
 
+def current_note(result: Dict[str, Any], time_s: float) -> Optional[Dict[str, Any]]:
+    notes = result.get("notes") or []
+    if not isinstance(notes, list):
+        return None
+    for note in notes:
+        if not isinstance(note, dict):
+            continue
+        text = str(note.get("text") or "").strip()
+        if not text:
+            continue
+        start = float(note.get("start") or 0.0)
+        end = float(note.get("end") or start)
+        if start <= time_s < end:
+            return note
+    return None
+
+
 def draw_label(draw: ImageDraw.ImageDraw, panel: Tuple[int, int, int, int], label: str) -> None:
     x, y, _, _ = panel
     draw.text((x + 26, y + 34), label, font=load_font(18, bold=True), fill="#e5e7eb")
@@ -449,16 +600,6 @@ def draw_media_panel(
         "#ffffff",
         70,
     )
-    placeholder = "后续接入地下艺演示动作" if (current or {}).get("role") == "underground_gei" else "后续接入该歌曲 MV 或教学画面"
-    draw_centered_lines(
-        draw,
-        [placeholder],
-        x + width // 2,
-        y + height // 2 + 30,
-        load_font(28, bold=True),
-        "#ffffff",
-        36,
-    )
     caption = f"{(result.get('song') or {}).get('title') or 'YesTiger'} · {(music or current or {}).get('music_label') or '-'}"
     caption_font = fit_font(draw, caption, width - 80, 24, min_size=18)
     draw_centered_lines(draw, [caption], x + width // 2, y + height - 48, caption_font, "#ffffff", 28)
@@ -468,21 +609,39 @@ def draw_action_panel(
     draw: ImageDraw.ImageDraw,
     panel: Tuple[int, int, int, int],
     current: Optional[Dict[str, Any]],
+    upcoming: Optional[Dict[str, Any]],
     role_color: str,
+    result: Dict[str, Any],
+    time_s: float,
 ) -> None:
     x, y, width, height = panel
     inner_x = x + 30
     max_width = width - 60
-    draw_label(draw, panel, "应援种类及名称")
-    draw.rectangle((inner_x, y + 76, inner_x + max_width, y + 84), fill=role_color)
+
+    note = current_note(result, time_s)
+    if note:
+        note_text = str(note.get("text") or "")
+        note_font = fit_font(draw, note_text, max_width, 48, min_size=30, bold=True)
+        note_lines = wrap_text(draw, note_text, note_font, max_width, 8)
+        note_line_height = max(40, text_height(draw, "Ag", note_font) + 10)
+        for index, line in enumerate(note_lines):
+            draw.text((inner_x, y + 42 + index * note_line_height), line, font=note_font, fill="#e5e7eb")
+        divider_y = y + 42 + len(note_lines) * note_line_height + 24
+        draw.rectangle((inner_x, divider_y, inner_x + max_width, divider_y + 1), fill="#2a2a2a")
+
+    draw.rectangle((inner_x, y + 360, inner_x + max_width, y + 362), fill="#2a2a2a")
+
+    action_top = y + 390
+    draw.text((inner_x, action_top + 16), "应援种类及名称", font=load_font(18, bold=True), fill="#e5e7eb")
+    draw.rectangle((inner_x, action_top + 46, inner_x + max_width, action_top + 52), fill=role_color)
 
     role_text = ROLE_LABELS.get((current or {}).get("role"), ROLE_LABELS["keepspace"])
-    role_font = fit_font(draw, role_text, max_width, 48, min_size=26, bold=True)
-    draw.text((inner_x, y + 112), role_text, font=role_font, fill="#f8fafc")
+    role_font = fit_font(draw, role_text, max_width, 44, min_size=24, bold=True)
+    draw.text((inner_x, action_top + 100), role_text, font=role_font, fill="#f8fafc")
 
-    action_name = str((current or {}).get("display_name") or "Keep Space")
-    action_font = load_font(40, bold=True)
-    draw_wrapped(draw, action_name, (inner_x, y + 194), action_font, "#f8fafc", max_width, 46, 2)
+    action_name = str((current or {}).get("display_name") or "留白")
+    action_font = load_font(36, bold=True)
+    draw_wrapped(draw, action_name, (inner_x, action_top + 152), action_font, "#f8fafc", max_width, 42, 2)
 
     if current:
         meta = (
@@ -490,8 +649,12 @@ def draw_action_panel(
             f"{RISK_LABELS.get(current.get('risk'), current.get('risk') or 'low')}"
         )
     else:
-        meta = "No action loaded"
-    draw_wrapped(draw, meta, (inner_x, y + height - 48), load_font(22), "#a8b3c2", max_width, 26, 1)
+        meta = "未加载动作"
+    draw_wrapped(draw, meta, (inner_x, y + height - 50), load_font(20), "#a8b3c2", max_width, 24, 1)
+
+    if upcoming:
+        upcoming_text = f"Next  {fmt_time(item_start(upcoming))}  {upcoming.get('display_name') or '-'}"
+        draw_wrapped(draw, upcoming_text, (inner_x, y + height - 22), load_font(18), "#9ca3af", max_width, 22, 1)
 
 
 def draw_method_panel(
@@ -532,15 +695,14 @@ def draw_method_panel(
 def render_frame(result: Dict[str, Any], time_s: float, duration: float, gei_cache=None) -> Image.Image:
     image = Image.new("RGB", (WIDTH, HEIGHT), "#f8fafc")
     draw = ImageDraw.Draw(image)
-    gap = 6
-    left_width = 386
-    top_height = 430
+    gap = PANEL_GAP
+    left_width = LEFT_PANEL_WIDTH
+    top_height = TOP_PANEL_HEIGHT
     right_width = WIDTH - left_width - gap
     bottom_height = HEIGHT - top_height - gap
     panels = {
-        "note": (0, 0, left_width, top_height),
+        "action": (0, 0, left_width, HEIGHT),
         "media": (left_width + gap, 0, right_width, top_height),
-        "action": (0, top_height + gap, left_width, bottom_height),
         "method": (left_width + gap, top_height + gap, right_width, bottom_height),
     }
     for x, y, width, height in panels.values():
@@ -554,9 +716,8 @@ def render_frame(result: Dict[str, Any], time_s: float, duration: float, gei_cac
     role = (current or {}).get("role") or "keepspace"
     role_color = ROLE_COLORS.get(role, ROLE_COLORS["keepspace"])
 
-    draw_note_panel(draw, panels["note"], result, current, upcoming, music, duration, time_s, role_color)
+    draw_action_panel(draw, panels["action"], current, upcoming, role_color, result, time_s)
     draw_media_panel(draw, panels["media"], result, current, music, role_color, time_s=time_s, gei_cache=gei_cache)
-    draw_action_panel(draw, panels["action"], current, role_color)
     draw_method_panel(draw, panels["method"], current, time_s, duration, role_color)
     return image
 
@@ -567,9 +728,14 @@ def export_teaching_video(
     output_path: Path,
     *,
     fps: Optional[int] = None,
+    song_video_path: Optional[Path] = None,
 ) -> Path:
     if not audio_path.exists():
         raise FileNotFoundError(audio_path)
+    if song_video_path is not None:
+        song_video_path = Path(song_video_path)
+        if not song_video_path.exists():
+            raise FileNotFoundError(song_video_path)
     ffmpeg = resolve_ffmpeg()
     fps = int(fps or os.environ.get("YESTIGER_EXPORT_FPS", "10"))
     fps = max(4, min(30, fps))
@@ -585,10 +751,24 @@ def export_teaching_video(
 
     tmp_dir = Path(tempfile.mkdtemp(prefix="yetiger_export_"))
     call_track = None
+    debug_report: Dict[str, Any] = {
+        "root": str(ROOT),
+        "audio_path": str(audio_path),
+        "output_path": str(output_path),
+        "song_video_path": str(song_video_path) if song_video_path is not None else None,
+        "duration": duration,
+        "fps": fps,
+    }
     try:
-        call_track = build_call_audio_track(result, duration, tmp_dir)
-    except Exception:
-        pass
+        call_track = build_call_audio_track(result, duration, tmp_dir, report=debug_report)
+    except Exception as exc:
+        debug_report["call_mix_error"] = str(exc)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        output_path.with_suffix(".export-debug.json").write_text(
+            json.dumps(debug_report, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+        raise RuntimeError(f"Call audio mix failed: {exc}") from exc
 
     command = [
         ffmpeg,
@@ -609,25 +789,48 @@ def export_teaching_video(
         "-i",
         str(audio_path),
     ]
+    next_input_index = 2
+    call_track_index = None
     if call_track and call_track.exists():
         command.extend(["-i", str(call_track)])
+        call_track_index = next_input_index
+        next_input_index += 1
+    song_video_index = None
+    if song_video_path is not None:
+        command.extend(["-i", str(song_video_path)])
+        song_video_index = next_input_index
+        next_input_index += 1
 
-    command.extend([
-        "-t",
-        f"{duration:.3f}",
-        "-map",
-        "0:v:0",
-    ])
-
-    if call_track and call_track.exists():
-        command.extend([
-            "-filter_complex",
-            "[1:a][2:a]amix=inputs=2:duration=first:weights=1 1[aout]",
-            "-map",
-            "[aout]",
+    filter_parts: List[str] = []
+    video_map = "0:v:0"
+    if song_video_index is not None:
+        filter_parts.extend([
+            (
+                f"[{song_video_index}:v]"
+                f"scale={MEDIA_PANEL_WIDTH}:{MEDIA_PANEL_HEIGHT}:force_original_aspect_ratio=decrease,"
+                f"pad={MEDIA_PANEL_WIDTH}:{MEDIA_PANEL_HEIGHT}:(ow-iw)/2:(oh-ih)/2,"
+                "setsar=1,format=rgba[sv]"
+            ),
+            (
+                f"[0:v][sv]overlay={MEDIA_PANEL_X}:{MEDIA_PANEL_Y}:"
+                "eof_action=pass:shortest=0[vout]"
+            ),
         ])
-    else:
-        command.extend(["-map", "1:a:0"])
+        video_map = "[vout]"
+
+    audio_map = "1:a:0"
+    if call_track_index is not None:
+        filter_parts.append(
+            f"[1:a][{call_track_index}:a]"
+            "amix=inputs=2:duration=first:weights=0.85 2.2:normalize=0,"
+            "alimiter=limit=0.98[aout]"
+        )
+        audio_map = "[aout]"
+
+    command.extend(["-t", f"{duration:.3f}"])
+    if filter_parts:
+        command.extend(["-filter_complex", ";".join(filter_parts)])
+    command.extend(["-map", video_map, "-map", audio_map])
 
     command.extend([
         "-c:v",
@@ -642,11 +845,23 @@ def export_teaching_video(
         "aac",
         "-b:a",
         "192k",
-        "-shortest",
         "-movflags",
         "+faststart",
         str(output_path),
     ])
+    debug_report.update({
+        "final_call_track": str(call_track) if call_track is not None else None,
+        "final_call_track_exists": bool(call_track and call_track.exists()),
+        "final_filter_complex": ";".join(filter_parts),
+        "final_video_map": video_map,
+        "final_audio_map": audio_map,
+        "final_ffmpeg_command": [str(part) for part in command],
+    })
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.with_suffix(".export-debug.json").write_text(
+        json.dumps(debug_report, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
     process = subprocess.Popen(
         command,
         stdin=subprocess.PIPE,
@@ -668,15 +883,27 @@ def export_teaching_video(
             process.stdin.close()
         except OSError:
             pass
-        try:
-            for p in tmp_dir.glob("*"):
-                p.unlink()
-            tmp_dir.rmdir()
-        except OSError:
-            pass
 
     stderr = process.stderr.read().decode("utf-8", errors="replace") if process.stderr else ""
     return_code = process.wait(timeout=max(60, int(duration * 4)))
+    try:
+        for p in tmp_dir.glob("*"):
+            p.unlink()
+        tmp_dir.rmdir()
+    except OSError:
+        pass
     if return_code != 0:
+        debug_report["final_ffmpeg_error"] = stderr[-2000:]
+        output_path.with_suffix(".export-debug.json").write_text(
+            json.dumps(debug_report, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
         raise RuntimeError(stderr[-2000:] or f"ffmpeg exited with {return_code}")
+    debug_report["final_ffmpeg_return_code"] = return_code
+    debug_report["output_exists"] = output_path.exists()
+    debug_report["output_size"] = output_path.stat().st_size if output_path.exists() else 0
+    output_path.with_suffix(".export-debug.json").write_text(
+        json.dumps(debug_report, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
     return output_path

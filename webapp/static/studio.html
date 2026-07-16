@@ -57,15 +57,6 @@
             </div>
           </div>
 
-          <div class="process-panel">
-            <div class="process-head">
-              <h2>分析流水线</h2>
-              <span id="pipelineBadge" class="pipeline-badge">空闲</span>
-            </div>
-            <div id="methodLine" class="method-line">尚未加载分析</div>
-            <ol id="processSteps" class="process-steps"></ol>
-          </div>
-
           <div class="export-panel">
             <button id="exportJsonBtn" type="button" disabled>导出 JSON</button>
             <button id="exportMdBtn" type="button" disabled>导出 MD</button>
@@ -78,13 +69,19 @@
             <canvas id="videoCanvas" width="1280" height="720"></canvas>
             <div id="geiVideoOverlay" class="gei-video-overlay" hidden>
               <video id="geiVideoPlayer" muted playsinline></video>
+              <video id="songVideoPlayer" muted playsinline></video>
             </div>
             <audio id="callAudioPlayer" hidden></audio>
             <audio id="audioPlayer" controls preload="auto" crossorigin="anonymous"></audio>
             <div class="media-actions">
+              <label class="song-video-upload" for="songVideoInput">
+                <input id="songVideoInput" type="file" accept="video/*" />
+                加载歌曲视频
+              </label>
+              <button id="clearSongVideoBtn" type="button" disabled>移除歌曲视频</button>
+              <span id="songVideoName" class="song-video-name">未加载歌曲视频</span>
               <button id="exportVideoBtn" class="video-export-btn" type="button" disabled>下载教学视频 (.mp4)</button>
-              <button id="recordBtn" type="button" disabled>录制 WebM</button>
-              <span id="recordHint" class="record-hint">请先加载分析</span>
+              <span id="exportHint" class="export-hint">请先加载分析</span>
             </div>
           </div>
 

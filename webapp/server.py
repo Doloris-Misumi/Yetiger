@@ -79,6 +79,8 @@ def _get_video_exporter():
 STATIC_DIR = THIS_DIR / "static"
 EXAMPLE_AUDIO_DIR = Path(os.environ.get("YESTIGER_EXAMPLE_AUDIO_DIR") or (ROOT / "example_audio")).resolve()
 EXAMPLE_AUDIO_SUFFIXES = (".mp3", ".wav", ".flac", ".m4a", ".ogg")
+VIDEO_UPLOAD_SUFFIXES = (".mp4", ".webm", ".mov", ".m4v", ".mkv", ".avi")
+MAX_EXPORT_BODY_BYTES = int(os.environ.get("YESTIGER_EXPORT_UPLOAD_LIMIT_MB", "2048")) * 1024 * 1024
 
 # In-memory job status for async analysis (bypasses Render 30s timeout)
 _job_status = {}
@@ -274,6 +276,41 @@ def suffix_from_content_type(content_type: str) -> str:
     if content_type in {"audio/ogg", "application/ogg"}:
         return ".ogg"
     return ".audio"
+
+
+def video_suffix_from_content_type(content_type: str) -> str:
+    content_type = str(content_type or "").split(";")[0].strip().lower()
+    if content_type == "video/mp4":
+        return ".mp4"
+    if content_type == "video/webm":
+        return ".webm"
+    if content_type in {"video/quicktime", "video/mov"}:
+        return ".mov"
+    if content_type in {"video/x-m4v", "video/m4v"}:
+        return ".m4v"
+    if content_type in {"video/x-matroska", "video/mkv"}:
+        return ".mkv"
+    if content_type in {"video/x-msvideo", "video/avi"}:
+        return ".avi"
+    return ".video"
+
+
+def save_export_song_video(field, export_assets_dir: Path) -> Path:
+    if isinstance(field, list):
+        field = field[0]
+    original_filename = decode_upload_filename(getattr(field, "filename", "") or "song_video.mp4")
+    original_path = Path(original_filename)
+    suffix = original_path.suffix.lower()
+    if suffix not in VIDEO_UPLOAD_SUFFIXES:
+        suffix = video_suffix_from_content_type(getattr(field, "type", ""))
+    if suffix not in VIDEO_UPLOAD_SUFFIXES:
+        raise ValueError("unsupported_song_video_type")
+    safe_stem = _slugify(original_path.stem)[:80] or "song_video"
+    export_assets_dir.mkdir(parents=True, exist_ok=True)
+    video_path = export_assets_dir / f"{safe_stem}{suffix}"
+    with video_path.open("wb") as handle:
+        shutil.copyfileobj(field.file, handle)
+    return video_path
 
 
 class YesTigerHandler(BaseHTTPRequestHandler):
@@ -624,15 +661,42 @@ class YesTigerHandler(BaseHTTPRequestHandler):
         self.send_json({"action": action, "status": "saved"})
 
     def handle_export_video(self) -> None:
+        content_type = self.headers.get("Content-Type", "")
         content_length = int(self.headers.get("Content-Length", "0") or "0")
         if content_length <= 0:
             self.send_json({"error": "missing_body"}, status=400)
             return
-        if content_length > 10 * 1024 * 1024:
+        if content_length > MAX_EXPORT_BODY_BYTES:
             self.send_json({"error": "body_too_large"}, status=413)
             return
-        payload = json.loads(self.rfile.read(content_length).decode("utf-8"))
-        result = payload.get("result") if isinstance(payload, dict) else payload
+
+        song_video_field = None
+        if "multipart/form-data" in content_type:
+            form = cgi.FieldStorage(
+                fp=self.rfile,
+                headers=self.headers,
+                environ={
+                    "REQUEST_METHOD": "POST",
+                    "CONTENT_TYPE": content_type,
+                },
+            )
+            result_text = form.getfirst("result")
+            if not result_text:
+                self.send_json({"error": "missing_result"}, status=400)
+                return
+            payload = json.loads(result_text)
+            if "song_video" in form:
+                song_video_field = form["song_video"]
+        else:
+            if content_length > 10 * 1024 * 1024:
+                self.send_json({"error": "body_too_large"}, status=413)
+                return
+            payload = json.loads(self.rfile.read(content_length).decode("utf-8"))
+
+        if isinstance(payload, dict) and isinstance(payload.get("result"), dict):
+            result = payload["result"]
+        else:
+            result = payload
         if not isinstance(result, dict):
             self.send_json({"error": "bad_result"}, status=400)
             return
@@ -643,7 +707,10 @@ class YesTigerHandler(BaseHTTPRequestHandler):
         job_id = export_job_id_from_result(result)
         out_dir = JOB_DIR / job_id / "exports"
         out_path = out_dir / f"{song_id}.teaching.mp4"
-        _get_video_exporter()(result, audio_path, out_path)
+        song_video_path = None
+        if song_video_field is not None:
+            song_video_path = save_export_song_video(song_video_field, JOB_DIR / job_id / "export_assets")
+        _get_video_exporter()(result, audio_path, out_path, song_video_path=song_video_path)
         self.send_file(out_path, download_name=f"{song_id}.teaching.mp4")
 
 

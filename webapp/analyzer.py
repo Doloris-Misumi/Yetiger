@@ -613,6 +613,28 @@ def _annotation_title(song_id: str) -> str:
     return str((data.get("song") or {}).get("title") or song_id)
 
 
+def _static_example_title(song_id: str) -> Optional[str]:
+    static_path = STATIC_EXAMPLES_DIR / f"{song_id}.json"
+    if static_path.exists():
+        try:
+            data = read_json(static_path)
+            title = (data.get("song") or {}).get("title")
+            if title:
+                return str(title)
+        except Exception:
+            pass
+    index_path = STATIC_EXAMPLES_DIR / "index.json"
+    if index_path.exists():
+        try:
+            data = read_json(index_path)
+            for song in data.get("songs") or []:
+                if str(song.get("song_id") or "") == song_id and song.get("title"):
+                    return str(song.get("title"))
+        except Exception:
+            pass
+    return None
+
+
 def _prediction_path_for_support(support_payload: Dict[str, Any], song_id: str) -> Path:
     candidate_config = _candidate_config()
     current_backbone = str(
@@ -857,7 +879,11 @@ def _call_spans_from_support(
     return spans
 
 
-def callbook_to_markdown(song_id: str, timeline: Sequence[Dict[str, Any]]) -> str:
+def callbook_to_markdown(
+    song_id: str,
+    timeline: Sequence[Dict[str, Any]],
+    notes: Optional[Sequence[Dict[str, Any]]] = None,
+) -> str:
     lines = [
         f"# YesTiger Tutorial Plan: {song_id}",
         "",
@@ -874,6 +900,18 @@ def callbook_to_markdown(song_id: str, timeline: Sequence[Dict[str, Any]]) -> st
             f"{item.get('risk')} | {confidence_text} | "
             f"{item.get('typical_text') or '-'} |"
         )
+    clean_notes = [
+        note for note in (notes or [])
+        if isinstance(note, dict) and str(note.get("text") or "").strip()
+    ]
+    if clean_notes:
+        lines.extend(["", "## 备注", ""])
+        for note in clean_notes:
+            lines.append(
+                f"- {fmt_time(float(note.get('start') or 0.0))}-"
+                f"{fmt_time(float(note.get('end') or 0.0))} "
+                f"{str(note.get('text') or '').strip()}"
+            )
     return "\n".join(lines) + "\n"
 
 
@@ -1081,10 +1119,16 @@ def save_curated_result(
 ) -> Dict[str, Any]:
     """Save human-curated music segments, timeline, and notes for a job."""
     job_dir = JOB_DIR / slugify(job_id)
+    result_path = job_dir / "result.json"
+    if not result_path.exists() and str(job_id).startswith("example_"):
+        song_id = slugify(str(job_id).replace("example_", "", 1))
+        job_dir.mkdir(parents=True, exist_ok=True)
+        original_example = load_example_result(song_id)
+        write_json(result_path, original_example)
     if not job_dir.exists():
         raise FileNotFoundError(f"Job directory not found: {job_dir}")
 
-    original = read_json(job_dir / "result.json")
+    original = read_json(result_path)
     curated = dict(original)
     # notes: array of {start, end, text} or legacy string
     if notes is not None:
@@ -1127,12 +1171,13 @@ def save_curated_result(
         if float(item.get("end", 0)) > float(item.get("start", 0))
     ]
 
-    curated["signal_process"]["status"] = "human_curated"
+    curated.setdefault("signal_process", {})["status"] = "human_curated"
     curated["pipeline_status"] = "human_curated"
-    curated["method"]["actions"] = "human_curated"
+    curated.setdefault("method", {})["actions"] = "human_curated"
     curated["markdown"] = callbook_to_markdown(
         curated.get("song", {}).get("song_id", job_id),
         curated["timeline"],
+        curated.get("notes") if isinstance(curated.get("notes"), list) else None,
     )
 
     write_json(job_dir / "curated_result.json", curated)
@@ -1227,11 +1272,21 @@ def refresh_result_actions_from_library(result: Dict[str, Any]) -> Dict[str, Any
     result["markdown"] = callbook_to_markdown(
         result.get("song", {}).get("song_id") or result.get("job_id") or "example",
         result.get("timeline") or [],
+        result.get("notes") if isinstance(result.get("notes"), list) else None,
     )
     return result
 
 
 def load_example_result(song_id: str) -> Dict[str, Any]:
+    song_id = slugify(song_id)
+    example_job_dir = JOB_DIR / f"example_{song_id}"
+    curated_path = example_job_dir / "curated_result.json"
+    if curated_path.exists():
+        result = read_json(curated_path)
+        result["job_id"] = result.get("job_id") or f"example_{song_id}"
+        result.setdefault("downloads", {})
+        return refresh_result_actions_from_library(result)
+
     support_path = _support_path_for_song(song_id)
     support_payload = read_json(support_path)
     try:
@@ -1266,7 +1321,7 @@ def load_example_result(song_id: str) -> Dict[str, Any]:
     }
     result = build_webapp_result(
         song_id=song_id,
-        title=_annotation_title(song_id),
+        title=_static_example_title(song_id) or _annotation_title(song_id),
         audio_filename=audio_path.name if audio_path else None,
         prediction=prediction,
         support_payload=support_payload,

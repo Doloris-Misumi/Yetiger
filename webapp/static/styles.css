@@ -215,14 +215,6 @@ h2 {
   gap: 8px;
 }
 
-.process-panel {
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  padding: 10px;
-  display: grid;
-  gap: 8px;
-}
-
 .process-head {
   display: flex;
   align-items: center;
@@ -269,40 +261,6 @@ h2 {
   background: #fff8e6;
 }
 
-.method-line {
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.35;
-  word-break: break-word;
-}
-
-.process-steps {
-  margin: 0;
-  padding-left: 18px;
-  display: grid;
-  gap: 7px;
-  font-size: 12px;
-}
-
-.process-steps li strong,
-.process-steps li span {
-  display: block;
-}
-
-.process-steps li strong {
-  color: #344054;
-}
-
-.process-steps li span {
-  margin-top: 2px;
-  color: var(--muted);
-  line-height: 1.35;
-}
-
-.fallback-note span {
-  color: #a33b2f;
-}
-
 .main-panel {
   min-width: 0;
   overflow: hidden;
@@ -342,6 +300,7 @@ h2 {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  display: none;
 }
 
 #audioPlayer {
@@ -356,6 +315,38 @@ h2 {
   min-height: 38px;
 }
 
+.song-video-upload {
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid #bdc7d3;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.song-video-upload:hover {
+  border-color: #8796a8;
+  background: #f8fafc;
+}
+
+.song-video-upload input {
+  display: none;
+}
+
+.song-video-name {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+  max-width: 240px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .video-export-btn {
   background: #17202a;
   border-color: #17202a;
@@ -368,7 +359,7 @@ h2 {
   border-color: #263241;
 }
 
-.record-hint {
+.export-hint {
   color: var(--muted);
   font-size: 12px;
   line-height: 1.35;

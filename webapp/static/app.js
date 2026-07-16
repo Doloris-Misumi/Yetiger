@@ -3,9 +3,12 @@ const state = {
   selectedFile: null,
   waveform: [],
   animationId: null,
-  recorder: null,
-  recordingStream: null,
   videoExporting: false,
+  songVideoUrl: "",
+  songVideoObjectUrl: "",
+  songVideoName: "",
+  songVideoFile: null,
+  callAudioKey: "",
   actionLibrary: [],
   segmentDirty: false,
   timelineDirty: false,
@@ -26,14 +29,13 @@ const els = {
   tempoStat: document.getElementById("tempoStat"),
   barsStat: document.getElementById("barsStat"),
   actionsStat: document.getElementById("actionsStat"),
-  pipelineBadge: document.getElementById("pipelineBadge"),
-  methodLine: document.getElementById("methodLine"),
-  processSteps: document.getElementById("processSteps"),
   exportJsonBtn: document.getElementById("exportJsonBtn"),
   exportMdBtn: document.getElementById("exportMdBtn"),
   exportVideoBtn: document.getElementById("exportVideoBtn"),
-  recordBtn: document.getElementById("recordBtn"),
-  recordHint: document.getElementById("recordHint"),
+  exportHint: document.getElementById("exportHint"),
+  songVideoInput: document.getElementById("songVideoInput"),
+  clearSongVideoBtn: document.getElementById("clearSongVideoBtn"),
+  songVideoName: document.getElementById("songVideoName"),
   canvas: document.getElementById("videoCanvas"),
   audio: document.getElementById("audioPlayer"),
   timelineBody: document.getElementById("timelineBody"),
@@ -48,6 +50,7 @@ const els = {
   timelineFilters: document.getElementById("timelineFilters"),
   geiVideoOverlay: document.getElementById("geiVideoOverlay"),
   geiVideoPlayer: document.getElementById("geiVideoPlayer"),
+  songVideoPlayer: document.getElementById("songVideoPlayer"),
   callAudioPlayer: document.getElementById("callAudioPlayer"),
   notesList: document.getElementById("notesList"),
   addNoteBtn: document.getElementById("addNoteBtn"),
@@ -91,7 +94,7 @@ const CALL_AUDIO_MAP = {
   imi_fumei_ai_mix: "/api/call-audio/imi_fumei_ai_mix",
 };
 const missingCallAudioIds = new Set();
-const CALL_AUDIO_VERSION = "20260715-ietora-audible";
+const CALL_AUDIO_VERSION = "20260717-duration-fit";
 
 function resolveApiBase() {
   const params = new URLSearchParams(window.location.search);
@@ -199,6 +202,14 @@ function fmtTime(seconds) {
   return `${String(minutes).padStart(2, "0")}:${secs.toFixed(2).padStart(5, "0")}`;
 }
 
+function parseTimeInput(value) {
+  const text = String(value || "").trim().replace("：", ":");
+  const match = text.match(/^(\d+):(\d+(?:\.\d+)?)$/);
+  if (match) return parseInt(match[1], 10) * 60 + parseFloat(match[2]);
+  const seconds = Number(text);
+  return Number.isFinite(seconds) && seconds >= 0 ? seconds : null;
+}
+
 function downloadText(filename, text, type) {
   const blob = new Blob([text], { type });
   const url = URL.createObjectURL(blob);
@@ -222,73 +233,146 @@ function downloadBlob(filename, blob) {
   URL.revokeObjectURL(url);
 }
 
-function preferredVideoMimeType() {
-  if (!window.MediaRecorder || !MediaRecorder.isTypeSupported) return "";
-  const candidates = [
-    "video/webm;codecs=vp9,opus",
-    "video/webm;codecs=vp8,opus",
-    "video/webm;codecs=vp9",
-    "video/webm;codecs=vp8",
-    "video/webm",
-  ];
-  return candidates.find((type) => MediaRecorder.isTypeSupported(type)) || "";
-}
-
 function hasAudioSource() {
   return Boolean(els.audio.currentSrc || els.audio.src);
 }
 
-function updateRecordAvailability(message) {
-  const supportsRecording = Boolean(window.MediaRecorder && els.canvas.captureStream);
-  const isRecording = Boolean(state.recorder && state.recorder.state !== "inactive");
-  const canRecord = Boolean(state.result && supportsRecording && hasAudioSource());
+function updateExportAvailability(message) {
   const canExportMp4 = Boolean(state.result && hasAudioSource());
   els.exportVideoBtn.disabled = state.videoExporting || !canExportMp4;
-  els.exportVideoBtn.textContent = state.videoExporting ? "Rendering MP4..." : "Download Teaching Video (.mp4)";
-  els.recordBtn.disabled = !isRecording && !canRecord;
-  els.recordBtn.textContent = isRecording ? "Stop and Download WebM" : "Record WebM";
-  if (!els.recordHint) return;
+  els.exportVideoBtn.textContent = state.videoExporting ? "正在生成 MP4..." : "下载教学视频 (.mp4)";
+  if (!els.exportHint) return;
   if (state.videoExporting) {
-    els.recordHint.textContent = "Rendering frames on the backend, then muxing with audio";
+    els.exportHint.textContent = "正在后端渲染画面并合成音频";
   } else if (message) {
-    els.recordHint.textContent = message;
-  } else if (!supportsRecording) {
-    els.recordHint.textContent = state.result ? "MP4 export is available; browser WebM recording is unavailable" : "Load analysis first";
+    els.exportHint.textContent = message;
   } else if (!state.result) {
-    els.recordHint.textContent = "Load analysis first";
+    els.exportHint.textContent = "请先加载分析";
   } else if (!hasAudioSource()) {
-    els.recordHint.textContent = "Load audio before exporting video";
+    els.exportHint.textContent = "请先加载音频";
   } else {
-    els.recordHint.textContent = "MP4 renders offline on the backend; WebM records in realtime";
+    els.exportHint.textContent = state.songVideoUrl
+      ? "MP4 会包含右上角歌曲视频、原曲音频和 call 声音。"
+      : "MP4 会在后端离线渲染，并合成原曲音频和 call 声音。";
   }
 }
 
-function waitForAudioMetadata() {
-  if (els.audio.readyState >= 1) return Promise.resolve();
-  return new Promise((resolve, reject) => {
-    const timeout = window.setTimeout(() => {
-      cleanup();
-      reject(new Error("audio metadata timeout"));
-    }, 8000);
-    const cleanup = () => {
-      window.clearTimeout(timeout);
-      els.audio.removeEventListener("loadedmetadata", onReady);
-      els.audio.removeEventListener("canplay", onReady);
-      els.audio.removeEventListener("error", onError);
-    };
-    const onReady = () => {
-      cleanup();
-      resolve();
-    };
-    const onError = () => {
-      cleanup();
-      reject(new Error("audio load failed"));
-    };
-    els.audio.addEventListener("loadedmetadata", onReady, { once: true });
-    els.audio.addEventListener("canplay", onReady, { once: true });
-    els.audio.addEventListener("error", onError, { once: true });
-    els.audio.load();
-  });
+function updateSongVideoUi() {
+  if (!els.songVideoName || !els.clearSongVideoBtn) return;
+  els.songVideoName.textContent = state.songVideoName || "未加载歌曲视频";
+  els.clearSongVideoBtn.disabled = !state.songVideoUrl;
+}
+
+function clearSongVideo(options = {}) {
+  if (state.songVideoObjectUrl) {
+    URL.revokeObjectURL(state.songVideoObjectUrl);
+  }
+  state.songVideoUrl = "";
+  state.songVideoObjectUrl = "";
+  state.songVideoName = "";
+  state.songVideoFile = null;
+  if (els.songVideoInput) els.songVideoInput.value = "";
+  if (els.songVideoPlayer) {
+    els.songVideoPlayer.pause();
+    els.songVideoPlayer.removeAttribute("src");
+    els.songVideoPlayer.style.display = "none";
+    els.songVideoPlayer.load();
+  }
+  updateSongVideoUi();
+  updateExportAvailability();
+  if (!options.silent) setStatus("歌曲视频已移除");
+}
+
+function setSongVideoFile(file) {
+  if (!file) return;
+  if (file.type && !file.type.startsWith("video/")) {
+    setStatus("请选择视频文件");
+    return;
+  }
+  clearSongVideo({ silent: true });
+  const url = URL.createObjectURL(file);
+  state.songVideoUrl = url;
+  state.songVideoObjectUrl = url;
+  state.songVideoName = file.name;
+  state.songVideoFile = file;
+  els.songVideoPlayer.src = url;
+  els.songVideoPlayer.load();
+  updateSongVideoUi();
+  updateExportAvailability("歌曲视频已加载，会跟随音频播放与拖动");
+  setStatus("歌曲视频已加载");
+  syncSongVideoToAudio(true);
+}
+
+function applyVideoOverlayBounds() {
+  const overlay = els.geiVideoOverlay;
+  const canvasRect = els.canvas.getBoundingClientRect();
+  const parentRect = els.canvas.parentElement.getBoundingClientRect();
+  const gap = 6;
+  const leftW = 386;
+  const topH = 430;
+  const scaleX = canvasRect.width / 1280;
+  const scaleY = canvasRect.height / 720;
+  const mediaX = canvasRect.left - parentRect.left + (leftW + gap) * scaleX;
+  const mediaY = canvasRect.top - parentRect.top;
+  const mediaW = (1280 - leftW - gap) * scaleX;
+  const mediaH = topH * scaleY;
+
+  overlay.style.left = `${mediaX}px`;
+  overlay.style.top = `${mediaY}px`;
+  overlay.style.width = `${mediaW}px`;
+  overlay.style.height = `${mediaH}px`;
+}
+
+function pauseOverlayVideos() {
+  els.geiVideoPlayer.pause();
+  stopCallAudio();
+  if (els.songVideoPlayer) els.songVideoPlayer.pause();
+  if (!state.songVideoUrl) els.geiVideoOverlay.hidden = true;
+}
+
+function syncSongVideoToAudio(force = false) {
+  if (!state.songVideoUrl || !els.songVideoPlayer) return false;
+  const video = els.songVideoPlayer;
+  const overlay = els.geiVideoOverlay;
+
+  applyVideoOverlayBounds();
+  els.geiVideoPlayer.pause();
+  els.geiVideoPlayer.style.display = "none";
+  video.style.display = "block";
+  overlay.hidden = false;
+
+  if (!video.src) {
+    video.src = state.songVideoUrl;
+    video.load();
+  }
+
+  const targetTime = Math.max(0, Number(els.audio.currentTime || 0));
+  if (video.readyState >= 1 && Number.isFinite(video.duration) && video.duration > 0) {
+    const boundedTime = Math.min(targetTime, Math.max(0, video.duration - 0.05));
+    if (force || Math.abs(video.currentTime - boundedTime) > 0.35) {
+      try {
+        video.currentTime = boundedTime;
+      } catch (_error) {
+        // Some browsers reject early seeks before metadata is ready.
+      }
+    }
+  }
+
+  if (Math.abs(video.playbackRate - els.audio.playbackRate) > 0.01) {
+    video.playbackRate = els.audio.playbackRate;
+  }
+
+  if (els.audio.paused || els.audio.ended || !hasAudioSource()) {
+    video.pause();
+  } else if (video.paused) {
+    video.play().catch(() => {});
+  }
+  return true;
+}
+
+function updateOverlayVideo(current, time) {
+  if (syncSongVideoToAudio()) return;
+  updateGeiVideo(current, time);
 }
 
 function filenameFromDisposition(value, fallback) {
@@ -316,6 +400,13 @@ function markdownFromTimeline(result) {
     lines.push(
       `| ${fmtTime(action.start)}-${fmtTime(action.end)} | ${action.music_label || "-"} | ${action.struct_label || "-"} | ${action.role || "-"} | ${action.display_name || "-"} | ${action.bar_count ?? "-"} | ${action.risk || "-"} | ${action.typical_text || "-"} |`
     );
+  }
+  const notes = Array.isArray(result.notes) ? result.notes.filter((note) => String(note.text || "").trim()) : [];
+  if (notes.length) {
+    lines.push("", "## 备注", "");
+    for (const note of notes) {
+      lines.push(`- ${fmtTime(note.start)}-${fmtTime(note.end)} ${String(note.text || "").trim()}`);
+    }
   }
   return `${lines.join("\n")}\n`;
 }
@@ -420,46 +511,8 @@ function renderStats() {
 }
 
 function renderProcess() {
-  const process = state.result?.signal_process || {};
-  const method = state.result?.method || {};
-  const status = process.status || state.result?.pipeline_status || "idle";
-  const statusLabels = {
-    idle: "Idle",
-    full: "Full Pipeline",
-    current_model: "Current Model",
-    degraded_grid: "Degraded Grid",
-    fallback: "Fallback",
-    heuristic: "Heuristic",
-  };
-  els.pipelineBadge.textContent = statusLabels[status] || status;
-  els.pipelineBadge.dataset.status = status;
-  els.methodLine.textContent = method.structure
-    ? `${method.structure} -> ${method.actions || "actions"}`
-    : "No analysis loaded";
-  els.processSteps.innerHTML = "";
-
-  const counts = [];
-  if (process.rows != null) counts.push(`${process.rows} 小节`);
-  if (process.music_segments != null) counts.push(`${process.music_segments} 音乐段落`);
-  if (process.call_spans != null) counts.push(`${process.call_spans} 应援区间`);
-  if (counts.length) {
-    const item = document.createElement("li");
-    item.innerHTML = `<strong>输出网格</strong><span>${counts.join(" / ")}</span>`;
-    els.processSteps.appendChild(item);
-  }
-
-  for (const step of process.steps || []) {
-    const item = document.createElement("li");
-    item.innerHTML = `<strong>${escapeHtml(step.name || "")}</strong><span>${escapeHtml(step.detail || "")}</span>`;
-    els.processSteps.appendChild(item);
-  }
-
-  if (process.fallback_reason) {
-    const item = document.createElement("li");
-    item.className = "fallback-note";
-    item.innerHTML = `<strong>Fallback reason</strong><span>${escapeHtml(process.fallback_reason)}</span>`;
-    els.processSteps.appendChild(item);
-  }
+  // Keep pipeline fields in saved analysis results, but hide debug-oriented
+  // process details from the product UI.
 }
 
 function renderTimeline() {
@@ -554,23 +607,26 @@ function handleDeleteAction(e) {
 
 function recalcBarCount(action) {
   const downbeats = getDownbeats();
-  if (!downbeats.length) return;
   const start = Number(action.start) || 0;
   const end = Number(action.end) || start;
   if (end <= start) {
     action.bar_count = null;
     return;
   }
-  const epsilon = 0.03;
-  let count = 0;
-  for (let i = 0; i < downbeats.length - 1; i++) {
-    const barStart = downbeats[i];
-    const barEnd = downbeats[i + 1];
-    const overlap = Math.min(end, barEnd) - Math.max(start, barStart);
-    if (overlap > epsilon && barEnd > barStart) count += 1;
+  const barSeconds = inferredBarSeconds();
+  if (downbeats.length >= 2) {
+    const startIndex = nearestDownbeatIndex(start, downbeats);
+    const endIndex = nearestDownbeatIndex(end, downbeats);
+    const startDist = Math.abs(downbeats[startIndex] - start);
+    const endDist = Math.abs(downbeats[endIndex] - end);
+    const tolerance = Math.max(0.18, (Number.isFinite(barSeconds) ? barSeconds : 2.4) * 0.38);
+    if (endIndex > startIndex && startDist <= tolerance && endDist <= tolerance) {
+      action.bar_count = endIndex - startIndex;
+      return;
+    }
   }
-  if (count > 0) {
-    action.bar_count = count;
+  if (Number.isFinite(barSeconds) && barSeconds > 0) {
+    action.bar_count = Math.max(1, Math.round((end - start) / barSeconds));
     return;
   }
   const intervals = [];
@@ -662,7 +718,7 @@ function drawCanvas() {
   const upcoming = nextAction(time);
   const currentMusic = musicSegmentAt(time);
 
-  updateGeiVideo(current, time);
+  updateOverlayVideo(current, time);
   updateCallAudio(current, time);
 
   drawTeachingCanvas(ctx, width, height, result, current, upcoming, currentMusic, duration, time);
@@ -680,26 +736,17 @@ function updateGeiVideo(current, time) {
   if (!videoSrc || !current) {
     overlay.hidden = true;
     video.pause();
+    video.style.display = "none";
     video.removeAttribute("src");
     return;
   }
 
-  const canvasRect = els.canvas.getBoundingClientRect();
-  const parentRect = els.canvas.parentElement.getBoundingClientRect();
-  const gap = 6;
-  const leftW = 386;
-  const topH = 430;
-  const scaleX = canvasRect.width / 1280;
-  const scaleY = canvasRect.height / 720;
-  const mediaX = canvasRect.left - parentRect.left + (leftW + gap) * scaleX;
-  const mediaY = canvasRect.top - parentRect.top;
-  const mediaW = (1280 - leftW - gap) * scaleX;
-  const mediaH = topH * scaleY;
-
-  overlay.style.left = `${mediaX}px`;
-  overlay.style.top = `${mediaY}px`;
-  overlay.style.width = `${mediaW}px`;
-  overlay.style.height = `${mediaH}px`;
+  applyVideoOverlayBounds();
+  if (els.songVideoPlayer) {
+    els.songVideoPlayer.pause();
+    els.songVideoPlayer.style.display = "none";
+  }
+  video.style.display = "block";
 
   const currentSrc = video.getAttribute("src") || "";
   if (!currentSrc.includes(videoSrc)) {
@@ -730,41 +777,75 @@ function updateGeiVideo(current, time) {
   overlay.hidden = false;
 }
 
+function stopCallAudio({ clearSource = false, resetTime = true } = {}) {
+  const audio = els.callAudioPlayer;
+  const hadSource = Boolean(audio.getAttribute("src"));
+  if (!hadSource && !state.callAudioKey && audio.paused) return;
+  audio.pause();
+  if (resetTime) {
+    try {
+      audio.currentTime = 0;
+    } catch (_error) {
+      // The media element may not have metadata yet.
+    }
+  }
+  if (clearSource && hadSource) {
+    audio.removeAttribute("src");
+    audio.load();
+  }
+  state.callAudioKey = "";
+}
+
 function updateCallAudio(current, time) {
   const actionId = current?.action_id;
   const audioSrc = callAudioUrlForAction(current);
   const audio = els.callAudioPlayer;
 
   if (!audioSrc || !current) {
-    audio.pause();
-    audio.removeAttribute("src");
+    stopCallAudio({ clearSource: true });
     return;
-  }
-
-  const resolvedAudioSrc = apiUrl(audioSrc);
-  const currentSrc = audio.getAttribute("src") || "";
-  if (!currentSrc.includes(resolvedAudioSrc)) {
-    audio.src = resolvedAudioSrc;
-    audio.onerror = () => {
-      if (actionId) missingCallAudioIds.add(actionId);
-      audio.pause();
-      audio.removeAttribute("src");
-    };
-    audio.load();
   }
 
   const actionStart = Number(current.start) || 0;
   const actionEnd = Number(current.end) || actionStart + 1;
   const actionDuration = Math.max(0.1, actionEnd - actionStart);
+  if (time < actionStart || time >= actionEnd - 0.025) {
+    stopCallAudio();
+    return;
+  }
+
+  const resolvedAudioSrc = apiUrl(audioSrc);
+  const currentSrc = audio.getAttribute("src") || "";
+  const actionKey = `${actionId}:${actionStart.toFixed(3)}:${actionEnd.toFixed(3)}`;
+  if (!currentSrc.includes(resolvedAudioSrc) || state.callAudioKey !== actionKey) {
+    audio.pause();
+    audio.src = resolvedAudioSrc;
+    state.callAudioKey = actionKey;
+    audio.onerror = () => {
+      if (actionId) missingCallAudioIds.add(actionId);
+      stopCallAudio({ clearSource: true });
+    };
+    audio.load();
+    try {
+      audio.currentTime = 0;
+    } catch (_error) {
+      // Metadata may not be ready yet.
+    }
+  }
+
   const localTime = Math.max(0, Math.min(actionDuration, time - actionStart));
 
   if (audio.readyState >= 2 && audio.duration > 0) {
-    const targetRate = Math.max(0.75, Math.min(4.0, audio.duration / actionDuration));
+    const targetRate = Math.max(0.5, Math.min(8.0, audio.duration / actionDuration));
     if (Math.abs(audio.playbackRate - targetRate) > 0.01) {
       audio.playbackRate = targetRate;
     }
     const expectedTime = (localTime / actionDuration) * audio.duration;
-    if (Math.abs(audio.currentTime - expectedTime) > 0.25) {
+    if (expectedTime >= audio.duration - 0.025) {
+      stopCallAudio();
+      return;
+    }
+    if (Math.abs(audio.currentTime - expectedTime) > 0.12) {
       audio.currentTime = expectedTime;
     }
   }
@@ -896,12 +977,6 @@ function drawMediaPanel(ctx, panel, result, current, currentMusic, roleColor) {
   fitCanvasFont(ctx, "MV / DEMO SLOT", "900", 66, "Segoe UI, sans-serif", panel.w - 100, 32);
   ctx.fillText("MV / DEMO SLOT", panel.x + panel.w / 2, panel.y + panel.h / 2 - 10);
 
-  ctx.font = "700 28px Segoe UI, Microsoft YaHei, sans-serif";
-  const placeholder = current?.role === "underground_gei"
-    ? "后续接入地下艺演示动作"
-    : "后续接入该歌曲 MV 或教学画面";
-  ctx.fillText(placeholder, panel.x + panel.w / 2, panel.y + panel.h / 2 + 44);
-
   ctx.font = "24px Segoe UI, sans-serif";
   const caption = `${result?.song?.title || "YesTiger"} · ${currentMusic?.music_label || current?.music_label || "-"}`;
   ctx.fillText(caption, panel.x + panel.w / 2, panel.y + panel.h - 42);
@@ -918,16 +993,14 @@ function drawActionPanel(ctx, panel, current, roleColor, result, currentMusic, d
 
   if (note) {
     ctx.fillStyle = "#f8fafc";
-    ctx.font = "700 28px Segoe UI, Microsoft YaHei, sans-serif";
-    ctx.fillText(`备注 · ${fmtTime(note.start)}-${fmtTime(note.end)}`, x, panel.y + 42);
-    ctx.fillStyle = "#e5e7eb";
     fitCanvasFont(ctx, note.text, "800", 48, "Segoe UI, Microsoft YaHei, sans-serif", maxW, 30);
     const noteLines = wrapCanvasText(ctx, note.text, maxW).slice(0, 8);
     const noteLineH = Math.max(40, Number(ctx.font.match(/(\d+)px/)?.[1] || 40) + 10);
+    ctx.fillStyle = "#e5e7eb";
     noteLines.forEach((line, i) => {
-      ctx.fillText(line, x, panel.y + 80 + i * noteLineH);
+      ctx.fillText(line, x, panel.y + 42 + i * noteLineH);
     });
-    infoTopY = panel.y + 80 + noteLines.length * noteLineH + 14;
+    infoTopY = panel.y + 42 + noteLines.length * noteLineH + 24;
 
     // Divider
     ctx.fillStyle = "#2a2a2a";
@@ -1114,7 +1187,75 @@ function drawRoleBands(ctx, width, height, duration, time) {
 function getDownbeats() {
   const meta = state.result?.model_meta || {};
   const raw = meta.downbeats || [];
-  return raw.map(Number).filter((d) => !isNaN(d) && d >= 0).sort((a, b) => a - b);
+  const anchors = raw.map(Number).filter((d) => !isNaN(d) && d >= 0);
+  if (!anchors.length) {
+    const generated = generatedDownbeats();
+    anchors.push(...generated);
+    if (!anchors.length) {
+      anchors.push(0);
+    }
+  }
+  return Array.from(new Set(anchors.map((value) => Math.round(value * 100) / 100)))
+    .sort((a, b) => a - b);
+}
+
+function inferredBarSeconds() {
+  const song = state.result?.song || {};
+  const meta = state.result?.model_meta || {};
+  const tempo = Number(song.tempo || meta.tempo);
+  if (Number.isFinite(tempo) && tempo > 20 && tempo < 260) {
+    return 240 / tempo;
+  }
+
+  const duration = Number(song.duration || meta.duration_s);
+  const bars = Number(song.bar_count || meta.bar_count);
+  if (Number.isFinite(duration) && duration > 0 && Number.isFinite(bars) && bars > 0) {
+    return duration / bars;
+  }
+
+  const lengths = [];
+  for (const item of state.result?.timeline || []) {
+    const start = Number(item.start);
+    const end = Number(item.end);
+    const length = end - start;
+    if (Number.isFinite(length) && length > 0.8 && length < 8) lengths.push(length);
+  }
+  lengths.sort((a, b) => a - b);
+  return lengths.length ? lengths[Math.floor(lengths.length / 2)] : 2.4;
+}
+
+function generatedDownbeats() {
+  const barSeconds = inferredBarSeconds();
+  if (!Number.isFinite(barSeconds) || barSeconds <= 0) return [];
+  const song = state.result?.song || {};
+  const duration = Number(song.duration || state.result?.model_meta?.duration_s || 0);
+  const timeline = state.result?.timeline || [];
+  const firstActionStart = timeline
+    .map((item) => Number(item.start))
+    .find((value) => Number.isFinite(value) && value >= 0);
+  const anchor = Number.isFinite(firstActionStart) ? firstActionStart : 0;
+  const start = anchor - Math.ceil(anchor / barSeconds) * barSeconds;
+  const end = Number.isFinite(duration) && duration > 0
+    ? duration + barSeconds
+    : Math.max(...timeline.map((item) => Number(item.end) || 0), anchor) + barSeconds;
+  const beats = [];
+  for (let t = start; t <= end + 0.001; t += barSeconds) {
+    if (t >= -0.001) beats.push(Math.max(0, t));
+  }
+  return beats;
+}
+
+function nearestDownbeatIndex(value, downbeats) {
+  let bestIndex = 0;
+  let bestDist = Infinity;
+  downbeats.forEach((downbeat, index) => {
+    const dist = Math.abs(Number(downbeat) - value);
+    if (dist < bestDist) {
+      bestDist = dist;
+      bestIndex = index;
+    }
+  });
+  return bestIndex;
 }
 
 function snapToDownbeat(value, downbeats) {
@@ -1188,9 +1329,10 @@ function bindStructureEvents() {
     state.result.music_segments[index].struct_label = sel.value;
     state.result.music_segments[index].source = "human_curated";
     state.segmentDirty = true;
-    syncSegmentsToTimeline();
+    if (syncSegmentsToTimeline()) state.timelineDirty = true;
     renderStructureEditor();
     renderTimeline();
+    drawCanvas();
     updateEditBadge();
   });
 
@@ -1199,12 +1341,14 @@ function bindStructureEvents() {
     if (!inp) return;
     const index = Number(inp.dataset.index);
     const field = inp.dataset.field;
-    const match = String(inp.value).match(/^(\d+):(\d+(?:\.\d+)?)$/);
-    if (match) {
-      const val = parseInt(match[1], 10) * 60 + parseFloat(match[2]);
+    const val = parseTimeInput(inp.value);
+    if (val !== null) {
       state.result.music_segments[index][field] = Math.round(val * 100) / 100;
       state.result.music_segments[index].source = "human_curated";
       state.segmentDirty = true;
+      if (syncSegmentsToTimeline()) state.timelineDirty = true;
+      renderTimeline();
+      drawCanvas();
       updateEditBadge();
     }
   });
@@ -1222,6 +1366,13 @@ function bindStructureEvents() {
       inp.value = fmtTime(snapped);
       showSnapToast(original, snapped);
     }
+    state.result.music_segments[index].source = "human_curated";
+    state.segmentDirty = true;
+    if (syncSegmentsToTimeline()) state.timelineDirty = true;
+    recalcAllBarCounts();
+    renderTimeline();
+    drawCanvas();
+    updateEditBadge();
   });
 
   els.segmentList.addEventListener("click", (e) => {
@@ -1230,9 +1381,10 @@ function bindStructureEvents() {
     const index = Number(btn.dataset.index);
     state.result.music_segments.splice(index, 1);
     state.segmentDirty = true;
-    syncSegmentsToTimeline();
+    if (syncSegmentsToTimeline()) state.timelineDirty = true;
     renderStructureEditor();
     renderTimeline();
+    drawCanvas();
   });
 
   els.addSegmentBtn.addEventListener("click", () => {
@@ -1249,9 +1401,10 @@ function bindStructureEvents() {
       source: "human_curated",
     });
     state.segmentDirty = true;
-    syncSegmentsToTimeline();
+    if (syncSegmentsToTimeline()) state.timelineDirty = true;
     renderStructureEditor();
     renderTimeline();
+    drawCanvas();
   });
 }
 
@@ -1295,11 +1448,11 @@ function bindNotesEvents() {
     if (inp) {
       const index = Number(inp.dataset.index);
       const field = inp.dataset.field;
-      const match = String(inp.value).match(/^(\d+):(\d+(?:\.\d+)?)$/);
-      if (match) {
-        const val = parseInt(match[1], 10) * 60 + parseFloat(match[2]);
+      const val = parseTimeInput(inp.value);
+      if (val !== null) {
         state.result.notes[index][field] = Math.round(val * 100) / 100;
         state.notesDirty = true;
+        drawCanvas();
       }
       return;
     }
@@ -1308,6 +1461,7 @@ function bindNotesEvents() {
       const index = Number(textInp.dataset.index);
       state.result.notes[index].text = textInp.value;
       state.notesDirty = true;
+      drawCanvas();
     }
   });
 
@@ -1323,6 +1477,8 @@ function bindNotesEvents() {
       state.result.notes[index][field] = snapped;
       inp.value = fmtTime(snapped);
       showSnapToast(original, snapped);
+      state.notesDirty = true;
+      drawCanvas();
     }
   });
 
@@ -1355,20 +1511,39 @@ function bindNotesEvents() {
 function syncSegmentsToTimeline() {
   const segments = state.result?.music_segments || [];
   const timeline = state.result?.timeline || [];
-  segments.forEach((seg, segIdx) => {
-    const label = seg.music_label;
-    const matching = timeline.filter((t) => {
-      const tStart = Number(t.start);
-      const tEnd = Number(t.end);
+  let changed = false;
+  timeline.forEach((item) => {
+    const start = Number(item.start);
+    const end = Number(item.end);
+    if (!Number.isFinite(start) || !Number.isFinite(end) || end <= start) return;
+
+    let best = null;
+    let bestOverlap = 0;
+    for (const seg of segments) {
       const segStart = Number(seg.start);
       const segEnd = Number(seg.end);
-      return tStart >= segStart - 0.5 && tEnd <= segEnd + 0.5;
-    });
-    matching.forEach((t) => {
-      t.music_label = label;
-      t.struct_label = label;
-    });
+      if (!Number.isFinite(segStart) || !Number.isFinite(segEnd) || segEnd <= segStart) continue;
+      const overlap = Math.min(end, segEnd) - Math.max(start, segStart);
+      if (overlap > bestOverlap) {
+        bestOverlap = overlap;
+        best = seg;
+      }
+    }
+    if (!best && segments.length) {
+      const midpoint = (start + end) / 2;
+      best = segments.find((seg) => midpoint >= Number(seg.start) && midpoint < Number(seg.end)) || null;
+      if (best) bestOverlap = end - start;
+    }
+    if (!best || bestOverlap <= 0) return;
+    const label = best.music_label || "unknown";
+    if (item.music_label !== label || item.struct_label !== label) {
+      item.music_label = label;
+      item.struct_label = label;
+      item.mode = "human_curated";
+      changed = true;
+    }
   });
+  return changed;
 }
 
 // ─── Action Search ───────────────────────────────────────────────────
@@ -1413,12 +1588,6 @@ function findExactAction(value) {
   }) || null;
 }
 
-function preferredBars(action) {
-  const duration = action?.duration || {};
-  const bars = Number(duration.preferred_bars);
-  return duration.strict_bars && Number.isFinite(bars) && bars > 0 ? bars : null;
-}
-
 function applyActionToTimeline(index, action) {
   const item = state.result?.timeline?.[index];
   if (!item || !action) return;
@@ -1428,8 +1597,7 @@ function applyActionToTimeline(index, action) {
   item.risk = action.risk || item.risk || "medium";
   item.typical_text = action.typical_text || "";
   item.tutorial_text = action.tutorial_text || null;
-  const bars = preferredBars(action);
-  if (bars !== null) item.bar_count = bars;
+  recalcBarCount(item);
   item.mode = "human_curated";
 }
 
@@ -1529,11 +1697,17 @@ async function saveEdits() {
       seg.start = snapToDownbeat(Number(seg.start), downbeats);
       seg.end = snapToDownbeat(Number(seg.end), downbeats);
     }
+    for (const note of state.result.notes || []) {
+      note.start = snapToDownbeat(Number(note.start), downbeats);
+      note.end = snapToDownbeat(Number(note.end), downbeats);
+    }
   }
+  if (syncSegmentsToTimeline()) state.timelineDirty = true;
   for (const item of state.result.timeline || []) {
     item.time = `${fmtTime(item.start)}-${fmtTime(item.end)}`;
   }
   renderStructureEditor();
+  renderNotesEditor();
   const jobId = state.result.job_id || state.result?.song?.song_id || "unknown";
   const payload = {
     music_segments: state.result.music_segments || [],
@@ -1603,9 +1777,13 @@ function setResult(result, audioUrl) {
   recalcAllBarCounts();
   els.geiVideoOverlay.hidden = true;
   els.geiVideoPlayer.pause();
+  els.geiVideoPlayer.style.display = "none";
   els.geiVideoPlayer.removeAttribute("src");
-  els.callAudioPlayer.pause();
-  els.callAudioPlayer.removeAttribute("src");
+  if (els.songVideoPlayer && !state.songVideoUrl) {
+    els.songVideoPlayer.pause();
+    els.songVideoPlayer.style.display = "none";
+  }
+  stopCallAudio({ clearSource: true });
   renderStats();
   renderProcess();
   renderStructureEditor();
@@ -1622,7 +1800,7 @@ function setResult(result, audioUrl) {
     els.audio.src = audioUrl;
     buildWaveformFromUrl(audioUrl);
   }
-  updateRecordAvailability();
+  updateExportAvailability();
   if (state.animationId) cancelAnimationFrame(state.animationId);
   drawCanvas();
 }
@@ -1714,6 +1892,7 @@ async function analyzeUpload(event) {
 async function loadExample() {
   const songId = els.exampleSelect.value;
   if (!songId) return;
+  clearSongVideo({ silent: true });
   setStatus("正在加载示例...");
   try {
     const data = await fetchJson(apiUrl(`/api/examples/${songId}`));
@@ -1745,28 +1924,36 @@ function bindEvents() {
   bindStructureEvents();
   bindRoleFilter();
   ["loadedmetadata", "canplay", "emptied", "error"].forEach((name) => {
-    els.audio.addEventListener(name, () => updateRecordAvailability());
+    els.audio.addEventListener(name, () => updateExportAvailability());
+  });
+
+  ["play", "playing", "seeked", "ratechange"].forEach((name) => {
+    els.audio.addEventListener(name, () => syncSongVideoToAudio(true));
   });
 
   ["pause", "ended"].forEach((name) => {
-    els.audio.addEventListener(name, () => {
-      els.geiVideoOverlay.hidden = true;
-      els.geiVideoPlayer.pause();
-      els.callAudioPlayer.pause();
-    });
+    els.audio.addEventListener(name, pauseOverlayVideos);
   });
 
   els.audioInput.addEventListener("change", async () => {
     const file = els.audioInput.files[0];
     if (!file) return;
+    clearSongVideo({ silent: true });
     state.selectedFile = file;
     els.fileName.textContent = file.name;
     if (!els.titleInput.value) els.titleInput.value = file.name.replace(/\.[^.]+$/, "");
     const url = URL.createObjectURL(file);
     els.audio.src = url;
-    updateRecordAvailability();
+    updateExportAvailability();
     await buildWaveform(await file.arrayBuffer());
   });
+
+  els.songVideoInput.addEventListener("change", () => {
+    const file = els.songVideoInput.files[0];
+    if (file) setSongVideoFile(file);
+  });
+
+  els.clearSongVideoBtn.addEventListener("click", () => clearSongVideo());
 
   ["dragenter", "dragover"].forEach((name) => {
     els.dropZone.addEventListener(name, (event) => {
@@ -1783,12 +1970,13 @@ function bindEvents() {
   els.dropZone.addEventListener("drop", async (event) => {
     const file = event.dataTransfer.files[0];
     if (!file) return;
+    clearSongVideo({ silent: true });
     state.selectedFile = file;
     els.fileName.textContent = file.name;
     els.titleInput.value = file.name.replace(/\.[^.]+$/, "");
     const url = URL.createObjectURL(file);
     els.audio.src = url;
-    updateRecordAvailability();
+    updateExportAvailability();
     await buildWaveform(await file.arrayBuffer());
   });
 
@@ -1821,9 +2009,9 @@ function bindEvents() {
     if (!inp || !state.result) return;
     const index = Number(inp.dataset.index);
     const field = inp.dataset.field;
-    const match = String(inp.value).match(/^(\d+):(\d+(?:\.\d+)?)$/);
-    if (match) {
-      let val = parseInt(match[1], 10) * 60 + parseFloat(match[2]);
+    const parsed = parseTimeInput(inp.value);
+    if (parsed !== null) {
+      let val = parsed;
       const downbeats = getDownbeats();
       if (downbeats.length) {
         const snapped = snapToDownbeat(val, downbeats);
@@ -1853,22 +2041,30 @@ function bindEvents() {
   });
 
   els.exportVideoBtn.addEventListener("click", exportTeachingVideo);
-  els.recordBtn.addEventListener("click", recordWebm);
 }
 
 async function exportTeachingVideo() {
   const result = editableResult();
   if (!result || state.videoExporting) return;
   state.videoExporting = true;
-  updateRecordAvailability();
+  updateExportAvailability();
   setStatus("正在生成 MP4 教学视频...");
   let finalHint = null;
   try {
-    const response = await fetch(apiUrl("/api/export-video"), {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ result }),
-    });
+    let requestOptions;
+    if (state.songVideoFile) {
+      const form = new FormData();
+      form.append("result", JSON.stringify(result));
+      form.append("song_video", state.songVideoFile, state.songVideoFile.name || "song_video.mp4");
+      requestOptions = { method: "POST", body: form };
+    } else {
+      requestOptions = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ result }),
+      };
+    }
+    const response = await fetch(apiUrl("/api/export-video"), requestOptions);
     if (!response.ok) {
       let detail = `${response.status} ${response.statusText}`;
       try {
@@ -1884,115 +2080,22 @@ async function exportTeachingVideo() {
     const filename = filenameFromDisposition(response.headers.get("Content-Disposition"), fallbackName);
     downloadBlob(filename, blob);
     setStatus("MP4 视频已下载");
-    finalHint = "已保存后端渲染 MP4（含音频）";
+    finalHint = state.songVideoFile
+      ? "已保存所见即所得 MP4（含右上角歌曲视频、原曲音频和 call 声音）"
+      : "已保存后端渲染 MP4（含原曲音频和 call 声音）";
   } catch (error) {
     setStatus(`MP4 导出失败: ${error.message}`);
-    finalHint = "MP4 export failed; WebM realtime recording is still available";
+    finalHint = "MP4 export failed";
   } finally {
     state.videoExporting = false;
-    updateRecordAvailability(finalHint);
+    updateExportAvailability(finalHint);
   }
 }
 
-async function recordWebm() {
-  if (state.recorder && state.recorder.state !== "inactive") {
-    setStatus("正在完成视频...");
-    state.recorder.stop();
-    return;
-  }
-  if (!state.result || !window.MediaRecorder || !els.canvas.captureStream || !hasAudioSource()) {
-    setStatus("视频导出不可用");
-    updateRecordAvailability();
-    return;
-  }
-
-  let cancelled = false;
-  let timeoutId = null;
-  const chunks = [];
-  const canvasStream = els.canvas.captureStream(30);
-  const audioCapture = els.audio.captureStream || els.audio.mozCaptureStream;
-  let audioTrackCount = 0;
-  if (audioCapture) {
-    const audioStream = audioCapture.call(els.audio);
-    const audioTracks = audioStream.getAudioTracks();
-    audioTrackCount = audioTracks.length;
-    audioTracks.forEach((track) => canvasStream.addTrack(track));
-  }
-
-  const mimeType = preferredVideoMimeType();
-  let recorder;
-  try {
-    recorder = new MediaRecorder(canvasStream, mimeType ? { mimeType } : undefined);
-  } catch (error) {
-    canvasStream.getTracks().forEach((track) => track.stop());
-    setStatus(`Video export failed: ${error.message}`);
-    updateRecordAvailability();
-    return;
-  }
-
-  const cleanup = () => {
-    if (timeoutId) window.clearTimeout(timeoutId);
-    canvasStream.getTracks().forEach((track) => track.stop());
-    els.audio.removeEventListener("ended", stopRecording);
-    state.recorder = null;
-    state.recordingStream = null;
-    updateRecordAvailability();
-  };
-
-  const stopRecording = () => {
-    if (recorder.state !== "inactive") recorder.stop();
-  };
-
-  recorder.ondataavailable = (event) => {
-    if (event.data.size) chunks.push(event.data);
-  };
-  recorder.onerror = (event) => {
-    cancelled = true;
-    setStatus(`视频导出失败: ${event.error?.message || "录制错误"}`);
-    stopRecording();
-  };
-  recorder.onstop = () => {
-    cleanup();
-    els.audio.pause();
-    if (cancelled || !chunks.length) {
-      setStatus("视频导出已取消");
-      return;
-    }
-    const outputType = mimeType || "video/webm";
-    const blob = new Blob(chunks, { type: outputType });
-    downloadBlob(`${state.result.song.song_id || "yetiger"}.webm`, blob);
-    setStatus("视频已下载");
-    updateRecordAvailability(audioTrackCount ? "已保存画面+音频 WebM" : "已保存纯画面 WebM；音频捕获不可用");
-  };
-
-  try {
-    await waitForAudioMetadata();
-    els.audio.pause();
-    els.audio.currentTime = 0;
-    state.recorder = recorder;
-    state.recordingStream = canvasStream;
-    recorder.start(1000);
-    updateRecordAvailability(audioTrackCount ? "正在录制画面+音频..." : "正在录制纯画面；浏览器未提供音频捕获");
-    setStatus(audioTrackCount ? "正在录制教学视频..." : "正在录制画面视频...");
-    await els.audio.play();
-    els.audio.addEventListener("ended", stopRecording, { once: true });
-    const duration = Number(state.result?.song?.duration || els.audio.duration || 0);
-    if (duration > 0) {
-      timeoutId = window.setTimeout(stopRecording, Math.ceil((duration + 1) * 1000));
-    }
-  } catch (error) {
-    cancelled = true;
-    setStatus(`Video export failed: ${error.message}`);
-    if (recorder.state !== "inactive") {
-      stopRecording();
-    } else {
-      cleanup();
-    }
-  }
-}
 
 bindEvents();
-updateRecordAvailability();
+updateExportAvailability();
+updateSongVideoUi();
 
 (async function init() {
   const ok = await wakeUpBackend();
