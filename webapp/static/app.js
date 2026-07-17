@@ -186,7 +186,7 @@ const musicLabels = {
   chorus: "副歌",
   post_chorus: "后副歌",
   bridge: "桥段",
-  instrumental: "纯音乐",
+  instrumental: "间奏/纯音乐",
   instrumental_break: "间奏 Break",
   interlude: "间奏",
   solo: "Solo",
@@ -1311,17 +1311,23 @@ const COARSE_LABELS = [
   "intro",
   "verse",
   "pre_chorus",
-  "pre_chorus_build",
   "chorus",
-  "post_chorus",
   "instrumental",
-  "instrumental_break",
-  "interlude",
-  "solo",
   "bridge",
   "outro",
-  "end",
 ];
+
+function structureLabelOptions(currentLabel) {
+  const current = String(currentLabel || "").trim();
+  const labels = COARSE_LABELS.slice();
+  if (current && current !== "unknown" && !labels.includes(current)) {
+    labels.push(current);
+  }
+  return labels.map((label) => {
+    const suffix = COARSE_LABELS.includes(label) ? "" : "（当前细分）";
+    return `<option value="${escapeAttr(label)}" ${current === label ? "selected" : ""}>${escapeHtml(musicLabelText(label) + suffix)}</option>`;
+  }).join("");
+}
 
 function renderStructureEditor() {
   const segments = state.result?.music_segments || [];
@@ -1335,9 +1341,7 @@ function renderStructureEditor() {
     li.className = "segment-row";
     li.dataset.index = String(index);
     const edited = seg.source === "human_curated";
-    const labelOptions = COARSE_LABELS.map(
-      (lb) => `<option value="${lb}" ${seg.music_label === lb ? "selected" : ""}>${musicLabelText(lb)}</option>`
-    ).join("");
+    const labelOptions = structureLabelOptions(seg.music_label);
     li.innerHTML = `
       <span class="seg-num">#${index + 1}</span>
       <input class="seg-time" type="text" value="${fmtTime(seg.start)}" data-index="${index}" data-field="start" size="8" />
