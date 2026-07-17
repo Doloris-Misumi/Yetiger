@@ -18,6 +18,7 @@
           <a class="back-link" href="/index.html">返回入口</a>
           <a class="back-link" href="/studio.html">Web Studio</a>
           <a class="back-link" href="/builder.html">MIX Builder</a>
+          <a class="back-link" href="/library.html">动作库</a>
         </nav>
       </header>
 
@@ -29,7 +30,9 @@
           <a href="#segments">修改音乐段落</a>
           <a href="#actions">修改应援动作</a>
           <a href="#notes">自定义备注</a>
+          <a href="#song-video">本地视频</a>
           <a href="#mix-builder">自定义 MIX</a>
+          <a href="#library">动作库参考</a>
           <a href="#save-export">保存与导出</a>
           <a href="#storage">数据位置</a>
         </nav>
@@ -42,6 +45,7 @@
               <li>上传自己的 mp3、wav 或 flac，填写歌曲名后开始分析。</li>
               <li>检查自动识别的音乐段落，必要时在右侧结构编辑器里修正。</li>
               <li>检查动作时间线，替换不合适的应援动作或调整起止时间。</li>
+              <li>可选：加载本地 MV / 现场视频，让右上角视频和歌曲用同一个播放条同步播放。</li>
               <li>添加备注，保存编辑，再导出 JSON、Markdown 或教学视频。</li>
               <li>需要新 MIX / Call 时，进入 MIX Builder 创建并保存到本地动作库。</li>
             </ol>
@@ -106,6 +110,17 @@
             <p>备注会跟随当前歌曲结果保存在本地，可以和 JSON 结果一起备份。</p>
           </section>
 
+          <section id="song-video" class="readme-section">
+            <h2>加载本地视频</h2>
+            <ol>
+              <li>歌曲加载后，在 canvas 下方点击“选择歌曲视频”。</li>
+              <li>选择本机上的 MV、现场视频或练习参考视频。</li>
+              <li>视频会显示在教学画面右上角，并跟随歌曲音频一起播放、暂停、拖动和变速。</li>
+              <li>不需要视频时，点击“移除视频”。</li>
+            </ol>
+            <p>视频文件只在本地浏览器和导出接口中使用，不会写入 GitHub。导出 MP4 时，当前加载的视频会一起合成进右上角画面。</p>
+          </section>
+
           <section id="mix-builder" class="readme-section">
             <h2>自定义 MIX / Call</h2>
             <ol>
@@ -119,14 +134,25 @@
             <p>保存后的自定义动作会写入 <code>webapp_runs/custom_actions/</code>。回到 Web Studio 后，它会出现在动作搜索里，可以被手动选入时间线。</p>
           </section>
 
+          <section id="library" class="readme-section">
+            <h2>动作库参考</h2>
+            <ol>
+              <li>从首页进入 MIX & Call Library。</li>
+              <li>按名称、别名、喊词或 ID 搜索动作。</li>
+              <li>用类别和风险筛选 MIX、节奏 Call、地下艺或留白。</li>
+              <li>查看中日文名称、内容、小节长度、适用场景和来源。</li>
+            </ol>
+            <p>该页面直接读取当前 <code>knowledge/call_mix_library.json</code> 和本地自定义动作，适合编辑时间线前快速查阅。</p>
+          </section>
+
           <section id="save-export" class="readme-section">
             <h2>保存与导出</h2>
             <ul>
               <li>“保存编辑”会保存音乐段落、动作时间线和备注到当前歌曲结果。</li>
+              <li>“保存备注”会单独保存备注列表，备注会显示在教学画面左上角，并参与 MP4 导出。</li>
               <li>“导出 JSON”会下载完整结构化结果，适合继续处理或备份。</li>
               <li>“导出 MD”会下载 Markdown 版 callbook，适合阅读和分享文字方案。</li>
-              <li>“下载教学视频”会用当前 canvas 和动作时间线生成 mp4。</li>
-              <li>“录制 WebM”会从浏览器端录制当前预览，适合快速留档。</li>
+              <li>“下载教学视频”会生成 MP4，包含当前教学画面、右上角本地视频、原曲音频、call / MIX 声音和备注。</li>
             </ul>
           </section>
 

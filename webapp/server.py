@@ -405,10 +405,13 @@ class YesTigerHandler(BaseHTTPRequestHandler):
             if path == "/builder" or path == "/builder.html":
                 self.send_file(STATIC_DIR / "builder.html")
                 return
+            if path == "/library" or path == "/library.html":
+                self.send_file(STATIC_DIR / "library.html")
+                return
             if path in {"/readme", "/readme.html", "/help", "/help.html"}:
                 self.send_file(STATIC_DIR / "readme.html")
                 return
-            if path in {"/styles.css", "/config.js", "/app.js", "/builder.js"}:
+            if path in {"/styles.css", "/config.js", "/app.js", "/builder.js", "/library.js"}:
                 self.send_file(STATIC_DIR / path.lstrip("/"))
                 return
             if path.startswith("/static/"):
@@ -456,6 +459,12 @@ class YesTigerHandler(BaseHTTPRequestHandler):
             if path == "/api/actions":
                 if _analyzer_ready.is_set():
                     self.send_json({"actions": _get_analyzer().list_action_library()})
+                else:
+                    self.send_json({"actions": [], "status": "loading"})
+                return
+            if path == "/api/library":
+                if _analyzer_ready.is_set():
+                    self.send_json(_get_analyzer().list_reference_library())
                 else:
                     self.send_json({"actions": [], "status": "loading"})
                 return

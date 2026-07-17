@@ -70,8 +70,6 @@ underground_gei
 | `clap` | Clap | rhythmcall | verse, chorus, bridge, outro | 0.35 | low |
 | `name_call` | Name Call | rhythmcall | solo line gap, post-phrase gap up to 8 bars | 0.55 | medium |
 | `vocal_chant` | Vocal Chant | rhythmcall | short original vocal chants | 0.50 | low |
-| `aizuchi` | Aizuchi Call | rhythmcall | lyric gaps, hooks, call-and-response | 0.50 | low |
-| `kecha` | Kecha | rhythmcall | emotional solo, ballad chorus, oshi focus | 0.30 | low |
 | `sing_along` | Sing Along | rhythmcall | chorus, final chorus, anthem hook | 0.45 | low |
 | `long_zhi_mao` | Long Zhi Mao | underground_gei | 4 or 8-bar high-energy gaps | 0.95 | high |
 | `gongfu_she` | Gongfu She | underground_gei | 8-9 bar high-energy chorus gaps | 0.98 | high |

@@ -1352,7 +1352,8 @@
         "quiet_ballad"
       ],
       "intensity": 0.58,
-      "risk": "low"
+      "risk": "low",
+      "chinese_alias": "巧克力螺"
     },
     {
       "id": "jyajya_mix",
@@ -1363,7 +1364,7 @@
         "李嘉MIX"
       ],
       "category": "mix",
-      "typical_text": "Jya Jya MIX phrase; fill exact chant text after local validation.",
+      "typical_text": "参考蟹蟹Start true dream",
       "best_context": [
         "pre_chorus",
         "pre_chorus_build",
@@ -1984,7 +1985,7 @@
           "Kasen Tobi Jyokyo "
         ]
       },
-      "chinese_alias": "虎虎起手式"
+      "chinese_alias": "虎虎发动"
     },
 
  
@@ -2044,7 +2045,7 @@
           "Haiseno"
         ]
       },
-      "chinese_alias": "一二发动"
+      "chinese_alias": "Haiseno发动"
     },
     {
       "id": "mouikai",
@@ -2098,7 +2099,7 @@
           "Mou ikkai!"
         ]
       },
-      "chinese_alias": "再来一次"
+      "chinese_alias": "莫一开"
     },
     {
       "id": "bismarck_mix_first_half",
@@ -2820,7 +2821,7 @@
       "aliases": [
         "long zhi mao"
       ],
-      "typical_text": "Long Zhi Mao underground-gei movement sequence."
+      "typical_text": "龙之矛"
     },
     {
       "id": "gongfu_she",
@@ -2831,7 +2832,7 @@
         "功夫蛇"
       ],
       "category": "underground_gei",
-      "typical_text": "Gongfu She underground-gei movement sequence.",
+      "typical_text": "功夫蛇",
       "best_context": [
         "chorus",
         "instrumental_break",
@@ -2874,7 +2875,7 @@
         "阿里十字"
       ],
       "category": "underground_gei",
-      "typical_text": "Ali Shizi underground-gei movement sequence.",
+      "typical_text": "阿里十字",
       "best_context": [
         "chorus",
         "instrumental_break",
@@ -2917,7 +2918,7 @@
         "黑白双翼"
       ],
       "category": "underground_gei",
-      "typical_text": "Heibai Shuangyi underground-gei movement sequence.",
+      "typical_text": "黑白双翼",
       "best_context": [
         "chorus",
         "instrumental_break",
@@ -2992,7 +2993,7 @@
         "cun zheng",
         "村正"
       ],
-      "typical_text": "Cun Zheng underground-gei movement sequence."
+      "typical_text": "村正"
     },
     {
       "category": "underground_gei",
@@ -3036,7 +3037,7 @@
         "Thunder Snake",
         "雷蛇"
       ],
-      "typical_text": "Lei She underground-gei movement sequence."
+      "typical_text": "雷蛇"
     },
     {
       "category": "underground_gei",
@@ -3079,7 +3080,7 @@
         "luo man si",
         "罗曼斯"
       ],
-      "typical_text": "Luo Man Si underground-gei movement sequence."
+      "typical_text": "罗曼斯"
     },
     {
       "category": "underground_gei",
@@ -3122,7 +3123,7 @@
         "dian bo she",
         "电波蛇"
       ],
-      "typical_text": "Dian Bo She underground-gei movement sequence."
+      "typical_text": "电波蛇"
     },
     {
       "category": "underground_gei",
@@ -3163,7 +3164,7 @@
         "zi he she",
         "滋贺蛇"
       ],
-      "typical_text": "Zi He She underground-gei movement sequence."
+      "typical_text": "滋贺蛇"
     },
     {
       "id": "chan_she",
@@ -3173,7 +3174,7 @@
         "禅蛇"
       ],
       "category": "underground_gei",
-      "typical_text": "Chan She underground-gei movement sequence.",
+      "typical_text": "禅蛇",
       "best_context": [
         "instrumental_break",
         "high_energy_break",
@@ -3215,7 +3216,7 @@
         "天照"
       ],
       "category": "underground_gei",
-      "typical_text": "Tian Zhao underground-gei movement sequence.",
+      "typical_text": "天照",
       "best_context": [
         "chorus",
         "instrumental_break",
@@ -3261,7 +3262,7 @@
         "天体驱动短"
       ],
       "category": "underground_gei",
-      "typical_text": "Tian Qu underground-gei movement sequence, short 6 eight-count version.",
+      "typical_text": "天体驱动",
       "best_context": [
         "instrumental_break",
         "high_energy_break",
@@ -3306,7 +3307,7 @@
         "天体驱动长"
       ],
       "category": "underground_gei",
-      "typical_text": "Tian Qu underground-gei movement sequence, long 10 eight-count version.",
+      "typical_text": "天体驱动长",
       "best_context": [
         "instrumental_break",
         "high_energy_break",
@@ -3674,72 +3675,6 @@
         "unknown_lyrics"
       ],
       "intensity": 0.5,
-      "risk": "low"
-    },
-    {
-      "id": "aizuchi",
-      "display_name": "Aizuchi Call",
-      "aliases": [
-        "Call and response",
-        "Aizuchi"
-      ],
-      "category": "rhythmcall",
-      "typical_text": "Short response in lyric gaps.",
-      "best_context": [
-        "post_phrase_gap",
-        "chorus_gap",
-        "catchy_hook"
-      ],
-      "requires": {
-        "min_bars": 1,
-        "max_bars": 8,
-        "vocal_density": "gap",
-        "lyric_or_phrase_pattern": "preferred"
-      },
-      "duration": {
-        "preferred_bars": 1,
-        "strict_bars": false,
-        "can_compress": true,
-        "can_extend": false
-      },
-      "avoid": [
-        "dense_vocal",
-        "unknown_gap_timing"
-      ],
-      "intensity": 0.5,
-      "risk": "low"
-    },
-    {
-      "id": "kecha",
-      "display_name": "Kecha",
-      "aliases": [
-        "Kechak",
-        "Forward reach"
-      ],
-      "category": "rhythmcall",
-      "typical_text": "Forward-reaching oshi gesture rather than shouted text.",
-      "best_context": [
-        "emotional_solo",
-        "ballad_chorus",
-        "oshi_focus"
-      ],
-      "requires": {
-        "min_bars": 4,
-        "max_bars": 32,
-        "energy": "low_to_medium",
-        "vocal_density": "can_overlap"
-      },
-      "duration": {
-        "preferred_bars": 4,
-        "strict_bars": false,
-        "can_compress": false,
-        "can_extend": true
-      },
-      "avoid": [
-        "high_speed_mix_section",
-        "aggressive_chorus"
-      ],
-      "intensity": 0.3,
       "risk": "low"
     },
     {

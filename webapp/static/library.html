@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>YesTiger MIX & Call Library</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="library-shell">
+      <header class="library-header">
+        <div>
+          <p class="readme-kicker">YesTiger Reference</p>
+          <h1>MIX & Call Library</h1>
+          <p id="libraryStatus" class="readme-lead">加载现有动作库，用于查看 MIX / Call 的名称、内容、长度和适用场景。</p>
+        </div>
+        <nav class="top-actions" aria-label="页面导航">
+          <a class="back-link" href="/index.html">返回入口</a>
+          <a class="back-link" href="/studio.html">Web Studio</a>
+          <a class="back-link" href="/builder.html">MIX Builder</a>
+        </nav>
+      </header>
+
+      <section class="library-toolbar" aria-label="筛选动作库">
+        <label class="library-search">
+          搜索
+          <input id="librarySearch" type="search" placeholder="名称、别名、喊词、ID" />
+        </label>
+        <label>
+          类别
+          <select id="libraryCategory">
+            <option value="all">全部</option>
+            <option value="mix">MIX</option>
+            <option value="rhythmcall">节奏 Call</option>
+            <option value="underground_gei">地下艺</option>
+            <option value="keepspace">留白</option>
+          </select>
+        </label>
+        <label>
+          风险
+          <select id="libraryRisk">
+            <option value="all">全部</option>
+            <option value="low">低</option>
+            <option value="medium">中</option>
+            <option value="high">高</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="library-summary">
+        <strong id="libraryCount">-</strong>
+        <span id="libraryMeta">正在加载动作库...</span>
+      </section>
+
+      <section id="libraryList" class="library-list" aria-live="polite"></section>
+    </main>
+
+    <script src="/static/config.js"></script>
+    <script src="/static/library.js"></script>
+  </body>
+</html>

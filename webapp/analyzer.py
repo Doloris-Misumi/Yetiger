@@ -1205,6 +1205,22 @@ def list_action_library() -> List[Dict[str, Any]]:
     ]
 
 
+def list_reference_library() -> Dict[str, Any]:
+    """Return the full call / MIX library for the public reference page."""
+    base = read_json(LIBRARY_PATH) if LIBRARY_PATH.exists() else {}
+    actions = []
+    for action_id, action in sorted(merged_action_library_by_id().items()):
+        item = dict(action)
+        item.setdefault("id", action_id)
+        item.setdefault("source", "builtin")
+        actions.append(_json_ready(item))
+    return {
+        "version": str(base.get("version") or "custom"),
+        "notes": base.get("notes") or [],
+        "actions": actions,
+    }
+
+
 def _preferred_bars_from_action(action: Dict[str, Any]) -> Optional[float]:
     duration = action.get("duration") if isinstance(action.get("duration"), dict) else {}
     if not duration.get("strict_bars"):

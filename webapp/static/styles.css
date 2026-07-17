@@ -976,9 +976,9 @@ tr.has-gei-video td:first-child {
 
 .landing-cards {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px;
-  max-width: 1080px;
+  max-width: 1280px;
   width: 100%;
 }
 
@@ -1041,6 +1041,12 @@ tr.has-gei-video td:first-child {
 
   .landing-title {
     font-size: 40px;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1180px) {
+  .landing-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -1211,6 +1217,233 @@ tr.has-gei-video td:first-child {
 
   .readme-paths {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ---- MIX & Call Library page ---- */
+
+.library-shell {
+  min-height: 100vh;
+  padding: 28px 24px 48px;
+}
+
+.library-header {
+  max-width: 1320px;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.library-toolbar {
+  max-width: 1320px;
+  margin: 0 auto 12px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 12px;
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) 180px 160px;
+  gap: 12px;
+}
+
+.library-toolbar label {
+  display: grid;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #475467;
+}
+
+.library-toolbar input,
+.library-toolbar select {
+  height: 38px;
+  border: 1px solid #bdc7d3;
+  border-radius: 6px;
+  padding: 0 10px;
+  background: #fff;
+  color: var(--ink);
+}
+
+.library-summary {
+  max-width: 1320px;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  color: #617083;
+}
+
+.library-summary strong {
+  font-size: 26px;
+  color: var(--ink);
+}
+
+.library-list {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  gap: 12px;
+}
+
+.library-item {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.library-item-head {
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.library-title-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.library-title-row h2 {
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.library-names {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  color: #617083;
+  font-size: 12px;
+}
+
+.library-length {
+  min-width: 132px;
+  text-align: right;
+  color: #17202a;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.library-risk {
+  border-radius: 999px;
+  padding: 2px 9px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.library-risk-low {
+  background: #e8f5ef;
+  color: #146c57;
+}
+
+.library-risk-medium {
+  background: #fff4db;
+  color: #98610e;
+}
+
+.library-risk-high {
+  background: #ffe9e6;
+  color: #a33b32;
+}
+
+.library-content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+  gap: 18px;
+  padding: 16px 18px 18px;
+}
+
+.library-content-grid h3 {
+  margin: 0 0 10px;
+  color: #344054;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.library-lines {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.library-lines li {
+  min-height: 34px;
+  border: 1px solid #d9e0e7;
+  border-radius: 6px;
+  background: #f8fafc;
+  padding: 7px 10px;
+  color: #17202a;
+  line-height: 1.45;
+  font-weight: 650;
+}
+
+.library-lines li span {
+  display: inline-block;
+  min-width: 30px;
+  margin-right: 8px;
+  color: #8796a8;
+  font-size: 12px;
+}
+
+.library-facts {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 8px 10px;
+  margin: 0;
+  color: #475467;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.library-facts dt {
+  font-weight: 800;
+  color: #344054;
+}
+
+.library-facts dd {
+  margin: 0;
+  word-break: break-word;
+}
+
+.library-facts a {
+  color: var(--blue);
+}
+
+.library-empty {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 28px;
+  color: #617083;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .library-header,
+  .library-item-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .library-toolbar,
+  .library-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .library-length {
+    text-align: left;
   }
 }
 
