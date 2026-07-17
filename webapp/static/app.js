@@ -178,6 +178,23 @@ const musicColors = {
   unknown: "#64748b",
 };
 
+const musicLabels = {
+  intro: "前奏",
+  verse: "主歌",
+  pre_chorus: "预副歌",
+  pre_chorus_build: "预副歌推进",
+  chorus: "副歌",
+  post_chorus: "后副歌",
+  bridge: "桥段",
+  instrumental: "纯音乐",
+  instrumental_break: "间奏 Break",
+  interlude: "间奏",
+  solo: "Solo",
+  outro: "尾奏",
+  end: "结束",
+  unknown: "未知段落",
+};
+
 const roleLabels = {
   keepspace: "留白",
   rhythmcall: "节奏 Call",
@@ -208,6 +225,12 @@ function parseTimeInput(value) {
   if (match) return parseInt(match[1], 10) * 60 + parseFloat(match[2]);
   const seconds = Number(text);
   return Number.isFinite(seconds) && seconds >= 0 ? seconds : null;
+}
+
+function musicLabelText(label) {
+  const key = String(label || "unknown").trim();
+  if (!key) return musicLabels.unknown;
+  return musicLabels[key] || key.replaceAll("_", " ");
 }
 
 function downloadText(filename, text, type) {
@@ -397,8 +420,10 @@ function markdownFromTimeline(result) {
     "|---:|---|---|---|---|---:|---|---|",
   ];
   for (const action of result.timeline || []) {
+    const music = musicLabelText(action.music_label);
+    const struct = musicLabelText(action.struct_label);
     lines.push(
-      `| ${fmtTime(action.start)}-${fmtTime(action.end)} | ${action.music_label || "-"} | ${action.struct_label || "-"} | ${action.role || "-"} | ${action.display_name || "-"} | ${action.bar_count ?? "-"} | ${action.risk || "-"} | ${action.typical_text || "-"} |`
+      `| ${fmtTime(action.start)}-${fmtTime(action.end)} | ${music} | ${struct} | ${action.role || "-"} | ${action.display_name || "-"} | ${action.bar_count ?? "-"} | ${action.risk || "-"} | ${action.typical_text || "-"} |`
     );
   }
   const notes = Array.isArray(result.notes) ? result.notes.filter((note) => String(note.text || "").trim()) : [];
@@ -533,7 +558,7 @@ function renderTimeline() {
         <span class="time-dash">-</span>
         <input class="time-inline" value="${fmtTime(action.end)}" data-index="${index}" data-field="end" size="7" />
       </td>
-      <td><span class="music-pill music-${action.music_label || "unknown"}">${escapeHtml(action.music_label || "-")}</span></td>
+      <td><span class="music-pill music-${action.music_label || "unknown"}">${escapeHtml(musicLabelText(action.music_label))}</span></td>
       <td><span class="role-pill role-${action.role || "keepspace"}">${escapeHtml(roleLabel)}</span></td>
       <td class="action-cell">
         <input class="action-search" value="${escapeAttr(action.display_name || "")}" data-index="${index}" data-field="display_name" placeholder="Search action..." autocomplete="off" />
@@ -666,7 +691,7 @@ function updateActiveRow() {
     const index = (state.result.timeline || []).indexOf(active);
     const row = els.timelineBody.querySelector(`tr[data-index="${index}"]`);
     if (row) row.classList.add("is-active");
-    els.currentAction.textContent = `${active.music_label || "-"} | ${active.role || "-"} | ${active.display_name} | ${fmtTime(active.start)}-${fmtTime(active.end)}`;
+    els.currentAction.textContent = `${musicLabelText(active.music_label)} | ${active.role || "-"} | ${active.display_name} | ${fmtTime(active.start)}-${fmtTime(active.end)}`;
   } else {
     els.currentAction.textContent = state.result ? "留白" : "未加载动作";
   }
@@ -909,7 +934,7 @@ function drawNotePanel(ctx, panel, result, current, upcoming, currentMusic, dura
   ctx.fillStyle = "#f8fafc";
   drawWrappedText(ctx, title, x, panel.y + 92, maxW, 44, 2);
 
-  const section = currentMusic?.music_label || current?.music_label || "-";
+  const section = musicLabelText(currentMusic?.music_label || current?.music_label);
   const actionWindow = current
     ? `${fmtTime(current.start)}-${fmtTime(current.end)}`
     : `Now ${fmtTime(time)}`;
@@ -978,7 +1003,7 @@ function drawMediaPanel(ctx, panel, result, current, currentMusic, roleColor) {
   ctx.fillText("MV / DEMO SLOT", panel.x + panel.w / 2, panel.y + panel.h / 2 - 10);
 
   ctx.font = "24px Segoe UI, sans-serif";
-  const caption = `${result?.song?.title || "YesTiger"} · ${currentMusic?.music_label || current?.music_label || "-"}`;
+  const caption = `${result?.song?.title || "YesTiger"} · ${musicLabelText(currentMusic?.music_label || current?.music_label)}`;
   ctx.fillText(caption, panel.x + panel.w / 2, panel.y + panel.h - 42);
   ctx.textAlign = "left";
 }
@@ -1032,7 +1057,7 @@ function drawActionPanel(ctx, panel, current, roleColor, result, currentMusic, d
   ctx.font = "20px Segoe UI, sans-serif";
   ctx.fillStyle = "#a8b3c2";
   const meta = current
-    ? `${current.music_label || "-"} · ${current.bar_count ?? "-"} bars · ${riskLabels[current.risk] || current.risk || "low"}`
+    ? `${musicLabelText(current.music_label)} · ${current.bar_count ?? "-"} bars · ${riskLabels[current.risk] || current.risk || "low"}`
     : "未加载动作";
   drawWrappedText(ctx, meta, x, panel.y + panel.h - 50, maxW, 24, 1);
 
@@ -1054,7 +1079,7 @@ function drawActionPanel(ctx, panel, current, roleColor, result, currentMusic, d
 
 function updateSongInfoBar(result, current, upcoming, currentMusic, duration, time) {
   if (!els.songInfoBar) return;
-  const section = currentMusic?.music_label || current?.music_label || "-";
+  const section = musicLabelText(currentMusic?.music_label || current?.music_label);
   const upcomingText = upcoming
     ? `Next: ${fmtTime(upcoming.start)} ${upcoming.display_name || "-"}`
     : "";
@@ -1110,7 +1135,7 @@ function drawMusicBands(ctx, width, height, duration, time) {
   });
   ctx.fillStyle = "#cbd5e1";
   ctx.font = "18px Segoe UI, sans-serif";
-  ctx.fillText("music structure", left, top - 8);
+  ctx.fillText("音乐结构", left, top - 8);
   const progressX = left + (time / Math.max(0.001, duration)) * w;
   ctx.fillStyle = "#f8fafc";
   ctx.fillRect(progressX, top - 6, 3, h + 12);
@@ -1282,7 +1307,21 @@ function showSnapToast(original, snapped) {
 
 // ─── Structure Editor ────────────────────────────────────────────────
 
-const COARSE_LABELS = ["intro", "verse", "pre_chorus", "chorus", "instrumental", "bridge", "outro"];
+const COARSE_LABELS = [
+  "intro",
+  "verse",
+  "pre_chorus",
+  "pre_chorus_build",
+  "chorus",
+  "post_chorus",
+  "instrumental",
+  "instrumental_break",
+  "interlude",
+  "solo",
+  "bridge",
+  "outro",
+  "end",
+];
 
 function renderStructureEditor() {
   const segments = state.result?.music_segments || [];
@@ -1297,7 +1336,7 @@ function renderStructureEditor() {
     li.dataset.index = String(index);
     const edited = seg.source === "human_curated";
     const labelOptions = COARSE_LABELS.map(
-      (lb) => `<option value="${lb}" ${seg.music_label === lb ? "selected" : ""}>${lb}</option>`
+      (lb) => `<option value="${lb}" ${seg.music_label === lb ? "selected" : ""}>${musicLabelText(lb)}</option>`
     ).join("");
     li.innerHTML = `
       <span class="seg-num">#${index + 1}</span>
