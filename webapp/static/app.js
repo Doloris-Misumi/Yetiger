@@ -1901,8 +1901,9 @@ async function analyzeUpload(event) {
     }
     // Poll for completion
     setStatus("正在分析...");
+    let fatalPollError = null;
     const pollInterval = 3000;
-    const maxPolls = 120; // 6 minutes max
+    const maxPolls = 600; // 30 minutes max; first MuQ download can be slow.
     for (let i = 0; i < maxPolls; i++) {
       await new Promise(r => setTimeout(r, pollInterval));
       try {
@@ -1916,10 +1917,12 @@ async function analyzeUpload(event) {
           return;
         }
         if (statusData.status === "error") {
+          fatalPollError = statusData.result?.error || "analysis failed";
           throw new Error(statusData.result?.error || "分析失败");
         }
         setStatus(`正在分析... (${Math.round((i + 1) * pollInterval / 1000)}s)`);
       } catch (pollErr) {
+        if (fatalPollError) throw new Error(fatalPollError);
         // Ignore poll errors, keep retrying
       }
     }

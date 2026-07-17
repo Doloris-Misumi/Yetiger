@@ -346,11 +346,32 @@ class MuQFeatureExtractor:
         """Load MuQ only when a requested embedding is not cached."""
         if self.model is not None:
             return
-        from muq import MuQ
+        from dataclasses import fields
+        from muq import MuQ, MuQConfig
         kwargs = {}
         if self.model_cache_dir is not None:
             kwargs["cache_dir"] = str(self.model_cache_dir)
-        self.model = MuQ.from_pretrained(self.model_name, **kwargs).to(self.device)
+
+        config_path = None
+        model_path = Path(self.model_name)
+        if model_path.is_dir():
+            local_config = model_path / "config.json"
+            if local_config.exists():
+                config_path = local_config
+        if config_path is None:
+            from huggingface_hub import hf_hub_download
+            config_path = Path(hf_hub_download(
+                repo_id=self.model_name,
+                filename="config.json",
+                cache_dir=kwargs.get("cache_dir"),
+            ))
+
+        raw_config = json.loads(config_path.read_text(encoding="utf-8"))
+        allowed_keys = {field.name for field in fields(MuQConfig)}
+        config = MuQConfig(**{
+            key: value for key, value in raw_config.items() if key in allowed_keys
+        })
+        self.model = MuQ.from_pretrained(self.model_name, config=config, **kwargs).to(self.device)
         self.model.eval()
         for p in self.model.parameters():
             p.requires_grad = False
